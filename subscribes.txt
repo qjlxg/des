@@ -287,3 +287,7 @@ https://sub.u1s1.life/api/v1/client/subscribe?token=381c50b328496fb5d8554bbb3d46
 https://nodes.huanyuyunvip.com/api/v1/client/subscribe?token=83c2e0043111afe30163d769d9d0cfbb
 https://www.cnmya.cn/api/v1/client/subscribe?token=185419badccf20b1e9840422a5f74b2a
 http://web01.u1s1.life/api/v1/client/subscribe?token=f2bcaea9fec565945c7e1cc503ddb7bc
+https://bssbs.slianvpn.top/api/v1/client/subscribe?token=a4e117e8845a1e1d1f6733faf97d23e3
+https://slianvpn.com/api/v1/client/subscribe?token=6c0dce604d92f350671b6ce12470b091
+https://cloudaddy.top/api/v1/client/subscribe?token=d43234f89f0d5fb1f9b8d10026e6c9cc
+https://saas.tayun.vip/api/v1/client/subscribe?token=f0435a6d415d4645df040273aead7df0
