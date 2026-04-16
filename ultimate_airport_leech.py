@@ -207,22 +207,33 @@ class V2BoardSession(Session):
 
     def buy(self):
         try:
+            # 拟人化延迟，防止 XBoard 行为识别
+            sleep(random.uniform(0.8, 1.5))
             r = self.get('api/v1/user/plan/fetch').json()
             plans = r.get('data', [])
             for p in plans:
-                if any(p.get(k) == 0 for k in ['month_price', 'onetime_price', 'year_price']):
-                    period = 'month_price' if p.get('month_price') == 0 else 'onetime_price'
-                    order = self.post('api/v1/user/order/save', {'period': period, 'plan_id': p['id']}).json()
-                    if order.get('data'):
-                        trade_no = order['data']
-                        self.post('api/v1/user/order/checkout', {'trade_no': trade_no})
-                        self.get(f'api/v1/user/plan/resetByOrder?trade_no={trade_no}')
-                        return f"FreePlan({p['id']})"
+                # 遍历所有可能的价格键 (month_price, quarter_price, year_price, onetime_price 等)
+                price_keys = [k for k in p.keys() if '_price' in k]
+                for k in price_keys:
+                    if p.get(k) == 0:
+                        period = k.replace('_price', '')
+                        order = self.post('api/v1/user/order/save', {'period': period, 'plan_id': p['id']}).json()
+                        if order.get('data'):
+                            trade_no = order['data']
+                            self.post('api/v1/user/order/checkout', {'trade_no': trade_no})
+                            # 激活订阅
+                            self.get(f'api/v1/user/plan/resetByOrder?trade_no={trade_no}')
+                            return f"FreePlan({p['id']}_{period})"
         except: pass
         return "NoFreePlan"
 
     def get_sub_url(self):
-        self.headers['User-Agent'] = 'Clash.meta'
+        # 模拟 ClashMeta UA 和 Referer 以绕过 XBoard 403 限制
+        self.headers.update({
+            'User-Agent': 'ClashMeta/1.18.0 (Clash.Meta; github.com/MetaCubeX)',
+            'Referer': f"{self.base}/",
+            'Accept': 'application/json, text/plain, */*'
+        })
         tk = self.headers.get('authorization')
         try:
             res = self.get('api/v1/user/getSubscribe').json()
@@ -320,10 +331,8 @@ def process_worker(url):
     sub_url = session.get_sub_url()
     if not sub_url: return None, None
 
-    # 订阅检查（即使 403 也继续记录）
     info, _ = check_subscription_robust(sub_url)
     
-    # 尝试将 raw_res 中的 Unicode 转为中文以便阅读
     try:
         decoded_raw = json.dumps(json.loads(reg_raw), ensure_ascii=False)
     except:
