@@ -183,3 +183,5 @@ https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=5abd971b5d019f08b84ad
 https://www.aicvideo.info/api/v1/client/subscribe?token=09e6b7b72e6c62e6d89f081d5f8b9d9e
 https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=b8208c7d36e452e8a460c968a7acb1fc
 https://www.aicvideo.info/api/v1/client/subscribe?token=b926976e44f15889b6a9053400236a90
+https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=dc792cba166097b07fd493472dcd19bc
+https://www.aicvideo.info/api/v1/client/subscribe?token=b6e6c4bf58581d3060a9f23d76e1a1c9
