@@ -1,0 +1,7 @@
+pybase64
+requests
+tqdm
+pyyaml
+qqwry-py3
+chardet
+beautifulsoup4
