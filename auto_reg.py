@@ -163,7 +163,7 @@ def process_domain(url, cached_info):
     for path in REG_PATHS:
         try:
             res = session.post(f"{api_domain}{path}", 
-                               data={'email':email,'password':password,'invite_code':'','email_code':''}, 
+                               data={'email':email,'password':password,'string_DAR352':'','email_code':''}, 
                                headers=headers, timeout=12, verify=False)
             
             res_json = {}
