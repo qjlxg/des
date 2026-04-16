@@ -1,20 +1,20 @@
 [alaalatin.alaala.xyz]
 buy    NoFreePlan
-email  243vv3z312@gmail.com
-pass   TWqRFUeeZFi1
+email  g27nsi0kyf@gmail.com
+pass   akriH5MVYr7f
 sub_info  0.00B/80.00GB (2026-04-16)
-sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=5abd971b5d019f08b84adaa06f0b8c74
-raw_res  {"data":{"token":"5abd971b5d019f08b84adaa06f0b8c74","is_admin":null,"auth_data":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NzU0LCJzZXNzaW9uIjoiM2E4MDdlMWRjMzFjY2VkZDQ5OWQ5NzE2NDljM2E3MWIifQ.QX9KXGeFckPLrqGKCHMfVpz2JnNrrNNd5mTOgZhvV3U"}}
-time  2026-04-16T11:15:20.320020+08:00
+sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=b8208c7d36e452e8a460c968a7acb1fc
+raw_res  {"data": {"token": "b8208c7d36e452e8a460c968a7acb1fc", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NzU4LCJzZXNzaW9uIjoiYTgwZjYwNzBjNTRjZDQ4NTY0N2MwYTUxNjQ2YWUzNDcifQ.QVS9yLZX4WlVgTtml4YN35kLDugypBJSq59bWm493Jo"}}
+time  2026-04-16T11:19:57.232153+08:00
 type  v2board
 
 
 [www.aicvideo.info]
 buy    NoFreePlan
-email  2auyjhofk8@gmail.com
-pass   N87LlWMzdCZT
+email  dsik97515n@gmail.com
+pass   cNQh3RmlD674
 sub_info  HTTP 403
-sub_url  https://www.aicvideo.info/api/v1/client/subscribe?token=09e6b7b72e6c62e6d89f081d5f8b9d9e
-raw_res  {"status":"success","message":"\u64cd\u4f5c\u6210\u529f","data":{"token":"09e6b7b72e6c62e6d89f081d5f8b9d9e","auth_data":"Bearer BUxPqOOplx3B6jGjhK68NBmAMd7Y0nAIISRdyE4l69db7f77","is_admin":null},"error":null}
-time  2026-04-16T11:15:20.571321+08:00
+sub_url  https://www.aicvideo.info/api/v1/client/subscribe?token=b926976e44f15889b6a9053400236a90
+raw_res  {"status": "success", "message": "操作成功", "data": {"token": "b926976e44f15889b6a9053400236a90", "auth_data": "Bearer aJEzUafu8rhbYdLzfGiOrrapYGnHUJ64DEgwLOD21755ea45", "is_admin": null}, "error": null}
+time  2026-04-16T11:19:57.310500+08:00
 type  v2board
