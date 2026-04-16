@@ -37,6 +37,7 @@ NODES_FILE = "nodes.txt"
 MAX_WORKERS = 150
 SH_TZ = datetime.timezone(datetime.timedelta(hours=8))
 
+# 增强路径参数
 REG_PATHS = [
     "api/v1/passport/auth/register", 
     "api/v1/guest/passport/auth/register",
@@ -56,10 +57,13 @@ DOMAIN_BLACKLIST = {
     'apple.com', 'cloudflare.com', 'douban.com', 'weibo.com', 'qq.com',
     'csdn.net', 'juejin.cn', 'v2ex.com', 'bilibili.com', 'youtube.com',
     'twitter.com', 'facebook.com', 'instagram.com', 'telegram.org',
-    'speedtest.net', 'fast.com', 'ip138.com', 'ip.skk.moe', 'gitee.com'
+    'speedtest.net', 'fast.com', 'ip138.com', 'ip.skk.moe', 'gitee.com',
+    'xueshu', 'research', 'edu', 'gov', 'amazon', 'bing', 'outlook', 'mail'
 }
+
 SUFFIX_BLACKLIST = ('.gov', '.edu', '.mil', '.org', '.gov.cn', '.edu.cn')
 
+# 全局锁
 io_lock = threading.Lock()
 
 # ==================== 基础工具函数 ====================
@@ -80,7 +84,9 @@ def format_time(ts):
     if not ts or ts == 0 or ts == "0": return "永久"
     try:
         ts = float(ts)
+        # 兼容毫秒级
         if ts > 2147483647: ts = ts / 1000
+        # 修改为精确到秒
         return datetime.datetime.fromtimestamp(ts, SH_TZ).strftime('%Y-%m-%d %H:%M:%S')
     except: return "未知"
 
@@ -216,7 +222,7 @@ class V2BoardSession(Session):
         return "NoFreePlan"
 
     def get_sub_info(self):
-        # 优先请求后端 user/info API 获取高精度数据
+        # 优先直接请求 User Info API
         try:
             res = self.get('api/v1/user/info').json()
             if res.get('data'):
@@ -224,45 +230,41 @@ class V2BoardSession(Session):
                 total = d.get('transfer_enable', 0)
                 used = d.get('u', 0) + d.get('d', 0)
                 expire = d.get('expired_at')
-                return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})"
+                # 只有 total > 0 才视为有效流量信息
+                if total > 0:
+                    return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})", total
         except: pass
-        # 备选原 getSubscribe API
+        # 备选 getSubscribe 接口
         try:
             res = self.get('api/v1/user/getSubscribe').json()
-            d = res['data']
-            total = d['transfer_enable']; used = d['u'] + d['d']
-            expire = d.get('expired_at')
-            return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})"
-        except: return None
+            if res.get('data'):
+                d = res['data']
+                total = d['transfer_enable']
+                used = d['u'] + d['d']
+                expire = d.get('expired_at')
+                return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})", total
+        except: pass
+        return None, 0
 
-    def check_node_quality(self):
-        # 检查节点列表与倍率
+    def check_nodes_and_rates(self):
         try:
             res = self.get('api/v1/user/server/fetch').json()
             nodes = res.get('data', [])
-            if not nodes: return "空壳机场"
-            
-            rates = []
-            for n in nodes:
-                # 提取倍率字段，通常在 rate 键中
-                rate = n.get('rate') or n.get('server_rate') or 1
-                try: rates.append(float(rate))
-                except: rates.append(1.0)
-            
-            if all(r >= 10 for r in rates):
-                return "[高倍率坑]"
-            return ""
-        except: return ""
+            if not nodes: return 0, False # 空壳
+            rates = [float(n.get('rate', 1)) for n in nodes]
+            is_high_risk = all(r >= 10 for r in rates) if rates else False
+            return len(nodes), is_high_risk
+        except: return 0, False
 
     def get_sub_url(self):
         self.headers.update({'User-Agent': 'ClashMeta/1.18.0', 'Referer': f"{self.base}/"})
+        tk = self.headers.get('authorization')
         try:
             res = self.get('api/v1/user/getSubscribe').json()
-            if res.get('data'): 
+            if res.get('data') and isinstance(res['data'], dict): 
                 s_url = res['data'].get('subscribe_url')
                 if s_url: return s_url
         except: pass
-        tk = self.headers.get('authorization')
         return f"{self.base}/api/v1/client/subscribe?token={tk}" if tk else None
 
 # ==================== SSPanelSession ====================
@@ -293,35 +295,38 @@ class SSPanelSession(Session):
             m_expire = re.search(r'等\D*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})', text)
             used = to_bytes(m_today.group(1) if m_today else "0B") + to_bytes(m_past.group(1) if m_past else "0B")
             remain = to_bytes(m_remain.group(1) if m_remain else "0B")
-            return f"{format_size(used)}/{format_size(used+remain)} ({m_expire.group(1) if m_expire else '永久'})"
-        except: return None
+            total = used + remain
+            return f"{format_size(used)}/{format_size(total)} ({m_expire.group(1) if m_expire else '永久'})", total
+        except: return None, 0
 
     def get_sub_url(self):
+        self.headers['User-Agent'] = 'Clash.meta'
         r = self.get('user').bs()
         tag = r.find(attrs={'data-clipboard-text': re.compile(r'https?://')})
         return tag['data-clipboard-text'] if tag else None
 
-# ==================== 邮箱系统 ====================
+# ==================== 邮箱与处理逻辑 ====================
 class TempEmail:
     def __init__(self): self.addr = ""
     def create(self):
         try:
-            r = requests.get("https://www.1secmail.com/api/v1/?action=genEmailAddresses&count=1", timeout=5).json()
-            self.addr = r[0]
-        except: self.addr = f"{''.join(random.choices(string.ascii_lowercase + string.digits, k=10))}@gmail.com"
+            r = requests.get("https://www.1secmail.com/api/v1/?action=genEmailAddresses&count=1", timeout=10).json()
+            if r: self.addr = r[0]; return self.addr
+        except: pass
+        self.addr = f"{''.join(random.choices(string.ascii_lowercase + string.digits, k=10))}@gmail.com"
         return self.addr
 
-# ==================== 核心处理器 ====================
-def check_subscription_header(url):
+def check_subscription_robust(url):
     try:
-        r = crequests.get(url, headers={'User-Agent': 'Clash.meta'}, timeout=12, verify=False)
+        r = crequests.get(url, headers={'User-Agent': 'Clash.meta'}, timeout=15, verify=False)
+        if not r.ok or len(r.text) < 100: return "EmptyContent", 0, False
         info_h = r.headers.get('subscription-userinfo', '')
         if info_h:
             p = {i.split('=')[0].strip(): i.split('=')[1].strip() for i in info_h.split(';') if '=' in i}
             total = int(p.get('total', 0)); used = int(p.get('upload', 0)) + int(p.get('download', 0))
-            return f"{format_size(used)}/{format_size(total)} ({format_time(p.get('expire', 0))})", True
-        return "Active(NoHeader)", True
-    except: return "CheckFailed", False
+            return f"{format_size(used)}/{format_size(total)} ({format_time(p.get('expire', 0))})", total, True
+        return "Active(NoHeader)", 1, True
+    except: return "CheckFailed", 0, False
 
 def process_worker(url):
     clean_dom = urlsplit(url).netloc.lower() or url.split('/')[0].lower()
@@ -333,9 +338,8 @@ def process_worker(url):
     try:
         if test_s.get('api/v1/guest/comm/config').ok or "v2board" in test_s.get('env.js').text.lower():
             session = V2BoardSession(test_s.base)
-        else:
-            if any(x in test_s.get('auth/login').text for x in ["SSPanel", "staff", "checkin"]):
-                session = SSPanelSession(test_s.base)
+        elif any(x in test_s.get('auth/login').text for x in ["SSPanel", "staff"]):
+            session = SSPanelSession(test_s.base)
     except: return None
     if not session: return None
 
@@ -345,62 +349,9 @@ def process_worker(url):
 
     buy_status = session.buy() if isinstance(session, V2BoardSession) else "Default"
     
-    # 核心：获取节点质量/倍率 (仅限 V2Board)
-    quality_tag = ""
-    if isinstance(session, V2BoardSession):
-        quality_tag = session.check_node_quality()
-
+    # 1. 流量校验
+    info, total_cap = session.get_sub_info()
     sub_url = session.get_sub_url()
-    if not sub_url: return None
-
-    # 流量信息获取：API 优先 -> Header 备选
-    info = session.get_sub_info()
-    if not info:
-        info, _ = check_subscription_header(sub_url)
-
-    # 组装 Log
-    display_info = f"{info} {quality_tag}".strip()
-    log = (f"[{clean_dom}]\n"
-           f"buy      {buy_status}\n"
-           f"email    {email}\n"
-           f"pass     {password}\n"
-           f"sub_info {display_info}\n"
-           f"sub_url  {sub_url}\n"
-           f"time     {datetime.datetime.now(SH_TZ).isoformat()}\n"
-           f"type     {('v2board' if isinstance(session, V2BoardSession) else 'sspanel')}\n")
-           
-    fast_log(f" [+] {clean_dom} | {display_info} | {buy_status}")
     
-    with io_lock:
-        with open(SUB_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
-        with open(NODES_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
-
-    return {"log": log, "info": info}
-
-def main():
-    if not os.path.exists(INPUT_FILE): return
-    urls = list(set([u.strip() for u in open(INPUT_FILE).readlines() if "." in u]))
-    fast_log(f"=== 引擎启动 === 任务: {len(urls)}")
-    
-    results = []
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
-        futures = {exe.submit(process_worker, u): u for u in urls}
-        for f in as_completed(futures):
-            try:
-                res = f.result()
-                if res: results.append(res)
-            except: pass 
-
-    def sort_key(item):
-        inf = str(item.get("info", "")).lower()
-        if re.search(r'\d{4}-\d{2}-\d{2}', inf): return 0
-        return 1 if "永久" in inf else 2
-
-    results.sort(key=sort_key)
-    all_logs = [item["log"] for item in results]
-    if all_logs:
-        with open(CACHE_FILE, 'w', encoding='utf-8') as f: f.write("\n\n".join(all_logs))
-    fast_log(f"任务结束 | 存入: {len(all_logs)}")
-
-if __name__ == "__main__":
-    main()
+    # 2. 节点与倍率校验 (后端 API)
+    node_count = 1 # 默认 SSPanel 为
