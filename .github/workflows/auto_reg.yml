@@ -1,0 +1,68 @@
+name: Airport_Auto_Register
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'auto_reg.py'
+      - '.github/workflows/auto_reg.yml'
+  schedule:
+    - cron: 0 0 1 * *
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - name: 迁出代码
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 
+
+    - name: 设置上海时区
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+
+    - name: 安装Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+
+    - name: 安装依赖
+      run: |
+      
+        sudo apt-get update && sudo apt-get install -y libglib2.0-0 libsm6 libxrender1 libxext6
+        pip install requests ddddocr crequests
+
+    - name: 配置 Git 用户
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+    - name: 执行前同步 (关键步骤)
+      run: |
+      
+        git pull origin main --rebase || echo "目前已是最新"
+
+    - name: 执行注册任务
+      run: |
+        python ./auto_reg.py
+      
+    - name: 提交并推送更改
+      run: |
+        # 1. 添加生成的文件
+        git add trial.cache subscribes.txt nodes.txt
+        
+        # 2. 检查是否有实际变动
+        if [ -n "$(git status --porcelain)" ]; then
+          # 3. 如果在脚本运行期间远程又有更新，强制合入并优先保留本地生成的 txt
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 自动注册更新 [上海时区]"
+          
+          # 推送前最后一次同步，防止 128 错误
+          git pull origin main --rebase -X theirs || echo "无需进一步 rebase"
+          git push origin main
+        else
+          echo "没有任何变动，无需提交。"
+        fi
