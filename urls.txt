@@ -1,8 +1,4 @@
-https://5.104.80.162 
-https://107.181.253.34 
-http://107.181.253.34/s/3fe63b7fb5f2dd6c7f5710d5e0340f9e
-https://163.223.210.244/api/v1/client/subscribe?token=fdb0aaa44a3720026bf998dc2a5da070
-https://163.223.210.244
-https://107.181.253.34
-http://107.181.253.34/s/3fe63b7fb5f2dd6c7f5710d5e0340f9e
-https://82.29.53.56
+cloudaddy.top
+slianvpn.com
+saas.tayun.vip
+bssbs.slianvpn.top
