@@ -1,4 +1,4 @@
-name: sub_merge
+name: TG_proxy_main
 
 on:
   workflow_dispatch:
