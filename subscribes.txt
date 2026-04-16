@@ -179,3 +179,5 @@ https://v2.walkunderground.com/api/v1/client/subscribe?token=f608317315cdc611f51
 https://abc.whtjdasha.com/api/v1/client/subscribe?token=b35d3aedd3e34dae17c49ec34bdbd28d
 https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=87451b36cfaccf6fb918cd85aa56b68b
 https://www.aicvideo.info/api/v1/client/subscribe?token=e4e6c1edc1f0a1a398c7150bcb131271
+https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=5abd971b5d019f08b84adaa06f0b8c74
+https://www.aicvideo.info/api/v1/client/subscribe?token=09e6b7b72e6c62e6d89f081d5f8b9d9e
