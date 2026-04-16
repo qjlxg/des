@@ -37,7 +37,7 @@ NODES_FILE = "nodes.txt"
 MAX_WORKERS = 150
 SH_TZ = datetime.timezone(datetime.timedelta(hours=8))
 
-# 新增：增强路径参数
+# 增强路径参数
 REG_PATHS = [
     "api/v1/passport/auth/register", 
     "api/v1/guest/passport/auth/register",
@@ -170,7 +170,6 @@ class V2BoardSession(Session):
         return None
 
     def register(self, email, password):
-        # 筛选符合 V2Board 格式的注册路径
         paths = [p for p in REG_PATHS if "api/v1" in p or p == "register"]
         payload = {'email': email, 'password': password, 'repassword': password, 'invite_code': ''}
         
@@ -180,7 +179,6 @@ class V2BoardSession(Session):
             if res_obj.status_code == 404: continue
             
             res = res_obj.json()
-            # 增强验证码处理
             if 'captcha' in str(res.get('message','')).lower() and ocr:
                 for cp in CAPTCHA_PATHS:
                     c_res = self.get(cp).json()
@@ -237,7 +235,6 @@ class V2BoardSession(Session):
 # ==================== SSPanelSession ====================
 class SSPanelSession(Session):
     def register(self, email, password):
-        # SSPanel 通常固定在 auth/register
         for path in ["auth/register", "register"]:
             payload = {'email': email, 'passwd': password, 'repasswd': password, 'agreeterm': 1, 'name': email.split('@')[0], 'code': ''}
             res_obj = self.post(path, payload)
@@ -323,16 +320,22 @@ def process_worker(url):
     sub_url = session.get_sub_url()
     if not sub_url: return None, None
 
-    info, is_ok = check_subscription_robust(sub_url)
-    if not info: info = "CheckFailed"
+    # 订阅检查（即使 403 也继续记录）
+    info, _ = check_subscription_robust(sub_url)
     
+    # 尝试将 raw_res 中的 Unicode 转为中文以便阅读
+    try:
+        decoded_raw = json.dumps(json.loads(reg_raw), ensure_ascii=False)
+    except:
+        decoded_raw = reg_raw
+
     log = (f"[{clean_dom}]\n"
            f"buy    {buy_status}\n"
            f"email  {email}\n"
            f"pass   {password}\n"
            f"sub_info  {info}\n"
            f"sub_url  {sub_url}\n"
-           f"raw_res  {reg_raw}\n"
+           f"raw_res  {decoded_raw}\n"
            f"time  {datetime.datetime.now(SH_TZ).isoformat()}\n"
            f"type  {('v2board' if isinstance(session, V2BoardSession) else 'sspanel')}\n")
            
@@ -347,7 +350,7 @@ def process_worker(url):
 def main():
     if not os.path.exists(INPUT_FILE): return
     urls = list(set([u.strip() for u in open(INPUT_FILE).readlines() if "." in u]))
-    fast_log(f"=== 启动修复版引擎(多路径支持版) === 任务数: {len(urls)}")
+    fast_log(f"=== 启动修复版引擎(全能记录版) === 任务数: {len(urls)}")
     
     all_logs = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
