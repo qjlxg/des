@@ -3353,3 +3353,7 @@ http://tntvipaffb01.cc/api/v1/client/subscribe?token=bfbbbf6bb40132a87e89ec0bdd5
 https://aa.yinxingye.xyz/api/v1/client/subscribe?token=72a77f60bfb4922f9d733ebbfb32636c
 https://www.chiguayun.pro/api/v1/client/subscribe?token=a50d00c950ff7f208df9e57c787fc749
 https://dochelp.site/api/v1/client/subscribe?token=87cddeff49395a58a51e1b1e16121102
+https://vtest.68601.net/api/v1/client/subscribe?token=1aa0ffebf1ae19b30de11795348bee3b
+https://www.aicvideo.info/api/v1/client/subscribe?token=00c54267e248f7cdad5178c551938da6
+http://admw.tmtb.top/api/v1/client/subscribe?token=8d721bd8bae12e2e8652a922bcd92d9a
+https://admw.tmtb.top/api/v1/client/subscribe?token=34a45e362b0f2f65bbc01a84b1018295
