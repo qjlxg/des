@@ -1,48 +1,163 @@
+[vmeteor.asia]
+reg_msg SUCCESS: 操作成功
+buy    NoFreePlan
+email  326n5glvx8@gmail.com
+pass   vzFU81Fs0ELy
+sub_info  HTTP 403
+sub_url  http://vmeteor.asia/api/v1/client/subscribe?token=b02e1a8f1b772bc2edeb550e70d722c0
+time  2026-04-16T11:09:28.886636+08:00
+type  v2board
+
+
+[vmeteor.asia]
+reg_msg SUCCESS: 操作成功
+buy    NoFreePlan
+email  vk87dalxqo@gmail.com
+pass   D8dSROItdKaa
+sub_info  HTTP 403
+sub_url  https://vmeteor.asia/api/v1/client/subscribe?token=ecdf8302814a015ee63269532da6047a
+time  2026-04-16T11:09:29.017787+08:00
+type  v2board
+
+
 [alaalatin.alaala.xyz]
+reg_msg SUCCESS: Registered
 buy    NoFreePlan
-email  nfoh1o60dq@gmail.com
-pass   h6m4HL2Ac5Sa
+email  dye5exohd6@gmail.com
+pass   4GCFN1vemu2J
 sub_info  0.00B/80.00GB (2026-04-16)
-sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=3f1bf6fb506924ba5ea6918edce6ef9e
-time  2026-04-16T10:18:07.302258+08:00
+sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=69aa7d86ab5b2f2f86ec2defb6db4c2d
+time  2026-04-16T11:09:29.028440+08:00
 type  v2board
 
 
-[node1.befast.cfd]
+[bakelite.benzene.cc]
+reg_msg SUCCESS: 操作成功
 buy    NoFreePlan
-email  s7qzxsn354@gmail.com
-pass   NzOg7m6fmq8K
-sub_info  0.00B/0.00B (永久)
-sub_url  http://node1.befast.cfd/api/v1/client/subscribe?token=3692ed1e496333b7410eeba00ed30bbb
-time  2026-04-16T10:18:10.844435+08:00
-type  v2board
-
-
-[node1.befast.cfd]
-buy    NoFreePlan
-email  9a07sfwijt@gmail.com
-pass   iZVIWlB2k3pc
-sub_info  0.00B/0.00B (永久)
-sub_url  https://node1.befast.cfd/api/v1/client/subscribe?token=caaff2c35211f70a3b6a86e94641fee5
-time  2026-04-16T10:18:11.297526+08:00
+email  17k5spypdk@gmail.com
+pass   2gvkpYmt0Anb
+sub_info  HTTP 403
+sub_url  https://bakelite.benzene.cc/api/v1/client/subscribe?token=e09daa808264a0dbeaf68676a43681dd
+time  2026-04-16T11:09:29.273372+08:00
 type  v2board
 
 
 [128.ya93.cc]
+reg_msg SUCCESS: Registered
 buy    NoFreePlan
-email  prbi6r9pvi@gmail.com
-pass   CU248jtp3VoG
+email  xrsqp5tf4i@gmail.com
+pass   CZHUX6Pg5Hoo
 sub_info  0.00B/3.00GB (2026-04-16)
-sub_url  http://128.ya93.cc/api/v1/client/subscribe?token=3e015cd4706b7ddb25340921a50ba0df
-time  2026-04-16T10:18:11.520843+08:00
+sub_url  http://128.ya93.cc/api/v1/client/subscribe?token=15b9657870ea993a2dbd8ed262f3cf1d
+time  2026-04-16T11:09:30.293277+08:00
 type  v2board
 
 
 [128.ya93.cc]
+reg_msg SUCCESS: Registered
 buy    NoFreePlan
-email  ib6s1g4q08@gmail.com
-pass   4UIRIuOjJrf7
+email  d8csowuehb@gmail.com
+pass   JnlVRFCOdnnd
 sub_info  0.00B/3.00GB (2026-04-16)
-sub_url  https://128.ya93.cc/api/v1/client/subscribe?token=abba489011de2bf0efc956129e0bfde5
-time  2026-04-16T10:18:11.588667+08:00
+sub_url  https://128.ya93.cc/api/v1/client/subscribe?token=4945f34021614accf792bdacd868c61d
+time  2026-04-16T11:09:30.306004+08:00
+type  v2board
+
+
+[oce.520712.xyz]
+reg_msg SUCCESS: 操作成功
+buy    NoFreePlan
+email  xtffrrba6o@gmail.com
+pass   EAeGpZFN7y6J
+sub_info  HTTP 403
+sub_url  https://oce.520712.xyz/api/v1/client/subscribe?token=ff42d2ca32d088e50ae498800d95f175
+time  2026-04-16T11:09:31.377860+08:00
+type  v2board
+
+
+[ai.nanmanzisb.top]
+reg_msg SUCCESS: 恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！
+buy    NoFreePlan
+email  2ax6izrp89@gmail.com
+pass   pzQZozmUrBmo
+sub_info  EmptyContent
+sub_url  http://ai.nanmanzisb.top/api/v1/client/subscribe?token=5e796e9adece0020a5c15d0a3a3c1dfe
+time  2026-04-16T11:09:32.682457+08:00
+type  v2board
+
+
+[ai.shabizhijia023.top]
+reg_msg SUCCESS: 恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！
+buy    NoFreePlan
+email  9llu1fvjnc@gmail.com
+pass   KE9f2eIvEgpF
+sub_info  EmptyContent
+sub_url  http://ai.shabizhijia023.top/api/v1/client/subscribe?token=131bc129c2d7e5bca9f5df8686c48c0d
+time  2026-04-16T11:09:32.726257+08:00
+type  v2board
+
+
+[ai.botelanzi201.buzz]
+reg_msg SUCCESS: 恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！
+buy    NoFreePlan
+email  5zv2h83ly8@gmail.com
+pass   h3GZrBIjQnkX
+sub_info  EmptyContent
+sub_url  http://ai.botelanzi201.buzz/api/v1/client/subscribe?token=f336d3811939d545007aaea3b47501e7
+time  2026-04-16T11:09:32.946995+08:00
+type  v2board
+
+
+[ai.shabizhijia023.top]
+reg_msg SUCCESS: 恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！
+buy    NoFreePlan
+email  ilt36ikpx0@gmail.com
+pass   WtaOSoHJrlaZ
+sub_info  EmptyContent
+sub_url  https://ai.shabizhijia023.top/api/v1/client/subscribe?token=783760e03be271517de569492259a03c
+time  2026-04-16T11:09:32.976289+08:00
+type  v2board
+
+
+[ai.botelanzi201.buzz]
+reg_msg SUCCESS: 恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！
+buy    NoFreePlan
+email  lzxh59k009@gmail.com
+pass   LNmXxOawlSvq
+sub_info  EmptyContent
+sub_url  https://ai.botelanzi201.buzz/api/v1/client/subscribe?token=07192ee296ce7b6b6d22e7008bbd13da
+time  2026-04-16T11:09:33.060766+08:00
+type  v2board
+
+
+[ai.nanmanzisb.top]
+reg_msg SUCCESS: 恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！
+buy    NoFreePlan
+email  xioobjuyvf@gmail.com
+pass   z19Ry2bE8Ubu
+sub_info  EmptyContent
+sub_url  https://ai.nanmanzisb.top/api/v1/client/subscribe?token=d75ebac309b71a1a53192af678557319
+time  2026-04-16T11:09:33.110904+08:00
+type  v2board
+
+
+[v2.walkunderground.com]
+reg_msg SUCCESS: Registered
+buy    NoFreePlan
+email  sfuy1u542w@gmail.com
+pass   eQmS1HiQC2IL
+sub_info  EmptyContent
+sub_url  https://v2.walkunderground.com/api/v1/client/subscribe?token=f608317315cdc611f5198be522ddbee8
+time  2026-04-16T11:09:47.633052+08:00
+type  v2board
+
+
+[abc.whtjdasha.com]
+reg_msg SUCCESS: 操作成功
+buy    NoFreePlan
+email  zwkj8e63k8@gmail.com
+pass   IXi8WMdtQNnC
+sub_info  CheckFailed
+sub_url  https://abc.whtjdasha.com/api/v1/client/subscribe?token=b35d3aedd3e34dae17c49ec34bdbd28d
+time  2026-04-16T11:09:48.719478+08:00
 type  v2board
