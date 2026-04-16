@@ -1,20 +1,174 @@
+[vmeteor.asia]
+buy    NoFreePlan
+email  a2jhnnpkam@gmail.com
+pass   DWI0NOKqU5To
+sub_info  HTTP 403
+sub_url  http://vmeteor.asia/api/v1/client/subscribe?token=1a28a50bba4065aeb741a453a4210873
+raw_res  {"status": "success", "message": "操作成功", "data": {"token": "1a28a50bba4065aeb741a453a4210873", "auth_data": "Bearer jN99qEBsG3xUTFHTEXKhR7ZMfn0upld88PvdnMDZ7e339abb", "is_admin": false}, "error": null}
+time  2026-04-16T11:29:59.011593+08:00
+type  v2board
+
+
 [alaalatin.alaala.xyz]
 buy    NoFreePlan
-email  976lrpmrnf@gmail.com
-pass   i3t23A2G5stq
+email  nude4zv9ng@gmail.com
+pass   x4DQdQx9fBps
 sub_info  0.00B/80.00GB (2026-04-16)
-sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=dc792cba166097b07fd493472dcd19bc
-raw_res  {"data": {"token": "dc792cba166097b07fd493472dcd19bc", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NzY0LCJzZXNzaW9uIjoiOTgwYTM2ZDkyMjIzNTQxY2UyYWIyMWU0ZDRkYmE2N2QifQ.UIaARwpmf96CePa-bPQsZ645BEagXgnBy72WYpV3gJY"}}
-time  2026-04-16T11:28:36.207634+08:00
+sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=681c458810304056adb6750690122ede
+raw_res  {"data": {"token": "681c458810304056adb6750690122ede", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NzY1LCJzZXNzaW9uIjoiY2RkYTg4YTE4NTNlMzYzZTM4NjVkN2Y1YTMzYWZiNTgifQ.OfdQjzVlg0eeSwMHggH9dCUHJu-m4O-IGmADL0Jl04o"}}
+time  2026-04-16T11:29:59.357846+08:00
+type  v2board
+
+
+[vmeteor.asia]
+buy    NoFreePlan
+email  42sj43hsbp@gmail.com
+pass   oeSB12imHg9Q
+sub_info  HTTP 403
+sub_url  https://vmeteor.asia/api/v1/client/subscribe?token=2d46f8ac17cdf087cd0e6d0bb86051be
+raw_res  {"status": "success", "message": "操作成功", "data": {"token": "2d46f8ac17cdf087cd0e6d0bb86051be", "auth_data": "Bearer WexDVzq04qDWog6vcr5GkedZQQhkSwvHYKNoGnnq6ada181d", "is_admin": false}, "error": null}
+time  2026-04-16T11:29:59.700848+08:00
+type  v2board
+
+
+[128.ya93.cc]
+buy    NoFreePlan
+email  l7abuavjss@gmail.com
+pass   g9xplXhbwhj4
+sub_info  0.00B/3.00GB (2026-04-16)
+sub_url  http://128.ya93.cc/api/v1/client/subscribe?token=40cda33bbd8970834cef74d22d1e8478
+raw_res  {"data": {"token": "40cda33bbd8970834cef74d22d1e8478", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTgsInNlc3Npb24iOiIwNjNjYWIzYjQ4Yzk4MmE2NTdkYTk5YWIwNmI2NGQyYSJ9.Wmm46iioUfXs2cOz7jGVx269YzAeTEksZ0y6R9zYKjo"}}
+time  2026-04-16T11:29:59.788133+08:00
+type  v2board
+
+
+[bakelite.benzene.cc]
+buy    NoFreePlan
+email  gpl0053lqt@gmail.com
+pass   brv67e9rIb8z
+sub_info  HTTP 403
+sub_url  https://bakelite.benzene.cc/api/v1/client/subscribe?token=7d908e28d903acbb69c26f0310f43c5a
+raw_res  {"status": "success", "message": "操作成功", "data": {"token": "7d908e28d903acbb69c26f0310f43c5a", "auth_data": "Bearer e81OxoOP4AlP9Ikcw7xD5r8wZzopwlnU2sJge6EE102bd143", "is_admin": false}, "error": null}
+time  2026-04-16T11:30:00.077341+08:00
 type  v2board
 
 
 [www.aicvideo.info]
 buy    NoFreePlan
-email  jxykl5t2iy@gmail.com
-pass   ROldR0NbZ2Uw
+email  exqk7bpjvw@gmail.com
+pass   tz9jbVrtaBHr
 sub_info  HTTP 403
-sub_url  https://www.aicvideo.info/api/v1/client/subscribe?token=b6e6c4bf58581d3060a9f23d76e1a1c9
-raw_res  {"status": "success", "message": "操作成功", "data": {"token": "b6e6c4bf58581d3060a9f23d76e1a1c9", "auth_data": "Bearer XKXlrs9QaSau1qWoqIATWj3ZvIqugWzRb46DFSdX0c5e52d4", "is_admin": null}, "error": null}
-time  2026-04-16T11:28:36.907020+08:00
+sub_url  https://www.aicvideo.info/api/v1/client/subscribe?token=c2a03b9ac4a2b65b066726390e62f01c
+raw_res  {"status": "success", "message": "操作成功", "data": {"token": "c2a03b9ac4a2b65b066726390e62f01c", "auth_data": "Bearer dcyMdANMa2iqD39RshGNBmYuz1yQjc8s2GGO75kH61f1ca34", "is_admin": null}, "error": null}
+time  2026-04-16T11:30:00.130292+08:00
+type  v2board
+
+
+[alaalatin.alaala.xyz]
+buy    NoFreePlan
+email  od57oxlvua@gmail.com
+pass   czMiN8WhcJHr
+sub_info  0.00B/80.00GB (2026-04-16)
+sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=ac43a9b36a180891b6027a8b3ac1960d
+raw_res  {"data": {"token": "ac43a9b36a180891b6027a8b3ac1960d", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NzY2LCJzZXNzaW9uIjoiZjkyNGFkMWY5ZmVhMmEyMjAzZGQ2ZjUzY2M1NWQyNDQifQ.iqac7eAUZrtFxsaDpqBXHbXLPaVHmox9YI0u8lBiePc"}}
+time  2026-04-16T11:30:00.297865+08:00
+type  v2board
+
+
+[oce.520712.xyz]
+buy    NoFreePlan
+email  e6qeqibsa0@gmail.com
+pass   N0Y4nYftAblA
+sub_info  HTTP 403
+sub_url  https://oce.520712.xyz/api/v1/client/subscribe?token=021cab175dcb3d9aa6c6f381e39ab126
+raw_res  {"status": "success", "message": "操作成功", "data": {"token": "021cab175dcb3d9aa6c6f381e39ab126", "auth_data": "Bearer IQChltuyskSVVK9yhN2zKqQzv0yy6kmUPpAzJ0X0cce96022", "is_admin": false}, "error": null}
+time  2026-04-16T11:30:01.056559+08:00
+type  v2board
+
+
+[128.ya93.cc]
+buy    NoFreePlan
+email  6cusqvs5il@gmail.com
+pass   F2OkbRifR37Q
+sub_info  0.00B/3.00GB (2026-04-16)
+sub_url  https://128.ya93.cc/api/v1/client/subscribe?token=4283220953ff3ba0d0007b89a0384054
+raw_res  {"data": {"token": "4283220953ff3ba0d0007b89a0384054", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTksInNlc3Npb24iOiJhYzZiZTU3MWY3MTNhOGU2YTU3NmFiODBlMjBiNWRiOCJ9.M46YedPj5bWyzruLYrKGezBdlGmH9DSVu2Y32p3K94k"}}
+time  2026-04-16T11:30:01.330311+08:00
+type  v2board
+
+
+[ai.botelanzi201.buzz]
+buy    NoFreePlan
+email  tnz742f2ab@gmail.com
+pass   4KLUXPUOhAQ8
+sub_info  EmptyContent
+sub_url  http://ai.botelanzi201.buzz/api/v1/client/subscribe?token=1c8d50f0411c3a84d3737d4afe246355
+raw_res  {"data": {"token": "1c8d50f0411c3a84d3737d4afe246355", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTcxMjksInNlc3Npb24iOiJlOWE4YTc4Njg1NThlODk1MDk1NmMwNjgyZDMzYzBkMiJ9.ZJUg5bHEa_TNJp8OtcHpxDls47w03ORSjoWhdnwxffg"}, "message": "恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！"}
+time  2026-04-16T11:30:01.987586+08:00
+type  v2board
+
+
+[ai.shabizhijia023.top]
+buy    NoFreePlan
+email  ekbqlqtfzb@gmail.com
+pass   f3x3VZ1zqWtp
+sub_info  EmptyContent
+sub_url  http://ai.shabizhijia023.top/api/v1/client/subscribe?token=c2aa7f7166c9513e843eaa472437417b
+raw_res  {"data": {"token": "c2aa7f7166c9513e843eaa472437417b", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTcxMzAsInNlc3Npb24iOiI2ODA4NWRlNWM1ZjM2NTVkODJkNzAwNTY2NmZhY2YzZSJ9.hTSHCK6jozFM8dToA8ArMknzpAcIZlQfvYffvRZIs6s"}, "message": "恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！"}
+time  2026-04-16T11:30:02.538544+08:00
+type  v2board
+
+
+[ai.nanmanzisb.top]
+buy    NoFreePlan
+email  oyeurrb1bc@gmail.com
+pass   zd3iMIHZ7Sgc
+sub_info  EmptyContent
+sub_url  http://ai.nanmanzisb.top/api/v1/client/subscribe?token=97e2fe8821e9f2b78c02d4f06f53900a
+raw_res  {"data": {"token": "97e2fe8821e9f2b78c02d4f06f53900a", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTcxMzEsInNlc3Npb24iOiI4NWY5M2QxNDg1OGZmYzQ4MGQ1MWU4ZTFiMzg3MWYzMCJ9.PVB3f-ZmMs7ZUKCNnFuqEXwPO6amSR1p53Fi3AcefPY"}, "message": "恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！"}
+time  2026-04-16T11:30:03.092959+08:00
+type  v2board
+
+
+[ai.botelanzi201.buzz]
+buy    NoFreePlan
+email  z8nolv7voq@gmail.com
+pass   S1S5dkZafzVe
+sub_info  EmptyContent
+sub_url  https://ai.botelanzi201.buzz/api/v1/client/subscribe?token=452f150ad2bd2d504fefcf0109334073
+raw_res  {"data": {"token": "452f150ad2bd2d504fefcf0109334073", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTcxMzIsInNlc3Npb24iOiI1ZTZhYjdhNDA5NTNkMjU5YTc1ZGUxZWQ5NTExZGRkMSJ9.S9EIhZaUZtuzly6j_GGRG87ZE-LhcJV32CuyTUurato"}, "message": "恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！"}
+time  2026-04-16T11:30:03.356695+08:00
+type  v2board
+
+
+[ai.nanmanzisb.top]
+buy    NoFreePlan
+email  awyfyadivl@gmail.com
+pass   n6cQb3QU92b2
+sub_info  EmptyContent
+sub_url  https://ai.nanmanzisb.top/api/v1/client/subscribe?token=baabe4c8bfe60f44cebf65a97fcff723
+raw_res  {"data": {"token": "baabe4c8bfe60f44cebf65a97fcff723", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTcxMzMsInNlc3Npb24iOiI5YWFiMDFkY2RkNzRiMGE2YjQ4NzBmYzcxMjhiZGYxNSJ9.cjFUB7Zq2xh-6gQ3uu_l9QHgv0P91IHZ1QsgggIN7to"}, "message": "恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！"}
+time  2026-04-16T11:30:03.485508+08:00
+type  v2board
+
+
+[ai.shabizhijia023.top]
+buy    NoFreePlan
+email  vqcg6dkig7@gmail.com
+pass   aHb24eDmvZxi
+sub_info  EmptyContent
+sub_url  https://ai.shabizhijia023.top/api/v1/client/subscribe?token=ce381a11a3eb09eb14c5812d17675535
+raw_res  {"data": {"token": "ce381a11a3eb09eb14c5812d17675535", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTcxMzQsInNlc3Npb24iOiJhNTVhYWQxMGYzMjAxNDljZThiMjZhNjQ5YmI5NGU3NSJ9.UHgWJyiBR-TPBE9FA4jVYpvq6sS8GBh6H43X3iTmixY"}, "message": "恭喜您注册成功，但因为您的设备不符合要求，无法领取体验套餐！"}
+time  2026-04-16T11:30:03.680997+08:00
+type  v2board
+
+
+[v2.walkunderground.com]
+buy    NoFreePlan
+email  1wkwv44uwa@gmail.com
+pass   5CQ8lpIyM4PW
+sub_info  EmptyContent
+sub_url  https://v2.walkunderground.com/api/v1/client/subscribe?token=de70f2cabb48271c40509aac314d293e
+raw_res  {"data": {"token": "de70f2cabb48271c40509aac314d293e", "is_admin": null, "auth_data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTI3MzI1LCJzZXNzaW9uIjoiM2MyOWUzYzkwNzhjNmI0M2MwZTYyMjgyZWRiNmE5MjUifQ.p0lOytkMmxWwvTPpjusAlug8ciMx3n9nJOhbYte8GhE"}}
+time  2026-04-16T11:30:14.421303+08:00
 type  v2board
