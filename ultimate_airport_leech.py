@@ -181,11 +181,12 @@ class V2BoardSession(Session):
                 token = data_content.get('token') or data_content.get('auth_data')
                 if token: 
                     self.headers['authorization'] = token
-                    return None
+                    # 修改位置：返回注册成功时的实时信息
+                    return f"SUCCESS: {res.get('message', 'Registered')}"
             
             last_msg = res.get('message') or (data_content if isinstance(data_content, str) else 'Reg Fail')
             if any(x in str(last_msg) for x in ["已经", "存在"]):
-                if self.login(email, password): return None
+                if self.login(email, password): return "SUCCESS: Already Exists"
                 break
         return last_msg
 
@@ -221,10 +222,11 @@ class SSPanelSession(Session):
     def register(self, email, password):
         payload = {'email': email, 'passwd': password, 'repasswd': password, 'agreeterm': 1, 'name': email.split('@')[0], 'code': ''}
         res = self.post('auth/register', payload).json()
-        if res.get('ret') or "成功" in str(res.get('msg', '')): return None
+        # 修改位置：返回注册成功时的实时信息
+        if res.get('ret') or "成功" in str(res.get('msg', '')): return f"SUCCESS: {res.get('msg')}"
         if "已经" in str(res.get('msg', '')):
             l_res = self.post('auth/login', {'email': email, 'passwd': password}).json()
-            if l_res.get('ret'): return None
+            if l_res.get('ret'): return "SUCCESS: Already Exists"
         return res.get('msg', 'Reg Fail')
 
     def get_sub_url(self):
@@ -269,15 +271,12 @@ def process_worker(url):
     # 1. 域名解析与黑名单预过滤
     clean_dom = urlsplit(url).netloc.lower() or url.split('/')[0].lower()
     
-    # 检查后缀黑名单
     if clean_dom.endswith(SUFFIX_BLACKLIST):
         return None, None
     
-    # 检查关键词黑名单 (只要域名包含这些黑名单词组即剔除)
     if any(black in clean_dom for black in DOMAIN_BLACKLIST):
         return None, None
     
-    # 排除纯 IP 地址 (机场通常使用域名)
     if re.match(r'^\d+\.\d+\.\d+\.\d+$', clean_dom.split(':')[0]):
         return None, None
 
@@ -286,7 +285,6 @@ def process_worker(url):
     session = None
     
     try:
-        # 识别引擎类型
         if test_s.get('api/v1/guest/comm/config').ok or "v2board" in test_s.get('env.js').text.lower():
             session = V2BoardSession(test_s.base)
         else:
@@ -303,7 +301,8 @@ def process_worker(url):
     password = "".join(random.choices(string.ascii_letters + string.digits, k=12))
     
     reg_res = session.register(email, password)
-    if reg_res is not None: return None, None
+    # 修改逻辑：只有注册反馈包含 SUCCESS 的才继续
+    if reg_res is None or not str(reg_res).startswith("SUCCESS"): return None, None
 
     # 3. 购买逻辑
     buy_status = "Default"
@@ -313,10 +312,11 @@ def process_worker(url):
     sub_url = session.get_sub_url()
     if not sub_url: return None, None
 
+    # 修改逻辑：无论 check_subscription_robust 返回什么，只要有 sub_url 就继续记录
     info, is_ok = check_subscription_robust(sub_url)
-    if not is_ok: return None, None
     
     log = (f"[{clean_dom}]\n"
+           f"reg_msg {reg_res}\n" # 新增：记录注册实时返回的信息
            f"buy    {buy_status}\n"
            f"email  {email}\n"
            f"pass   {password}\n"
@@ -336,7 +336,7 @@ def process_worker(url):
 def main():
     if not os.path.exists(INPUT_FILE): return
     urls = list(set([u.strip() for u in open(INPUT_FILE).readlines() if "." in u]))
-    fast_log(f"=== 启动修复版引擎(黑名单深度净化版) === 任务数: {len(urls)}")
+    fast_log(f"=== 启动修复版引擎(注册信息增强版) === 任务数: {len(urls)}")
     
     all_logs = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
