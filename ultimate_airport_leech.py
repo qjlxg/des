@@ -207,12 +207,10 @@ class V2BoardSession(Session):
 
     def buy(self):
         try:
-            # 拟人化延迟，防止 XBoard 行为识别
             sleep(random.uniform(0.8, 1.5))
             r = self.get('api/v1/user/plan/fetch').json()
             plans = r.get('data', [])
             for p in plans:
-                # 遍历所有可能的价格键 (month_price, quarter_price, year_price, onetime_price 等)
                 price_keys = [k for k in p.keys() if '_price' in k]
                 for k in price_keys:
                     if p.get(k) == 0:
@@ -221,14 +219,22 @@ class V2BoardSession(Session):
                         if order.get('data'):
                             trade_no = order['data']
                             self.post('api/v1/user/order/checkout', {'trade_no': trade_no})
-                            # 激活订阅
                             self.get(f'api/v1/user/plan/resetByOrder?trade_no={trade_no}')
                             return f"FreePlan({p['id']}_{period})"
         except: pass
         return "NoFreePlan"
 
+    def get_sub_info(self):
+        try:
+            res = self.get('api/v1/user/getSubscribe').json()
+            d = res['data']
+            total = d['transfer_enable']
+            used = d['u'] + d['d']
+            expire = d.get('expired_at')
+            return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})"
+        except: return None
+
     def get_sub_url(self):
-        # 模拟 ClashMeta UA 和 Referer 以绕过 XBoard 403 限制
         self.headers.update({
             'User-Agent': 'ClashMeta/1.18.0 (Clash.Meta; github.com/MetaCubeX)',
             'Referer': f"{self.base}/",
@@ -257,6 +263,30 @@ class SSPanelSession(Session):
                 if l_res.get('ret'): return None, l_res_obj.text
             if res_obj.status_code != 404: break
         return res.get('msg', 'Reg Fail'), None
+
+    def get_sub_info(self):
+        try:
+            text = self.get('user').text
+            def to_bytes(s):
+                if not s: return 0
+                units = {"B": 1, "K": 1024, "M": 1024**2, "G": 1024**3, "T": 1024**4, "P": 1024**5}
+                m = re.search(r'([-+]?\d+(?:\.\d+)?)\s*([BKMGTPE]?)', s, re.I)
+                if m:
+                    num, unit = m.group(1), m.group(2).upper()
+                    return float(num) * units.get(unit, 1)
+                return 0
+            
+            m_today = re.search(r'日已用\D*?([-+]?\d+(?:\.\d+)?[BKMGTPE]?)', text, re.I)
+            m_past = re.search(r'去已用\D*?([-+]?\d+(?:\.\d+)?[BKMGTPE]?)', text, re.I)
+            m_remain = re.search(r'剩.流量\D*?([-+]?\d+(?:\.\d+)?[BKMGTPE]?)', text, re.I)
+            m_expire = re.search(r'等\D*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})', text)
+            
+            used = to_bytes(m_today.group(1) if m_today else "0B") + to_bytes(m_past.group(1) if m_past else "0B")
+            remain = to_bytes(m_remain.group(1) if m_remain else "0B")
+            total = used + remain
+            expire_str = m_expire.group(1) if m_expire else "永久"
+            return f"{format_size(used)}/{format_size(total)} ({expire_str})"
+        except: return None
 
     def get_sub_url(self):
         self.headers['User-Agent'] = 'Clash.meta'
@@ -331,7 +361,10 @@ def process_worker(url):
     sub_url = session.get_sub_url()
     if not sub_url: return None, None
 
-    info, _ = check_subscription_robust(sub_url)
+    # 优先从 Session 获取详细流量信息
+    info = session.get_sub_info()
+    if not info:
+        info, _ = check_subscription_robust(sub_url)
     
     try:
         decoded_raw = json.dumps(json.loads(reg_raw), ensure_ascii=False)
