@@ -51,6 +51,7 @@ MAIL_PATHS = ["api/v1/passport/comm/sendEmailVerify", "api/v1/guest/passport/com
 CAPTCHA_PATHS = ["api/v1/passport/comm/captcha", "api/v1/guest/passport/comm/captcha"]
 
 # ==================== 增强版黑名单系统 ====================
+
 DOMAIN_BLACKLIST = {
     'baidu.com', 'google.com', 'github.com', 'zhihu.com', 'xueqiu.com', 
     'yandex.com', 'yamcode.com', 'wikipedia.org', 'microsoft.com', 
@@ -84,10 +85,8 @@ def format_time(ts):
     if not ts or ts == 0 or ts == "0": return "永久"
     try:
         ts = float(ts)
-        # 兼容毫秒级
         if ts > 2147483647: ts = ts / 1000
-        # 修改为精确到秒
-        return datetime.datetime.fromtimestamp(ts, SH_TZ).strftime('%Y-%m-%d %H:%M:%S')
+        return datetime.datetime.fromtimestamp(ts, SH_TZ).strftime('%Y-%m-%d')
     except: return "未知"
 
 def cached(func):
@@ -173,10 +172,12 @@ class V2BoardSession(Session):
     def register(self, email, password):
         paths = [p for p in REG_PATHS if "api/v1" in p or p == "register"]
         payload = {'email': email, 'password': password, 'repassword': password, 'invite_code': ''}
+        
         last_msg = "Path Not Found"
         for path in paths:
             res_obj = self.post(path, payload)
             if res_obj.status_code == 404: continue
+            
             res = res_obj.json()
             if 'captcha' in str(res.get('message','')).lower() and ocr:
                 for cp in CAPTCHA_PATHS:
@@ -189,12 +190,14 @@ class V2BoardSession(Session):
                             res = res_obj.json()
                             break
                         except: pass
+            
             data_content = res.get('data')
             if data_content and isinstance(data_content, dict):
                 token = data_content.get('token') or data_content.get('auth_data')
                 if token: 
                     self.headers['authorization'] = token
                     return None, res_obj.text
+            
             last_msg = res.get('message') or (data_content if isinstance(data_content, str) else 'Reg Fail')
             if any(x in str(last_msg) for x in ["已经", "存在"]):
                 login_raw = self.login(email, password)
@@ -204,7 +207,7 @@ class V2BoardSession(Session):
 
     def buy(self):
         try:
-            sleep(random.uniform(0.5, 1.0))
+            sleep(random.uniform(0.8, 1.5))
             r = self.get('api/v1/user/plan/fetch').json()
             plans = r.get('data', [])
             for p in plans:
@@ -222,42 +225,21 @@ class V2BoardSession(Session):
         return "NoFreePlan"
 
     def get_sub_info(self):
-        # 优先直接请求 User Info API
-        try:
-            res = self.get('api/v1/user/info').json()
-            if res.get('data'):
-                d = res['data']
-                total = d.get('transfer_enable', 0)
-                used = d.get('u', 0) + d.get('d', 0)
-                expire = d.get('expired_at')
-                # 只有 total > 0 才视为有效流量信息
-                if total > 0:
-                    return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})", total
-        except: pass
-        # 备选 getSubscribe 接口
         try:
             res = self.get('api/v1/user/getSubscribe').json()
-            if res.get('data'):
-                d = res['data']
-                total = d['transfer_enable']
-                used = d['u'] + d['d']
-                expire = d.get('expired_at')
-                return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})", total
-        except: pass
-        return None, 0
-
-    def check_nodes_and_rates(self):
-        try:
-            res = self.get('api/v1/user/server/fetch').json()
-            nodes = res.get('data', [])
-            if not nodes: return 0, False # 空壳
-            rates = [float(n.get('rate', 1)) for n in nodes]
-            is_high_risk = all(r >= 10 for r in rates) if rates else False
-            return len(nodes), is_high_risk
-        except: return 0, False
+            d = res['data']
+            total = d['transfer_enable']
+            used = d['u'] + d['d']
+            expire = d.get('expired_at')
+            return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})"
+        except: return None
 
     def get_sub_url(self):
-        self.headers.update({'User-Agent': 'ClashMeta/1.18.0', 'Referer': f"{self.base}/"})
+        self.headers.update({
+            'User-Agent': 'ClashMeta/1.18.0 (Clash.Meta; github.com/MetaCubeX)',
+            'Referer': f"{self.base}/",
+            'Accept': 'application/json, text/plain, */*'
+        })
         tk = self.headers.get('authorization')
         try:
             res = self.get('api/v1/user/getSubscribe').json()
@@ -277,7 +259,8 @@ class SSPanelSession(Session):
             if res.get('ret') or "成功" in str(res.get('msg', '')): return None, res_obj.text
             if "已经" in str(res.get('msg', '')):
                 l_res_obj = self.post('auth/login', {'email': email, 'passwd': password})
-                if l_res_obj.json().get('ret'): return None, l_res_obj.text
+                l_res = l_res_obj.json()
+                if l_res.get('ret'): return None, l_res_obj.text
             if res_obj.status_code != 404: break
         return res.get('msg', 'Reg Fail'), None
 
@@ -286,112 +269,131 @@ class SSPanelSession(Session):
             text = self.get('user').text
             def to_bytes(s):
                 if not s: return 0
-                units = {"B": 1, "K": 1024, "M": 1024**2, "G": 1024**3, "T": 1024**4}
-                m = re.search(r'([-+]?\d+(?:\.\d+)?)\s*([BKMGT]?)', s, re.I)
-                return float(m.group(1)) * units.get(m.group(2).upper(), 1) if m else 0
-            m_today = re.search(r'日已用\D*?([-+]?\d+.*?B)', text, re.I)
-            m_past = re.search(r'去已用\D*?([-+]?\d+.*?B)', text, re.I)
-            m_remain = re.search(r'剩.流量\D*?([-+]?\d+.*?B)', text, re.I)
+                units = {"B": 1, "K": 1024, "M": 1024**2, "G": 1024**3, "T": 1024**4, "P": 1024**5}
+                m = re.search(r'([-+]?\d+(?:\.\d+)?)\s*([BKMGTPE]?)', s, re.I)
+                if m:
+                    num, unit = m.group(1), m.group(2).upper()
+                    return float(num) * units.get(unit, 1)
+                return 0
+            
+            m_today = re.search(r'日已用\D*?([-+]?\d+(?:\.\d+)?[BKMGTPE]?)', text, re.I)
+            m_past = re.search(r'去已用\D*?([-+]?\d+(?:\.\d+)?[BKMGTPE]?)', text, re.I)
+            m_remain = re.search(r'剩.流量\D*?([-+]?\d+(?:\.\d+)?[BKMGTPE]?)', text, re.I)
             m_expire = re.search(r'等\D*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})', text)
+            
             used = to_bytes(m_today.group(1) if m_today else "0B") + to_bytes(m_past.group(1) if m_past else "0B")
             remain = to_bytes(m_remain.group(1) if m_remain else "0B")
             total = used + remain
-            return f"{format_size(used)}/{format_size(total)} ({m_expire.group(1) if m_expire else '永久'})", total
-        except: return None, 0
+            expire_str = m_expire.group(1) if m_expire else "永久"
+            return f"{format_size(used)}/{format_size(total)} ({expire_str})"
+        except: return None
 
     def get_sub_url(self):
         self.headers['User-Agent'] = 'Clash.meta'
         r = self.get('user').bs()
         tag = r.find(attrs={'data-clipboard-text': re.compile(r'https?://')})
-        return tag['data-clipboard-text'] if tag else None
+        if tag: return tag['data-clipboard-text']
+        return None
 
-# ==================== 邮箱与处理逻辑 ====================
+# ==================== 邮箱系统 ====================
 class TempEmail:
-    def __init__(self): self.addr = ""
+    def __init__(self):
+        self.api = "https://www.1secmail.com/api/v1/"
+        self.addr = ""
     def create(self):
-        try:
-            r = requests.get("https://www.1secmail.com/api/v1/?action=genEmailAddresses&count=1", timeout=10).json()
-            if r: self.addr = r[0]; return self.addr
-        except: pass
+        for _ in range(3):
+            try:
+                r = requests.get(f"{self.api}?action=genEmailAddresses&count=1", timeout=10).json()
+                if r: self.addr = r[0]; return self.addr
+            except: sleep(1)
         self.addr = f"{''.join(random.choices(string.ascii_lowercase + string.digits, k=10))}@gmail.com"
         return self.addr
 
+# ==================== 核心处理器 ====================
 def check_subscription_robust(url):
     try:
-        r = crequests.get(url, headers={'User-Agent': 'Clash.meta'}, timeout=15, verify=False)
-        if not r.ok or len(r.text) < 100: return "EmptyContent", 0, False
+        headers = {'User-Agent': 'Clash.meta'}
+        r = crequests.get(url, headers=headers, timeout=15, verify=False)
+        if r.status_code != 200: return f"HTTP {r.status_code}", False
+        if len(r.text) < 100: return "EmptyContent", False
+
         info_h = r.headers.get('subscription-userinfo', '')
         if info_h:
             p = {i.split('=')[0].strip(): i.split('=')[1].strip() for i in info_h.split(';') if '=' in i}
             total = int(p.get('total', 0)); used = int(p.get('upload', 0)) + int(p.get('download', 0))
-            return f"{format_size(used)}/{format_size(total)} ({format_time(p.get('expire', 0))})", total, True
-        return "Active(NoHeader)", 1, True
-    except: return "CheckFailed", 0, False
+            expire = p.get('expire', 0)
+            return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})", True
+        return "Active(NoHeader)", True
+    except: return "CheckFailed", False
 
 def process_worker(url):
     clean_dom = urlsplit(url).netloc.lower() or url.split('/')[0].lower()
-    if clean_dom.endswith(SUFFIX_BLACKLIST) or any(b in clean_dom for b in DOMAIN_BLACKLIST): return None
+    
+    if clean_dom.endswith(SUFFIX_BLACKLIST): return None
+    if any(black in clean_dom for black in DOMAIN_BLACKLIST): return None
+    if re.match(r'^\d+\.\d+\.\d+\.\d+$', clean_dom.split(':')[0]): return None
 
     base_url = url if url.startswith('http') else 'https://' + url
     test_s = Session(base_url)
     session = None
+    
     try:
         if test_s.get('api/v1/guest/comm/config').ok or "v2board" in test_s.get('env.js').text.lower():
             session = V2BoardSession(test_s.base)
-        elif any(x in test_s.get('auth/login').text for x in ["SSPanel", "staff"]):
-            session = SSPanelSession(test_s.base)
+        else:
+            r_login = test_s.get('auth/login')
+            if any(x in r_login.text for x in ["SSPanel", "staff", "checkin"]):
+                session = SSPanelSession(test_s.base)
     except: return None
+
     if not session: return None
 
-    email = TempEmail().create(); password = "".join(random.choices(string.ascii_letters + string.digits, k=12))
+    email_mgr = TempEmail()
+    email = email_mgr.create()
+    password = "".join(random.choices(string.ascii_letters + string.digits, k=12))
+    
     reg_err, reg_raw = session.register(email, password)
-    if reg_err: return None
+    if reg_err is not None: return None
 
-    buy_status = session.buy() if isinstance(session, V2BoardSession) else "Default"
+    buy_status = "Default"
+    if isinstance(session, V2BoardSession): buy_status = session.buy()
     
-    # 1. 流量校验
-    info, total_cap = session.get_sub_info()
     sub_url = session.get_sub_url()
-    
-    # 2. 节点与倍率校验 (后端 API)
-    node_count = 1 # 默认 SSPanel 为 1 绕过 API 检查
-    is_high_risk = False
-    if isinstance(session, V2BoardSession):
-        node_count, is_high_risk = session.check_nodes_and_rates()
+    if not sub_url: return None
 
-    # 3. 订阅内容校验 (Header/内容)
-    sub_info_header, sub_cap, sub_ok = check_subscription_robust(sub_url) if sub_url else (None, 0, False)
-    if not info: info = sub_info_header
-
-    # --- 剔除逻辑：只有 (流量>0) + (内容不为空) + (活跃节点>0) ---
-    is_valid = (total_cap > 0 or sub_cap > 0) and sub_ok and (node_count > 0)
+    # 优先从 Session 获取详细流量信息
+    info = session.get_sub_info()
+    if not info:
+        info, _ = check_subscription_robust(sub_url)
     
-    tag = ""
-    if node_count == 0: tag += "[空壳机场]"
-    if is_high_risk: tag += "[高倍率坑]"
+    try:
+        decoded_raw = json.dumps(json.loads(reg_raw), ensure_ascii=False)
+    except:
+        decoded_raw = reg_raw
 
     log = (f"[{clean_dom}]\n"
            f"buy    {buy_status}\n"
            f"email  {email}\n"
-           f"sub_info  {info} {tag}\n"
+           f"pass   {password}\n"
+           f"sub_info  {info}\n"
            f"sub_url  {sub_url}\n"
-           f"nodes  {node_count} | status {('Valid' if is_valid else 'Invalid')}\n"
+        #  f"raw_res  {decoded_raw}\n"
            f"time  {datetime.datetime.now(SH_TZ).isoformat()}\n"
            f"type  {('v2board' if isinstance(session, V2BoardSession) else 'sspanel')}\n")
            
-    fast_log(f" {'[+]' if is_valid else '[-]'} {clean_dom} | {info} | {tag or 'Clean'}")
+    fast_log(f" [+] {clean_dom} | {info} | {buy_status}")
+    
+    with io_lock:
+        with open(SUB_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
+        with open(NODES_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
 
-    if is_valid:
-        with io_lock:
-            with open(SUB_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
-            with open(NODES_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
-
+    # 返回 log 和 info 用于后续排序
     return {"log": log, "info": info}
 
 def main():
     if not os.path.exists(INPUT_FILE): return
     urls = list(set([u.strip() for u in open(INPUT_FILE).readlines() if "." in u]))
-    fast_log(f"=== 引擎启动 === 任务数: {len(urls)}")
+    fast_log(f"=== 启动修复版引擎(全能记录版) === 任务数: {len(urls)}")
     
     results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
@@ -399,19 +401,30 @@ def main():
         for f in as_completed(futures):
             try:
                 res = f.result()
-                if res: results.append(res)
+                if res and res.get("log"): 
+                    results.append(res)
             except: pass 
 
+    # --- 排序逻辑：有流量和日期信息的排在前面 ---
     def sort_key(item):
-        inf = str(item.get("info", "")).lower()
-        if re.search(r'\d{4}-\d{2}-\d{2}', inf): return 0
-        return 1 if "永久" in inf else 2
+        info = str(item.get("info", "")).lower()
+        # 优先级0：包含具体日期 (YYYY-MM-DD)
+        if re.search(r'\d{4}-\d{2}-\d{2}', info):
+            return 0
+        # 优先级1：包含“永久”
+        if "永久" in info:
+            return 1
+        # 优先级2：其他（未知、失败、仅Active等）
+        return 2
 
     results.sort(key=sort_key)
     all_logs = [item["log"] for item in results]
+
     if all_logs:
-        with open(CACHE_FILE, 'w', encoding='utf-8') as f: f.write("\n\n".join(all_logs))
-    fast_log(f"任务结束 | 有效记录: {len(all_logs)}")
+        with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+            f.write("\n\n".join(all_logs))
+    
+    fast_log(f"任务结束 | 有效存入: {len(all_logs)}")
 
 if __name__ == "__main__":
     main()
