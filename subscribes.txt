@@ -152,4 +152,8 @@ http://panel.shahramv1.site/api/v1/client/subscribe?token=5a9157e1637d6fc812ad98
 http://146.235.61.252/api/v1/client/subscribe?token=a283193ee443fc99cf8a8d5fcc9599d3
 http://d58e3582afa99040e27b92b13c8f2280.boluoidc.com/api/v1/client/subscribe?token=ce99ba2a45232670acff45fa10055190
 http://node.apsnaillink.com/api/v1/client/subscribe?token=195012511966b565155494df1f30736e
-http://13.228.211.226/api/v1/client/subscribe?token=81ab94b0a759a92579d621ac4fe8b3d7
+http://13.228.211.226/api/v1/client/subscribe?token=81ab94b0a759a92579d621ac4fe8b3d7https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=3f1bf6fb506924ba5ea6918edce6ef9e
+http://node1.befast.cfd/api/v1/client/subscribe?token=3692ed1e496333b7410eeba00ed30bbb
+https://node1.befast.cfd/api/v1/client/subscribe?token=caaff2c35211f70a3b6a86e94641fee5
+http://128.ya93.cc/api/v1/client/subscribe?token=3e015cd4706b7ddb25340921a50ba0df
+https://128.ya93.cc/api/v1/client/subscribe?token=abba489011de2bf0efc956129e0bfde5
