@@ -1,68 +1,58 @@
 [alaalatin.alaala.xyz]
-buy    NoFreePlan
-email  raz4khlqj5@gmail.com
-pass   e34jT4O0Xlhh
-sub_info  0.00B/80.00GB (2026-04-16)
-sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=4e5b12356cc189efbc9d214aa62f4ab0
-time  2026-04-16T15:59:11.713998+08:00
-type  v2board
+buy      NoFreePlan
+email    hoha1mdrgl@gmail.com
+pass     ODYGN31nbqcE
+sub_info 0.00B/80.00GB (2026-04-16 18:49:11) 空壳机场
+sub_url  https://alaalatin.alaala.xyz/api/v1/client/subscribe?token=95a2ca86277bff8744e657bb7e7fd421
+time     2026-04-16T17:49:14.201294+08:00
+type     v2board
 
 
 [xboard.mmbreed.sbs]
-buy    NoFreePlan
-email  s7u20nwwjm@gmail.com
-pass   qwt6upDOUQXQ
-sub_info  0.00B/100.00GB (2026-04-16)
-sub_url  https://xboard.mmbreed.sbs/api/v1/client/subscribe?token=9b5b539d4ff9929a7eb55412ca436f87
-time  2026-04-16T15:59:15.331082+08:00
-type  v2board
+buy      NoFreePlan
+email    fc0h2r4z3l@gmail.com
+pass     l1HAn0vRvHa2
+sub_info 0.00B/100.00GB (2026-04-16 18:49:14) 空壳机场
+sub_url  https://xboard.mmbreed.sbs/api/v1/client/subscribe?token=6496b633436e63839f47d349bf65ce36
+time     2026-04-16T17:49:18.254355+08:00
+type     v2board
 
 
 [x-panel.bomp.top]
-buy    NoFreePlan
-email  ezt5uw4c7z@gmail.com
-pass   3r9PNWm3pZdd
-sub_info  HTTP 403
-sub_url  https://x-panel.bomp.top/api/v1/client/subscribe?token=6dc29452640a2d53757247274cb78256
-time  2026-04-16T15:59:11.014143+08:00
-type  v2board
-
-
-[hotsteam.xyz]
-buy    NoFreePlan
-email  z71uxfqtx7@gmail.com
-pass   EVl9RT0DmaC1
-sub_info  HTTP 403
-sub_url  https://hotsteam.xyz/api/v1/client/subscribe?token=34b6a3ff0106f3a8da1622fb1ac95aa7
-time  2026-04-16T15:59:11.284487+08:00
-type  v2board
-
-
-[panel.beedigikharid.ir]
-buy    NoFreePlan
-email  p88niixv1h@gmail.com
-pass   mrPIkeyoa6cn
-sub_info  EmptyContent
-sub_url  https://panel.beedigikharid.ir/api/v1/client/subscribe?token=09fb5c37115faa95bf456df867669bf3
-time  2026-04-16T15:59:13.413358+08:00
-type  v2board
+buy      NoFreePlan
+email    4z1418uhlv@gmail.com
+pass     ItSdZYIdlPMZ
+sub_info Active(NoHeader) 空壳机场
+sub_url  https://x-panel.bomp.top/api/v1/client/subscribe?token=976cd9582fd395628295425ee25d2069
+time     2026-04-16T17:49:15.500438+08:00
+type     v2board
 
 
 [oce.520712.xyz]
-buy    NoFreePlan
-email  zygt3gpny3@gmail.com
-pass   36SrC7G2Rjiz
-sub_info  HTTP 403
-sub_url  https://oce.520712.xyz/api/v1/client/subscribe?token=a7c6e4f1ca114865990cc072a4275302
-time  2026-04-16T15:59:13.662717+08:00
-type  v2board
+buy      NoFreePlan
+email    ndop4i6pyu@gmail.com
+pass     DJEbncVb4G9x
+sub_info Active(NoHeader) 空壳机场
+sub_url  https://oce.520712.xyz/api/v1/client/subscribe?token=dc4338e9ef2df6ede62d3150196e510b
+time     2026-04-16T17:49:16.683022+08:00
+type     v2board
 
 
 [lightningspeed.zh-a-fengniaogames.com]
-buy    NoFreePlan
-email  i18ggkzouc@gmail.com
-pass   YupphvFseIkS
-sub_info  Active(NoHeader)
-sub_url  https://lightningspeed.zh-a-fengniaogames.com/api/v1/client/subscribe?token=771f75193b5b9d9459045a011139ea48
-time  2026-04-16T15:59:14.238434+08:00
-type  v2board
+buy      NoFreePlan
+email    7q121j1x7j@gmail.com
+pass     PR74cdGqPi9p
+sub_info Active(NoHeader) 空壳机场
+sub_url  https://lightningspeed.zh-a-fengniaogames.com/api/v1/client/subscribe?token=b2b434945aabd8607b3d1aed7c443fbc
+time     2026-04-16T17:49:17.855044+08:00
+type     v2board
+
+
+[panel.beedigikharid.ir]
+buy      NoFreePlan
+email    mibavkyvps@gmail.com
+pass     HA04u0KQw3Zy
+sub_info Active(NoHeader) 空壳机场
+sub_url  https://panel.beedigikharid.ir/api/v1/client/subscribe?token=ca8d85266791509931763069ec9a314b
+time     2026-04-16T17:49:17.869752+08:00
+type     v2board
