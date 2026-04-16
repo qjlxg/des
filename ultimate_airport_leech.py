@@ -354,4 +354,64 @@ def process_worker(url):
     sub_url = session.get_sub_url()
     
     # 2. 节点与倍率校验 (后端 API)
-    node_count = 1 # 默认 SSPanel 为
+    node_count = 1 # 默认 SSPanel 为 1 绕过 API 检查
+    is_high_risk = False
+    if isinstance(session, V2BoardSession):
+        node_count, is_high_risk = session.check_nodes_and_rates()
+
+    # 3. 订阅内容校验 (Header/内容)
+    sub_info_header, sub_cap, sub_ok = check_subscription_robust(sub_url) if sub_url else (None, 0, False)
+    if not info: info = sub_info_header
+
+    # --- 剔除逻辑：只有 (流量>0) + (内容不为空) + (活跃节点>0) ---
+    is_valid = (total_cap > 0 or sub_cap > 0) and sub_ok and (node_count > 0)
+    
+    tag = ""
+    if node_count == 0: tag += "[空壳机场]"
+    if is_high_risk: tag += "[高倍率坑]"
+
+    log = (f"[{clean_dom}]\n"
+           f"buy    {buy_status}\n"
+           f"email  {email}\n"
+           f"sub_info  {info} {tag}\n"
+           f"sub_url  {sub_url}\n"
+           f"nodes  {node_count} | status {('Valid' if is_valid else 'Invalid')}\n"
+           f"time  {datetime.datetime.now(SH_TZ).isoformat()}\n"
+           f"type  {('v2board' if isinstance(session, V2BoardSession) else 'sspanel')}\n")
+           
+    fast_log(f" {'[+]' if is_valid else '[-]'} {clean_dom} | {info} | {tag or 'Clean'}")
+
+    if is_valid:
+        with io_lock:
+            with open(SUB_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
+            with open(NODES_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
+
+    return {"log": log, "info": info}
+
+def main():
+    if not os.path.exists(INPUT_FILE): return
+    urls = list(set([u.strip() for u in open(INPUT_FILE).readlines() if "." in u]))
+    fast_log(f"=== 引擎启动 === 任务数: {len(urls)}")
+    
+    results = []
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
+        futures = {exe.submit(process_worker, u): u for u in urls}
+        for f in as_completed(futures):
+            try:
+                res = f.result()
+                if res: results.append(res)
+            except: pass 
+
+    def sort_key(item):
+        inf = str(item.get("info", "")).lower()
+        if re.search(r'\d{4}-\d{2}-\d{2}', inf): return 0
+        return 1 if "永久" in inf else 2
+
+    results.sort(key=sort_key)
+    all_logs = [item["log"] for item in results]
+    if all_logs:
+        with open(CACHE_FILE, 'w', encoding='utf-8') as f: f.write("\n\n".join(all_logs))
+    fast_log(f"任务结束 | 有效记录: {len(all_logs)}")
+
+if __name__ == "__main__":
+    main()
