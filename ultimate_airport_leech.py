@@ -149,11 +149,14 @@ class V2BoardSession(Session):
     def login(self, email, password):
         paths = ['api/v1/passport/auth/login', 'api/v1/guest/passport/auth/login']
         for path in paths:
-            res = self.post(path, {'email': email, 'password': password}).json()
+            res_obj = self.post(path, {'email': email, 'password': password})
+            res = res_obj.json()
             if res.get('data') and isinstance(res['data'], dict):
                 token = res['data'].get('token') or res['data'].get('auth_data')
-                if token: self.headers['authorization'] = token; return True
-        return False
+                if token: 
+                    self.headers['authorization'] = token
+                    return res_obj.text # 返回登录成功的原始信息
+        return None
 
     def register(self, email, password):
         paths = ['api/v1/passport/auth/register', 'api/v1/guest/passport/auth/register', 'api/v1/client/register']
@@ -172,7 +175,8 @@ class V2BoardSession(Session):
                         try:
                             img = base64.b64decode(c_res['data'].split(',')[-1])
                             with ocr_lock: payload['captcha_code'] = ocr.classification(img)
-                            res = self.post(path, payload).json()
+                            res_obj = self.post(path, payload)
+                            res = res_obj.json()
                             break
                         except: pass
             
@@ -181,14 +185,14 @@ class V2BoardSession(Session):
                 token = data_content.get('token') or data_content.get('auth_data')
                 if token: 
                     self.headers['authorization'] = token
-                    # 修改位置：返回注册成功时的实时信息
-                    return f"SUCCESS: {res.get('message', 'Registered')}"
+                    return None, res_obj.text # 成功，返回None错误和原始响应
             
             last_msg = res.get('message') or (data_content if isinstance(data_content, str) else 'Reg Fail')
             if any(x in str(last_msg) for x in ["已经", "存在"]):
-                if self.login(email, password): return "SUCCESS: Already Exists"
+                login_raw = self.login(email, password)
+                if login_raw: return None, login_raw
                 break
-        return last_msg
+        return last_msg, None
 
     def buy(self):
         try:
@@ -221,13 +225,14 @@ class V2BoardSession(Session):
 class SSPanelSession(Session):
     def register(self, email, password):
         payload = {'email': email, 'passwd': password, 'repasswd': password, 'agreeterm': 1, 'name': email.split('@')[0], 'code': ''}
-        res = self.post('auth/register', payload).json()
-        # 修改位置：返回注册成功时的实时信息
-        if res.get('ret') or "成功" in str(res.get('msg', '')): return f"SUCCESS: {res.get('msg')}"
+        res_obj = self.post('auth/register', payload)
+        res = res_obj.json()
+        if res.get('ret') or "成功" in str(res.get('msg', '')): return None, res_obj.text
         if "已经" in str(res.get('msg', '')):
-            l_res = self.post('auth/login', {'email': email, 'passwd': password}).json()
-            if l_res.get('ret'): return "SUCCESS: Already Exists"
-        return res.get('msg', 'Reg Fail')
+            l_res_obj = self.post('auth/login', {'email': email, 'passwd': password})
+            l_res = l_res_obj.json()
+            if l_res.get('ret'): return None, l_res_obj.text
+        return res.get('msg', 'Reg Fail'), None
 
     def get_sub_url(self):
         self.headers['User-Agent'] = 'Clash.meta'
@@ -271,14 +276,9 @@ def process_worker(url):
     # 1. 域名解析与黑名单预过滤
     clean_dom = urlsplit(url).netloc.lower() or url.split('/')[0].lower()
     
-    if clean_dom.endswith(SUFFIX_BLACKLIST):
-        return None, None
-    
-    if any(black in clean_dom for black in DOMAIN_BLACKLIST):
-        return None, None
-    
-    if re.match(r'^\d+\.\d+\.\d+\.\d+$', clean_dom.split(':')[0]):
-        return None, None
+    if clean_dom.endswith(SUFFIX_BLACKLIST): return None, None
+    if any(black in clean_dom for black in DOMAIN_BLACKLIST): return None, None
+    if re.match(r'^\d+\.\d+\.\d+\.\d+$', clean_dom.split(':')[0]): return None, None
 
     base_url = url if url.startswith('http') else 'https://' + url
     test_s = Session(base_url)
@@ -300,9 +300,8 @@ def process_worker(url):
     email = email_mgr.create()
     password = "".join(random.choices(string.ascii_letters + string.digits, k=12))
     
-    reg_res = session.register(email, password)
-    # 修改逻辑：只有注册反馈包含 SUCCESS 的才继续
-    if reg_res is None or not str(reg_res).startswith("SUCCESS"): return None, None
+    reg_err, reg_raw = session.register(email, password)
+    if reg_err is not None: return None, None
 
     # 3. 购买逻辑
     buy_status = "Default"
@@ -312,16 +311,17 @@ def process_worker(url):
     sub_url = session.get_sub_url()
     if not sub_url: return None, None
 
-    # 修改逻辑：无论 check_subscription_robust 返回什么，只要有 sub_url 就继续记录
     info, is_ok = check_subscription_robust(sub_url)
+    # 无论是否 check 成功，只要 sub_url 存在即保留 (响应用户需求)
+    if not info: info = "CheckFailed"
     
     log = (f"[{clean_dom}]\n"
-           f"reg_msg {reg_res}\n" # 新增：记录注册实时返回的信息
            f"buy    {buy_status}\n"
            f"email  {email}\n"
            f"pass   {password}\n"
            f"sub_info  {info}\n"
            f"sub_url  {sub_url}\n"
+           f"raw_res  {reg_raw}\n"
            f"time  {datetime.datetime.now(SH_TZ).isoformat()}\n"
            f"type  {('v2board' if isinstance(session, V2BoardSession) else 'sspanel')}\n")
            
@@ -336,7 +336,7 @@ def process_worker(url):
 def main():
     if not os.path.exists(INPUT_FILE): return
     urls = list(set([u.strip() for u in open(INPUT_FILE).readlines() if "." in u]))
-    fast_log(f"=== 启动修复版引擎(注册信息增强版) === 任务数: {len(urls)}")
+    fast_log(f"=== 启动修复版引擎(黑名单深度净化版) === 任务数: {len(urls)}")
     
     all_logs = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
