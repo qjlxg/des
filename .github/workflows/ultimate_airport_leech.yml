@@ -47,7 +47,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
           # 1. 暂存指定的文件
-          git add airport_master.cache subscribes.txt airport_error.cache
+          git add airport_master.cache subscribes.txt 
           
           # 2. 核心修复：清理工作区中未被追踪且不需要的文件
           # 这样可以防止 git pull --rebase 报错 "unstaged changes"
