@@ -344,7 +344,7 @@ def main():
                     print(f"{tag}: {log.splitlines()[0]}")
             except: pass
     with open("nodes_plain.txt", "w", encoding="utf-8") as f: f.write("\n".join(list(set(all_nodes))))
-    with open(SUB_FILE, "w", encoding="utf-8") as f: f.write("\n".join(list(set(all_sub_urls))))
+    with open(SUB_FILE, "a", encoding="utf-8") as f: f.write("\n".join(list(set(all_sub_urls))))
     with open(CACHE_FILE, "w", encoding="utf-8") as f: f.writelines(all_logs)
 
 if __name__ == '__main__':
