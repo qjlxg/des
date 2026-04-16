@@ -37,9 +37,21 @@ NODES_FILE = "nodes.txt"
 MAX_WORKERS = 150
 SH_TZ = datetime.timezone(datetime.timedelta(hours=8))
 
+# 新增：增强路径参数
+REG_PATHS = [
+    "api/v1/passport/auth/register", 
+    "api/v1/guest/passport/auth/register",
+    "api/v1/client/register",
+    "auth/register",
+    "api/v1/passport/auth/subscribe",
+    "api/v1/passport/auth/v2boardRegister",
+    "register"
+]
+MAIL_PATHS = ["api/v1/passport/comm/sendEmailVerify", "api/v1/guest/passport/comm/sendEmailVerify"]
+CAPTCHA_PATHS = ["api/v1/passport/comm/captcha", "api/v1/guest/passport/comm/captcha"]
+
 # ==================== 增强版黑名单系统 ====================
 
-# 1. 域名关键词黑名单 (包含这些词的域名都会被排除)
 DOMAIN_BLACKLIST = {
     'baidu.com', 'google.com', 'github.com', 'zhihu.com', 'xueqiu.com', 
     'yandex.com', 'yamcode.com', 'wikipedia.org', 'microsoft.com', 
@@ -50,7 +62,6 @@ DOMAIN_BLACKLIST = {
     'xueshu', 'research', 'edu', 'gov', 'amazon', 'bing', 'outlook', 'mail'
 }
 
-# 2. 后缀黑名单 (过滤特定机构或行政后缀)
 SUFFIX_BLACKLIST = ('.gov', '.edu', '.mil', '.org', '.gov.cn', '.edu.cn')
 
 # 全局锁
@@ -155,11 +166,12 @@ class V2BoardSession(Session):
                 token = res['data'].get('token') or res['data'].get('auth_data')
                 if token: 
                     self.headers['authorization'] = token
-                    return res_obj.text # 返回登录成功的原始信息
+                    return res_obj.text
         return None
 
     def register(self, email, password):
-        paths = ['api/v1/passport/auth/register', 'api/v1/guest/passport/auth/register', 'api/v1/client/register']
+        # 筛选符合 V2Board 格式的注册路径
+        paths = [p for p in REG_PATHS if "api/v1" in p or p == "register"]
         payload = {'email': email, 'password': password, 'repassword': password, 'invite_code': ''}
         
         last_msg = "Path Not Found"
@@ -168,8 +180,9 @@ class V2BoardSession(Session):
             if res_obj.status_code == 404: continue
             
             res = res_obj.json()
+            # 增强验证码处理
             if 'captcha' in str(res.get('message','')).lower() and ocr:
-                for cp in ['api/v1/passport/comm/captcha', 'api/v1/guest/passport/comm/captcha']:
+                for cp in CAPTCHA_PATHS:
                     c_res = self.get(cp).json()
                     if c_res.get('data'):
                         try:
@@ -185,7 +198,7 @@ class V2BoardSession(Session):
                 token = data_content.get('token') or data_content.get('auth_data')
                 if token: 
                     self.headers['authorization'] = token
-                    return None, res_obj.text # 成功，返回None错误和原始响应
+                    return None, res_obj.text
             
             last_msg = res.get('message') or (data_content if isinstance(data_content, str) else 'Reg Fail')
             if any(x in str(last_msg) for x in ["已经", "存在"]):
@@ -224,14 +237,17 @@ class V2BoardSession(Session):
 # ==================== SSPanelSession ====================
 class SSPanelSession(Session):
     def register(self, email, password):
-        payload = {'email': email, 'passwd': password, 'repasswd': password, 'agreeterm': 1, 'name': email.split('@')[0], 'code': ''}
-        res_obj = self.post('auth/register', payload)
-        res = res_obj.json()
-        if res.get('ret') or "成功" in str(res.get('msg', '')): return None, res_obj.text
-        if "已经" in str(res.get('msg', '')):
-            l_res_obj = self.post('auth/login', {'email': email, 'passwd': password})
-            l_res = l_res_obj.json()
-            if l_res.get('ret'): return None, l_res_obj.text
+        # SSPanel 通常固定在 auth/register
+        for path in ["auth/register", "register"]:
+            payload = {'email': email, 'passwd': password, 'repasswd': password, 'agreeterm': 1, 'name': email.split('@')[0], 'code': ''}
+            res_obj = self.post(path, payload)
+            res = res_obj.json()
+            if res.get('ret') or "成功" in str(res.get('msg', '')): return None, res_obj.text
+            if "已经" in str(res.get('msg', '')):
+                l_res_obj = self.post('auth/login', {'email': email, 'passwd': password})
+                l_res = l_res_obj.json()
+                if l_res.get('ret'): return None, l_res_obj.text
+            if res_obj.status_code != 404: break
         return res.get('msg', 'Reg Fail'), None
 
     def get_sub_url(self):
@@ -273,7 +289,6 @@ def check_subscription_robust(url):
     except: return "CheckFailed", False
 
 def process_worker(url):
-    # 1. 域名解析与黑名单预过滤
     clean_dom = urlsplit(url).netloc.lower() or url.split('/')[0].lower()
     
     if clean_dom.endswith(SUFFIX_BLACKLIST): return None, None
@@ -295,7 +310,6 @@ def process_worker(url):
 
     if not session: return None, None
 
-    # 2. 注册逻辑
     email_mgr = TempEmail()
     email = email_mgr.create()
     password = "".join(random.choices(string.ascii_letters + string.digits, k=12))
@@ -303,16 +317,13 @@ def process_worker(url):
     reg_err, reg_raw = session.register(email, password)
     if reg_err is not None: return None, None
 
-    # 3. 购买逻辑
     buy_status = "Default"
     if isinstance(session, V2BoardSession): buy_status = session.buy()
     
-    # 4. 获取并验证订阅
     sub_url = session.get_sub_url()
     if not sub_url: return None, None
 
     info, is_ok = check_subscription_robust(sub_url)
-    # 无论是否 check 成功，只要 sub_url 存在即保留 (响应用户需求)
     if not info: info = "CheckFailed"
     
     log = (f"[{clean_dom}]\n"
@@ -336,7 +347,7 @@ def process_worker(url):
 def main():
     if not os.path.exists(INPUT_FILE): return
     urls = list(set([u.strip() for u in open(INPUT_FILE).readlines() if "." in u]))
-    fast_log(f"=== 启动修复版引擎(黑名单深度净化版) === 任务数: {len(urls)}")
+    fast_log(f"=== 启动修复版引擎(多路径支持版) === 任务数: {len(urls)}")
     
     all_logs = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as exe:
