@@ -1,42 +1,38 @@
 [bssbs.slianvpn.top]
 buy    NoFreePlan
-email  mft7vsn8bg@gmail.com
-pass   TDD6Ex7VdFKi
+email  oq61na9zuu@gmail.com
+pass   08nIrh5UhV47
 sub_info  0.00B/2.00GB (2026-04-16)
-sub_url  https://bssbs.slianvpn.top/api/v1/client/subscribe?token=a4e117e8845a1e1d1f6733faf97d23e3
-raw_res  {"status": "success", "message": "操作成功", "data": {"token": "a4e117e8845a1e1d1f6733faf97d23e3", "auth_data": "Bearer pbrp0nsL8QkxL8lbNvXuPz0KrIhn90UdqevdJXpWc38833f3", "is_admin": false}, "error": null}
-time  2026-04-16T13:30:11.703635+08:00
+sub_url  https://bssbs.slianvpn.top/api/v1/client/subscribe?token=bb39d60a79f3f06cefd6d6f88f5778b1
+time  2026-04-16T13:37:09.987101+08:00
 type  v2board
 
 
 [slianvpn.com]
 buy    NoFreePlan
-email  pye5s2lp8t@gmail.com
-pass   dbNFWdGHtHOK
+email  9krrvc9c71@gmail.com
+pass   ukyuPl8frDJn
 sub_info  0.00B/2.00GB (2026-04-16)
-sub_url  https://slianvpn.com/api/v1/client/subscribe?token=6c0dce604d92f350671b6ce12470b091
-raw_res  {"status": "success", "message": "操作成功", "data": {"token": "6c0dce604d92f350671b6ce12470b091", "auth_data": "Bearer EWXXUIDy98XK7QVA68PAuxlJwPyZ71S97ts88ASo80d84f63", "is_admin": false}, "error": null}
-time  2026-04-16T13:30:11.779477+08:00
+sub_url  https://slianvpn.com/api/v1/client/subscribe?token=1a158c3cad3f0644cc3eb020686b4839
+time  2026-04-16T13:37:10.096899+08:00
 type  v2board
 
 
 [cloudaddy.top]
 buy    NoFreePlan
-email  n1ak89bg9z@gmail.com
-pass   r0ekrUPGZziL
+email  k6gexso1mm@gmail.com
+pass   JrJYkiYYkfut
 sub_info  0.00B/3.00GB (2026-04-16)
-sub_url  https://cloudaddy.top/api/v1/client/subscribe?token=d43234f89f0d5fb1f9b8d10026e6c9cc
-raw_res  {"status": "success", "message": "操作成功", "data": {"token": "d43234f89f0d5fb1f9b8d10026e6c9cc", "auth_data": "Bearer Je6kLsgljYSZjCTwF5KLbp2E7FxWXaUQIszQJDb70278b8a5", "is_admin": null}, "error": null}
-time  2026-04-16T13:30:11.974703+08:00
+sub_url  https://cloudaddy.top/api/v1/client/subscribe?token=0e70ec8c40c9394d866c4c8865f31ce1
+time  2026-04-16T13:37:10.130747+08:00
 type  v2board
 
 
 [saas.tayun.vip]
 buy    NoFreePlan
-email  ug4jdsl0ma@gmail.com
-pass   q9gvU1cSavzA
+email  xlg3aufu61@gmail.com
+pass   53HzFGUGKOyr
 sub_info  0.00B/100.00GB (2026-04-16)
-sub_url  https://saas.tayun.vip/api/v1/client/subscribe?token=f0435a6d415d4645df040273aead7df0
-raw_res  {"status": "success", "message": "操作成功", "data": {"token": "f0435a6d415d4645df040273aead7df0", "auth_data": "Bearer JtmYnkVooYBY6o8EjsacwQRPMotJS8nAsAsYd83O054352c9", "is_admin": null}, "error": null}
-time  2026-04-16T13:30:14.354709+08:00
+sub_url  https://saas.tayun.vip/api/v1/client/subscribe?token=0d0148cf0ad7b799d1240ac697f0a1d4
+time  2026-04-16T13:37:12.324645+08:00
 type  v2board
