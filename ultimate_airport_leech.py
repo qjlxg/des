@@ -86,7 +86,8 @@ def format_time(ts):
     try:
         ts = float(ts)
         if ts > 2147483647: ts = ts / 1000
-        return datetime.datetime.fromtimestamp(ts, SH_TZ).strftime('%Y-%m-%d')
+        # 修改为输出精确到秒
+        return datetime.datetime.fromtimestamp(ts, SH_TZ).strftime('%Y-%m-%d %H:%M:%S')
     except: return "未知"
 
 def cached(func):
@@ -226,11 +227,15 @@ class V2BoardSession(Session):
 
     def get_sub_info(self):
         try:
+            # 尝试请求 User Info API 以获取更精确的信息
+            user_res = self.get('api/v1/user/info').json()
             res = self.get('api/v1/user/getSubscribe').json()
+            
             d = res['data']
+            # 优先使用 info 里的过期时间，如果 info 没有则用 getSubscribe 的
+            expire = user_res.get('data', {}).get('expired_at') or d.get('expired_at')
             total = d['transfer_enable']
             used = d['u'] + d['d']
-            expire = d.get('expired_at')
             return f"{format_size(used)}/{format_size(total)} ({format_time(expire)})"
         except: return None
 
@@ -387,7 +392,6 @@ def process_worker(url):
         with open(SUB_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
         with open(NODES_FILE, 'a', encoding='utf-8') as f: f.write(sub_url + "\n")
 
-    # 返回 log 和 info 用于后续排序
     return {"log": log, "info": info}
 
 def main():
@@ -405,17 +409,29 @@ def main():
                     results.append(res)
             except: pass 
 
-    # --- 排序逻辑：有流量和日期信息的排在前面 ---
+    # --- 修改后的排序逻辑 ---
     def sort_key(item):
         info = str(item.get("info", "")).lower()
-        # 优先级0：包含具体日期 (YYYY-MM-DD)
-        if re.search(r'\d{4}-\d{2}-\d{2}', info):
-            return 0
+        # 匹配日期 (YYYY-MM-DD 或 YYYY-MM-DD HH:MM:SS)
+        date_match = re.search(r'(\d{4}-\d{2}-\d{2}(?:\s\d{2}:\d{2}:\d{2})?)', info)
+        
+        if date_match:
+            try:
+                # 尝试解析日期，可能是短日期也可能是长日期
+                date_str = date_match.group(1)
+                fmt = '%Y-%m-%d %H:%M:%S' if ':' in date_str else '%Y-%m-%d'
+                dt = datetime.datetime.strptime(date_str, fmt)
+                # 优先级0：日期离现在越远越靠前（即时间戳越大越靠前，所以取负数进行升序排）
+                return (0, -dt.timestamp())
+            except:
+                return (0, 0)
+        
         # 优先级1：包含“永久”
         if "永久" in info:
-            return 1
-        # 优先级2：其他（未知、失败、仅Active等）
-        return 2
+            return (1, 0)
+            
+        # 优先级2：其他（未知、失败等）
+        return (2, 0)
 
     results.sort(key=sort_key)
     all_logs = [item["log"] for item in results]
