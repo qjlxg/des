@@ -1,0 +1,35 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 香港Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25116, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hk1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇹🇼 台湾1-Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25157, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇹🇼 台湾2-Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25158, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 国内加速-日本1-极速 - 悟空, server: china.stpikit.com, port: 25111, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp5.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 国内加速-日本2-极速 - 悟空, server: china.stpikit.com, port: 25112, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp6.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 日本1-极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25111, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp5.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 日本2-极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25112, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp6.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 国内加速-日本3-极速 - 悟空, server: china.stpikit.com, port: 25129, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp7.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 国内加速-日本4-极速 - 悟空, server: china.stpikit.com, port: 25130, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp8.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 国内加速-日本5-极速 - 悟空, server: china.stpikit.com, port: 25131, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp9.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇸🇬 新加坡1•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25150, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇸🇬 新加坡2•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25152, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇸🇬 新加坡3•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25153, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp3.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇸🇬 新加坡4•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25154, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp4.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇸🇬 新加坡5•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25151, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp5.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 日本3-极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25129, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp7.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 日本4-极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25130, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp8.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 日本5-极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25131, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: jp9.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 美国-chatgpt专线 - 悟空, server: rybdphiledo.stpikit.com, port: 25159, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: usa1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 香港-极速一 - 悟空, server: rybdphiledo.stpikit.com, port: 27090, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hkbgp1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国1•国外专用 - 悟空, server: uk1.stbartsprimaryschool.co.uk, port: 444, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: uk1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国1•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25100, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: uk1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国2•国外专用 - 悟空, server: uk2.stbartsprimaryschool.co.uk, port: 444, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: uk2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国2•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25101, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: uk2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国3•极速-gpt - 悟空, server: rybdphiledo.stpikit.com, port: 25102, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: de1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国4•极速-gpt - 悟空, server: rybdphiledo.stpikit.com, port: 25104, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: de2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国gpt1 - 悟空, server: rybdphiledo.stpikit.com, port: 25107, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: degpt1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国gpt2 - 悟空, server: rybdphiledo.stpikit.com, port: 25108, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: degpt2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国gpt3 - 悟空, server: rybdphiledo.stpikit.com, port: 25109, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: degpt3.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇩🇪 德国gpt4 - 悟空, server: rybdphiledo.stpikit.com, port: 25110, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: degpt4.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇹🇼 台湾-国外专用一 - 悟空, server: tw1.stbartsprimaryschool.co.uk, port: 444, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇹🇼 台湾-国外专用二 - 悟空, server: tw2.stbartsprimaryschool.co.uk, port: 444, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}

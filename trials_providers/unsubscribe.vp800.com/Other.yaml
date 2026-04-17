@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+proxies:
+- {name: '🇮🇳 [vmess]印度1 - Cloudflare', server: ip6-in1.vp1000.net, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicfastpDisney, headers: {Host: ip4-in2.vp1000.net}}, udp: true}
+- {name: '🇮🇳 [vmess]印度2 - Cloudflare', server: ip4-in2.vp1000.net, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicfastpDisney, headers: {Host: ip4-in2.vp1000.net}}, udp: true}
+- {name: '🇮🇳 [vmess]印度3 - Cloudflare', server: ip6-in3.vp1000.net, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicfastpDisney, headers: {Host: ip4-in4.vp1000.net}}, udp: true}
+- {name: '🇮🇳 [vmess]印度4 - Cloudflare', server: ip4-in4.vp1000.net, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicfastpDisney, headers: {Host: ip4-in4.vp1000.net}}, udp: true}
+- {name: '🇧🇷 [vmess]巴西1 - Cloudflare', server: br.vp1000.net, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicpDisney, headers: {Host: br.vp1000.net}}, udp: true}
+- {name: '🇧🇷 [vmess]巴西2 - Cloudflare', server: br3.vp1000.net, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicpDisney, headers: {Host: br3.vp1000.net}}, udp: true}
+- {name: '🇧🇷 [vmess]巴西3 - Cloudflare', server: 2603:c021:c006:3fee:0:83af:48c6:2edc, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicpDisney, headers: {Host: br3.vp1000.net}}, udp: true}
+- {name: '🇧🇷 [vmess]巴西4 - Cloudflare', server: ip6-br5.vp1000.net, port: 443, type: vmess, uuid: 7c890a62-b1cd-469d-92c4-bead7acdd933, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /pulicpDisney, headers: {Host: br.vp1000.net}}, udp: true}

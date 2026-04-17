@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: ℹ️ 近期线路封禁频繁请及时更新订阅切换号数使用 - 无界, server: wujiehub.top, port: 10086, type: vmess, uuid: cfff1b46-944a-316b-aac2-1c860fa0dfdf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}

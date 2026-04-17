@@ -1,0 +1,5 @@
+%YAML 1.1
+---
+proxies:
+- {name: '🇮🇩 User ID: 172 - VPNGo – VPN Việt Nam', server: expired.example.com, port: 80, type: vmess, uuid: 514d1098-0d82-44ca-bbf9-d71cf8c5c330, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /expired, headers: {Host: expired.example.com}}, udp: true}
+- {name: Gói của bạn đã hết hạn - VPNGo – VPN Việt Nam, server: expired.example.com, port: 80, type: vmess, uuid: 514d1098-0d82-44ca-bbf9-d71cf8c5c330, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /expired, headers: {Host: expired.example.com}}, udp: true}

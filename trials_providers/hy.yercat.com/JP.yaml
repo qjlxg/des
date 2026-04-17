@@ -1,0 +1,8 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇯🇵 直连 | v6 | 日本1 - 云猫加速, server: yjp61.ncybk.app, port: 26827, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}
+- {name: 🇯🇵 ss | 日本｜1 - 云猫加速, server: yjp21.ncybk.app, port: 46473, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}
+- {name: 🇯🇵 ss | 日本｜2 - 云猫加速, server: yjp22.ncybk.app, port: 48235, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}
+- {name: 🇯🇵 ss | 日本｜3 - 云猫加速, server: yjp23.ncybk.app, port: 36370, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}
+- {name: 🇯🇵 ss | 日本｜4 - 云猫加速, server: yjp24.ncybk.app, port: 36902, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}

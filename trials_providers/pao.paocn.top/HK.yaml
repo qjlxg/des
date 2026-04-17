@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: '[泡泡] [加速器] 🇭🇰香港01 - 泡泡全球', server: chengbai02.ascwt179.com, port: 13223, type: ss, cipher: aes-128-gcm, password: JVrsLLN1tkN8oXZO, plugin: obfs, plugin-opts: {mode: http, host: ''}, udp: true}

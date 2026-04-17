@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 专线A1-香港2-极纯家宽IP支持Cityline流媒体全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 27502, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}
+- {name: 🇭🇰 专线A1-香港3-极纯家宽IP支持Cityline流媒体全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 49642, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}
+- {name: 🇭🇰 专线A1-香港4-极纯家宽IP支持Cityline流媒体全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 6740, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}

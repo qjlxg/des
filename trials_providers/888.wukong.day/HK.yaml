@@ -1,0 +1,5 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 香港Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25116, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hk1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 香港-极速一 - 悟空, server: rybdphiledo.stpikit.com, port: 27090, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hkbgp1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}

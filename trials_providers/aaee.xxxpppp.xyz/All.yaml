@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇸🇬 新加坡 ss - sk云, server: ipv6-01.hhu8.help, port: 42333, type: ss, cipher: aes-128-gcm, password: BnSdh1p14JjRlfBD, udp: true}

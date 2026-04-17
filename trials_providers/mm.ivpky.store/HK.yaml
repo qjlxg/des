@@ -1,0 +1,5 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 香港-1 - 萌猫加速, server: mhk13.ncybk.app, port: 44632, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}
+- {name: 🇭🇰 香港-2 - 萌猫加速, server: mhk12.ncybk.app, port: 46482, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}

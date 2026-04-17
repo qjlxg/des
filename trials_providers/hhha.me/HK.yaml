@@ -1,0 +1,12 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 CN中转|香港① - 夜光云 BLUECLOUD, server: hk2.cloudbb.loan, port: 443, type: vmess, uuid: cde26032-a54f-346f-a7a3-3794f3e9ba4e, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hk2.cloudbb.loan}}, udp: true}
+- {name: 🇭🇰 CN中转|香港② - 夜光云 BLUECLOUD, server: hk3.cloudbb.cyou, port: 443, type: vmess, uuid: cde26032-a54f-346f-a7a3-3794f3e9ba4e, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hk3.cloudbb.cyou}}, udp: true}
+- {name: 🇭🇰 CN中转|香港③ - 夜光云 BLUECLOUD, server: hkdmift6.cloudbb.loan, port: 443, type: vmess, uuid: cde26032-a54f-346f-a7a3-3794f3e9ba4e, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hkdmift6.cloudbb.loan}}, udp: true}
+- {name: 🇭🇰 CN中转|香港④ - 夜光云 BLUECLOUD, server: hkdmit8.cloudbb.loan, port: 443, type: vmess, uuid: cde26032-a54f-346f-a7a3-3794f3e9ba4e, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hkdmit8.cloudbb.loan}}, udp: true}
+- {name: 🇭🇰 CN中转|香港⑤ - 夜光云 BLUECLOUD, server: hk2.cloudbb.cyou, port: 443, type: vmess, uuid: cde26032-a54f-346f-a7a3-3794f3e9ba4e, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hk2.cloudbb.cyou}}, udp: true}
+- {name: 🇭🇰 CN高速|香港① - 夜光云 BLUECLOUD, server: hkhe02.bcloudv.cyou, port: 20897, type: trojan, password: cde26032-a54f-346f-a7a3-3794f3e9ba4e, sni: hkhe02.bcloudv.cyou, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 CN高速|香港② - 夜光云 BLUECLOUD, server: hkhe03.bcloudv.cyou, port: 20001, type: trojan, password: cde26032-a54f-346f-a7a3-3794f3e9ba4e, sni: hkhe03.bcloudv.cyou, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 CN高速|香港③ - 夜光云 BLUECLOUD, server: any3017.bcloud.cyou, port: 20001, type: trojan, password: cde26032-a54f-346f-a7a3-3794f3e9ba4e, sni: any3017.bcloud.cyou, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 CN高速|香港④ - 夜光云 BLUECLOUD, server: hkdmit7.cloudbb.loan, port: 20005, type: trojan, password: cde26032-a54f-346f-a7a3-3794f3e9ba4e, sni: hkdmit7.cloudbb.loan, skip-cert-verify: true, udp: true}

@@ -1,0 +1,16 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇯🇵 直连 | v6 | 日本1 - 灵溪加速器, server: njp61.ncybk.app, port: 26212, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇯🇵 ss | 日本｜1 - 灵溪加速器, server: jp21.ncybk.app, port: 38943, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇯🇵 ss | 日本｜2 - 灵溪加速器, server: jp22.ncybk.app, port: 38342, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇯🇵 ss | 日本｜3 - 灵溪加速器, server: jp23.ncybk.app, port: 38574, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇯🇵 直连 | v6 | 日本1 - 云猫加速, server: yjp61.ncybk.app, port: 26827, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇯🇵 ss | 日本｜1 - 云猫加速, server: yjp21.ncybk.app, port: 46473, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇯🇵 ss | 日本｜2 - 云猫加速, server: yjp22.ncybk.app, port: 48235, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇯🇵 ss | 日本｜3 - 云猫加速, server: yjp23.ncybk.app, port: 36370, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇯🇵 ss | 日本｜4 - 云猫加速, server: yjp24.ncybk.app, port: 36902, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇯🇵 直连 | v6 | 日本1 - 萌猫加速, server: mjp61.ncybk.app, port: 28431, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇯🇵 日本-2 - 萌猫加速, server: mjp13.ncybk.app, port: 49302, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇯🇵 日本-3 - 萌猫加速, server: mjp14.ncybk.app, port: 47838, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇯🇵 日本-4 - 萌猫加速, server: mjp15.ncybk.app, port: 26860, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}

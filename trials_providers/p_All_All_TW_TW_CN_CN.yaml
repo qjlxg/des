@@ -1,0 +1,13 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇹🇼 台湾解锁 (广港)1 x1 - ⚡闪连机场, server: slur.izenny.com, port: 14187, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- {name: 🇹🇼 台湾解锁 (广港)2 x1 - ⚡闪连机场, server: slur.izenny.com, port: 14187, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- {name: 🇹🇼 台湾解锁 (广港)3 x1 - ⚡闪连机场, server: slur.izenny.com, port: 14187, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- {name: 🇹🇼 台湾解锁 (广新)1 x1 - ⚡闪连机场, server: slur.izenny.com, port: 14187, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- {name: 🇹🇼 台湾解锁 (广新)2 x1 - ⚡闪连机场, server: slur.izenny.com, port: 14187, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- {name: 🇹🇼 台湾解锁 (广新)3 x1 - ⚡闪连机场, server: slur.izenny.com, port: 14187, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- {name: 🇹🇼 专线A1-台湾1-流媒体全解锁TikTok优秀3倍率 - VVCloud, server: zf.sg-iepl.com, port: 13599, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
+- {name: 🇹🇼 台湾②一优化 - tuboshu.io|土拨鼠.co, server: yresdc3fjfg.raspn.cn, port: 18850, type: vmess, uuid: 3f464c5d-5fa1-31d9-bc36-4374016046d3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: ixigua.com, network: ws, ws-opts: {path: /, headers: {Host: ixigua.com}}, udp: true}
+- {name: 🇹🇼 台湾台北原生一优化 - tuboshu.io|土拨鼠.co, server: yresdc3fjfg.raspn.cn, port: 18856, type: vmess, uuid: 3f464c5d-5fa1-31d9-bc36-4374016046d3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: ixigua.com, network: ws, ws-opts: {path: /, headers: {Host: ixigua.com}}, udp: true}
+- {name: 🇹🇼 🇨🇳 台湾IEPL - Candytally（糖果云）, server: 110.242.74.102, port: 10002, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}

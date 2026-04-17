@@ -1,0 +1,7 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇯🇵 直连 | v6 | 日本1 - 灵溪加速器, server: njp61.ncybk.app, port: 26212, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}
+- {name: 🇯🇵 ss | 日本｜1 - 灵溪加速器, server: jp21.ncybk.app, port: 38943, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}
+- {name: 🇯🇵 ss | 日本｜2 - 灵溪加速器, server: jp22.ncybk.app, port: 38342, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}
+- {name: 🇯🇵 ss | 日本｜3 - 灵溪加速器, server: jp23.ncybk.app, port: 38574, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}

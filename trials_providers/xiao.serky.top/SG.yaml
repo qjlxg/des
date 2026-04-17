@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇸🇬 ss | 新加坡 | 1 - 火箭加速, server: xsg21.ncybk.app, port: 39201, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇸🇬 ss | 新加坡 | 2 - 火箭加速, server: xsg22.ncybk.app, port: 39205, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇸🇬 ss | 新加坡 | 3 - 火箭加速, server: xsg23.ncybk.app, port: 39208, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}

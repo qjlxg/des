@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: 联通电信暂不提供优化测试 - OKX, server: 156.231.115.233, port: 30044, type: ss, cipher: chacha20-ietf-poly1305, password: b96e17d7-7fea-4ed7-9375-4386bde9a736, udp: true}

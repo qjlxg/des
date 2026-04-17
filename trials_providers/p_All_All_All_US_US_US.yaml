@@ -1,0 +1,12 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇺🇲 ss | 美国｜1 - 灵溪加速器, server: us21.ncybk.app, port: 30948, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇺🇲 ss | 美国｜2 - 灵溪加速器, server: us22.ncybk.app, port: 30994, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇺🇸 美国高速节点1 - 新云游, server: 144.34.178.66, port: 1443, type: trojan, password: c15030fa-dd26-4e98-b4d5-4278fe50af6b, sni: node4.yuntongclouds.com, skip-cert-verify: true, udp: true}
+- {name: 🇺🇲 ss | 美国 | 1 - 云猫加速, server: yus21.ncybk.app, port: 30925, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇺🇲 ss | 美国 | 2 - 云猫加速, server: yus22.ncybk.app, port: 37921, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇺🇲 ss | 美国 | 3 - 云猫加速, server: yus23.ncybk.app, port: 36621, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇺🇲 美国-1 - 萌猫加速, server: mus13.ncybk.app, port: 48680, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇺🇲 美国-2 - 萌猫加速, server: mus14.ncybk.app, port: 48574, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇺🇲 美国-3 - 萌猫加速, server: mus15.ncybk.app, port: 48668, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}

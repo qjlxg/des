@@ -1,0 +1,36 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 香港IEPL - 红杏云, server: 110.242.74.102, port: 10001, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
+- {name: 🇭🇰 香港Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25116, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hk1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 香港-极速一 - 悟空, server: rybdphiledo.stpikit.com, port: 27090, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hkbgp1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 V港HK7 - 拓扑门topman8848.com, server: v7.toppp.cc, port: 42107, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: '🇭🇰 ipv6港HK12[手机流量可用] - 拓扑门topman8848.com', server: v12.toppp.cc, port: 42112, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 V1 | 香港1 - Bingo加速, server: hk91.appmimi.com, port: 49011, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港2 - Bingo加速, server: hk92.appmimi.com, port: 49012, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港3 - Bingo加速, server: hk93.appmimi.com, port: 49013, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港4 - Bingo加速, server: hk94.appmimi.com, port: 49014, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港5 - Bingo加速, server: hk95.appmimi.com, port: 49015, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港6 - Bingo加速, server: hk96.appmimi.com, port: 49016, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港7 - Bingo加速, server: hk97.appmimi.com, port: 49017, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港8 - Bingo加速, server: hk98.appmimi.com, port: 49018, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港9 - Bingo加速, server: 151.242.182.240, port: 49019, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港10 - Bingo加速, server: hk9a.appmimi.com, port: 49020, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 香港2 - OurFast, server: node4.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node4.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node4.ourfast.asia}}, udp: true}
+- {name: 🇭🇰 ss | 香港 | 1 - 火箭加速, server: xhk21.ncybk.app, port: 31509, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇭🇰 ss | 香港 | 2 - 火箭加速, server: xhk22.ncybk.app, port: 33571, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇭🇰 ss | 香港 | 3 - 火箭加速, server: xhk23.ncybk.app, port: 39483, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: '[泡泡] [加速器] 🇭🇰香港01 - 泡泡全球', server: chengbai02.ascwt179.com, port: 13223, type: ss, cipher: aes-128-gcm, password: JVrsLLN1tkN8oXZO, plugin: obfs, plugin-opts: {mode: http, host: ''}, udp: true}
+- {name: '🇭🇰 [vmess]香港测试vmess - PS66', server: site03.ps66.uk, port: 58089, type: vmess, uuid: da925bdd-d420-4b6c-9fe5-2b63c19f9a64, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /edu, headers: {Host: site03.ps66.uk}}, udp: true}
+- {name: 🇭🇰 香港代理01 - 美心TG, server: hkt.karyl.cc, port: 40404, type: socks5, username: f50e440a-7098-486a-aea5-ce288608e2d2, password: f50e440a-7098-486a-aea5-ce288608e2d2, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 香港代理02 - 美心TG, server: hkt.karyl.cc, port: 40404, type: socks5, username: f50e440a-7098-486a-aea5-ce288608e2d2, password: f50e440a-7098-486a-aea5-ce288608e2d2, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 A2-香港-01节点 - 方舟加速器, server: hkcdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-hk.202014.xyz}}, udp: true}
+- {name: 🇭🇰 A2-香港-02节点 - 方舟加速器, server: hkcdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-hk02.202014.xyz}}, udp: true}
+- {name: 🇭🇰 A2-香港-03节点 - 方舟加速器, server: hkcdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-hk03.202014.xyz}}, udp: true}
+- {name: 🇭🇰 ★网站最新域名tomatobay.cc - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 ★在线客服永不失联tmtbcloud.top - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 有更多地区节点需求，请联系客服 - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: '🇭🇰 TG客服: tomatobaybot - Tomatobay番茄港', server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 TG群组：tmtbgood - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 HK000 香港 低保慢速节点 升级请买官网套餐 永久官网地址 nova.live 需要翻墙 - NovaLive, server: 103.219.195.108, port: 447, type: trojan, password: 429a82cd-2a6e-3dfd-91af-b3c99f973404, sni: fastly.cdn.steampipe.steamcontent.com, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 试用节点-香港 - 巨人坤场vpn(超稳定), server: jry.izenny.com, port: 26535, type: ss, cipher: chacha20-ietf-poly1305, password: 6b02652d-2534-444f-8c63-19fbb31f251a, udp: true}

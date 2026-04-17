@@ -1,0 +1,12 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇸🇬 ss | 新加坡｜1 - 灵溪加速器, server: sg21.ncybk.app, port: 38599, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇸🇬 ss | 新加坡｜2 - 灵溪加速器, server: sg22.ncybk.app, port: 38398, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇸🇬 ss | 新加坡｜3 - 灵溪加速器, server: sg23.ncybk.app, port: 37583, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇸🇬 ss | 新加坡｜1 - 云猫加速, server: ysg21.ncybk.app, port: 49837, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇸🇬 ss | 新加坡｜2 - 云猫加速, server: ysg22.ncybk.app, port: 48493, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇸🇬 ss | 新加坡｜3 - 云猫加速, server: ysg23.ncybk.app, port: 48746, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇸🇬 新加坡-1 - 萌猫加速, server: msg15.ncybk.app, port: 49783, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇸🇬 新加坡-2 - 萌猫加速, server: msg14.ncybk.app, port: 49983, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇸🇬 新加坡-3 - 萌猫加速, server: msg13.ncybk.app, port: 49306, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}

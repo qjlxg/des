@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇺🇲 美国-1 - 萌猫加速, server: mus13.ncybk.app, port: 48680, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}
+- {name: 🇺🇲 美国-2 - 萌猫加速, server: mus14.ncybk.app, port: 48574, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}
+- {name: 🇺🇲 美国-3 - 萌猫加速, server: mus15.ncybk.app, port: 48668, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}

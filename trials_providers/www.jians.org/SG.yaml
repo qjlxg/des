@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇸🇬 新加坡|01|专线|中转|流媒体|3.0x - 见之云, server: zz.gd.01.jianz.group, port: 15412, type: ss, cipher: aes-128-gcm, password: 5ad9966f-e365-4da0-8d35-cbfd27deff6b, udp: true}

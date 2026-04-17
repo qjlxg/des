@@ -1,0 +1,37 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇺🇸 美国节点 - byi加速器, server: g4bk7yx3nd5q.byijsq.com, port: 20106, type: vmess, uuid: ff18d4c9-1c1a-3f13-81bc-487984a89513, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: usnode.byijsq.com, udp: true}
+- {name: 🇺🇸 美国IEPL - 红杏云, server: 110.242.74.102, port: 10005, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
+- {name: 🇺🇸 美国-chatgpt专线 - 悟空, server: rybdphiledo.stpikit.com, port: 25159, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: usa1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 直链#美国01 - 秒连加速器, server: us01.n.lgjsq.top, port: 10001, type: ss, cipher: chacha20-ietf-poly1305, password: a6406c09-ef40-4e3d-b886-4bdeb4c3c949, udp: true}
+- {name: 🇺🇸 转发#美国01 - 秒连加速器, server: rk1.mlrk0.cc, port: 10002, type: ss, cipher: chacha20-ietf-poly1305, password: a6406c09-ef40-4e3d-b886-4bdeb4c3c949, udp: true}
+- {name: 🇺🇸 美国直连ss - V2Board, server: us1-ss.flyparts.cn, port: 10020, type: ss, cipher: chacha20-ietf-poly1305, password: bccd766a-80dc-4549-87ae-5ebe8c19942b, udp: true}
+- {name: 🇺🇸 美国直连V2 - V2Board, server: us1-ss.flyparts.cn, port: 10022, type: vmess, uuid: bccd766a-80dc-4549-87ae-5ebe8c19942b, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /, headers: {Host: us1-ss.flyparts.cn}}, udp: true}
+- {name: 🇺🇸 美国rn1-快速 - Wink, server: us-rn1.xaa.app, port: 443, type: trojan, password: 78ede441-e642-4411-8639-da9dcb793742, sni: us-rn1.xaa.app, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 美国rn2-快速 - Wink, server: us-rn2.xaa.app, port: 443, type: trojan, password: 78ede441-e642-4411-8639-da9dcb793742, sni: us-rn2.xaa.app, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 美国rn3-高速 - Wink, server: us-rn3.xaa.app, port: 443, type: trojan, password: 78ede441-e642-4411-8639-da9dcb793742, sni: us-rn3.xaa.app, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 ipv6美US13 - 拓扑门topman8848.com, server: v12.toppp.cc, port: 42113, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 V美US16 - 拓扑门topman8848.com, server: vm3.doooo.top, port: 42116, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 V美US17 - 拓扑门topman8848.com, server: vm3.doooo.top, port: 42117, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 V美US18 - 拓扑门topman8848.com, server: v18.toppp.cc, port: 42118, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 V1 | 美国1 - Bingo加速, server: us91.appmimi.com, port: 49061, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇺🇸 V1 | 美国2 - Bingo加速, server: us92.appmimi.com, port: 49062, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇺🇸 V1 | 美国3 - Bingo加速, server: us93.appmimi.com, port: 49063, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇺🇸 V1 | 美国4 - Bingo加速, server: us94.appmimi.com, port: 49064, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇺🇸 V1 | 美国5 - Bingo加速, server: us95.appmimi.com, port: 49065, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: '🇺🇸 V1 | [海外用户]美国1 - Bingo加速', server: dd01.appmimi.com, port: 19201, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: '🇺🇸 V1 | [海外用户]美国2 - Bingo加速', server: dd02.appmimi.com, port: 19201, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇺🇸 美国1 - OurFast, server: node11.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node11.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node11.ourfast.asia}}, udp: true}
+- {name: 🇺🇸 美国2 - OurFast, server: node12.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node12.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node22.ourfast.asia}}, udp: true}
+- {name: 🇺🇸 美国3 - OurFast, server: node15.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node15.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node15.ourfast.asia}}, udp: true}
+- {name: 🇺🇸 美国4 - OurFast, server: node18.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node18.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node18.ourfast.asia}}, udp: true}
+- {name: 🇺🇲 ss | 美国 | 1 - 火箭加速, server: xus21.ncybk.app, port: 37512, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇺🇲 ss | 美国 | 2 - 火箭加速, server: xus22.ncybk.app, port: 47822, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇺🇲 ss | 美国 | 3 - 火箭加速, server: xus23.ncybk.app, port: 41823, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇺🇲 A1-美国-01节点  - 方舟加速器, server: cdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-usa.202014.xyz}}, udp: true}
+- {name: 🇺🇲 A1-美国-02节点 - 方舟加速器, server: cdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-usa02.202014.xyz}}, udp: true}
+- {name: 🇺🇲 A1-美国-03节点 - 方舟加速器, server: cdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-usa03.202014.xyz}}, udp: true}
+- {name: 🇺🇲 A1-美国-04节点 - 方舟加速器, server: cdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-usa04.202014.xyz}}, udp: true}
+- {name: 🇺🇸 US000 美国 低保慢速节点 升级请买官网套餐 永久官网地址 nova.live 需要翻墙 - NovaLive, server: 178.208.190.99, port: 447, type: trojan, password: 429a82cd-2a6e-3dfd-91af-b3c99f973404, sni: upos-hz-mirrorakam.akamaized.net, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 试用节点-美国 - 巨人坤场vpn(超稳定), server: jry.izenny.com, port: 47831, type: ss, cipher: chacha20-ietf-poly1305, password: 6b02652d-2534-444f-8c63-19fbb31f251a, udp: true}

@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇸🇬 ss | 新加坡｜1 - 灵溪加速器, server: sg21.ncybk.app, port: 38599, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}
+- {name: 🇸🇬 ss | 新加坡｜2 - 灵溪加速器, server: sg22.ncybk.app, port: 38398, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}
+- {name: 🇸🇬 ss | 新加坡｜3 - 灵溪加速器, server: sg23.ncybk.app, port: 37583, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}

@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇹🇼台湾住宅家宽01 - OKX, server: 151.242.165.213, port: 30039, type: ss, cipher: chacha20-ietf-poly1305, password: b96e17d7-7fea-4ed7-9375-4386bde9a736, udp: true}

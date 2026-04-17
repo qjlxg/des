@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: ℹ️ 0续约官网https://ykk.xy21.xyz或https://vx.xuuk444.online - 推云, server: hz.hnytkm.c, port: 10464, type: vmess, uuid: dcf7bde8-d549-3152-823f-30d0862efc00, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: ℹ️ 1.网路如果卡请联系客服更换URL - 推云, server: hz.hnytkm.c, port: 25308, type: vmess, uuid: dcf7bde8-d549-3152-823f-30d0862efc00, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: ℹ️ 1客服qq:2759505441客服qq：532163181客服qq：275295228 - 推云, server: hz.hnytkm.c, port: 53870, type: vmess, uuid: dcf7bde8-d549-3152-823f-30d0862efc00, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}

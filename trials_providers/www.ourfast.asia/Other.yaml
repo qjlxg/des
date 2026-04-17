@@ -1,0 +1,9 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇰🇷 韩国1 - OurFast, server: node14.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node14.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node14.ourfast.asia}}, udp: true}
+- {name: 🇦🇺 澳大利亚1 - OurFast, server: node17.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node17.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node17.ourfast.asia}}, udp: true}
+- {name: 🇫🇷 法国1 - OurFast, server: node19.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node19.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node19.ourfast.asia}}, udp: true}
+- {name: 🇬🇧 英国1 - OurFast, server: node20.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node20.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node20.ourfast.asia}}, udp: true}
+- {name: 🇲🇽 墨西哥1 - OurFast, server: node21.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node21.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node21.ourfast.asia}}, udp: true}
+- {name: 🇨🇦 加拿大1 - OurFast, server: node22.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node22.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node22.ourfast.asia}}, udp: true}

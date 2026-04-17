@@ -1,0 +1,20 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇯🇵 直连 | v6 | 日本1 - 火箭加速, server: xjp61.ncybk.app, port: 22832, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇸🇬 ss | 新加坡 | 1 - 火箭加速, server: xsg21.ncybk.app, port: 39201, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇸🇬 ss | 新加坡 | 2 - 火箭加速, server: xsg22.ncybk.app, port: 39205, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇸🇬 ss | 新加坡 | 3 - 火箭加速, server: xsg23.ncybk.app, port: 39208, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇯🇵 ss | 日本 | 1 - 火箭加速, server: xjp21.ncybk.app, port: 35261, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇯🇵 ss | 日本 | 2 - 火箭加速, server: xjp22.ncybk.app, port: 36271, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇯🇵 ss | 日本 | 3 - 火箭加速, server: xjp23.ncybk.app, port: 39481, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇺🇲 ss | 美国 | 1 - 火箭加速, server: xus21.ncybk.app, port: 37512, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇺🇲 ss | 美国 | 2 - 火箭加速, server: xus22.ncybk.app, port: 47822, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇺🇲 ss | 美国 | 3 - 火箭加速, server: xus23.ncybk.app, port: 41823, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇹🇼 ss | 台湾 | 1 - 火箭加速, server: xtw21.ncybk.app, port: 37382, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇭🇰 ss | 香港 | 1 - 火箭加速, server: xhk21.ncybk.app, port: 31509, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇭🇰 ss | 香港 | 2 - 火箭加速, server: xhk22.ncybk.app, port: 33571, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇭🇰 ss | 香港 | 3 - 火箭加速, server: xhk23.ncybk.app, port: 39483, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇬🇧 ss | 英国 | 1 - 火箭加速, server: xuk21.ncybk.app, port: 38527, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇮🇳 ss | 印度｜1 - 火箭加速, server: xin21.ncybk.app, port: 47381, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇩🇪 ss | 德国 | 1 - 火箭加速, server: xge21.ncybk.app, port: 47390, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}

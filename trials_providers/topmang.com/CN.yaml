@@ -1,0 +1,8 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇹🇼 V这里是新平台 - 拓扑门topman8848.com, server: 5.102.124.129, port: 42105, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 V港HK7 - 拓扑门topman8848.com, server: v7.toppp.cc, port: 42107, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇹🇼 V台TW10 - 拓扑门topman8848.com, server: v10.toppp.cc, port: 42110, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇹🇼 ipv6台TW11 - 拓扑门topman8848.com, server: v11.toppp.cc, port: 42111, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: '🇭🇰 ipv6港HK12[手机流量可用] - 拓扑门topman8848.com', server: v12.toppp.cc, port: 42112, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}

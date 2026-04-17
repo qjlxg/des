@@ -1,0 +1,8 @@
+%YAML 1.1
+---
+proxies:
+- {name: ℹ️ 使用遇到问题请看官网公告 - 学习工具, server: www.suzu.shop, port: 10086, type: vmess, uuid: e8046204-0875-3cd4-9dbf-9e59813275cb, alterId: 1, cipher: auto, tls: false, skip-cert-verify: true, servername: jd.com, network: ws, ws-opts: {path: /www, headers: {Host: jd.com}}, udp: true}
+- {name: ℹ️ 官网:study.suzu.club - 学习工具, server: study.suzu.club, port: 443, type: trojan, password: e8046204-0875-3cd4-9dbf-9e59813275cb, sni: study.suzu.club, skip-cert-verify: true, udp: true}
+- {name: ℹ️ 官网:www.weixin110.xyz - 学习工具, server: study.suzu.club, port: 443, type: trojan, password: e8046204-0875-3cd4-9dbf-9e59813275cb, sni: study.suzu.club, skip-cert-verify: true, udp: true}
+- {name: ℹ️ 官网:www.正式开业.com - 学习工具, server: study.suzu.club, port: 443, type: trojan, password: e8046204-0875-3cd4-9dbf-9e59813275cb, sni: study.suzu.club, skip-cert-verify: true, udp: true}
+- {name: ⬇️大陆用户专用⬇️ - 学习工具, server: www.suzu.shop, port: 10086, type: vmess, uuid: e8046204-0875-3cd4-9dbf-9e59813275cb, alterId: 1, cipher: auto, tls: false, skip-cert-verify: true, servername: jd.com, network: ws, ws-opts: {path: /www, headers: {Host: jd.com}}, udp: true}

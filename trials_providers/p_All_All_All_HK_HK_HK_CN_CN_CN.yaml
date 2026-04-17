@@ -1,0 +1,9 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 ss | 香港｜1 - 灵溪加速器, server: hk21.ncybk.app, port: 38765, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇭🇰 ss | 香港｜2 - 灵溪加速器, server: hk22.ncybk.app, port: 39832, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- {name: 🇭🇰 ss | 香港 | 1 - 云猫加速, server: yhk21.ncybk.app, port: 38941, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇭🇰 ss | 香港 | 2 - 云猫加速, server: yhk22.ncybk.app, port: 38029, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇭🇰 香港-1 - 萌猫加速, server: mhk13.ncybk.app, port: 44632, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- {name: 🇭🇰 香港-2 - 萌猫加速, server: mhk12.ncybk.app, port: 46482, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}

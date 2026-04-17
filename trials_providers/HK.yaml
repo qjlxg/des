@@ -1,0 +1,149 @@
+%YAML 1.1
+---
+proxies:
+- &id025 {name: 🇭🇰 香港 (广港)1 x1 - ⚡闪连机场, server: slur.izenny.com, port: 55407, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- &id026 {name: 🇭🇰 香港 (广港)2 x1 - ⚡闪连机场, server: slur.izenny.com, port: 55407, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- &id027 {name: 🇭🇰 香港 (广港)3 x1 - ⚡闪连机场, server: slur.izenny.com, port: 55407, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- &id028 {name: 🇭🇰 香港 (广新)1 x1 - ⚡闪连机场, server: slur.izenny.com, port: 55407, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- &id029 {name: 🇭🇰 香港  (广新)2 x1 - ⚡闪连机场, server: slur.izenny.com, port: 55407, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- &id030 {name: 🇭🇰 香港 (广新)3 x1 - ⚡闪连机场, server: slur.izenny.com, port: 55407, type: ss, cipher: chacha20-ietf-poly1305, password: c4d066c9-acc3-4c23-b1cd-333de515ebcc, udp: true}
+- &id011 {name: 🇭🇰 ss | 香港｜1 - 灵溪加速器, server: hk21.ncybk.app, port: 38765, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- &id012 {name: 🇭🇰 ss | 香港｜2 - 灵溪加速器, server: hk22.ncybk.app, port: 39832, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
+- &id013 {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-01 - 小牛机场, server: 104.16.246.156, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- &id014 {name: 🇭🇰 移动-HKG-80-Trojan-WS-02 - 小牛机场, server: 104.16.246.156, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- &id015 {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-03 - 小牛机场, server: 104.17.149.101, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- &id016 {name: 🇭🇰 移动-HKG-80-Trojan-WS-04 - 小牛机场, server: 104.17.149.101, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- &id017 {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-05 - 小牛机场, server: 104.18.84.140, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- &id018 {name: 🇭🇰 移动-HKG-80-Trojan-WS-06 - 小牛机场, server: 104.18.84.140, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- &id019 {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-07 - 小牛机场, server: 104.17.176.20, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- &id020 {name: 🇭🇰 移动-HKG-80-Trojan-WS-08 - 小牛机场, server: 104.17.176.20, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- &id021 {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-09 - 小牛机场, server: 104.18.84.28, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- &id022 {name: 🇭🇰 移动-HKG-80-Trojan-WS-10 - 小牛机场, server: 104.18.84.28, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- &id001 {name: '🇭🇰 [vip①]①香港 - MG Network', server: 12.mamamajd.site, port: 23612, type: vmess, uuid: dd818ae1-a0f6-3478-8c4b-7718e8f1b392, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- *id001
+- &id002 {name: 🇭🇰 CN中转|香港① - 夜光云 BLUECLOUD, server: hk2.cloudbb.loan, port: 443, type: vmess, uuid: 1992e74b-f3ee-31d0-a90c-55b997d5f822, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hk2.cloudbb.loan}}, udp: true}
+- &id003 {name: 🇭🇰 CN中转|香港② - 夜光云 BLUECLOUD, server: hk3.cloudbb.cyou, port: 443, type: vmess, uuid: 1992e74b-f3ee-31d0-a90c-55b997d5f822, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hk3.cloudbb.cyou}}, udp: true}
+- &id004 {name: 🇭🇰 CN中转|香港③ - 夜光云 BLUECLOUD, server: hkdmift6.cloudbb.loan, port: 443, type: vmess, uuid: 1992e74b-f3ee-31d0-a90c-55b997d5f822, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hkdmift6.cloudbb.loan}}, udp: true}
+- &id005 {name: 🇭🇰 CN中转|香港④ - 夜光云 BLUECLOUD, server: hkdmit8.cloudbb.loan, port: 443, type: vmess, uuid: 1992e74b-f3ee-31d0-a90c-55b997d5f822, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hkdmit8.cloudbb.loan}}, udp: true}
+- &id006 {name: 🇭🇰 CN中转|香港⑤ - 夜光云 BLUECLOUD, server: hk2.cloudbb.cyou, port: 443, type: vmess, uuid: 1992e74b-f3ee-31d0-a90c-55b997d5f822, alterId: 1, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /v2ray, headers: {Host: hk2.cloudbb.cyou}}, udp: true}
+- &id007 {name: 🇭🇰 CN高速|香港① - 夜光云 BLUECLOUD, server: hkhe02.bcloudv.cyou, port: 20897, type: trojan, password: 1992e74b-f3ee-31d0-a90c-55b997d5f822, sni: hkhe02.bcloudv.cyou, skip-cert-verify: true, udp: true}
+- &id008 {name: 🇭🇰 CN高速|香港② - 夜光云 BLUECLOUD, server: hkhe03.bcloudv.cyou, port: 20001, type: trojan, password: 1992e74b-f3ee-31d0-a90c-55b997d5f822, sni: hkhe03.bcloudv.cyou, skip-cert-verify: true, udp: true}
+- &id009 {name: 🇭🇰 CN高速|香港③ - 夜光云 BLUECLOUD, server: any3017.bcloud.cyou, port: 20001, type: trojan, password: 1992e74b-f3ee-31d0-a90c-55b997d5f822, sni: any3017.bcloud.cyou, skip-cert-verify: true, udp: true}
+- &id010 {name: 🇭🇰 CN高速|香港④ - 夜光云 BLUECLOUD, server: hkdmit7.cloudbb.loan, port: 20005, type: trojan, password: 1992e74b-f3ee-31d0-a90c-55b997d5f822, sni: hkdmit7.cloudbb.loan, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 香港IEPL - 红杏云, server: 110.242.74.102, port: 10001, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
+- {name: 🇭🇰 香港Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25116, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hk1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 香港-极速一 - 悟空, server: rybdphiledo.stpikit.com, port: 27090, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hkbgp1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
+- *id001
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+- *id007
+- *id008
+- *id009
+- *id010
+- *id011
+- *id012
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+- *id007
+- *id008
+- *id009
+- *id010
+- &id023 {name: 🇭🇰 香港-中转-1 - AirBuddy Rocket, server: gd1.ddns.argonode.men, port: 15531, type: trojan, password: 0f838b5f-4505-4f35-a49c-3f46fbcdd855, sni: hk1.argonode.men, skip-cert-verify: true, udp: true}
+- &id024 {name: 🇭🇰 香港-中转-2 - AirBuddy Rocket, server: gd1.ddns.argonode.men, port: 15530, type: trojan, password: 0f838b5f-4505-4f35-a49c-3f46fbcdd855, sni: hk1.argonode.men, skip-cert-verify: true, udp: true}
+- *id001
+- {name: 🇭🇰 V港HK7 - 拓扑门topman8848.com, server: v7.toppp.cc, port: 42107, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: '🇭🇰 ipv6港HK12[手机流量可用] - 拓扑门topman8848.com', server: v12.toppp.cc, port: 42112, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 V1 | 香港1 - Bingo加速, server: hk91.appmimi.com, port: 49011, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港2 - Bingo加速, server: hk92.appmimi.com, port: 49012, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港3 - Bingo加速, server: hk93.appmimi.com, port: 49013, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港4 - Bingo加速, server: hk94.appmimi.com, port: 49014, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港5 - Bingo加速, server: hk95.appmimi.com, port: 49015, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港6 - Bingo加速, server: hk96.appmimi.com, port: 49016, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港7 - Bingo加速, server: hk97.appmimi.com, port: 49017, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港8 - Bingo加速, server: hk98.appmimi.com, port: 49018, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港9 - Bingo加速, server: 151.242.182.240, port: 49019, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- {name: 🇭🇰 V1 | 香港10 - Bingo加速, server: hk9a.appmimi.com, port: 49020, type: ss, cipher: aes-256-gcm, password: 0f0c41d8-02ff-4ab0-bf42-d6d7fdd03a10, udp: true}
+- *id011
+- *id012
+- {name: 🇭🇰 香港2 - OurFast, server: node4.ourfast.asia, port: 443, type: vmess, uuid: 9a088a93-5447-44d5-8e1b-63ab370281f2, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: node4.ourfast.asia, network: ws, ws-opts: {path: /, headers: {Host: node4.ourfast.asia}}, udp: true}
+- &id033 {name: 🇭🇰 专线A1-香港2-极纯家宽IP支持Cityline流媒体全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 27502, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
+- &id034 {name: 🇭🇰 专线A1-香港3-极纯家宽IP支持Cityline流媒体全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 49642, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
+- &id035 {name: 🇭🇰 专线A1-香港4-极纯家宽IP支持Cityline流媒体全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 6740, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
+- &id039 {name: 🇭🇰 香港②一优化 - tuboshu.io|土拨鼠.co, server: yresdc3fjfg.raspn.cn, port: 18820, type: vmess, uuid: 3f464c5d-5fa1-31d9-bc36-4374016046d3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: ixigua.com, network: ws, ws-opts: {path: /, headers: {Host: ixigua.com}}, udp: true}
+- &id040 {name: 🇭🇰 香港③一优化 - tuboshu.io|土拨鼠.co, server: yresdc3fjfg.raspn.cn, port: 18838, type: vmess, uuid: 3f464c5d-5fa1-31d9-bc36-4374016046d3, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: ixigua.com, network: ws, ws-opts: {path: /, headers: {Host: ixigua.com}}, udp: true}
+- &id038 {name: 🇭🇰 香港IEPL - Candytally（糖果云）, server: 110.242.74.102, port: 10001, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
+- &id031 {name: 🇭🇰 ss | 香港 | 1 - 云猫加速, server: yhk21.ncybk.app, port: 38941, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- &id032 {name: 🇭🇰 ss | 香港 | 2 - 云猫加速, server: yhk22.ncybk.app, port: 38029, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
+- {name: 🇭🇰 ss | 香港 | 1 - 火箭加速, server: xhk21.ncybk.app, port: 31509, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇭🇰 ss | 香港 | 2 - 火箭加速, server: xhk22.ncybk.app, port: 33571, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: 🇭🇰 ss | 香港 | 3 - 火箭加速, server: xhk23.ncybk.app, port: 39483, type: ss, cipher: aes-256-gcm, password: YLRZmSqGFXSylhg7, udp: true}
+- {name: '[泡泡] [加速器] 🇭🇰香港01 - 泡泡全球', server: chengbai02.ascwt179.com, port: 13223, type: ss, cipher: aes-128-gcm, password: JVrsLLN1tkN8oXZO, plugin: obfs, plugin-opts: {mode: http, host: ''}, udp: true}
+- *id001
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+- *id007
+- *id008
+- *id009
+- *id010
+- {name: '🇭🇰 [vmess]香港测试vmess - PS66', server: site03.ps66.uk, port: 58089, type: vmess, uuid: da925bdd-d420-4b6c-9fe5-2b63c19f9a64, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /edu, headers: {Host: site03.ps66.uk}}, udp: true}
+- *id013
+- *id014
+- *id015
+- *id016
+- *id017
+- *id018
+- *id019
+- *id020
+- *id021
+- *id022
+- {name: 🇭🇰 香港代理01 - 美心TG, server: hkt.karyl.cc, port: 40404, type: socks5, username: f50e440a-7098-486a-aea5-ce288608e2d2, password: f50e440a-7098-486a-aea5-ce288608e2d2, skip-cert-verify: true, udp: true}
+- {name: 🇭🇰 香港代理02 - 美心TG, server: hkt.karyl.cc, port: 40404, type: socks5, username: f50e440a-7098-486a-aea5-ce288608e2d2, password: f50e440a-7098-486a-aea5-ce288608e2d2, skip-cert-verify: true, udp: true}
+- *id023
+- *id024
+- *id023
+- *id024
+- *id025
+- *id026
+- *id027
+- *id028
+- *id029
+- *id030
+- *id031
+- *id032
+- {name: 🇭🇰 A2-香港-01节点 - 方舟加速器, server: hkcdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-hk.202014.xyz}}, udp: true}
+- {name: 🇭🇰 A2-香港-02节点 - 方舟加速器, server: hkcdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-hk02.202014.xyz}}, udp: true}
+- {name: 🇭🇰 A2-香港-03节点 - 方舟加速器, server: hkcdn.fzcloud.xyz, port: 443, type: vmess, uuid: 40948bc6-24b3-3da7-bb58-8fa49923aab3, alterId: 2, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /download, headers: {Host: cdn-hk03.202014.xyz}}, udp: true}
+- *id031
+- *id032
+- *id033
+- *id034
+- *id035
+- &id036 {name: 🇭🇰 香港-1 - 萌猫加速, server: mhk13.ncybk.app, port: 44632, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- &id037 {name: 🇭🇰 香港-2 - 萌猫加速, server: mhk12.ncybk.app, port: 46482, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
+- *id023
+- *id024
+- *id023
+- *id024
+- *id036
+- *id037
+- {name: 🇭🇰 ★网站最新域名tomatobay.cc - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 ★在线客服永不失联tmtbcloud.top - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 有更多地区节点需求，请联系客服 - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: '🇭🇰 TG客服: tomatobaybot - Tomatobay番茄港', server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 TG群组：tmtbgood - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 7ba2f00e-33d8-4ee4-b040-a1605418da1f, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- *id036
+- *id037
+- {name: 🇭🇰 HK000 香港 低保慢速节点 升级请买官网套餐 永久官网地址 nova.live 需要翻墙 - NovaLive, server: 103.219.195.108, port: 447, type: trojan, password: 429a82cd-2a6e-3dfd-91af-b3c99f973404, sni: fastly.cdn.steampipe.steamcontent.com, skip-cert-verify: true, udp: true}
+- *id038
+- {name: 🇭🇰 试用节点-香港 - 巨人坤场vpn(超稳定), server: jry.izenny.com, port: 26535, type: ss, cipher: chacha20-ietf-poly1305, password: 6b02652d-2534-444f-8c63-19fbb31f251a, udp: true}
+- *id039
+- *id040
