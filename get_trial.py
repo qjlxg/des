@@ -9,7 +9,7 @@ from apis import PanelSession, TempEmail, guess_panel, panel_class_map
 from subconverter import gen_base64_and_clash_config, get
 from utils import (clear_files, g0, keep, list_file_paths, list_folder_paths,
                    rand_id, read, read_cfg, remove, size2str, str2timestamp,
-                   timestamp2str, to_zero, write, write_cfg)
+                   timestamp2str, to_zero, write, write_cfg, str2size)
 
 
 def get_sub(session: PanelSession, opt: dict, cache: dict[str, list[str]]):
@@ -411,5 +411,23 @@ if __name__ == '__main__':
     )
 
     print('总节点数', total_node_n)
+
+    # 排序逻辑：将有 sub_info 的排在前面，并按剩余流量和过期时间降序排列
+    def get_sort_key(host):
+        c = cache.get(host, {})
+        if 'sub_info' not in c:
+            return (0, 0, 0)
+        try:
+            # 剩余流量 = 总 - 已用
+            remain = str2size(c['sub_info'][1]) - str2size(c['sub_info'][0])
+            expire = c['sub_info'][2]
+            # 时间戳处理
+            ts = 4102416000 if expire == '永不过期' else str2timestamp(expire)
+            return (1, remain, ts)
+        except:
+            return (0, 0, 0)
+
+    sorted_hosts = sorted(cache.keys(), key=get_sort_key, reverse=True)
+    cache = {h: cache[h] for h in sorted_hosts}
 
     write_cfg('trial.cache', cache)
