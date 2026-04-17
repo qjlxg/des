@@ -1,0 +1,17 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇰🇷 cn1韩国|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.8888888888.sbs, port: 18999, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇰🇷 cn2韩国|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 18999, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇲🇲 cn1缅甸|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.8888888888.sbs, port: 28889, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇲🇲 cn2缅甸|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 28889, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇲🇾 cn1马来西亚|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.8888888888.sbs, port: 25595, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇲🇾 cn2马来西亚|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 25595, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇮🇳 cn1印度|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.8888888888.sbs, port: 19988, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇮🇳 cn2印度|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 19988, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇬🇧 cn1英国|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.8888888888.sbs, port: 28899, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇬🇧 cn2英国|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 28899, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇹🇷 cn1土耳其|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.haofast.cloud, port: 25999, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇹🇷 cn2土耳其|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 25999, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇩🇪 cn1德国|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.8888888888.sbs, port: 16999, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
+- {name: 🇩🇪 cn2德国|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 16999, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
