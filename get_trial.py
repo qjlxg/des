@@ -11,7 +11,7 @@ from utils import (clear_files, g0, keep, list_file_paths, list_folder_paths,
                    rand_id, read, read_cfg, remove, size2str, str2timestamp,
                    timestamp2str, to_zero, write, write_cfg)
 
-# ... (保持 get_sub, should_turn, _register, _get_email_and_email_code 逻辑不变)
+
 def get_sub(session: PanelSession, opt: dict, cache: dict[str, list[str]]):
     url = cache['sub_url'][0]
     suffix = ' - ' + g0(cache, 'name')
@@ -82,7 +82,7 @@ def _get_email_and_email_code(kwargs, session: PanelSession, opt: dict, cache: d
         kwargs['email_code'] = email_code
         return email
 
-# ... (保持 register, is_checkin, try_checkin, try_buy, do_turn 逻辑不变)
+
 def register(session: PanelSession, opt: dict, cache: dict[str, list[str]], log: list) -> bool:
     kwargs = keep(opt, 'name_eq_email', 'reg_fmt', 'aff')
 
@@ -252,7 +252,6 @@ def do_turn(session: PanelSession, opt: dict, cache: dict[str, list[str]], log: 
     log.append(f'{"更新订阅链接(新注册)" if is_new_reg else "续费续签"}({session.host}) {cache["sub_url"][0]}')
 
 
-# ... (保持 try_turn, cache_sub_info, save_sub_base64_and_clash, save_sub, get_and_save, new_panel_session, get_trial 不变)
 def try_turn(session: PanelSession, opt: dict, cache: dict[str, list[str]], log: list):
     cache.pop('更新旧订阅失败', None)
     cache.pop('更新订阅链接/续费续签失败', None)
@@ -372,12 +371,7 @@ if __name__ == '__main__':
         remove('trial.cache')
         write('.github/repo_get_trial', cur_repo)
 
-    # 修改部分：从 urls.txt 读取，而不是从 trial.cfg 读取
-    if os.path.exists('urls.txt'):
-        urls_content = read('urls.txt').splitlines()
-        cfg = [[line.strip()] for line in urls_content if line.strip()]
-    else:
-        cfg = []
+    cfg = read_cfg('trial.cfg')['default']
 
     opt = build_options(cfg)
 
