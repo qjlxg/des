@@ -1,5 +1,5 @@
 import os
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import timedelta
 from random import choice, randint
 from time import time
@@ -357,11 +357,7 @@ def get_trial(host, opt: dict, cache: dict[str, list[str]]):
 
 
 def build_options(cfg):
-    opt = {
-        host: dict(zip(opt[::2], opt[1::2]))
-        for host, *opt in cfg
-    }
-    return opt
+    return {host: dict(zip(opt[::2], opt[1::2])) for host, *opt in cfg}
 
 
 if __name__ == '__main__':
@@ -371,10 +367,21 @@ if __name__ == '__main__':
         remove('trial.cache')
         write('.github/repo_get_trial', cur_repo)
 
-    cfg = read_cfg('trial.cfg')['default']
+    # 关键逻辑：从 urls.txt 读取网址，支持万级任务
+    cfg = []
+    if os.path.exists('urls.txt'):
+        with open('urls.txt', 'r', encoding='utf-8') as f:
+            for line in f:
+                u = line.strip()
+                if u:
+                    cfg.append([u])
+    else:
+        try:
+            cfg = read_cfg('trial.cfg')['default']
+        except:
+            cfg = []
 
     opt = build_options(cfg)
-
     cache = read_cfg('trial.cache', dict_items=True)
 
     for host in [*cache]:
@@ -396,11 +403,16 @@ if __name__ == '__main__':
             clear_files(path)
             remove(path)
 
-    with ThreadPoolExecutor(32) as executor:
-        args = [(h, opt[h], cache[h]) for h, *_ in cfg]
-        for log in executor.map(get_trial, *zip(*args)):
-            for line in log:
-                print(line)
+    # 优化点：线程数提升至 100，使用 as_completed 模式，哪个快跑哪个，不阻塞队列
+    with ThreadPoolExecutor(max_workers=100) as executor:
+        futures = {executor.submit(get_trial, h, opt[h], cache.get(h, {})): h for h in opt}
+        for future in as_completed(futures):
+            try:
+                log = future.result()
+                for line in log:
+                    print(line)
+            except:
+                pass
 
     total_node_n = gen_base64_and_clash_config(
         base64_path='trial',
@@ -418,10 +430,8 @@ if __name__ == '__main__':
         if 'sub_info' not in c:
             return (0, 0, 0)
         try:
-            # 剩余流量 = 总 - 已用
             remain = str2size(c['sub_info'][1]) - str2size(c['sub_info'][0])
             expire = c['sub_info'][2]
-            # 时间戳处理
             ts = 4102416000 if expire == '永不过期' else str2timestamp(expire)
             return (1, remain, ts)
         except:
