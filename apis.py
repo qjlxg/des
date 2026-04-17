@@ -951,7 +951,6 @@ def temp_email_domain_to_session_type(domain: str = None) -> dict[str, type[Temp
             print(f'获取 {session_type.__name__} 域名失败: {e}')
         return session_type, domains
 
-    # 使用 parallel_map 已经具备一定的并发能力，保持其逻辑
     return {d: s for s, ds in parallel_map(fn, session_types) for d in ds}
 
 
@@ -984,7 +983,8 @@ class TempEmail:
             self.__queues.append((keyword, queue, time() + timeout))
             if not hasattr(self, f'_{TempEmail.__name__}__th'):
                 self.__th = Thread(target=self.__run)
-                self.__th.daemon = True # 优化：设置为守护线程，随主线程快速退出
+                # 优化：设置为守护线程，随主线程快速退出
+                self.__th.daemon = True
                 self.__th.start()
         return queue.get()
 
