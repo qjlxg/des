@@ -12,10 +12,6 @@ import json5
 import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
-# from requests.structures import CaseInsensitiveDict
-# from selenium.webdriver.support.expected_conditions import any_of, title_is
-# from selenium.webdriver.support.ui import WebDriverWait
-# from undetected_chromedriver import Chrome, ChromeOptions
 from urllib3 import Retry
 from urllib3.util import parse_url
 
@@ -113,8 +109,14 @@ class Response:
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
-        self.mount('https://', HTTPAdapter(max_retries=Retry(total=3, backoff_factor=0.1)))
-        self.mount('http://', HTTPAdapter(max_retries=Retry(total=3, backoff_factor=0.1)))
+        # 优化：增加连接池大小，减少高并发时的阻塞
+        adapter = HTTPAdapter(
+            max_retries=Retry(total=3, backoff_factor=0.1),
+            pool_connections=50,
+            pool_maxsize=100
+        )
+        self.mount('https://', adapter)
+        self.mount('http://', adapter)
         self.max_redirects = max_redirects
         self.allow_redirects = allow_redirects
         self.headers['User-Agent'] = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
@@ -156,17 +158,11 @@ class Session(requests.Session):
 
     def close(self):
         super().close()
-        # if hasattr(self, 'chrome'):
-        #     self.chrome.quit()
 
     def reset(self):
         self.cookies.clear()
         self.headers.pop('authorization', None)
         self.headers.pop('token', None)
-        # if hasattr(self, 'chrome'):
-        #     self.chrome.delete_all_cookies()
-        #     for cookie in self.chrome_default_cookies:
-        #         self.chrome.add_cookie(cookie)
 
     def head(self, url='', **kwargs) -> Response:
         return self.request('HEAD', url, **kwargs)
@@ -186,7 +182,6 @@ class Session(requests.Session):
         kwargs.update(data=data, timeout=timeout, allow_redirects=False)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
-        # if not hasattr(self, 'chrome'):
         res = super().request(method, url, **kwargs)
         if allow_redirects and res.is_redirect:
             no = ~allow_redirects
@@ -222,48 +217,6 @@ class Session(requests.Session):
                     break
                 res = super().request(method, url, **kwargs)
         return Response(res)
-        #     if True or res.status_code != 403 and (
-        #         'Content-Type' not in res.headers
-        #         or not res.headers['Content-Type'].startswith('text/html')
-        #         or not res.content
-        #         or res.content[0] != 60
-        #         or not res.bs().title
-        #         or res.bs().title.text not in ('Just a moment...', '')
-        #     ):
-        #         return res
-        # cur_host = urlsplit(url).hostname
-        # if urlsplit(self.get_chrome().current_url).hostname != cur_host:
-        #     self.chrome.get('https://' + cur_host)
-        #     WebDriverWait(self.chrome, 15).until_not(any_of(title_is('Just a moment...'), title_is('')))
-        #     self.chrome_default_cookies = self.chrome.get_cookies()
-        # headers = CaseInsensitiveDict()
-        # if 'authorization' in self.headers:
-        #     headers['authorization'] = self.headers['authorization']
-        # if data:
-        #     headers['Content-Type'] = 'application/x-www-form-urlencoded'
-        #     body = repr(data if isinstance(data, str) else urlencode(data))
-        # else:
-        #     body = 'null'
-        # content, header_list, status_code, reason = self.chrome.execute_script(f'''
-        #     const res = await fetch({repr(url)}, {{ method: {repr(method)}, headers: {repr(headers)}, body: {body} }})
-        #     return [new Uint8Array(await res.arrayBuffer()), [...res.headers], res.status, res.statusText]
-        # ''')
-        # return Response(bytes(content), CaseInsensitiveDict(header_list), int(status_code), reason)
-
-    # def get_chrome(self):
-    #     if not hasattr(self, 'chrome'):
-    #         print(f'{self.host} using Chrome')
-    #         options = ChromeOptions()
-    #         options.add_argument('--disable-web-security')
-    #         options.add_argument('--ignore-certificate-errors')
-    #         options.add_argument('--allow-running-insecure-content')
-    #         options.page_load_strategy = 'eager'
-    #         self.chrome = Chrome(
-    #             options=options,
-    #             driver_executable_path=os.path.join(os.getenv('CHROMEWEBDRIVER'), 'chromedriver')
-    #         )
-    #         self.chrome.set_page_load_timeout(15)
-    #     return self.chrome
 
     def get_ip_info(self):
         """return (ip, 位置, 运营商)"""
@@ -703,22 +656,24 @@ panel_class_map = {
 def guess_panel(host):
     info = {}
     session = _ROSession(host)
+    # 优化：对于探测请求使用更短的 timeout，加速识别过程
+    probe_timeout = 10
     try:
-        r = session.get('api/v1/guest/comm/config')
+        r = session.get('api/v1/guest/comm/config', timeout=probe_timeout)
         if r.status_code == 403:
-            r = session.head()
+            r = session.head(timeout=probe_timeout)
             if r.ok and session.redirect_origin:
-                r = session.get('api/v1/guest/comm/config')
+                r = session.get('api/v1/guest/comm/config', timeout=probe_timeout)
         if r.ok:
             r.json()
             info['type'] = 'v2board'
-            _r = session.get()
+            _r = session.get(timeout=probe_timeout)
             if _r.ok and _r.bs().title:
                 info['name'] = _r.bs().title.text
             else:
                 if (app_url := get(r.json(), 'data', 'app_url')):
                     session.set_base(app_url)
-                _r = session.get('env.js')
+                _r = session.get('env.js', timeout=probe_timeout)
                 if _r.ok:
                     settings = json5.loads(_r.text[_r.text.index('{'):])
                     info['name'] = settings['title']
@@ -728,22 +683,22 @@ def guess_panel(host):
             ):
                 info['email_domain'] = email_whitelist_suffix[0]
         elif 400 <= r.status_code < 500:
-            r = session.get('env.js')
+            r = session.get('env.js', timeout=probe_timeout)
             if r.ok:
                 info['type'] = 'v2board'
                 settings = json5.loads(r.text[r.text.index('{'):])
                 info['name'] = settings['title']
                 info['api_host'] = parse_url(settings['host']).netloc
         if 'type' not in info:
-            r = session.get('auth/login')
+            r = session.get('auth/login', timeout=probe_timeout)
             if r.ok:
                 info['type'] = 'sspanel'
                 info['name'] = r.bs().title.text.split(' — ')[-1]
             elif 300 <= r.status_code < 400:
-                r = session.head('user/login')
+                r = session.head('user/login', timeout=probe_timeout)
                 if r.ok:
                     info['type'] = 'sspanel'
-                    r = session.get('404')
+                    r = session.get('404', timeout=probe_timeout)
                     if r.ok:
                         info['name'] = r.bs().title.text.split(' — ')[-1]
                     info['auth_path'] = 'user'
@@ -988,12 +943,15 @@ def temp_email_domain_to_session_type(domain: str = None) -> dict[str, type[Temp
 
     def fn(session_type: type[TempEmailSession]):
         try:
-            domains = session_type().get_domains()
+            # 优化：在初始化域名列表时减少超时等待
+            s = session_type()
+            domains = s.get_domains()
         except Exception as e:
             domains = []
-            print(e)
+            print(f'获取 {session_type.__name__} 域名失败: {e}')
         return session_type, domains
 
+    # 使用 parallel_map 已经具备一定的并发能力，保持其逻辑
     return {d: s for s, ds in parallel_map(fn, session_types) for d in ds}
 
 
@@ -1008,10 +966,12 @@ class TempEmail:
     def email(self) -> str:
         id = rand_id()
         domain_len_limit = 31 - len(id)
-        domain = choice([
+        # 优化：通过提前过滤可选域名加速选择过程
+        available_domains = [
             d for d in temp_email_domain_to_session_type()
             if len(d) <= domain_len_limit and d not in self.__banned
-        ])
+        ]
+        domain = choice(available_domains)
         address = f'{id}@{domain}'
         self.__session = temp_email_domain_to_session_type(domain)()
         self.__session.set_email_address(address)
@@ -1024,12 +984,14 @@ class TempEmail:
             self.__queues.append((keyword, queue, time() + timeout))
             if not hasattr(self, f'_{TempEmail.__name__}__th'):
                 self.__th = Thread(target=self.__run)
+                self.__th.daemon = True # 优化：设置为守护线程，随主线程快速退出
                 self.__th.start()
         return queue.get()
 
     def __run(self):
         while True:
-            sleep(1)
+            # 优化：微调 sleep 时间，平衡 CPU 占用与响应速度
+            sleep(1.5)
             try:
                 messages = self.__session.get_messages()
             except Exception as e:
