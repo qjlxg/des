@@ -1,5 +1,5 @@
 import os
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor
 from datetime import timedelta
 from random import choice, randint
 from time import time
@@ -9,7 +9,7 @@ from apis import PanelSession, TempEmail, guess_panel, panel_class_map
 from subconverter import gen_base64_and_clash_config, get
 from utils import (clear_files, g0, keep, list_file_paths, list_folder_paths,
                    rand_id, read, read_cfg, remove, size2str, str2timestamp,
-                   timestamp2str, to_zero, write, write_cfg, str2size)
+                   timestamp2str, to_zero, write, write_cfg)
 
 
 def get_sub(session: PanelSession, opt: dict, cache: dict[str, list[str]]):
@@ -357,7 +357,11 @@ def get_trial(host, opt: dict, cache: dict[str, list[str]]):
 
 
 def build_options(cfg):
-    return {host: dict(zip(opt[::2], opt[1::2])) for host, *opt in cfg}
+    opt = {
+        host: dict(zip(opt[::2], opt[1::2]))
+        for host, *opt in cfg
+    }
+    return opt
 
 
 if __name__ == '__main__':
@@ -367,21 +371,17 @@ if __name__ == '__main__':
         remove('trial.cache')
         write('.github/repo_get_trial', cur_repo)
 
-    # 关键逻辑：从 urls.txt 读取网址，支持万级任务
+    # 修改部分：从 urls.txt 读取配置
     cfg = []
     if os.path.exists('urls.txt'):
         with open('urls.txt', 'r', encoding='utf-8') as f:
             for line in f:
-                u = line.strip()
-                if u:
-                    cfg.append([u])
-    else:
-        try:
-            cfg = read_cfg('trial.cfg')['default']
-        except:
-            cfg = []
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    cfg.append(line.split())
 
     opt = build_options(cfg)
+
     cache = read_cfg('trial.cache', dict_items=True)
 
     for host in [*cache]:
@@ -403,16 +403,11 @@ if __name__ == '__main__':
             clear_files(path)
             remove(path)
 
-    # 优化点：线程数提升至 100，使用 as_completed 模式，哪个快跑哪个，不阻塞队列
-    with ThreadPoolExecutor(max_workers=100) as executor:
-        futures = {executor.submit(get_trial, h, opt[h], cache.get(h, {})): h for h in opt}
-        for future in as_completed(futures):
-            try:
-                log = future.result()
-                for line in log:
-                    print(line)
-            except:
-                pass
+    with ThreadPoolExecutor(32) as executor:
+        args = [(h, opt[h], cache[h]) for h, *_ in cfg]
+        for log in executor.map(get_trial, *zip(*args)):
+            for line in log:
+                print(line)
 
     total_node_n = gen_base64_and_clash_config(
         base64_path='trial',
@@ -423,21 +418,5 @@ if __name__ == '__main__':
     )
 
     print('总节点数', total_node_n)
-
-    # 排序逻辑：将有 sub_info 的排在前面，并按剩余流量和过期时间降序排列
-    def get_sort_key(host):
-        c = cache.get(host, {})
-        if 'sub_info' not in c:
-            return (0, 0, 0)
-        try:
-            remain = str2size(c['sub_info'][1]) - str2size(c['sub_info'][0])
-            expire = c['sub_info'][2]
-            ts = 4102416000 if expire == '永不过期' else str2timestamp(expire)
-            return (1, remain, ts)
-        except:
-            return (0, 0, 0)
-
-    sorted_hosts = sorted(cache.keys(), key=get_sort_key, reverse=True)
-    cache = {h: cache[h] for h in sorted_hosts}
 
     write_cfg('trial.cache', cache)
