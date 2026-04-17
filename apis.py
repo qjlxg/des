@@ -109,11 +109,11 @@ class Response:
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
-        # 优化：增加连接池大小，减少高并发时的阻塞
+        # 优化点：极大增加连接池大小，应对上万网址并发
         adapter = HTTPAdapter(
-            max_retries=Retry(total=3, backoff_factor=0.1),
-            pool_connections=50,
-            pool_maxsize=100
+            max_retries=Retry(total=2, backoff_factor=0.1),
+            pool_connections=200, 
+            pool_maxsize=1000
         )
         self.mount('https://', adapter)
         self.mount('http://', adapter)
@@ -176,7 +176,7 @@ class Session(requests.Session):
     def put(self, url='', data=None, **kwargs) -> Response:
         return self.request('PUT', url, data, **kwargs)
 
-    def request(self, method: str, url: str = '', data=None, timeout=30, allow_redirects=None, **kwargs):
+    def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
         kwargs.update(data=data, timeout=timeout, allow_redirects=False)
@@ -192,7 +192,7 @@ class Session(requests.Session):
                 if res.is_redirect:
                     i += 1
                     if i > self.max_redirects:
-                        raise requests.TooManyRedirects(f'重定向次数超过 {self.max_redirects} 次')
+                        break
                     new_url = urljoin(url, res.headers['Location'])
                     if url == new_url:
                         if no & REDIRECT_TO_GET:
@@ -656,8 +656,8 @@ panel_class_map = {
 def guess_panel(host):
     info = {}
     session = _ROSession(host)
-    # 优化：对于探测请求使用更短的 timeout，加速识别过程
-    probe_timeout = 10
+    # 核心优化：探测超时压缩至 3秒，防止因非机场站点卡死
+    probe_timeout = 3
     try:
         r = session.get('api/v1/guest/comm/config', timeout=probe_timeout)
         if r.status_code == 403:
@@ -665,47 +665,31 @@ def guess_panel(host):
             if r.ok and session.redirect_origin:
                 r = session.get('api/v1/guest/comm/config', timeout=probe_timeout)
         if r.ok:
-            r.json()
-            info['type'] = 'v2board'
-            _r = session.get(timeout=probe_timeout)
-            if _r.ok and _r.bs().title:
-                info['name'] = _r.bs().title.text
-            else:
-                if (app_url := get(r.json(), 'data', 'app_url')):
-                    session.set_base(app_url)
-                _r = session.get('env.js', timeout=probe_timeout)
-                if _r.ok:
-                    settings = json5.loads(_r.text[_r.text.index('{'):])
-                    info['name'] = settings['title']
-            if (
-                (email_whitelist_suffix := get(r.json(), 'data', 'email_whitelist_suffix'))
-                and not ('gmail.com' in email_whitelist_suffix or 'qq.com' in email_whitelist_suffix)
-            ):
-                info['email_domain'] = email_whitelist_suffix[0]
-        elif 400 <= r.status_code < 500:
-            r = session.get('env.js', timeout=probe_timeout)
-            if r.ok:
+            try:
+                js = r.json()
                 info['type'] = 'v2board'
-                settings = json5.loads(r.text[r.text.index('{'):])
-                info['name'] = settings['title']
-                info['api_host'] = parse_url(settings['host']).netloc
+                _r = session.get(timeout=probe_timeout)
+                if _r.ok and _r.bs().title:
+                    info['name'] = _r.bs().title.text
+                if (suffix := js.get('data', {}).get('email_whitelist_suffix')) and not ('gmail.com' in suffix or 'qq.com' in suffix):
+                    info['email_domain'] = suffix[0]
+            except:
+                pass
         if 'type' not in info:
             r = session.get('auth/login', timeout=probe_timeout)
             if r.ok:
                 info['type'] = 'sspanel'
-                info['name'] = r.bs().title.text.split(' — ')[-1]
+                if r.bs().title:
+                    info['name'] = r.bs().title.text.split(' — ')[-1]
             elif 300 <= r.status_code < 400:
                 r = session.head('user/login', timeout=probe_timeout)
                 if r.ok:
                     info['type'] = 'sspanel'
-                    r = session.get('404', timeout=probe_timeout)
-                    if r.ok:
-                        info['name'] = r.bs().title.text.split(' — ')[-1]
                     info['auth_path'] = 'user'
         if 'api_host' not in info and session.redirect_origin:
             info['api_host'] = session.host
     except Exception as e:
-        info['error'] = e
+        pass
     return info
 
 
@@ -943,15 +927,12 @@ def temp_email_domain_to_session_type(domain: str = None) -> dict[str, type[Temp
 
     def fn(session_type: type[TempEmailSession]):
         try:
-            # 优化：在初始化域名列表时减少超时等待
             s = session_type()
             domains = s.get_domains()
         except Exception as e:
             domains = []
-            print(f'获取 {session_type.__name__} 域名失败: {e}')
         return session_type, domains
 
-    # 使用 parallel_map 已经具备一定的并发能力，保持其逻辑
     return {d: s for s, ds in parallel_map(fn, session_types) for d in ds}
 
 
@@ -966,7 +947,6 @@ class TempEmail:
     def email(self) -> str:
         id = rand_id()
         domain_len_limit = 31 - len(id)
-        # 优化：通过提前过滤可选域名加速选择过程
         available_domains = [
             d for d in temp_email_domain_to_session_type()
             if len(d) <= domain_len_limit and d not in self.__banned
@@ -975,7 +955,6 @@ class TempEmail:
         address = f'{id}@{domain}'
         self.__session = temp_email_domain_to_session_type(domain)()
         self.__session.set_email_address(address)
-        del self.__banned
         return address
 
     def get_email_code(self, keyword, timeout=60) -> str | None:
@@ -984,19 +963,17 @@ class TempEmail:
             self.__queues.append((keyword, queue, time() + timeout))
             if not hasattr(self, f'_{TempEmail.__name__}__th'):
                 self.__th = Thread(target=self.__run)
-                self.__th.daemon = True # 优化：设置为守护线程，随主线程快速退出
+                self.__th.daemon = True
                 self.__th.start()
         return queue.get()
 
     def __run(self):
         while True:
-            # 优化：微调 sleep 时间，平衡 CPU 占用与响应速度
             sleep(1.5)
             try:
                 messages = self.__session.get_messages()
             except Exception as e:
                 messages = []
-                print(f'TempEmail.__run: {e}')
             with self.__lock:
                 new_len = 0
                 for item in self.__queues:
