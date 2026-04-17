@@ -222,48 +222,6 @@ class Session(requests.Session):
                     break
                 res = super().request(method, url, **kwargs)
         return Response(res)
-        #     if True or res.status_code != 403 and (
-        #         'Content-Type' not in res.headers
-        #         or not res.headers['Content-Type'].startswith('text/html')
-        #         or not res.content
-        #         or res.content[0] != 60
-        #         or not res.bs().title
-        #         or res.bs().title.text not in ('Just a moment...', '')
-        #     ):
-        #         return res
-        # cur_host = urlsplit(url).hostname
-        # if urlsplit(self.get_chrome().current_url).hostname != cur_host:
-        #     self.chrome.get('https://' + cur_host)
-        #     WebDriverWait(self.chrome, 15).until_not(any_of(title_is('Just a moment...'), title_is('')))
-        #     self.chrome_default_cookies = self.chrome.get_cookies()
-        # headers = CaseInsensitiveDict()
-        # if 'authorization' in self.headers:
-        #     headers['authorization'] = self.headers['authorization']
-        # if data:
-        #     headers['Content-Type'] = 'application/x-www-form-urlencoded'
-        #     body = repr(data if isinstance(data, str) else urlencode(data))
-        # else:
-        #     body = 'null'
-        # content, header_list, status_code, reason = self.chrome.execute_script(f'''
-        #     const res = await fetch({repr(url)}, {{ method: {repr(method)}, headers: {repr(headers)}, body: {body} }})
-        #     return [new Uint8Array(await res.arrayBuffer()), [...res.headers], res.status, res.statusText]
-        # ''')
-        # return Response(bytes(content), CaseInsensitiveDict(header_list), int(status_code), reason)
-
-    # def get_chrome(self):
-    #     if not hasattr(self, 'chrome'):
-    #         print(f'{self.host} using Chrome')
-    #         options = ChromeOptions()
-    #         options.add_argument('--disable-web-security')
-    #         options.add_argument('--ignore-certificate-errors')
-    #         options.add_argument('--allow-running-insecure-content')
-    #         options.page_load_strategy = 'eager'
-    #         self.chrome = Chrome(
-    #             options=options,
-    #             driver_executable_path=os.path.join(os.getenv('CHROMEWEBDRIVER'), 'chromedriver')
-    #         )
-    #         self.chrome.set_page_load_timeout(15)
-    #     return self.chrome
 
     def get_ip_info(self):
         """return (ip, 位置, 运营商)"""
@@ -703,22 +661,23 @@ panel_class_map = {
 def guess_panel(host):
     info = {}
     session = _ROSession(host)
+    # 为探测请求增加较短的超时，防止网址过多时卡死
     try:
-        r = session.get('api/v1/guest/comm/config')
+        r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
-            r = session.head()
+            r = session.head(timeout=5)
             if r.ok and session.redirect_origin:
-                r = session.get('api/v1/guest/comm/config')
+                r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.ok:
             r.json()
             info['type'] = 'v2board'
-            _r = session.get()
+            _r = session.get(timeout=5)
             if _r.ok and _r.bs().title:
                 info['name'] = _r.bs().title.text
             else:
                 if (app_url := get(r.json(), 'data', 'app_url')):
                     session.set_base(app_url)
-                _r = session.get('env.js')
+                _r = session.get('env.js', timeout=5)
                 if _r.ok:
                     settings = json5.loads(_r.text[_r.text.index('{'):])
                     info['name'] = settings['title']
@@ -728,22 +687,22 @@ def guess_panel(host):
             ):
                 info['email_domain'] = email_whitelist_suffix[0]
         elif 400 <= r.status_code < 500:
-            r = session.get('env.js')
+            r = session.get('env.js', timeout=5)
             if r.ok:
                 info['type'] = 'v2board'
                 settings = json5.loads(r.text[r.text.index('{'):])
                 info['name'] = settings['title']
                 info['api_host'] = parse_url(settings['host']).netloc
         if 'type' not in info:
-            r = session.get('auth/login')
+            r = session.get('auth/login', timeout=5)
             if r.ok:
                 info['type'] = 'sspanel'
                 info['name'] = r.bs().title.text.split(' — ')[-1]
             elif 300 <= r.status_code < 400:
-                r = session.head('user/login')
+                r = session.head('user/login', timeout=5)
                 if r.ok:
                     info['type'] = 'sspanel'
-                    r = session.get('404')
+                    r = session.get('404', timeout=5)
                     if r.ok:
                         info['name'] = r.bs().title.text.split(' — ')[-1]
                     info['auth_path'] = 'user'
@@ -991,7 +950,7 @@ def temp_email_domain_to_session_type(domain: str = None) -> dict[str, type[Temp
             domains = session_type().get_domains()
         except Exception as e:
             domains = []
-            print(e)
+            print(f"Error in {session_type.__name__}: {e}")
         return session_type, domains
 
     return {d: s for s, ds in parallel_map(fn, session_types) for d in ds}
@@ -1023,7 +982,8 @@ class TempEmail:
         with self.__lock:
             self.__queues.append((keyword, queue, time() + timeout))
             if not hasattr(self, f'_{TempEmail.__name__}__th'):
-                self.__th = Thread(target=self.__run)
+                # 增加 daemon=True 确保主程序退出时线程能自动终止
+                self.__th = Thread(target=self.__run, daemon=True)
                 self.__th.start()
         return queue.get()
 
@@ -1040,7 +1000,8 @@ class TempEmail:
                 for item in self.__queues:
                     keyword, queue, end_time = item
                     for message in messages:
-                        if keyword in message:
+                        # 核心修复：增加 keyword 和 message 的非空校验，解决 TypeError
+                        if keyword is not None and message is not None and keyword in message:
                             m = re_email_code.search(message)
                             queue.put(m[1] if m else m)
                             break
@@ -1052,5 +1013,6 @@ class TempEmail:
                             new_len += 1
                 del self.__queues[new_len:]
                 if new_len == 0:
-                    del self.__th
+                    if hasattr(self, f'_{TempEmail.__name__}__th'):
+                        del self.__th
                     break
