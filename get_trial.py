@@ -412,32 +412,35 @@ if __name__ == '__main__':
 
     print('总节点数', total_node_n)
 
-    # --- 排序逻辑：将有 sub_info 的排在前面，并按剩余流量和过期时间降序排列 ---
+    # --- 核心修改：重新实现排序逻辑，确保有流量数据的节点在 cache 中置顶 ---
     def get_sort_key(host):
         c = cache.get(host, {})
-        # 如果没有 sub_info，权重最低
-        if 'sub_info' not in c or not isinstance(c['sub_info'], list) or len(c['sub_info']) < 3:
+        # 严格检查 sub_info 是否存在且有效
+        sub_info = c.get('sub_info')
+        if not sub_info or not isinstance(sub_info, list) or len(sub_info) < 3:
             return (0, 0, 0)
+        
         try:
-            # 剩余流量 = 总流量 - 已用流量
-            # index 0: 已用, index 1: 总量
-            remain = str2size(c['sub_info'][1]) - str2size(c['sub_info'][0])
-            
-            # 时间戳处理 (index 2: 过期时间)
-            expire_str = c['sub_info'][2]
+            # 权重1：置顶标识
+            has_data = 1
+            # 权重2：剩余流量 (str2size 将 '100G' 转换成字节数进行对比)
+            remain_val = str2size(sub_info[1]) - str2size(sub_info[0])
+            # 权重3：有效期
+            expire_str = sub_info[2]
             if expire_str == '永不过期':
-                ts = 4102416000  # 设为一个很远的未来时间戳 (2100年)
+                time_val = 4102416000 # 2100年
             else:
-                ts = str2timestamp(expire_str)
+                time_val = str2timestamp(expire_str)
             
-            # 排序元组：(是否有数据标识, 剩余流量数值, 时间戳数值)
-            return (1, remain, ts)
-        except Exception:
-            # 容错处理，解析失败则回退到最低权重
+            return (has_data, remain_val, time_val)
+        except:
             return (0, 0, 0)
 
-    # 使用 reverse=True 实现降序（大的在前）
-    sorted_hosts = sorted(cache.keys(), key=get_sort_key, reverse=True)
-    cache = {h: cache[h] for h in sorted_hosts}
-
-    write_cfg('trial.cache', cache)
+    # 对 cache.keys() 进行降序排列（大的在前）
+    # 这样 (1, 流量, 时间) 会排在 (0, 0, 0) 之前
+    sorted_keys = sorted(cache.keys(), key=get_sort_key, reverse=True)
+    
+    # 重新构建有序字典，确保 write_cfg 写入文件时顺序正确
+    new_cache = {k: cache[k] for k in sorted_keys}
+    
+    write_cfg('trial.cache', new_cache)
