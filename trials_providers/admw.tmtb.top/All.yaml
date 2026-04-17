@@ -1,8 +1,8 @@
 %YAML 1.1
 ---
 proxies:
-- {name: 🇭🇰 ★网站最新域名tomatobay.cc - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 9adccebb-0e62-4bb9-9a9e-3d4737a38803, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: 🇭🇰 ★在线客服永不失联tmtbcloud.top - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 9adccebb-0e62-4bb9-9a9e-3d4737a38803, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: 🇭🇰 有更多地区节点需求，请联系客服 - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 9adccebb-0e62-4bb9-9a9e-3d4737a38803, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: '🇭🇰 TG客服: tomatobaybot - Tomatobay番茄港', server: 1.1.1.1, port: 1000, type: vmess, uuid: 9adccebb-0e62-4bb9-9a9e-3d4737a38803, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: 🇭🇰 TG群组：tmtbgood - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 9adccebb-0e62-4bb9-9a9e-3d4737a38803, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 ★网站最新域名tomatobay.cc - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 0b447036-9299-4e70-94e3-6072a4681529, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 ★在线客服永不失联tmtbcloud.top - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 0b447036-9299-4e70-94e3-6072a4681529, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 有更多地区节点需求，请联系客服 - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 0b447036-9299-4e70-94e3-6072a4681529, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: '🇭🇰 TG客服: tomatobaybot - Tomatobay番茄港', server: 1.1.1.1, port: 1000, type: vmess, uuid: 0b447036-9299-4e70-94e3-6072a4681529, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 TG群组：tmtbgood - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 0b447036-9299-4e70-94e3-6072a4681529, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
