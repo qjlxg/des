@@ -27,25 +27,16 @@ proxy-groups:
   - REJECT
 - name: ⚡ ‍低延迟
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 30
   tolerance: 100
-  proxies: &id001
-  - 🇭🇰 香港-1 - 快捷VPN
-  - 🇭🇰 香港 - 快捷VPN
-  - 🇭🇰 香港-2 - 快捷VPN
-  - 🇭🇰 香港-3 - 快捷VPN
-  - 🇭🇰 香港-4 - 快捷VPN
-  - 🇹🇼 台湾 - 快捷VPN
-  - 🇯🇵 日本-2 - 快捷VPN
-  - 🇯🇵 日本-3 - 快捷VPN
-  - 🇯🇵 日本-4 - 快捷VPN
-  - 🇺🇸 美国 - 快捷VPN
-  - 🇨🇦 加拿大 - 快捷VPN
-  - 🇬🇧 英国 - 快捷VPN
+  use: &id001
+  - HK
+  - TW
+  - JP
+  - US
+  - Other
 - name: 👆🏻 ‍指定
   type: select
-  proxies: *id001
+  use: *id001
 - name: 🛩️ ‍墙内
   type: select
   proxies:
@@ -92,89 +83,99 @@ proxy-groups:
   - 💩 ‍广告
 - name: 🇭🇰 ‍香港
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 15
   tolerance: 100
-  proxies: &id002
-  - 🇭🇰 香港-1 - 快捷VPN
-  - 🇭🇰 香港 - 快捷VPN
-  - 🇭🇰 香港-2 - 快捷VPN
-  - 🇭🇰 香港-3 - 快捷VPN
-  - 🇭🇰 香港-4 - 快捷VPN
+  use: &id002
+  - HK
 - name: 🇹🇼 ‍台湾
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 15
   tolerance: 100
-  proxies: &id003
-  - 🇹🇼 台湾 - 快捷VPN
+  use: &id003
+  - TW
 - name: 🇨🇳 ‍中国
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 15
   tolerance: 100
-  proxies: &id004
-  - 🇭🇰 香港-1 - 快捷VPN
-  - 🇭🇰 香港 - 快捷VPN
-  - 🇭🇰 香港-2 - 快捷VPN
-  - 🇭🇰 香港-3 - 快捷VPN
-  - 🇭🇰 香港-4 - 快捷VPN
-  - 🇹🇼 台湾 - 快捷VPN
+  use: &id004
+  - HK
+  - TW
 - name: 🇯🇵 ‍日本
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 15
   tolerance: 100
-  proxies: &id005
-  - 🇯🇵 日本-2 - 快捷VPN
-  - 🇯🇵 日本-3 - 快捷VPN
-  - 🇯🇵 日本-4 - 快捷VPN
+  use: &id005
+  - JP
 - name: 🇺🇸 ‍美国
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 15
   tolerance: 300
-  proxies: &id006
-  - 🇺🇸 美国 - 快捷VPN
+  use: &id006
+  - US
 - name: 🎏 ‍其他
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 30
   tolerance: 100
-  proxies: &id007
-  - 🇨🇦 加拿大 - 快捷VPN
-  - 🇬🇧 英国 - 快捷VPN
+  use: &id007
+  - Other
 - name: 👆🏻🇭🇰 ‍香港
   type: select
-  proxies: *id002
+  use: *id002
 - name: 👆🏻🇹🇼 ‍台湾
   type: select
-  proxies: *id003
+  use: *id003
 - name: 👆🏻🇨🇳 ‍中国
   type: select
-  proxies: *id004
+  use: *id004
 - name: 👆🏻🇯🇵 ‍日本
   type: select
-  proxies: *id005
+  use: *id005
 - name: 👆🏻🇺🇸 ‍美国
   type: select
-  proxies: *id006
+  use: *id006
 - name: 👆🏻🎏 ‍其他
   type: select
-  proxies: *id007
-proxies:
-- {name: 🇺🇸 美国 - 快捷VPN, server: 107.161.92.142, port: 663, type: vmess, uuid: 4d43fb12-d793-4335-8f6a-40514af01bc5, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: 🇭🇰 香港-1 - 快捷VPN, server: 95.40.66.13, port: 663, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇨🇦 加拿大 - 快捷VPN, server: 27.152.180.32, port: 28013, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇯🇵 日本-2 - 快捷VPN, server: 27.152.180.32, port: 28019, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇯🇵 日本-3 - 快捷VPN, server: 27.152.180.32, port: 28054, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇬🇧 英国 - 快捷VPN, server: 27.152.180.32, port: 28056, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇯🇵 日本-4 - 快捷VPN, server: 27.152.180.32, port: 28057, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇭🇰 香港 - 快捷VPN, server: 27.152.180.32, port: 28070, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇭🇰 香港-2 - 快捷VPN, server: 27.152.180.32, port: 28071, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇭🇰 香港-3 - 快捷VPN, server: 2408:873c:3010:6:1:1:0:102, port: 35619, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇭🇰 香港-4 - 快捷VPN, server: 27.152.180.32, port: 28085, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
-- {name: 🇹🇼 台湾 - 快捷VPN, server: 27.152.180.32, port: 28081, type: ss, cipher: chacha20-ietf-poly1305, password: 4d43fb12-d793-4335-8f6a-40514af01bc5, udp: true}
+  use: *id007
+proxy-providers:
+  HK:
+    type: http
+    url: https://raw.kgithub.com/qjlxg/des/main/trials_providers/http://192.197.113.55:2053/HK.yaml
+    interval: 180
+    path: trials_providers/http://192.197.113.55:2053/HK.yaml
+    health-check:
+      enable: true
+      url: https://i.ytimg.com/generate_204
+      interval: 30
+  TW:
+    type: http
+    url: https://raw.kgithub.com/qjlxg/des/main/trials_providers/http://192.197.113.55:2053/TW.yaml
+    interval: 180
+    path: trials_providers/http://192.197.113.55:2053/TW.yaml
+    health-check:
+      enable: true
+      url: https://i.ytimg.com/generate_204
+      interval: 30
+  JP:
+    type: http
+    url: https://raw.kgithub.com/qjlxg/des/main/trials_providers/http://192.197.113.55:2053/JP.yaml
+    interval: 180
+    path: trials_providers/http://192.197.113.55:2053/JP.yaml
+    health-check:
+      enable: true
+      url: https://i.ytimg.com/generate_204
+      interval: 30
+  US:
+    type: http
+    url: https://raw.kgithub.com/qjlxg/des/main/trials_providers/http://192.197.113.55:2053/US.yaml
+    interval: 180
+    path: trials_providers/http://192.197.113.55:2053/US.yaml
+    health-check:
+      enable: true
+      url: https://i.ytimg.com/generate_204
+      interval: 30
+  Other:
+    type: http
+    url: https://raw.kgithub.com/qjlxg/des/main/trials_providers/http://192.197.113.55:2053/Other.yaml
+    interval: 180
+    path: trials_providers/http://192.197.113.55:2053/Other.yaml
+    health-check:
+      enable: true
+      url: https://i.ytimg.com/generate_204
+      interval: 30
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,DIRECT
 - DOMAIN-SUFFIX,ip6-localhost,DIRECT

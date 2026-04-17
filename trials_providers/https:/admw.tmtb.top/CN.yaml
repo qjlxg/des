@@ -1,0 +1,8 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 ★网站最新域名tomatobay.cc - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 2605843e-bf03-4d2a-915d-71a64ab5d8c1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 ★在线客服永不失联tmtbcloud.top - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 2605843e-bf03-4d2a-915d-71a64ab5d8c1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 有更多地区节点需求，请联系客服 - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 2605843e-bf03-4d2a-915d-71a64ab5d8c1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: '🇭🇰 TG客服: tomatobaybot - Tomatobay番茄港', server: 1.1.1.1, port: 1000, type: vmess, uuid: 2605843e-bf03-4d2a-915d-71a64ab5d8c1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+- {name: 🇭🇰 TG群组：tmtbgood - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: 2605843e-bf03-4d2a-915d-71a64ab5d8c1, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
