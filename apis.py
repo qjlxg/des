@@ -1,5 +1,3 @@
---- START OF FILE text/x-python ---
-
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -111,11 +109,11 @@ class Response:
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
-        # 优化：增加连接池大小并缩短重试延迟，确保 1W+ 网址高并发时不阻塞
+        # 优化：针对1W+网址大幅增加连接池大小，并开启 status_forcelist 自动重试
         adapter = HTTPAdapter(
             max_retries=Retry(total=2, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504]),
-            pool_connections=200, 
-            pool_maxsize=500
+            pool_connections=200,
+            pool_maxsize=500 
         )
         self.mount('https://', adapter)
         self.mount('http://', adapter)
@@ -180,19 +178,13 @@ class Session(requests.Session):
 
     def request(self, method: str, url: str = '', data=None, timeout=30, allow_redirects=None, **kwargs):
         method = method.upper()
-        # 处理可能的空 base
-        _base = self.__base or ""
+        # 容错：防止 self.__base 为 None 时报错
+        _base = self.__base if self.__base else ""
         url = urljoin(_base, url.split('#', 1)[0])
         kwargs.update(data=data, timeout=timeout, allow_redirects=False)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
-        
-        try:
-            res = super().request(method, url, **kwargs)
-        except (requests.exceptions.RequestException, Exception) as e:
-            # 高并发下捕获异常，防止整个程序崩溃
-            raise e
-
+        res = super().request(method, url, **kwargs)
         if allow_redirects and res.is_redirect:
             no = ~allow_redirects
             url = res.url
@@ -251,11 +243,12 @@ class _ROSession(Session):
     def request(self, method, url='', *args, **kwargs):
         r = super().request(method, url, *args, **kwargs)
         if self.__times < 2:
-            url = urljoin(self.base or "", url)
+            _base = self.base if self.base else ""
+            url = urljoin(_base, url)
             if parse_url(r.url)[:4] != parse_url(url)[:4]:
                 self.set_origin(r.url)
                 self.__redirect_origin = True
-                # print(f'{self.host}: {url} -> {r.url}') # 1W个网址时减少打印，避免IO阻塞
+                # 大规模处理时减少 print 频率避免阻塞 IO
             self.__times += 1
         return r
 
@@ -666,10 +659,9 @@ panel_class_map = {
 def guess_panel(host):
     info = {}
     session = _ROSession(host)
-    # 优化：对于大规模探测，将 timeout 设为较小值，避免在死站上浪费时间
-    probe_timeout = 8 
+    # 优化：大规模探测时将超时设短一些（8s），并确保 Session 释放
+    probe_timeout = 8
     try:
-        # 探测 V2Board
         r = session.get('api/v1/guest/comm/config', timeout=probe_timeout)
         if r.status_code == 403:
             r = session.head(timeout=probe_timeout)
@@ -706,8 +698,6 @@ def guess_panel(host):
                     info['api_host'] = parse_url(settings['host']).netloc
                 except:
                     pass
-        
-        # 探测 SSPanel
         if 'type' not in info:
             r = session.get('auth/login', timeout=probe_timeout)
             if r.ok:
@@ -722,13 +712,12 @@ def guess_panel(host):
                     if r.ok and r.bs().title:
                         info['name'] = r.bs().title.text.split(' — ')[-1]
                     info['auth_path'] = 'user'
-        
         if 'api_host' not in info and session.redirect_origin:
             info['api_host'] = session.host
     except Exception as e:
         info['error'] = e
     finally:
-        session.close() # 显式关闭，防止句柄泄露
+        session.close() # 必须关闭，否则1W+并发会导致文件描述符耗尽卡死
     return info
 
 
@@ -800,14 +789,14 @@ class MailCX(TempEmailSession):
             if js.has_attr('src') and re_mailcx_js_path.fullmatch(js['src']):
                 js_paths.append(js['src'])
         if js_paths:
-            # 内部并发获取 js 域名列表
+            # 限制子线程并发数
             with ThreadPoolExecutor(max_workers=min(len(js_paths), 5)) as executor:
                 futures = [executor.submit(self.get, urljoin('https://mail.cx', js_path), timeout=10) for js_path in js_paths]
                 for future in as_completed(futures):
                     try:
-                        res = future.result()
-                        if res.ok:
-                            m = re_mailcx_domains.search(res.text)
+                        r = future.result()
+                        if r.ok:
+                            m = re_mailcx_domains.search(r.text)
                             if m: return json5.loads(m[1])
                     except: pass
         return []
@@ -966,13 +955,11 @@ def temp_email_domain_to_session_type(domain: str = None) -> dict[str, type[Temp
 
     def fn(session_type: type[TempEmailSession]):
         try:
-            # 优化：在初始化域名列表时增加超时控制
             s = session_type()
             domains = s.get_domains()
-            s.close()
+            s.close() # 及时释放
         except Exception as e:
             domains = []
-            # print(f'获取 {session_type.__name__} 域名失败: {e}')
         return session_type, domains
 
     return {d: s for s, ds in parallel_map(fn, session_types) for d in ds}
@@ -989,23 +976,20 @@ class TempEmail:
     def email(self) -> str:
         id = rand_id()
         domain_len_limit = 31 - len(id)
-        # 优化：通过提前过滤可选域名加速选择过程
-        all_mapping = temp_email_domain_to_session_type()
+        all_map = temp_email_domain_to_session_type()
         available_domains = [
-            d for d in all_mapping
+            d for d in all_map
             if len(d) <= domain_len_limit and d not in self.__banned
         ]
         if not available_domains:
-             # 如果都被禁用了，保底选择一个最常见的
-             domain = 'gmail.com' 
+            domain = choice(list(all_map.keys())) # 保底
         else:
-             domain = choice(available_domains)
-        
+            domain = choice(available_domains)
+            
         address = f'{id}@{domain}'
-        session_cls = temp_email_domain_to_session_type(domain)
-        self.__session = session_cls()
+        self.__session = all_map[domain]()
         self.__session.set_email_address(address)
-        if hasattr(self, '__banned'):
+        if hasattr(self, '_TempEmail__banned'):
             del self.__banned
         return address
 
@@ -1015,19 +999,17 @@ class TempEmail:
             self.__queues.append((keyword, queue, time() + timeout))
             if not hasattr(self, f'_{TempEmail.__name__}__th'):
                 self.__th = Thread(target=self.__run)
-                self.__th.daemon = True # 优化：设置为守护线程，随主进程快速退出
+                self.__th.daemon = True 
                 self.__th.start()
         return queue.get()
 
     def __run(self):
         while True:
-            # 优化：微调 sleep 时间，平衡 CPU 占用与响应速度
-            sleep(2)
+            sleep(2) # 稍微增加轮询间隔减少压力
             try:
                 messages = self.__session.get_messages()
             except Exception as e:
                 messages = []
-                # print(f'TempEmail.__run: {e}')
             with self.__lock:
                 new_len = 0
                 for item in self.__queues:
