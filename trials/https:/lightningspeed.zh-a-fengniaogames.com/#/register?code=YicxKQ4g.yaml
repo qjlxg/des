@@ -19,8 +19,11 @@ proxy-groups:
   interval: 30
   tolerance: 100
   proxies: &id001
-  - 🇮🇩 苹果ID账号：jennifergetz1002@looklooklook.us密码：3P9vCB5yeh - 奈奈加速
-  - 🇮🇩 苹果ID账号：jilliancookwtwrf@icloud.com密码：2kfZWS2bhf - 奈奈加速
+  - ℹ️ 官网www.work-fengniao.com - 蜂鸟畅享版
+  - ℹ️ 当前节点不可用请购买套餐后使用 - 蜂鸟畅享版
+  - ℹ️ 购买套餐后IOS请刷新一下订阅 - 蜂鸟畅享版
+  - ℹ️ 购买套餐后Android请清除订阅缓存 - 蜂鸟畅享版
+  - 也可退出后重新登录 - 蜂鸟畅享版
 - name: 👆🏻 ‍指定
   type: select
   proxies: *id001
@@ -55,8 +58,11 @@ proxy-groups:
   - 🛩️ ‍墙内
   - 💩 ‍广告
 proxies:
-- {name: 🇮🇩 苹果ID账号：jennifergetz1002@looklooklook.us密码：3P9vCB5yeh - 奈奈加速, server: rhfghfghfg, port: 1424, type: ss, cipher: chacha20-ietf-poly1305, password: b4f46298-0fa7-4a47-8037-d39291adeeff, udp: true}
-- {name: 🇮🇩 苹果ID账号：jilliancookwtwrf@icloud.com密码：2kfZWS2bhf - 奈奈加速, server: sdgjlkdsgg, port: 6331, type: ss, cipher: chacha20-ietf-poly1305, password: b4f46298-0fa7-4a47-8037-d39291adeeff, udp: true}
+- {name: ℹ️ 官网www.work-fengniao.com - 蜂鸟畅享版, server: basic9873cheap.fq-number-01.co, port: 52891, type: ss, cipher: aes-128-gcm, password: c51967b2-cb68-4ddc, udp: true}
+- {name: ℹ️ 当前节点不可用请购买套餐后使用 - 蜂鸟畅享版, server: basic9873cheap.fq-number-01.co, port: 52891, type: ss, cipher: aes-128-gcm, password: c51967b2-cb68-4ddc, udp: true}
+- {name: ℹ️ 购买套餐后IOS请刷新一下订阅 - 蜂鸟畅享版, server: basic9873cheap.fq-number-01.co, port: 52891, type: ss, cipher: aes-128-gcm, password: c51967b2-cb68-4ddc, udp: true}
+- {name: ℹ️ 购买套餐后Android请清除订阅缓存 - 蜂鸟畅享版, server: basic9873cheap.fq-number-01.co, port: 52891, type: ss, cipher: aes-128-gcm, password: c51967b2-cb68-4ddc, udp: true}
+- {name: 也可退出后重新登录 - 蜂鸟畅享版, server: basic9873cheap.fq-number-01.co, port: 52891, type: ss, cipher: aes-128-gcm, password: c51967b2-cb68-4ddc-ba7f, udp: true}
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,DIRECT
 - DOMAIN-SUFFIX,ip6-localhost,DIRECT

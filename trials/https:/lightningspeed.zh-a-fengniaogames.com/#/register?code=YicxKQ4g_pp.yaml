@@ -15,18 +15,12 @@ proxy-groups:
   - REJECT
 - name: ⚡ ‍低延迟
   type: url-test
-  url: https://i.ytimg.com/generate_204
-  interval: 30
   tolerance: 100
-  proxies: &id001
-  - 🇭🇰 ★网站最新域名tomatobay.cc - Tomatobay番茄港
-  - 🇭🇰 ★在线客服永不失联tmtbcloud.top - Tomatobay番茄港
-  - 🇭🇰 有更多地区节点需求，请联系客服 - Tomatobay番茄港
-  - '🇭🇰 TG客服: tomatobaybot - Tomatobay番茄港'
-  - 🇭🇰 TG群组：tmtbgood - Tomatobay番茄港
+  use: &id001
+  - All
 - name: 👆🏻 ‍指定
   type: select
-  proxies: *id001
+  use: *id001
 - name: 🛩️ ‍墙内
   type: select
   proxies:
@@ -57,12 +51,16 @@ proxy-groups:
   - ✈️ ‍起飞
   - 🛩️ ‍墙内
   - 💩 ‍广告
-proxies:
-- {name: 🇭🇰 ★网站最新域名tomatobay.cc - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: e6ec9000-2d4f-40ac-8cc4-09e8f5eb977e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: 🇭🇰 ★在线客服永不失联tmtbcloud.top - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: e6ec9000-2d4f-40ac-8cc4-09e8f5eb977e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: 🇭🇰 有更多地区节点需求，请联系客服 - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: e6ec9000-2d4f-40ac-8cc4-09e8f5eb977e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: '🇭🇰 TG客服: tomatobaybot - Tomatobay番茄港', server: 1.1.1.1, port: 1000, type: vmess, uuid: e6ec9000-2d4f-40ac-8cc4-09e8f5eb977e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
-- {name: 🇭🇰 TG群组：tmtbgood - Tomatobay番茄港, server: 1.1.1.1, port: 1000, type: vmess, uuid: e6ec9000-2d4f-40ac-8cc4-09e8f5eb977e, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: ws, ws-opts: {path: /}, udp: true}
+proxy-providers:
+  All:
+    type: http
+    url: https://raw.kgithub.com/qjlxg/des/main/trials_providers/https://lightningspeed.zh-a-fengniaogames.com/#/register?code=YicxKQ4g/All.yaml
+    interval: 180
+    path: trials_providers/https://lightningspeed.zh-a-fengniaogames.com/#/register?code=YicxKQ4g/All.yaml
+    health-check:
+      enable: true
+      url: https://i.ytimg.com/generate_204
+      interval: 30
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,DIRECT
 - DOMAIN-SUFFIX,ip6-localhost,DIRECT
