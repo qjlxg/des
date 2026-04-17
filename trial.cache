@@ -3,7 +3,7 @@ buy  pass
 email  ewttzox536@gmail.com
 name  快捷VPN
 node_n  12
-sub_info  0B  953.7P  2026-04-20 11:26:20+08:00  (剩余 953.7P 2 days, 10:41:15.451744)
+sub_info  0B  953.7P  2026-04-20 11:26:20+08:00  (剩余 953.7P 2 days, 4:55:49.058735)
 sub_url  http://192.197.113.55:2053/api/v1/client/subscribe?token=d7cd9f6490d25e155bb234c2bb6b2581
 time  2026-04-17 23:26:22.182413+08:00
 type  v2board
@@ -13,7 +13,7 @@ buy  pass
 email  htlumoev739@gmail.com
 name  快捷VPN
 node_n  12
-sub_info  0B  953.7P  2026-04-20 11:26:20+08:00  (剩余 953.7P 2 days, 10:40:32.594250)
+sub_info  0B  953.7P  2026-04-20 11:26:20+08:00  (剩余 953.7P 2 days, 4:55:50.975849)
 sub_url  http://192.197.113.53:2053/api/v1/client/subscribe?token=f8b842814360bb82419ff02c2b2e1953
 time  2026-04-17 23:26:22.179932+08:00
 type  v2board
@@ -22,7 +22,7 @@ type  v2board
 buy  pass
 email  mvfzqtud335@gmail.com
 name  XBoard
-sub_info  0B  100G  2026-05-17 23:26:19+08:00  (剩余 100G 29 days, 22:37:55.595347)
+sub_info  0B  100G  2026-05-17 23:26:19+08:00  (剩余 100G 29 days, 16:50:51.997325)
 sub_url  http://103.49.63.119/s/c5e63d83f31ac0c6f51c757df0e4bb40
 time  2026-04-17 23:26:19.793811+08:00
 type  v2board
@@ -32,11 +32,11 @@ type  v2board
 buy  pass
 email  rexnvie418@gmail.com
 name  免费机场
-sub_info  0B  100G  2026-04-18 23:26:19+08:00  (剩余 100G 22:37:09.487721)
+sub_info  0B  100G  2026-04-18 23:26:19+08:00  (剩余 100G 16:50:54.875529)
 sub_url  http://35.213.154.187/api/v1/client/subscribe?token=3985b6da1b842538319ef562a8073d7b
 time  2026-04-17 23:26:19.964394+08:00
 type  v2board
-保存base64/clash订阅失败  mapping values are not allowed here in "<byte string>", line 1, column 1818: ... on(){window._cf_chl_opt = {cFPWv: 'g',cH: 'xuslqYGi4yPMumJMJUs57 ... ^ (line: 1)
+保存base64/clash订阅失败  mapping values are not allowed here in "<byte string>", line 67, column 70: ... block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold"> ... ^ (line: 67)
 
 [http://xbb.nai99.top]
 api_host  xbb.nai99.top
@@ -68,7 +68,7 @@ buy  pass
 email  pvytaujxk121@gmail.com
 name  Tomatobay番茄港
 node_n  5
-sub_info  0B  2G  2026-04-18 23:27:11+08:00  (剩余 2G 22:42:04.007955)
+sub_info  0B  2G  2026-04-18 23:27:11+08:00  (剩余 2G 16:55:56.235781)
 sub_url  https://tianchuang.wiseunbox.blog/api/v1/client/subscribe?token=01e2c99c05ee1ee31d08dc06d139f3ec
 time  2026-04-17 23:27:12.475528+08:00
 type  v2board
@@ -78,41 +78,41 @@ buy  pass
 email  pmowdcdnd577@gmail.com
 name  Tomatobay番茄港
 node_n  5
-sub_info  0B  2G  2026-04-18 23:27:10+08:00  (剩余 2G 22:42:06.928392)
+sub_info  0B  2G  2026-04-18 23:27:10+08:00  (剩余 2G 16:55:56.197624)
 sub_url  https://tianchuang.wiseunbox.blog/api/v1/client/subscribe?token=da36f2b5cdf1c3612cea51b38f8158b7
 time  2026-04-17 23:27:12.012313+08:00
 type  v2board
 
+[https://vtest.68601.net]
+buy  pass
+email  bgxkkdql616@gmail.com
+name  小蜜蜂
+sub_info  0B  1G  2026-04-18 11:34:27+08:00  (剩余 1G 4:56:43.491584)
+sub_url  http://172.96.142.65:9001/html/system/bee/html?token=9dae3bf507d1b130b06a09cdd2360050
+time  2026-04-18 06:34:27.790871+08:00
+type  v2board
+保存base64/clash订阅失败  'proxies'
+
 [http://vtest.68601.net]
 api_host  vtest.68601.net
 buy  pass
-email  sbrozxri842@gmail.com
+email  ocsmvqx707@gmail.com
 name  小蜜蜂
-sub_info  0B  1G  2026-04-18 04:26:19+08:00  (剩余 1G 3:38:01.688063)
-sub_url  http://172.96.142.65:9001/html/system/bee/html?token=70db6db0cdd8f6611b9e7d0d18c1ad1f
-time  2026-04-17 23:26:19.568306+08:00
+sub_info  0B  1G  2026-04-18 11:33:41+08:00  (剩余 1G 4:55:12.766634)
+sub_url  http://172.96.142.65:9001/html/system/bee/html?token=cec96802fe9da260acc1ef28ea7f8a02
+time  2026-04-18 06:33:41.840728+08:00
 type  v2board
-保存base64/clash订阅失败  string indices must be integers
+保存base64/clash订阅失败  mapping values are not allowed here in "<byte string>", line 1, column 1818: ... on(){window._cf_chl_opt = {cFPWv: 'g',cH: 'rYOvpJ5MGKe22aqR9hEj_ ... ^ (line: 1)
 
 [http://172.96.142.65:9001]
 buy  pass
-email  kigkkfcu843@gmail.com
+email  rauzudggu290@gmail.com
 name  小蜜蜂
-sub_info  0B  1G  2026-04-18 04:26:18+08:00  (剩余 1G 3:37:14.571323)
-sub_url  http://172.96.142.65:9001/html/system/bee/html?token=40c0b28c8aaa490684abd78d3f517995
-time  2026-04-17 23:26:18.912381+08:00
+sub_info  0B  1G  2026-04-18 11:33:41+08:00  (剩余 1G 4:56:35.836576)
+sub_url  http://172.96.142.65:9001/html/system/bee/html?token=bf9ba6cb0701cc0868b3b07bd29f2eed
+time  2026-04-18 06:33:41.733211+08:00
 type  v2board
 保存base64/clash订阅失败  string indices must be integers
-
-[https://vtest.68601.net]
-buy  pass
-email  eegiwgpv693@gmail.com
-name  小蜜蜂
-sub_info  0B  1G  2026-04-18 04:26:18+08:00  (剩余 1G 3:36:19.161693)
-sub_url  http://172.96.142.65:9001/html/system/bee/html?token=7f6cf080597c2eb4d75a8cf1e46e3e75
-time  2026-04-17 23:26:19.343089+08:00
-type  v2board
-保存base64/clash订阅失败  mapping values are not allowed here in "<byte string>", line 1, column 1818: ... on(){window._cf_chl_opt = {cFPWv: 'g',cH: 'gMzSm9HJpPZShgv71ZNx9 ... ^ (line: 1)
 
 [https://51.255.173.39]
 
