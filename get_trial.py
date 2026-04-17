@@ -9,7 +9,7 @@ from apis import PanelSession, TempEmail, guess_panel, panel_class_map
 from subconverter import gen_base64_and_clash_config, get
 from utils import (clear_files, g0, keep, list_file_paths, list_folder_paths,
                    rand_id, read, read_cfg, remove, size2str, str2timestamp,
-                   timestamp2str, to_zero, write, write_cfg)
+                   timestamp2str, to_zero, write, write_cfg, str2size)
 
 
 def get_sub(session: PanelSession, opt: dict, cache: dict[str, list[str]]):
@@ -411,5 +411,33 @@ if __name__ == '__main__':
     )
 
     print('总节点数', total_node_n)
+
+    # --- 排序逻辑：将有 sub_info 的排在前面，并按剩余流量和过期时间降序排列 ---
+    def get_sort_key(host):
+        c = cache.get(host, {})
+        # 如果没有 sub_info，权重最低
+        if 'sub_info' not in c or not isinstance(c['sub_info'], list) or len(c['sub_info']) < 3:
+            return (0, 0, 0)
+        try:
+            # 剩余流量 = 总流量 - 已用流量
+            # index 0: 已用, index 1: 总量
+            remain = str2size(c['sub_info'][1]) - str2size(c['sub_info'][0])
+            
+            # 时间戳处理 (index 2: 过期时间)
+            expire_str = c['sub_info'][2]
+            if expire_str == '永不过期':
+                ts = 4102416000  # 设为一个很远的未来时间戳 (2100年)
+            else:
+                ts = str2timestamp(expire_str)
+            
+            # 排序元组：(是否有数据标识, 剩余流量数值, 时间戳数值)
+            return (1, remain, ts)
+        except Exception:
+            # 容错处理，解析失败则回退到最低权重
+            return (0, 0, 0)
+
+    # 使用 reverse=True 实现降序（大的在前）
+    sorted_hosts = sorted(cache.keys(), key=get_sort_key, reverse=True)
+    cache = {h: cache[h] for h in sorted_hosts}
 
     write_cfg('trial.cache', cache)
