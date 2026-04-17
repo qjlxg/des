@@ -1,7 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇯🇵 专线A1-日本1-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 22168, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
-- {name: 🇯🇵 专线A1-日本2-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 42721, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
-- {name: 🇯🇵 专线A1-日本3-流媒体全解锁3倍率 - VVCloud, server: zf.sg-iepl.com, port: 58490, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
-- {name: 🇯🇵 专线A1-日本4-家宽IP视频AI全解锁Tiktok运营数据好-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 8641, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}

@@ -1,8 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: ✅付费后可用全部线路 - VVCloud, server: zf.sg-iepl.com, port: 49642, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}
-- {name: ℹ️ ✅续费网址:https://getvv.cloud - VVCloud, server: zf.sg-iepl.com, port: 49642, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}
-- {name: 🇰🇷 专线A1-韩国1家宽IP全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 26881, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}
-- {name: 🇻🇳 专线A1-越南1家宽住宅IP全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 24308, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}
-- {name: 🇬🇧 专线A1-伦敦3-解锁BBC iPlayer极纯家宽IP流媒体全解锁-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 29110, type: ss, cipher: chacha20-ietf-poly1305, password: a92b6be8-c5b1-439d-9c81-2a1b85b41d2d, udp: true}

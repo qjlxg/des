@@ -1,8 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇸🇬 新加坡1•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25150, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇸🇬 新加坡2•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25152, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇸🇬 新加坡3•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25153, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp3.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇸🇬 新加坡4•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25154, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp4.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇸🇬 新加坡5•极速 - 悟空, server: rybdphiledo.stpikit.com, port: 25151, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: sgp5.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}

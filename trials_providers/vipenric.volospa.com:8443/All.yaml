@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇹🇼 ssPanel1_TW - EricYun, server: vipenric.volospa.com, port: 47801, type: trojan, password: 7adb2663-c8c3-3657-be48-08e5e3be07ac, sni: vipenric.volospa.com, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 ssPanel2_TW - EricYun, server: vipenric.volospa.com, port: 53832, type: trojan, password: 7adb2663-c8c3-3657-be48-08e5e3be07ac, sni: vipenric.volospa.com, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 ssPanel3_TW - EricYun, server: vipenric.volospa.com, port: 47209, type: trojan, password: 7adb2663-c8c3-3657-be48-08e5e3be07ac, sni: vipenric.volospa.com, skip-cert-verify: true, udp: true}

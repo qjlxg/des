@@ -1,5 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇭🇰 V港HK7 - 拓扑门topman8848.com, server: v7.toppp.cc, port: 42107, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: '🇭🇰 ipv6港HK12[手机流量可用] - 拓扑门topman8848.com', server: v12.toppp.cc, port: 42112, type: vmess, uuid: 7ff04d5d-6084-4e91-8527-a367fec8abd4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}

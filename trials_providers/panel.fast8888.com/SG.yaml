@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇸🇬 IEPL · 新加坡SG · 204 - 悟空加速器, server: 45.250.185.142, port: 16114, type: ss, cipher: chacha20-ietf-poly1305, password: cc9d8dec-1675-471b-90ef-0398beb9c909, udp: true}

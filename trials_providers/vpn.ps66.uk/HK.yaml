@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: '🇭🇰 [vmess]香港测试vmess - PS66', server: site03.ps66.uk, port: 58089, type: vmess, uuid: da925bdd-d420-4b6c-9fe5-2b63c19f9a64, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /edu, headers: {Host: site03.ps66.uk}}, udp: true}

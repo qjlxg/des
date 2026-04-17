@@ -1,9 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇭🇰 香港Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25116, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hk1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾1-Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25157, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾2-Netflix - 悟空, server: rybdphiledo.stpikit.com, port: 25158, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇭🇰 香港-极速一 - 悟空, server: rybdphiledo.stpikit.com, port: 27090, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: hkbgp1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾-国外专用一 - 悟空, server: tw1.stbartsprimaryschool.co.uk, port: 444, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw1.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾-国外专用二 - 悟空, server: tw2.stbartsprimaryschool.co.uk, port: 444, type: trojan, password: aebed767-c60f-37c7-9326-65e16311b96c, sni: tw2.stbartsprimaryschool.co.uk, skip-cert-verify: true, udp: true}

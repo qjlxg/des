@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇺🇲 ss | 美国 | 1 - 云猫加速, server: yus21.ncybk.app, port: 30925, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
-- {name: 🇺🇲 ss | 美国 | 2 - 云猫加速, server: yus22.ncybk.app, port: 37921, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
-- {name: 🇺🇲 ss | 美国 | 3 - 云猫加速, server: yus23.ncybk.app, port: 36621, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}

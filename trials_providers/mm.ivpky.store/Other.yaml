@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇮🇳 印度-1 - 萌猫加速, server: min11.ncybk.app, port: 30387, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}
-- {name: 🇩🇪 德国-1 - 萌猫加速, server: mge11.ncybk.app, port: 48327, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}
-- {name: 🇬🇧 英国-1 - 萌猫加速, server: muk11.ncybk.app, port: 40327, type: ss, cipher: aes-256-gcm, password: 46Cp7BCD6H3LgPTn, udp: true}

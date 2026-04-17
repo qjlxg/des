@@ -1,8 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇭🇰 香港IEPL - 红杏云, server: 110.242.74.102, port: 10001, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
-- {name: 🇹🇼 🇨🇳 台湾IEPL - 红杏云, server: 110.242.74.102, port: 10002, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
-- {name: 🇯🇵 日本IEPL - 红杏云, server: 110.242.74.102, port: 10003, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
-- {name: 🇸🇬 新加坡IEPL - 红杏云, server: 110.242.74.102, port: 10004, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}
-- {name: 🇺🇸 美国IEPL - 红杏云, server: 110.242.74.102, port: 10005, type: ss, cipher: aes-256-gcm, password: 909ca374-501a-4a34-8c1e-a5be3cadbeb2, udp: true}

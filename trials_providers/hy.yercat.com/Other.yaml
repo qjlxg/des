@@ -1,7 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇮🇳 ss | 印度｜1 - 云猫加速, server: yin21.ncybk.app, port: 40932, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}
-- {name: 🇩🇪 ss | 德国 | 1  - 云猫加速, server: yge21.ncybk.app, port: 48854, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}
-- {name: 🇬🇧 ss | 英国 | 1 - 云猫加速, server: yuk21.ncybk.app, port: 39922, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}
-- {name: 🇨🇦 ss | 加拿大 ｜1 - 云猫加速, server: yca21.ncybk.app, port: 47893, type: ss, cipher: aes-256-gcm, password: bEv507lOpQwKUTNY, udp: true}

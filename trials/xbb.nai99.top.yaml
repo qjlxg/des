@@ -55,8 +55,8 @@ proxy-groups:
   - 🛩️ ‍墙内
   - 💩 ‍广告
 proxies:
-- {name: 🇮🇩 苹果ID账号：jennifergetz1002@looklooklook.us密码：3P9vCB5yeh - 奈奈加速, server: rhfghfghfg, port: 1424, type: ss, cipher: chacha20-ietf-poly1305, password: 8d6d48df-cc58-46dd-bc06-6151f745e19e, udp: true}
-- {name: 🇮🇩 苹果ID账号：jilliancookwtwrf@icloud.com密码：2kfZWS2bhf - 奈奈加速, server: sdgjlkdsgg, port: 6331, type: ss, cipher: chacha20-ietf-poly1305, password: 8d6d48df-cc58-46dd-bc06-6151f745e19e, udp: true}
+- {name: 🇮🇩 苹果ID账号：jennifergetz1002@looklooklook.us密码：3P9vCB5yeh - 奈奈加速, server: rhfghfghfg, port: 1424, type: ss, cipher: chacha20-ietf-poly1305, password: 1585de61-521c-4194-96b2-2ae58716904f, udp: true}
+- {name: 🇮🇩 苹果ID账号：jilliancookwtwrf@icloud.com密码：2kfZWS2bhf - 奈奈加速, server: sdgjlkdsgg, port: 6331, type: ss, cipher: chacha20-ietf-poly1305, password: 1585de61-521c-4194-96b2-2ae58716904f, udp: true}
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,DIRECT
 - DOMAIN-SUFFIX,ip6-localhost,DIRECT

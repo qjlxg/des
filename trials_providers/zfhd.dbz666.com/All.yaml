@@ -1,7 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 01✈如遇节点不可用✈ - 挡不住, server: 8888888888888888888, port: 443, type: trojan, password: 4cb4449b-f6b0-3a83-8edb-0bdcdd365da2, sni: 8888888888888888888, skip-cert-verify: true, udp: true}
-- {name: ℹ️ 02✈请及时更新订阅✈ - 挡不住, server: 9999999999999999999, port: 443, type: trojan, password: 4cb4449b-f6b0-3a83-8edb-0bdcdd365da2, sni: 9999999999999999999, skip-cert-verify: true, udp: true}
-- {name: ℹ️ 导航:16838dbz.xyz✈ - 挡不住, server: 16939dbz.xyz, port: 443, type: trojan, password: 4cb4449b-f6b0-3a83-8edb-0bdcdd365da2, sni: 16939dbz.xyz, skip-cert-verify: true, udp: true}
-- {name: ℹ️ 续费:36338dbz.com✈ - 挡不住, server: 36338dbz.com, port: 443, type: trojan, password: 4cb4449b-f6b0-3a83-8edb-0bdcdd365da2, sni: 36338dbz.com, skip-cert-verify: true, udp: true}

@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇮🇳 ss | 印度｜1 - 灵溪加速器, server: in21.ncybk.app, port: 37943, type: ss, cipher: chacha20-ietf-poly1305, password: X1bEY0LQBwPM3vHg, udp: true}

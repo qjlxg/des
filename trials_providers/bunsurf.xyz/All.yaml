@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇯🇵 v6 | 流量可用 | 日本1 - 兔子冲浪, server: bjp61.ncybk.app, port: 48293, type: ss, cipher: aes-128-gcm, password: 558021c4-c896-431e-92f5-4d50cc826ae2, udp: true}

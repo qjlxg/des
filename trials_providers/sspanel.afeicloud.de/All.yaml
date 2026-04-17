@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇸🇬 新加坡 - sspanel, server: cloudflare.182682.xyz, port: 8880, type: vmess, uuid: 2529da53-2015-3e34-8d13-6244a73b2c31, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, servername: afeissp.54141528.xyz, network: ws, ws-opts: {path: /afeissp, headers: {Host: afeissp.54141528.xyz}}, udp: true}

@@ -1,5 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇸🇬 专线A1-新加坡1-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 35058, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}
-- {name: 🇸🇬 专线A1-新加坡2-3倍率 - VVCloud, server: zf.sg-iepl.com, port: 57598, type: ss, cipher: chacha20-ietf-poly1305, password: 6a59c0a3-b94b-4ed0-9e64-a9ebe4bb90af, udp: true}

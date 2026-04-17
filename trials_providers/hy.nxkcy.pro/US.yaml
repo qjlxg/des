@@ -1,5 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇺🇲 ss | 美国｜1 - 灵溪加速器, server: us21.ncybk.app, port: 30948, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
-- {name: 🇺🇲 ss | 美国｜2 - 灵溪加速器, server: us22.ncybk.app, port: 30994, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}

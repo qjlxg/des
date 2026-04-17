@@ -1,7 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: '🇸🇬 [vip①]新加坡1 - MG Network', server: 16.mamamajd.site, port: 23616, type: vmess, uuid: dd818ae1-a0f6-3478-8c4b-7718e8f1b392, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: '🇸🇬 [vip①]新加坡2 - MG Network', server: 13.mamamajd.site, port: 23613, type: vmess, uuid: dd818ae1-a0f6-3478-8c4b-7718e8f1b392, alterId: 2, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: 🇸🇬 新加坡-中转-1 - AirBuddy Rocket, server: gd1.ddns.argonode.men, port: 14401, type: trojan, password: 0f838b5f-4505-4f35-a49c-3f46fbcdd855, sni: sg1.argonode.men, skip-cert-verify: true, udp: true}
-- {name: 🇸🇬 新加坡-中转-2 - AirBuddy Rocket, server: gd1.ddns.argonode.men, port: 14402, type: trojan, password: 0f838b5f-4505-4f35-a49c-3f46fbcdd855, sni: sg1.argonode.men, skip-cert-verify: true, udp: true}

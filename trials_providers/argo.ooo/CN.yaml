@@ -1,5 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇭🇰 香港-中转-1 - AirBuddy Rocket, server: gd1.ddns.argonode.men, port: 15531, type: trojan, password: b3bea77a-0f83-4a1b-a16e-064b4684a625, sni: hk1.argonode.men, skip-cert-verify: true, udp: true}
-- {name: 🇭🇰 香港-中转-2 - AirBuddy Rocket, server: gd1.ddns.argonode.men, port: 15530, type: trojan, password: b3bea77a-0f83-4a1b-a16e-064b4684a625, sni: hk1.argonode.men, skip-cert-verify: true, udp: true}

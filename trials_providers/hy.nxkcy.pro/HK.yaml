@@ -1,5 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇭🇰 ss | 香港｜1 - 灵溪加速器, server: hk21.ncybk.app, port: 38765, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
-- {name: 🇭🇰 ss | 香港｜2 - 灵溪加速器, server: hk22.ncybk.app, port: 39832, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}

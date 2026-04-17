@@ -1,9 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇹🇼 ss | 台湾｜解锁 - 灵溪加速器, server: tw21.ncybk.app, port: 30943, type: ss, cipher: chacha20-ietf-poly1305, password: EPXBYNa6fLty4aKA, udp: true}
-- {name: 🇹🇼 台湾高速节点 - 新云游, server: 103.137.63.77, port: 443, type: trojan, password: c15030fa-dd26-4e98-b4d5-4278fe50af6b, sni: node1.yuntongclouds.com, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾高速节点2 - 新云游, server: 118.232.199.29, port: 443, type: trojan, password: c15030fa-dd26-4e98-b4d5-4278fe50af6b, sni: node2.yuntongclouds.com, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾高速节点3 - 新云游, server: 118.232.199.14, port: 443, type: trojan, password: c15030fa-dd26-4e98-b4d5-4278fe50af6b, sni: node3.yuntongclouds.com, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 ss | 台湾｜1 - 云猫加速, server: ytw21.ncybk.app, port: 43782, type: ss, cipher: aes-256-gcm, password: eugTUKmVrzw7lvcn, udp: true}
-- {name: 🇹🇼 台湾-1 - 萌猫加速, server: mtw11.ncybk.app, port: 42889, type: ss, cipher: aes-256-gcm, password: JwmkIPvHM9eGmUyR, udp: true}
