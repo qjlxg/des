@@ -1,0 +1,50 @@
+name: parser_github
+
+on:
+  push:
+    paths:
+      - 'parser_github.py'
+      - '.github/workflows/parser_github.yml'
+      - 'sources.txt'
+      - 'domain.txt'
+      - 'iP.txt'
+  workflow_dispatch: # 支持手动点击按钮运行
+
+jobs:
+  execute_parser:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 安装原始脚本所需的依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install aiohttp aiofiles requests
+
+      - name: 运行解析脚本
+        env:
+          TZ: Asia/Shanghai
+        run: python parser_github.py
+
+      - name: 推送更新结果到仓库
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # 添加所有生成的文件（如 url.txt, url_work.txt, log.txt 等）
+          git add .
+          
+          # 检查是否有变动，如果有则提交并推送
+          if git diff --staged --quiet; then
+            echo "内容无变化，跳过提交。"
+          else
+            git commit -m "自动更新: $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
