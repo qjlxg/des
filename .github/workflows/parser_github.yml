@@ -4,15 +4,14 @@ on:
   push:
     paths:
       - 'parser_github.py'
-      - '.github/workflows/parser_github.yml'
       - 'sources.txt'
   workflow_dispatch:
 
 jobs:
-  run-parser:
+  build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # 必须开启写入权限
 
     steps:
       - name: 检出代码
@@ -26,19 +25,23 @@ jobs:
       - name: 安装依赖
         run: pip install aiohttp aiofiles requests
 
-      - name: 执行脚本
+      - name: 执行解析与测速
         env:
           TZ: Asia/Shanghai
         run: python parser_github.py
 
-      - name: 提交并推送
+      - name: 提交并推送结果
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # 再次确认：不添加巨大的中间文件，只提交结果
+          git add url_work.txt
+          
+          # 如果文件变动则推送
           if git diff --staged --quiet; then
-            echo "无变动"
+            echo "没有变化，跳过推送。"
           else
-            git commit -m "Update nodes: $(date +'%Y-%m-%d %H:%M:%S')"
+            git commit -m "自动更新节点: $(date +'%Y-%m-%d %H:%M:%S')"
             git push
           fi
