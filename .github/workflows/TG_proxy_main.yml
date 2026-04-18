@@ -1,7 +1,7 @@
 name: TG_proxy_main
 
 on:
-  workflow_dispatch: # 手动运行
+  workflow_dispatch: # 手动触发
   schedule:
     - cron: "0 2,14 * * *" # 北京时间 10:00, 22:00
   push:
@@ -9,12 +9,13 @@ on:
       - main
     paths:
       - 'TG_proxy_main.py'
+      - 'trial.cfg'
       - '.github/workflows/TG_proxy_main.yml'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # 授予读写权限，防止 push 失败
+    # 必须显式开启读写权限，否则无法推送缓存和结果
     permissions:
       contents: write
       
@@ -31,26 +32,30 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
     - name: 安装依赖
-      run: pip install requests
+      run: |
+        pip install requests urllib3
 
     - name: 执行任务
       run: python ./TG_proxy_main.py
       
-    - name: 提交并推送更改
+    - name: 提交并推送更改 (包含缓存)
       run: |
-        # 使用 GitHub 官方机器人身份，解决 identity unknown 报错
+        # 使用 GitHub 官方机器人身份
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
+        # 拉取远程变动防止冲突
         git pull origin main
         
-        if [ -f "./trial_subscriptions.txt" ]; then
-          git add ./trial_subscriptions.txt
-          # 检查内容是否有实质性变化
-          if git diff --staged --quiet; then
-            echo "内容未变动，跳过提交。"
-          else
-            git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 自动更新试用订阅"
-            git push origin main
-          fi
+        # 准备要提交的文件
+        # trial_subscriptions.txt 为结果文件
+        # sub_cache.json 为缓存数据库文件
+        git add trial_subscriptions.txt sub_cache.json || true
+        
+        # 检查是否有内容变更（避免产生空提交）
+        if git diff --staged --quiet; then
+          echo "没有任何变动，跳过本次提交。"
+        else
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 自动更新订阅与缓存"
+          git push origin main
         fi
