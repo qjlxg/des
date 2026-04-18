@@ -183,7 +183,7 @@ async def main():
 
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    with open(OUTPUT_TXT, "a", encoding="utf-8") as f: f.write("\n".join(final_links))
+    with open(OUTPUT_TXT, "w", encoding="utf-8") as f: f.write("\n".join(final_links))
     with open(OUTPUT_B64, "w", encoding="utf-8") as f: f.write(encode_base64("\n".join(final_links)))
     with open(OUTPUT_CSV, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f); writer.writerow(["订阅链接", "节点数量"]); writer.writerows(stats)
