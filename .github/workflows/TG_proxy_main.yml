@@ -3,11 +3,9 @@ name: TG_proxy_main.yml
 # 触发条件
 on:
   workflow_dispatch:
-
   schedule:
-    # - cron: '*/5 * * * *'
-    # 表达式生成  https://crontab.guru/
-    - cron: " 0 2,14 * * *"
+    # 每天北京时间 10:00 和 22:00 运行 (UTC 2:00, 14:00)
+    - cron: "0 2,14 * * *"
 
 jobs:
   deploy:
@@ -15,25 +13,29 @@ jobs:
     steps:
     - name: 迁出代码
       uses: actions/checkout@v2
+
     - name: 安装Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+
     - name: 加载缓存
       uses: actions/cache@v3
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/requirements.txt') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
+
     - name: 设置时区
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
+
     - name: 安装依赖
       run: |
-        pip install -r ./requirements.txt
+        pip install requests
+
     - name: 执行任务
       run: |
-
         python ./TG_proxy_main.py
       
     - name: 提交更改
@@ -42,12 +44,16 @@ jobs:
         git config --local user.name '${{ secrets.NAME }}'
         git pull origin main
         
+        # 仅添加脚本新生成的试用订阅文件
+        if [ -f "./trial_subscriptions.txt" ]; then
+          git add ./trial_subscriptions.txt
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') trial_sub_update"
+        else
+          echo "No changes to commit"
+        fi
 
-        git add ./Long_term_subscription_try
-
-        git add ./README.md
-        git commit -m "$(date '+%Y-%m-%d %H:%M:%S') sub_merge_node"
     - name: 推送更改
-      uses:  ad-m/github-push-action@master
+      uses: ad-m/github-push-action@master
       with:
         branch: main
+        github_token: ${{ secrets.GITHUB_TOKEN }}
