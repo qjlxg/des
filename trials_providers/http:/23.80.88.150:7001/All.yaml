@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇯🇵 japan-test-singlink-01 - test.singlink.org, server: 142.91.108.183, port: 12377, type: ss, cipher: aes-128-gcm, password: ac0c5a27-fa2f-419c-927a-ae4c7ad7f5c9, udp: true}
+- {name: 🇺🇸 usa-test-singlink-02 - test.singlink.org, server: 23.80.90.220, port: 12378, type: ss, cipher: aes-128-gcm, password: ac0c5a27-fa2f-419c-927a-ae4c7ad7f5c9, udp: true}
+- {name: 🇺🇸 usa-test-singlink-3 - test.singlink.org, server: 38.46.155.193, port: 12781, type: ss, cipher: aes-128-gcm, password: ac0c5a27-fa2f-419c-927a-ae4c7ad7f5c9, udp: true}
