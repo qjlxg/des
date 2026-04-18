@@ -10,7 +10,7 @@ on:
     paths:
       - 'get_trial.py'
       - '.github/workflows/get_trial.yml'
-      - 'urls.txt'
+      - 'rial.cfg'
       - 'apis.py'
 
 permissions: write-all
