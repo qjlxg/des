@@ -26,7 +26,7 @@ MAX_RETRIES = 1
 
 # --- 排除过滤名单 (包含网址及其变种关键词) ---
 BLACKLIST_KEYWORDS = [
-    "ly.ba000.cc", "wocao.su7.me", "jiasu01.vip", "louwangzhiyu", "mojie",  "lyly.649844.xyz", "multiserver", "shahramv1",
+    "ly.ba000.cc", "wocao.su7.me", "jiasu01.vip", "louwangzhiyu", "mojie",  "lyly.649844.xyz", "multiserver", "shahramv1","xship.top",
     "yywhale", "nxxbbf", "slianvpn", "cloudaddy", "quickbeevpn", "114.34.83.215:7001","sub.shadowproxy66.workers.dev",
     "tianmiao", "cokecloud", "boluoidc", "gpket", "fast8888", "ykxqn"
 ]
