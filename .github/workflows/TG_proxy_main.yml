@@ -2,10 +2,17 @@ name: TG_proxy_main.yml
 
 # 触发条件
 on:
-  workflow_dispatch:
+  workflow_dispatch: # 支持手动触发运行
   schedule:
-    # 每天北京时间 10:00 和 22:00 运行 (UTC 2:00, 14:00)
+    # 每天北京时间 10:00 和 22:00 运行 (对应 UTC 2:00, 14:00)
     - cron: "0 2,14 * * *"
+  push:
+    # 当以下文件发生变动并推送到 main 分支时自动触发
+    branches:
+      - main
+    paths:
+      - 'TG_proxy_main.py'
+      - '.github/workflows/TG_proxy_main.yml'
 
 jobs:
   deploy:
@@ -44,12 +51,15 @@ jobs:
         git config --local user.name '${{ secrets.NAME }}'
         git pull origin main
         
-        # 仅添加脚本新生成的试用订阅文件
+        # 仅当生成了 trial_subscriptions.txt 时才提交
         if [ -f "./trial_subscriptions.txt" ]; then
           git add ./trial_subscriptions.txt
-          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') trial_sub_update"
-        else
-          echo "No changes to commit"
+          # 检查是否有文件变动，避免提交空记录
+          if git diff --staged --quiet; then
+            echo "No changes in trial_subscriptions.txt"
+          else
+            git commit -m "$(date '+%Y-%m-%d %H:%M:%S') trial_sub_update"
+          fi
         fi
 
     - name: 推送更改
