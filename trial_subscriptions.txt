@@ -1,2 +1,2 @@
-https://xn--30rs3bu7r87f.com/api/v1/client/subscribe?token=ae4ad0c672bea715a7e6de509dfba182
-https://fastestcloud.xyz/api/v1/client/subscribe?token=d7d8f29fcc26d715cf60488570b7f2a1
+https://xn--30rs3bu7r87f.com/api/v1/client/subscribe?token=6bdd5b60c1852d214b4bd94264771212
+https://fastestcloud.xyz/api/v1/client/subscribe?token=3a922c172cb3ecbc49771fc5663e1971
