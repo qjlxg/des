@@ -1,13 +1,10 @@
-name: TG_proxy_main.yml
+name: TG_proxy_main
 
-# 触发条件
 on:
-  workflow_dispatch: # 支持手动触发运行
+  workflow_dispatch: # 手动运行
   schedule:
-    # 每天北京时间 10:00 和 22:00 运行 (对应 UTC 2:00, 14:00)
-    - cron: "0 2,14 * * *"
+    - cron: "0 2,14 * * *" # 北京时间 10:00, 22:00
   push:
-    # 当以下文件发生变动并推送到 main 分支时自动触发
     branches:
       - main
     paths:
@@ -17,53 +14,43 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # 授予读写权限，防止 push 失败
+    permissions:
+      contents: write
+      
     steps:
     - name: 迁出代码
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: 安装Python
-      uses: actions/setup-python@v2
+    - name: 安装 Python
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
-
-    - name: 加载缓存
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
+        python-version: '3.10'
 
     - name: 设置时区
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
     - name: 安装依赖
-      run: |
-        pip install requests
+      run: pip install requests
 
     - name: 执行任务
-      run: |
-        python ./TG_proxy_main.py
+      run: python ./TG_proxy_main.py
       
-    - name: 提交更改
-      run: |                 
-        git config --local user.email '${{ secrets.EMAIL }}'
-        git config --local user.name '${{ secrets.NAME }}'
+    - name: 提交并推送更改
+      run: |
+        # 使用 GitHub 官方机器人身份，解决 identity unknown 报错
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
         git pull origin main
         
-        # 仅当生成了 trial_subscriptions.txt 时才提交
         if [ -f "./trial_subscriptions.txt" ]; then
           git add ./trial_subscriptions.txt
-          # 检查是否有文件变动，避免提交空记录
+          # 检查内容是否有实质性变化
           if git diff --staged --quiet; then
-            echo "No changes in trial_subscriptions.txt"
+            echo "内容未变动，跳过提交。"
           else
-            git commit -m "$(date '+%Y-%m-%d %H:%M:%S') trial_sub_update"
+            git commit -m "$(date '+%Y-%m-%d %H:%M:%S') 自动更新试用订阅"
+            git push origin main
           fi
         fi
-
-    - name: 推送更改
-      uses: ad-m/github-push-action@master
-      with:
-        branch: main
-        github_token: ${{ secrets.GITHUB_TOKEN }}
