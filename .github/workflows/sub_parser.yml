@@ -8,9 +8,8 @@ on:
     paths:
       - 'sub_parser.py'
       - '.github/workflows/sub_parser.yml'
-      - 'filter_subs.txt'
-      - 'filter_nodes.txt'
-      - 'subscribes.txt'
+      - 'sub_links.txt'
+     
 
 jobs:
   run-and-push:
