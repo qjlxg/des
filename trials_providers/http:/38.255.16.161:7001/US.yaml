@@ -1,0 +1,5 @@
+%YAML 1.1
+---
+proxies:
+- {name: '🇺🇸 [trojan]美国高速-家宽IP - 跨境速云', server: node3.xres.top, port: 2053, type: trojan, password: 333668ac-321f-47c4-96bb-87f635348fb3, skip-cert-verify: true, udp: true}
+- {name: '🇺🇸 [trojan]美国高速-AI专用[推荐] - 跨境速云', server: suyun.laowu.life, port: 49152, type: trojan, password: 333668ac-321f-47c4-96bb-87f635348fb3, sni: suyun.laowu.life, skip-cert-verify: true, udp: true}

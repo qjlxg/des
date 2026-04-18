@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇺🇸 美国-V1 - xxpp.cool, server: 142.171.147.246, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vus1.xxpp.cool}}, udp: true}
+- {name: 🇺🇸 美国-V2 - xxpp.cool, server: 74.48.204.199, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vus2.xxpp.cool}}, udp: true}
+- {name: 🇺🇸 美国-V3 - xxpp.cool, server: 142.171.199.13, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vus3.xxpp.cool}}, udp: true}

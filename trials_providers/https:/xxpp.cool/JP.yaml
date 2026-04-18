@@ -1,0 +1,5 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇯🇵 日本-S1-测试-非正式节点-1.5倍率 - xxpp.cool, server: 43.163.209.240, port: 7002, type: ss, cipher: chacha20-ietf-poly1305, password: ba33ead6-be80-4840-a02e-471a92c59bf8, udp: true}
+- {name: 🇯🇵 日本-S2-测试-非正式节点-2倍率 - xxpp.cool, server: 188.253.118.184, port: 7003, type: ss, cipher: chacha20-ietf-poly1305, password: ba33ead6-be80-4840-a02e-471a92c59bf8, udp: true}

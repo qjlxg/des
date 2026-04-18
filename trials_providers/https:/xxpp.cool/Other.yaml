@@ -1,0 +1,5 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇰🇷 韩国-V1 - xxpp.cool, server: 47.80.5.197, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vkr1.xxpp.cool}}, udp: true}
+- {name: 🇰🇷 韩国-V2 - xxpp.cool, server: 8.213.144.86, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vkr2.xxpp.cool}}, udp: true}

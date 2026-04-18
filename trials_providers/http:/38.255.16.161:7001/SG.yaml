@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: '🇸🇬 [trojan]新加坡高速-家宽IP - 跨境速云', server: node3.xres.top, port: 2055, type: trojan, password: 333668ac-321f-47c4-96bb-87f635348fb3, skip-cert-verify: true, udp: true}

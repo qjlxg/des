@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-01 - 小牛机场, server: 104.17.124.202, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- {name: 🇭🇰 移动-HKG-80-Trojan-WS-02 - 小牛机场, server: 104.17.124.202, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-03 - 小牛机场, server: 104.16.244.22, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- {name: 🇭🇰 移动-HKG-80-Trojan-WS-04 - 小牛机场, server: 104.16.244.22, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-05 - 小牛机场, server: 104.17.26.59, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- {name: 🇭🇰 移动-HKG-80-Trojan-WS-06 - 小牛机场, server: 104.17.26.59, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}
+- {name: 🇭🇰 移动-HKG-443-Trojan-WS-TLS-07 - 小牛机场, server: 104.17.97.136, port: 443, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, sni: gbyz.asia, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048', headers: {Host: gbyz.asia}}, udp: true}
+- {name: 🇭🇰 移动-HKG-80-Trojan-WS-08 - 小牛机场, server: 104.17.97.136, port: 80, type: trojan, password: 06ccdb80-4617-4a4d-b3c6-f754899dce25, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2048'}, udp: true}

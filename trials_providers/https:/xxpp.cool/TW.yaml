@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇹🇼 台湾-V1-2倍率 - xxpp.cool, server: 188.253.6.76, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vtw1.xxpp.cool}}, udp: true}

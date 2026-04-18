@@ -1,0 +1,14 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇰🇷 韩国-V1 - xxpp.cool, server: 47.80.5.197, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vkr1.xxpp.cool}}, udp: true}
+- {name: 🇰🇷 韩国-V2 - xxpp.cool, server: 8.213.144.86, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vkr2.xxpp.cool}}, udp: true}
+- {name: 🇸🇬 新加坡-V1 - xxpp.cool, server: 8.222.218.65, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vsg1.xxpp.cool}}, udp: true}
+- {name: 🇺🇸 美国-V1 - xxpp.cool, server: 142.171.147.246, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vus1.xxpp.cool}}, udp: true}
+- {name: 🇺🇸 美国-V2 - xxpp.cool, server: 74.48.204.199, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vus2.xxpp.cool}}, udp: true}
+- {name: 🇺🇸 美国-V3 - xxpp.cool, server: 142.171.199.13, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vus3.xxpp.cool}}, udp: true}
+- {name: 🇯🇵 日本-S1-测试-非正式节点-1.5倍率 - xxpp.cool, server: 43.163.209.240, port: 7002, type: ss, cipher: chacha20-ietf-poly1305, password: ba33ead6-be80-4840-a02e-471a92c59bf8, udp: true}
+- {name: 🇯🇵 日本-S2-测试-非正式节点-2倍率 - xxpp.cool, server: 188.253.118.184, port: 7003, type: ss, cipher: chacha20-ietf-poly1305, password: ba33ead6-be80-4840-a02e-471a92c59bf8, udp: true}
+- {name: 🇭🇰 香港-V1 - xxpp.cool, server: 47.76.48.200, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vhk2.xxpp.cool}}, udp: true}
+- {name: 🇭🇰 香港-V2 - xxpp.cool, server: 43.161.249.130, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vhk4.xxpp.cool}}, udp: true}
+- {name: 🇹🇼 台湾-V1-2倍率 - xxpp.cool, server: 188.253.6.76, port: 443, type: vmess, uuid: ba33ead6-be80-4840-a02e-471a92c59bf8, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /assets/js/app, headers: {Host: vtw1.xxpp.cool}}, udp: true}
