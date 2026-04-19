@@ -1,6 +1,6 @@
 # 美帝国主义是纸老虎
-# Updated: 2026-04-19 08:50:12
-# Total: 563
+# Updated: 2026-04-19 12:54:06
+# Total: 1221
 
 port: 7890
 mode: Rule
@@ -39,54 +39,54 @@ proxies:
   - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_847a", type: vmess, server: planb.mojcn.com, port: 16645, uuid: a2106bcf-ea9f-42dc-aeb3-13f85f1d364a, cipher: auto, tls: false, udp: true }
   - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_28d3", type: vmess, server: m.cnmjin.net, port: 16645, uuid: a2106bcf-ea9f-42dc-aeb3-13f85f1d364a, cipher: auto, tls: false, udp: true }
   - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_2222", type: vmess, server: t.cnmjcn.cyou, port: 16645, uuid: a2106bcf-ea9f-42dc-aeb3-13f85f1d364a, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_3fc1", type: vless, server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_0930", type: vless, server: wetest.xn--vip-ob6fs36j.cloudflare.182682.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a5ad", type: vless, server: xn--ktff-jt6hr36l.tencentapp.cn, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a491", type: vless, server: cf.877774.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_66e5", type: vless, server: cfip.xxxxxxxx.tk, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6639", type: vless, server: bestcf.030101.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_4174", type: vless, server: 777.ai7777777.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7a6b", type: vless, server: nrt.xxxxxxxx.nyc.mn, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_1150", type: vless, server: saas.sin.fan, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8828", type: vless, server: cdn.2020111.xyz, port: 443, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_69ff", type: vless, server: cfip.cfcdn.vip, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8a91", type: vless, server: cf.0sm.com, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9a89", type: vless, server: cfip.1323123.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_4c3b", type: vless, server: cloudflare-ip.mofashi.ltd, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_b87c", type: vless, server: cf.877771.xyz, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_9b15", type: vless, server: cf.900501.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6809", type: vless, server: cdns.doon.eu.org, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a630", type: vless, server: fn.130519.xyz, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_19f9", type: vless, server: nrtcfdns.zone.id, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8c23", type: vless, server: xn--b6gac.eu.org, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6652", type: vless, server: freeyx.cloudflare88.eu.org, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_e677", type: vless, server: mfa.gov.ua, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6b9d", type: vless, server: www.shopify.com, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_5010", type: vless, server: visa.com.sg, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_0625", type: vless, server: time.is, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8e4f", type: vless, server: icook.hk, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9273", type: vless, server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9165", type: vless, server: wetest.xn--vip-ob6fs36j.cloudflare.182682.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_fe67", type: vless, server: xn--ktff-jt6hr36l.tencentapp.cn, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_ec76", type: vless, server: cf.877774.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_dd09", type: vless, server: cfip.xxxxxxxx.tk, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9f5b", type: vless, server: bestcf.030101.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_0e3d", type: vless, server: 777.ai7777777.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7bd4", type: vless, server: nrt.xxxxxxxx.nyc.mn, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_cc22", type: vless, server: saas.sin.fan, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_176a", type: vless, server: cdn.2020111.xyz, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f3ae", type: vless, server: cfip.cfcdn.vip, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_84c8", type: vless, server: cf.0sm.com, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6487", type: vless, server: cfip.1323123.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_fb48", type: vless, server: cloudflare-ip.mofashi.ltd, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_f5e7", type: vless, server: cf.877771.xyz, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_4bb2", type: vless, server: cf.900501.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_1e71", type: vless, server: cdns.doon.eu.org, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_0d19", type: vless, server: fn.130519.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_fcd0", type: vless, server: nrtcfdns.zone.id, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_850c", type: vless, server: xn--b6gac.eu.org, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_10a8", type: vless, server: freeyx.cloudflare88.eu.org, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_e2e8", type: vless, server: mfa.gov.ua, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_08de", type: vless, server: www.shopify.com, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_38da", type: vless, server: visa.com.sg, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_aefe", type: vless, server: time.is, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_3bea", type: vless, server: icook.hk, port: 443, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_28be", type: vless, server: tuboshu.io, port: 10086, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b1f6", type: trojan, server: 127.0.0.1, port: 1234, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_388e", type: trojan, server: 103.21.244.181, port: 2053, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_61b8", type: trojan, server: 104.16.224.235, port: 2053, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_25ca", type: trojan, server: 104.24.192.78, port: 2053, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_369f", type: trojan, server: 172.64.42.157, port: 8443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_da1c", type: trojan, server: 104.16.218.0, port: 2053, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8ed8", type: trojan, server: 104.24.210.116, port: 2096, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_1efd", type: trojan, server: 141.101.93.135, port: 8443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_54b9", type: trojan, server: 172.64.72.182, port: 2087, udp: true }
-  - { name: "🇮🇹 意大利 打倒美帝国主义及其一切走狗_4af7", type: trojan, server: 188.114.103.254, port: 2083, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_c37a", type: trojan, server: 190.93.241.65, port: 2083, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_991e", type: trojan, server: 162.159.153.219, port: 8443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a55f", type: trojan, server: 104.16.247.27, port: 2087, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_abae", type: trojan, server: 104.24.45.158, port: 2096, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_750d", type: trojan, server: 172.64.28.58, port: 2083, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_18bd", type: trojan, server: 104.16.235.237, port: 2096, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9ff3", type: trojan, server: 104.24.83.135, port: 443, udp: true }
-  - { name: "🇳🇱 荷兰 打倒美帝国主义及其一切走狗_ed88", type: trojan, server: 141.101.65.4, port: 2083, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_ad7b", type: trojan, server: 172.64.61.199, port: 443, udp: true }
-  - { name: "🇮🇹 意大利 打倒美帝国主义及其一切走狗_be8a", type: trojan, server: 188.114.100.15, port: 8443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6982", type: trojan, server: 190.93.241.57, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a3df", type: trojan, server: 103.21.244.193, port: 2083, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_cb75", type: trojan, server: 104.16.204.140, port: 2087, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9d97", type: trojan, server: 104.24.241.217, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a9f6", type: trojan, server: 172.64.254.166, port: 2087, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9adc", type: trojan, server: 104.16.149.156, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_839a", type: trojan, server: 104.24.9.183, port: 2096, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2a9b", type: trojan, server: 141.101.73.219, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_784b", type: trojan, server: 172.64.122.242, port: 2087, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_716b", type: trojan, server: 188.114.96.16, port: 2053, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_d233", type: trojan, server: 190.93.242.30, port: 2053, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a8ca", type: trojan, server: 162.159.152.132, port: 2053, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_ef60", type: trojan, server: 104.16.137.217, port: 2053, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_3c61", type: trojan, server: 104.24.251.93, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_c2b1", type: trojan, server: 172.64.68.158, port: 2087, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_017a", type: trojan, server: 104.16.112.214, port: 8443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_456c", type: trojan, server: 104.24.166.69, port: 2087, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_588f", type: trojan, server: 141.101.66.115, port: 2053, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_9e65", type: trojan, server: 172.64.117.141, port: 8443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_77d9", type: trojan, server: 188.114.99.52, port: 8443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_3419", type: trojan, server: 190.93.245.230, port: 8443, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_dffc", type: vmess, server: node6.ourfast.asia, port: 443, uuid: 8c8fb661-7b16-49ef-aabb-dad053397c8d, cipher: auto, tls: true, udp: true }
   - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_5ef5", type: vmess, server: node4.ourfast.asia, port: 443, uuid: 8c8fb661-7b16-49ef-aabb-dad053397c8d, cipher: auto, tls: true, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_e729", type: vmess, server: node7.ourfast.asia, port: 443, uuid: 8c8fb661-7b16-49ef-aabb-dad053397c8d, cipher: auto, tls: true, udp: true }
@@ -139,20 +139,22 @@ proxies:
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d1a4", type: vless, server: bm9uzto1yze4mzgwmi03nddkltrkmmytytzmms1hzmyyzdvknzg0mdfanjeumjiyljiwmi4xnde6ndqz, port: 443, udp: true }
   - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_0623", type: vless, server: 34.92.65.82, port: 25791, udp: true }
   - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_347b", type: vless, server: np1.lemen.dev, port: 18881, udp: true }
-  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_f006", type: vless, server: np1.lemen.dev, port: 18882, udp: true }
-  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_d3b1", type: vless, server: np1.lemen.dev, port: 18883, udp: true }
-  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_da6d", type: vless, server: np2.lemen.dev, port: 18891, udp: true }
-  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_236a", type: vless, server: np2.lemen.dev, port: 18892, udp: true }
-  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_5cec", type: vless, server: np2.lemen.dev, port: 18893, udp: true }
-  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_7453", type: vless, server: 212.193.23.53, port: 33333, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_fa61", type: vless, server: np1.lemen.dev, port: 18881, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_eceb", type: vless, server: np1.lemen.dev, port: 18881, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_9c45", type: vless, server: np1.lemen.dev, port: 18882, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_94cf", type: vless, server: np1.lemen.dev, port: 18883, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_c8cc", type: vless, server: np2.lemen.dev, port: 18891, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_b959", type: vless, server: np2.lemen.dev, port: 18892, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_9845", type: vless, server: np2.lemen.dev, port: 18893, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_5b65", type: vless, server: 212.193.23.53, port: 33333, udp: true }
   - { name: "🇱🇹 立陶宛 打倒美帝国主义及其一切走狗_48d4", type: vless, server: lt.point-rusboost.sbs, port: 33333, udp: true }
-  - { name: "🇵🇱 波兰 打倒美帝国主义及其一切走狗_9c60", type: vless, server: 89.37.185.218, port: 33333, udp: true }
-  - { name: "🇱🇹 立陶宛 打倒美帝国主义及其一切走狗_2684", type: vless, server: 194.87.106.77, port: 60141, udp: true }
-  - { name: "🇷🇺 俄罗斯联邦 打倒美帝国主义及其一切走狗_1c80", type: vless, server: 194.87.69.244, port: 24414, udp: true }
+  - { name: "🇵🇱 波兰 打倒美帝国主义及其一切走狗_2c99", type: vless, server: 89.37.185.218, port: 33333, udp: true }
+  - { name: "🇱🇹 立陶宛 打倒美帝国主义及其一切走狗_aa23", type: vless, server: 194.87.106.77, port: 60141, udp: true }
+  - { name: "🇷🇺 俄罗斯联邦 打倒美帝国主义及其一切走狗_9866", type: vless, server: 194.87.69.244, port: 24414, udp: true }
   - { name: "🇷🇺 俄罗斯联邦 打倒美帝国主义及其一切走狗_9848", type: vless, server: 195.133.5.182, port: 21251, udp: true }
-  - { name: "🇷🇺 俄罗斯联邦 打倒美帝国主义及其一切走狗_be8b", type: vless, server: 195.133.5.182, port: 24466, udp: true }
-  - { name: "🇱🇹 立陶宛 打倒美帝国主义及其一切走狗_c144", type: vless, server: 194.87.106.77, port: 61451, udp: true }
-  - { name: "🇷🇺 俄罗斯联邦 打倒美帝国主义及其一切走狗_39ad", type: vless, server: 194.87.69.244, port: 24569, udp: true }
+  - { name: "🇷🇺 俄罗斯联邦 打倒美帝国主义及其一切走狗_4e81", type: vless, server: 195.133.5.182, port: 24466, udp: true }
+  - { name: "🇱🇹 立陶宛 打倒美帝国主义及其一切走狗_8f9b", type: vless, server: 194.87.106.77, port: 61451, udp: true }
+  - { name: "🇷🇺 俄罗斯联邦 打倒美帝国主义及其一切走狗_b1b3", type: vless, server: 194.87.69.244, port: 24569, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_345f", type: vmess, server: 142.171.48.179, port: 28167, uuid: b10969df-4cc9-489c-97f2-aa6e142441dd, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_af49", type: vmess, server: 142.171.48.179, port: 28167, uuid: b10969df-4cc9-489c-97f2-aa6e142441dd, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_585c", type: vmess, server: 142.171.48.179, port: 28167, uuid: b10969df-4cc9-489c-97f2-aa6e142441dd, cipher: auto, tls: false, udp: true }
@@ -163,7 +165,7 @@ proxies:
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_7f6c", type: vmess, server: 154.196.2.95, port: 443, uuid: b10969df-4cc9-489c-97f2-aa6e142441dd, cipher: auto, tls: false, udp: true }
   - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_7baf", type: vmess, server: 86.53.104.193, port: 443, uuid: b10969df-4cc9-489c-97f2-aa6e142441dd, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_6f08", type: vmess, server: 142.171.48.179, port: 28167, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_42fc", type: vmess, server: 142.171.48.179, port: 28167, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_234b", type: vmess, server: 142.171.48.179, port: 28167, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7939", type: vmess, server: 142.171.48.179, port: 28167, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_def2", type: vmess, server: 142.171.48.179, port: 28167, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_60d4", type: vmess, server: 154.193.252.16, port: 443, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
@@ -172,7 +174,7 @@ proxies:
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_4431", type: vmess, server: 154.196.2.95, port: 443, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
   - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_deb8", type: vmess, server: 86.53.104.193, port: 443, uuid: 77fbfad5-2bd4-42b7-81d7-dba08b7c970c, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3221", type: vmess, server: 142.171.48.179, port: 28167, uuid: b80e6efd-1d9b-4f27-9b75-54e476f4566f, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4d30", type: vmess, server: 142.171.48.179, port: 28167, uuid: b80e6efd-1d9b-4f27-9b75-54e476f4566f, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_1f61", type: vmess, server: 142.171.48.179, port: 28167, uuid: b80e6efd-1d9b-4f27-9b75-54e476f4566f, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a4d9", type: vmess, server: 142.171.48.179, port: 28167, uuid: b80e6efd-1d9b-4f27-9b75-54e476f4566f, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c5c6", type: vmess, server: 142.171.48.179, port: 28167, uuid: b80e6efd-1d9b-4f27-9b75-54e476f4566f, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_5d6d", type: vmess, server: 154.193.252.16, port: 443, uuid: b80e6efd-1d9b-4f27-9b75-54e476f4566f, cipher: auto, tls: false, udp: true }
@@ -190,7 +192,7 @@ proxies:
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_7f36", type: vmess, server: 154.196.2.95, port: 443, uuid: 0f73ea45-c937-4fad-9b3b-e0582e9a8cfe, cipher: auto, tls: false, udp: true }
   - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_ad96", type: vmess, server: 86.53.104.193, port: 443, uuid: 0f73ea45-c937-4fad-9b3b-e0582e9a8cfe, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_37dc", type: vmess, server: 142.171.48.179, port: 28167, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_45f7", type: vmess, server: 142.171.48.179, port: 28167, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_6009", type: vmess, server: 142.171.48.179, port: 28167, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_959a", type: vmess, server: 142.171.48.179, port: 28167, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_46b6", type: vmess, server: 142.171.48.179, port: 28167, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_bfdb", type: vmess, server: 154.193.252.16, port: 443, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
@@ -199,7 +201,7 @@ proxies:
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_26d4", type: vmess, server: 154.196.2.95, port: 443, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
   - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_8cc3", type: vmess, server: 86.53.104.193, port: 443, uuid: 11ab021c-c692-4361-ad41-1c128b57089a, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7dfa", type: vmess, server: 142.171.48.179, port: 28167, uuid: 9c3604fe-8de6-41fb-8756-7fa339b9b1a0, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3696", type: vmess, server: 142.171.48.179, port: 28167, uuid: 9c3604fe-8de6-41fb-8756-7fa339b9b1a0, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c563", type: vmess, server: 142.171.48.179, port: 28167, uuid: 9c3604fe-8de6-41fb-8756-7fa339b9b1a0, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_8488", type: vmess, server: 142.171.48.179, port: 28167, uuid: 9c3604fe-8de6-41fb-8756-7fa339b9b1a0, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7701", type: vmess, server: 142.171.48.179, port: 28167, uuid: 9c3604fe-8de6-41fb-8756-7fa339b9b1a0, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_6015", type: vmess, server: 154.193.252.16, port: 443, uuid: 9c3604fe-8de6-41fb-8756-7fa339b9b1a0, cipher: auto, tls: false, udp: true }
@@ -226,7 +228,7 @@ proxies:
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_57ab", type: vmess, server: 154.196.2.95, port: 443, uuid: d4231588-c33d-4beb-9854-debcfdad415e, cipher: auto, tls: false, udp: true }
   - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_02d8", type: vmess, server: 86.53.104.193, port: 443, uuid: d4231588-c33d-4beb-9854-debcfdad415e, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_615c", type: vmess, server: 142.171.48.179, port: 28167, uuid: 2168b064-3cfc-453f-9beb-98014b220cf5, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_15ee", type: vmess, server: 142.171.48.179, port: 28167, uuid: 2168b064-3cfc-453f-9beb-98014b220cf5, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5d3b", type: vmess, server: 142.171.48.179, port: 28167, uuid: 2168b064-3cfc-453f-9beb-98014b220cf5, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_03ce", type: vmess, server: 142.171.48.179, port: 28167, uuid: 2168b064-3cfc-453f-9beb-98014b220cf5, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ebe3", type: vmess, server: 142.171.48.179, port: 28167, uuid: 2168b064-3cfc-453f-9beb-98014b220cf5, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_eb55", type: vmess, server: 154.193.252.16, port: 443, uuid: 2168b064-3cfc-453f-9beb-98014b220cf5, cipher: auto, tls: false, udp: true }
@@ -271,7 +273,7 @@ proxies:
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_ee05", type: vmess, server: 154.196.2.95, port: 443, uuid: ccde7981-f5c3-48cf-921c-2df0227a74f7, cipher: auto, tls: false, udp: true }
   - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_35e6", type: vmess, server: 86.53.104.193, port: 443, uuid: ccde7981-f5c3-48cf-921c-2df0227a74f7, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_631d", type: vmess, server: 142.171.48.179, port: 28167, uuid: 68ecf48d-86a1-497c-a6e6-8cc7ac95ab00, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d471", type: vmess, server: 142.171.48.179, port: 28167, uuid: 68ecf48d-86a1-497c-a6e6-8cc7ac95ab00, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_af16", type: vmess, server: 142.171.48.179, port: 28167, uuid: 68ecf48d-86a1-497c-a6e6-8cc7ac95ab00, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_325e", type: vmess, server: 142.171.48.179, port: 28167, uuid: 68ecf48d-86a1-497c-a6e6-8cc7ac95ab00, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4c5b", type: vmess, server: 142.171.48.179, port: 28167, uuid: 68ecf48d-86a1-497c-a6e6-8cc7ac95ab00, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_7ad2", type: vmess, server: 154.193.252.16, port: 443, uuid: 68ecf48d-86a1-497c-a6e6-8cc7ac95ab00, cipher: auto, tls: false, udp: true }
@@ -298,7 +300,7 @@ proxies:
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_5418", type: vmess, server: 154.196.2.95, port: 443, uuid: 5c29d27b-ee9b-4143-b142-05eea6c7207d, cipher: auto, tls: false, udp: true }
   - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_8394", type: vmess, server: 86.53.104.193, port: 443, uuid: 5c29d27b-ee9b-4143-b142-05eea6c7207d, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_bea6", type: vmess, server: 142.171.48.179, port: 28167, uuid: 466cc463-306e-49ce-8eca-622a371754c4, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5ef4", type: vmess, server: 142.171.48.179, port: 28167, uuid: 466cc463-306e-49ce-8eca-622a371754c4, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_8b43", type: vmess, server: 142.171.48.179, port: 28167, uuid: 466cc463-306e-49ce-8eca-622a371754c4, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2a40", type: vmess, server: 142.171.48.179, port: 28167, uuid: 466cc463-306e-49ce-8eca-622a371754c4, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_1edc", type: vmess, server: 142.171.48.179, port: 28167, uuid: 466cc463-306e-49ce-8eca-622a371754c4, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_cc13", type: vmess, server: 154.193.252.16, port: 443, uuid: 466cc463-306e-49ce-8eca-622a371754c4, cipher: auto, tls: false, udp: true }
@@ -314,10 +316,11 @@ proxies:
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7aea", type: trojan, server: saas.sin.fan, port: 443, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_bc36", type: vless, server: freeyx.cloudflare88.eu.org, port: 443, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_0420", type: trojan, server: freeyx.cloudflare88.eu.org, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_566f", type: vless, server: asaa.mmm.top, port: 10003, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_918c", type: vless, server: asaa.mmm.top, port: 10003, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0f04", type: vless, server: asaa.mmm.top, port: 10003, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7a5e", type: vless, server: asaa.mmm.top, port: 10003, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0c4f", type: vless, server: asaa.mmm.top, port: 10003, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_918c", type: vless, server: asaa.mmm.top, port: 10003, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_c20a", type: vless, server: asaa.mmm.top, port: 10003, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4def", type: vless, server: 147.182.236.243, port: 443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_16f4", type: vless, server: p04.rghvf.sbs, port: 8443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4994", type: vmess, server: p05.rghvf.sbs, port: 1233, uuid: 9b6419f8-8120-442e-a48c-6bf52aef0abf, cipher: auto, tls: true, udp: true }
@@ -326,21 +329,21 @@ proxies:
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_1a35", type: vless, server: 132.226.147.10, port: 443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_6104", type: vless, server: 129.158.41.239, port: 443, udp: true }
   - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_9eb9", type: vless, server: 192.9.164.54, port: 443, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_a4f6", type: vless, server: s5.db-link.in, port: 15996, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_a7ef", type: vless, server: s5.db-link.in, port: 12517, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_d8c0", type: vless, server: s5.db-link.in, port: 18977, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_e341", type: vless, server: s5.db-link.in, port: 18977, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_187f", type: vless, server: s5.db-link.in, port: 12517, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_f1df", type: vless, server: s5.db-link.in, port: 16198, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_a533", type: vless, server: s5.db-link.in, port: 15996, udp: true }
-  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_2111", type: vless, server: s5.db-link.in, port: 12517, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1d8d", type: vless, server: s5.db-link.in, port: 16367, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_222e", type: vless, server: s5.db-link.in, port: 16367, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1681", type: vless, server: s5.db-link.in, port: 15257, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_c82c", type: vless, server: s5.db-link.in, port: 16367, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_81b0", type: vless, server: s5.db-link.in, port: 12247, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_9a5c", type: vless, server: s5.db-link.in, port: 15257, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_71a3", type: vless, server: s5.db-link.in, port: 12247, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_6a70", type: vless, server: s5.db-link.in, port: 18355, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4c33", type: vless, server: us1.chinablog.xyz, port: 9090, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_e109", type: vless, server: us2.chinablog.xyz, port: 9090, udp: true }
-  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_9eab", type: vless, server: kr1.chinablog.xyz, port: 9090, udp: true }
-  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_10f1", type: vless, server: kr2.chinablog.xyz, port: 9090, udp: true }
-  - { name: "🇬🇧 英国 打倒美帝国主义及其一切走狗_3c2f", type: vless, server: uk1.chinablog.xyz, port: 9090, udp: true }
-  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_881f", type: vless, server: hk.chinablog.xyz, port: 8080, udp: true }
-  - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_1cd7", type: vless, server: au1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_67d1", type: vless, server: us2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_5544", type: vless, server: kr1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_4921", type: vless, server: kr2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇬🇧 英国 打倒美帝国主义及其一切走狗_97fb", type: vless, server: uk1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_1df4", type: vless, server: hk.chinablog.xyz, port: 8080, udp: true }
+  - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_da6c", type: vless, server: au1.chinablog.xyz, port: 9090, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_005e", type: trojan, server: ssh.naicn.top, port: 8443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_fa07", type: hysteria2, server: ny1.naicn.top, port: 8443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_59bc", type: hysteria2, server: tc1.naicn.top, port: 443, udp: true }
@@ -355,17 +358,19 @@ proxies:
   - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_385f", type: hysteria2, server: jp1.naicn.top, port: 8443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b06b", type: ss, server: rhfghfghfg, port: 1424, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8fae", type: ss, server: sdgjlkdsgg, port: 6331, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_c07b", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_cafc", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_9d4a", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_1c91", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_65bf", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_cafc", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_f1a6", type: vless, server: 4-jp.ap.ku-ke.cc, port: 443, udp: true }
-  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_5454", type: vless, server: 3-sg.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_39b2", type: vless, server: 3-sg.ap.ku-ke.cc, port: 443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_bd4b", type: vless, server: 1-us.ap.ku-ke.cc, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ff04", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7429", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_d650", type: vless, server: 4-jp.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a480", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_1e1c", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_e19f", type: vless, server: 3-jp.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7b8e", type: vless, server: 4-jp.ap.ku-ke.cc, port: 443, udp: true }
   - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_95b1", type: vless, server: 3-sg.ap.ku-ke.cc, port: 443, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_80ee", type: vless, server: 1-us.ap.ku-ke.cc, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_40e5", type: vless, server: 1-us.ap.ku-ke.cc, port: 443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f95e", type: trojan, server: ssh.naicn.top, port: 8443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ac4c", type: hysteria2, server: ny1.naicn.top, port: 8443, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_9d18", type: hysteria2, server: tc1.naicn.top, port: 443, udp: true }
@@ -400,17 +405,208 @@ proxies:
   - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_d263", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7820", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_6654", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_07ee", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_e1eb", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_fdec", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f09f", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_1e83", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_8f35", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b4e6", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b7a3", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_de5a", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_f85d", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_6063", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4b6d", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_428c", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_b044", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2a46", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7c25", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_3f67", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_1f2d", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8955", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_67de", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_6fe0", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_40c8", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a8c1", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_82c7", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_db4b", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_959b", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7220", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ff4f", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_f3a7", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_912f", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b5e0", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5ac2", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_28df", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_1226", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_9e8e", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7aad", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
   - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_41c3", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
   - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_7be1", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7f4c", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_aa6b", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
-  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_5d5a", type: vless, server: 218.188.154.159, port: 58888, udp: true }
-  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_4370", type: trojan, server: 218.188.154.159, port: 12345, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2e8e", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22345, udp: true }
-  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_2e67", type: trojan, server: 140.235.141.219, port: 12345, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_1c9c", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 54741, udp: true }
-  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_f5ce", type: trojan, server: 209.209.48.3, port: 12345, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_fbea", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22347, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_777d", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_9d7b", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b7df", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_faef", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇹🇷 土耳其 打倒美帝国主义及其一切走狗_4ecc", type: trojan, server: trbya.osaip.net, port: 443, udp: true }
+  - { name: "🇮🇩 印度尼西亚 打倒美帝国主义及其一切走狗_0c29", type: ss, server: idxva.osaip.net, port: 33333, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_30ab", type: trojan, server: jplic.osaip.net, port: 25055, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2c12", type: trojan, server: usrna.osaip.net, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4c24", type: trojan, server: ssh.naicn.top, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_e66b", type: hysteria2, server: ny1.naicn.top, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_82f2", type: hysteria2, server: tc1.naicn.top, port: 443, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_c738", type: hysteria2, server: akhk1.naicn.top, port: 8443, udp: true }
+  - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_762d", type: hysteria2, server: jp1.naicn.top, port: 8443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fdb8", type: ss, server: rhfghfghfg, port: 1424, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5543", type: ss, server: sdgjlkdsgg, port: 6331, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5e4d", type: trojan, server: ssh.naicn.top, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_1aa6", type: hysteria2, server: ny1.naicn.top, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c6f0", type: hysteria2, server: tc1.naicn.top, port: 443, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_3d7c", type: hysteria2, server: akhk1.naicn.top, port: 8443, udp: true }
+  - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_b05f", type: hysteria2, server: jp1.naicn.top, port: 8443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_aa69", type: ss, server: rhfghfghfg, port: 1424, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_746b", type: ss, server: sdgjlkdsgg, port: 6331, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a250", type: vless, server: us1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a2a3", type: vless, server: us2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_6411", type: vless, server: kr1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_5140", type: vless, server: kr2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇬🇧 英国 打倒美帝国主义及其一切走狗_b59e", type: vless, server: uk1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_7663", type: vless, server: hk.chinablog.xyz, port: 8080, udp: true }
+  - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_d3d9", type: vless, server: au1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4b69", type: vless, server: us1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5715", type: vless, server: us2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_3c11", type: vless, server: kr1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_1c11", type: vless, server: kr2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇬🇧 英国 打倒美帝国主义及其一切走狗_de28", type: vless, server: uk1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_8a94", type: vless, server: hk.chinablog.xyz, port: 8080, udp: true }
+  - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_f894", type: vless, server: au1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_521b", type: vless, server: us1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b018", type: vless, server: us2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_59e5", type: vless, server: kr1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_7589", type: vless, server: kr2.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇬🇧 英国 打倒美帝国主义及其一切走狗_5912", type: vless, server: uk1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_b260", type: vless, server: hk.chinablog.xyz, port: 8080, udp: true }
+  - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_e048", type: vless, server: au1.chinablog.xyz, port: 9090, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_693b", type: vless, server: 218.188.154.159, port: 58888, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_30cc", type: trojan, server: 218.188.154.159, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_9d89", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22345, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_f541", type: trojan, server: 140.235.141.219, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_2222", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 54741, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_3030", type: trojan, server: 209.209.48.3, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_6d91", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22347, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_5ce1", type: vless, server: 218.188.154.159, port: 58888, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_9da5", type: trojan, server: 218.188.154.159, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_9a2c", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22345, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_8827", type: trojan, server: 140.235.141.219, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_1d4a", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 54741, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_9b3f", type: trojan, server: 209.209.48.3, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_b74c", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22347, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_a8ef", type: vless, server: 167.148.203.251, port: 8444, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_de8b", type: vless, server: 38.6.219.112, port: 8445, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2138", type: vless, server: 156.246.93.122, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7f6e", type: vless, server: 185.106.96.126, port: 8446, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_bda2", type: vless, server: 66.235.104.197, port: 25858, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_6124", type: vless, server: 218.188.154.159, port: 58888, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_3eeb", type: trojan, server: 218.188.154.159, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_261d", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22345, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_fcaf", type: trojan, server: 140.235.141.219, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_c25d", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 54741, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_d41a", type: trojan, server: 209.209.48.3, port: 12345, udp: true }
+  - { name: "🇲🇾 马来西亚 打倒美帝国主义及其一切走狗_2889", type: trojan, server: c80c993c-e6d4-548c-88c0-c4893b3d3d4d.358.onl, port: 22347, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_13eb", type: trojan, server: 8888888888888888888, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_4c12", type: trojan, server: 9999999999999999999, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_01cd", type: trojan, server: 16939dbz.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_af28", type: trojan, server: 36338dbz.com, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b1f2", type: vless, server: baobei0601.xn--3iq226gfdb94q.com, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_9258", type: trojan, server: 8888888888888888888, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_4a64", type: trojan, server: 9999999999999999999, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a1dc", type: trojan, server: 16939dbz.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_4111", type: trojan, server: 36338dbz.com, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3adc", type: vless, server: baobei0601.xn--3iq226gfdb94q.com, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2359", type: trojan, server: 8888888888888888888, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_010e", type: trojan, server: 9999999999999999999, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_afab", type: trojan, server: 16939dbz.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_34a6", type: trojan, server: 36338dbz.com, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d430", type: vless, server: baobei0601.xn--3iq226gfdb94q.com, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_e65d", type: trojan, server: 8888888888888888888, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_bfac", type: trojan, server: 9999999999999999999, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_234f", type: trojan, server: 16939dbz.xyz, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_bac6", type: trojan, server: 36338dbz.com, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_051c", type: vless, server: baobei0601.xn--3iq226gfdb94q.com, port: 10086, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_4cea", type: vless, server: 8.217.203.226, port: 18431, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_490b", type: vless, server: 8.211.167.199, port: 23221, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_e154", type: vless, server: 38.76.204.88, port: 23422, udp: true }
+  - { name: "🇸🇨 塞舌尔 打倒美帝国主义及其一切走狗_a45b", type: vless, server: 156.238.251.254, port: 23221, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_ac79", type: vless, server: 203.174.82.146, port: 23245, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_d354", type: vless, server: 156.226.171.224, port: 23230, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_f4d7", type: trojan, server: jp200m.jiasu.asia, port: 50000, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ba4f", type: trojan, server: us200m.jiasu.asia, port: 50000, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_29f7", type: trojan, server: hk200m.jiasu.asia, port: 50000, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ef5b", type: vless, server: y2hhy2hhmjatcg9setezmdu6yzczotu3odqtyzc3zc0zotbhltlkyjytnjcxnti0njjiotviqhm1lmrilwxpbmsuaw46mtczntc, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ec0b", type: vless, server: y2hhy2hhmjatcg9setezmdu6yzczotu3odqtyzc3zc0zotbhltlkyjytnjcxnti0njjiotviqhm1lmrilwxpbmsuaw46mtgymdk, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_52a8", type: vless, server: y2hhy2hhmjatcg9setezmdu6yzczotu3odqtyzc3zc0zotbhltlkyjytnjcxnti0njjiotviqhm1lmrilwxpbmsuaw46mtgymdk, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2c05", type: vless, server: y2hhy2hhmjatcg9setezmdu6yzczotu3odqtyzc3zc0zotbhltlkyjytnjcxnti0njjiotviqhm1lmrilwxpbmsuaw46mtu2ndk, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_1822", type: vless, server: y2hhy2hhmjatcg9setezmdu6yzczotu3odqtyzc3zc0zotbhltlkyjytnjcxnti0njjiotviqhm1lmrilwxpbmsuaw46mte4ntq, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5c99", type: vless, server: y2hhy2hhmjatcg9setezmdu6yzczotu3odqtyzc3zc0zotbhltlkyjytnjcxnti0njjiotviqhm1lmrilwxpbmsuaw46mti3mdc, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5bf6", type: vless, server: y2hhy2hhmjatcg9setezmdu6odjmzjmwnjytmwzizc0zzgqyltlimtutn2m0nme4njuzmtdjqhm1lmrilwxpbmsuaw46mta0otc, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_f44c", type: vless, server: y2hhy2hhmjatcg9setezmdu6odjmzjmwnjytmwzizc0zzgqyltlimtutn2m0nme4njuzmtdjqhm1lmrilwxpbmsuaw46mtkymzg, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b5a1", type: vless, server: y2hhy2hhmjatcg9setezmdu6odjmzjmwnjytmwzizc0zzgqyltlimtutn2m0nme4njuzmtdjqhm1lmrilwxpbmsuaw46mta0otc, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8520", type: vless, server: y2hhy2hhmjatcg9setezmdu6odjmzjmwnjytmwzizc0zzgqyltlimtutn2m0nme4njuzmtdjqhm1lmrilwxpbmsuaw46mtczode, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_47b5", type: vless, server: y2hhy2hhmjatcg9setezmdu6odjmzjmwnjytmwzizc0zzgqyltlimtutn2m0nme4njuzmtdjqhm1lmrilwxpbmsuaw46mtkymzg, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_31d0", type: vless, server: y2hhy2hhmjatcg9setezmdu6odjmzjmwnjytmwzizc0zzgqyltlimtutn2m0nme4njuzmtdjqhm1lmrilwxpbmsuaw46mtkymzg, port: 443, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_97ea", type: vmess, server: hk.aicvideo.info, port: 8443, uuid: 456c497e-02bc-4b46-883f-06747cabdfbd, cipher: auto, tls: true, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_6a69", type: vmess, server: hk.aicvideo.info, port: 8443, uuid: 456c497e-02bc-4b46-883f-06747cabdfbd, cipher: auto, tls: true, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_c613", type: vmess, server: hk.aicvideo.info, port: 8443, uuid: 456c497e-02bc-4b46-883f-06747cabdfbd, cipher: auto, tls: true, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f0b9", type: ss, server: 107.172.219.230, port: 2096, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_6fc4", type: trojan, server: hk.aicvideo.info, port: 8809, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_69f8", type: vmess, server: hk.aicvideo.info, port: 8810, uuid: 456c497e-02bc-4b46-883f-06747cabdfbd, cipher: auto, tls: true, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_5774", type: vmess, server: hk.aicvideo.info, port: 8443, uuid: 4dc8eeda-fdfb-4660-8ceb-3e872956cb94, cipher: auto, tls: true, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_ee6d", type: vmess, server: hk.aicvideo.info, port: 8443, uuid: 4dc8eeda-fdfb-4660-8ceb-3e872956cb94, cipher: auto, tls: true, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_0622", type: vmess, server: hk.aicvideo.info, port: 8443, uuid: 4dc8eeda-fdfb-4660-8ceb-3e872956cb94, cipher: auto, tls: true, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d70d", type: ss, server: 107.172.219.230, port: 2096, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_ceb8", type: trojan, server: hk.aicvideo.info, port: 8809, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_45f7", type: vmess, server: hk.aicvideo.info, port: 8810, uuid: 4dc8eeda-fdfb-4660-8ceb-3e872956cb94, cipher: auto, tls: true, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_eda8", type: vmess, server: 127.0.0.1, port: 1, uuid: bcb7c581-3c95-4569-a4e7-918141e91ea3, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_901b", type: vmess, server: 127.0.0.1, port: 1, uuid: bcb7c581-3c95-4569-a4e7-918141e91ea3, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6e33", type: vmess, server: 127.0.0.1, port: 1, uuid: bcb7c581-3c95-4569-a4e7-918141e91ea3, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8679", type: vmess, server: 127.0.0.1, port: 1, uuid: bcb7c581-3c95-4569-a4e7-918141e91ea3, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_9c31", type: vmess, server: 132.145.154.72, port: 80, uuid: bcb7c581-3c95-4569-a4e7-918141e91ea3, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_bddd", type: vmess, server: 132.145.154.72, port: 443, uuid: bcb7c581-3c95-4569-a4e7-918141e91ea3, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_f366", type: ss, server: 127.0.0.1, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_eede", type: trojan, server: 166.0.192.29, port: 41001, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_66dd", type: vless, server: a1-tss.pages.dev, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_b529", type: vless, server: www.speedtest.net, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_eaf9", type: vless, server: 172.66.44.137, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7680", type: vless, server: 172.66.47.119, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_bc7b", type: vless, server: 2606:4700:310c::ac42:2f77, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_f071", type: vless, server: 2606:4700:310c::ac42:2c89, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_368c", type: trojan, server: jp200m.jiasu.asia, port: 50000, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_bbac", type: trojan, server: us200m.jiasu.asia, port: 50000, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_841a", type: trojan, server: hk200m.jiasu.asia, port: 50000, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_7260", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_8e62", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_3f2f", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7642", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_cff4", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_796e", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_34f1", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_a047", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_9c4a", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_df31", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_87c4", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_e46c", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_7875", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f7b6", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_8a33", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2250", type: trojan, server: global.digital-nvme.com, port: 39501, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_056b", type: trojan, server: global.digital-nvme.com, port: 39502, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_388a", type: trojan, server: global.digital-nvme.com, port: 39503, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_c336", type: trojan, server: global.digital-nvme.com, port: 39504, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d32f", type: trojan, server: global.digital-nvme.com, port: 39505, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d6dd", type: vless, server: us2.cco.pp.ua, port: 2053, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_df32", type: ss, server: wyy5.gdnye.cn, port: 19006, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_f207", type: ss, server: wyy1.gdnye.cn, port: 19008, udp: true }
   - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_4f4e", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: 2c4cf792-475e-4a41-a302-6c35fd327a35, cipher: auto, tls: true, udp: true }
   - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_c811", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: 2c4cf792-475e-4a41-a302-6c35fd327a35, cipher: auto, tls: true, udp: true }
   - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_8a30", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: 2c4cf792-475e-4a41-a302-6c35fd327a35, cipher: auto, tls: true, udp: true }
@@ -421,55 +617,288 @@ proxies:
   - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_6bcb", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: 9d4a3168-7ae6-4a6f-b18a-306fa236e06f, cipher: auto, tls: true, udp: true }
   - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_a6c9", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: 9d4a3168-7ae6-4a6f-b18a-306fa236e06f, cipher: auto, tls: true, udp: true }
   - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_ad33", type: vmess, server: tw01.neurix.icu, port: 443, uuid: 9d4a3168-7ae6-4a6f-b18a-306fa236e06f, cipher: auto, tls: true, udp: true }
-  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_5b7a", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_4896", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: ba111756-7aba-41dd-8d8a-d55a3f4755bb, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_faef", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: ba111756-7aba-41dd-8d8a-d55a3f4755bb, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_e69d", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: ba111756-7aba-41dd-8d8a-d55a3f4755bb, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_15f8", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: ba111756-7aba-41dd-8d8a-d55a3f4755bb, cipher: auto, tls: true, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_cd2e", type: vmess, server: tw01.neurix.icu, port: 443, uuid: ba111756-7aba-41dd-8d8a-d55a3f4755bb, cipher: auto, tls: true, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_0a4d", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_3737", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_1de8", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_43b1", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_25ac", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_31a0", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_bec8", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_c171", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a7a9", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_8907", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_da49", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_b8cb", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_30de", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_246d", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_785f", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_11d1", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
   - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_9876", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
   - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_8b70", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_647c", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_9c7f", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_bf81", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_8a73", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: 7f620257-50b3-4ed6-ac6e-6c6e80b237af, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_c52d", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: 7f620257-50b3-4ed6-ac6e-6c6e80b237af, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_f335", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: 7f620257-50b3-4ed6-ac6e-6c6e80b237af, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_3cfa", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: 7f620257-50b3-4ed6-ac6e-6c6e80b237af, cipher: auto, tls: true, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_e212", type: vmess, server: tw01.neurix.icu, port: 443, uuid: 7f620257-50b3-4ed6-ac6e-6c6e80b237af, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_d8d6", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: e0c616cf-b03c-4718-be3a-fc2e411dacab, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_c7d3", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: e0c616cf-b03c-4718-be3a-fc2e411dacab, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_bfac", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: e0c616cf-b03c-4718-be3a-fc2e411dacab, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_a8f0", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: e0c616cf-b03c-4718-be3a-fc2e411dacab, cipher: auto, tls: true, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_f825", type: vmess, server: tw01.neurix.icu, port: 443, uuid: e0c616cf-b03c-4718-be3a-fc2e411dacab, cipher: auto, tls: true, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_1664", type: hysteria2, server: fre.guren1.me, port: 8443, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_ccc9", type: vless, server: 156.224.78.11, port: 8080, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_31bf", type: vmess, server: 156.224.78.11, port: 40001, uuid: b2325ebb-21a3-46db-ae98-44884ef6dc44, cipher: auto, tls: false, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_8950", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_5728", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_b72a", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7bee", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_befb", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_7935", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_c9c5", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_ee21", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_1cb0", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ff90", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_b886", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_9496", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_f91a", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c3ab", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_dd53", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ccdd", type: trojan, server: global.digital-nvme.com, port: 39501, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8a6c", type: trojan, server: global.digital-nvme.com, port: 39502, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0495", type: trojan, server: global.digital-nvme.com, port: 39503, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7223", type: trojan, server: global.digital-nvme.com, port: 39504, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b8db", type: trojan, server: global.digital-nvme.com, port: 39505, udp: true }
   - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_39df", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
-  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_a262", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
-  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_4fa2", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_99a9", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_362d", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_6ab8", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_89fe", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_088c", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_876f", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_9a31", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: 01b3e052-f81a-46da-94bb-995d51cb4b7f, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_3a15", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: 01b3e052-f81a-46da-94bb-995d51cb4b7f, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_2760", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: 01b3e052-f81a-46da-94bb-995d51cb4b7f, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_62f1", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: 01b3e052-f81a-46da-94bb-995d51cb4b7f, cipher: auto, tls: true, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_2703", type: vmess, server: tw01.neurix.icu, port: 443, uuid: 01b3e052-f81a-46da-94bb-995d51cb4b7f, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_d2fe", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: 9a577072-3971-41df-83be-abb07fddc995, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_0c92", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: 9a577072-3971-41df-83be-abb07fddc995, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_fb05", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: 9a577072-3971-41df-83be-abb07fddc995, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_b158", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: 9a577072-3971-41df-83be-abb07fddc995, cipher: auto, tls: true, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_47b6", type: vmess, server: tw01.neurix.icu, port: 443, uuid: 9a577072-3971-41df-83be-abb07fddc995, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_311d", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: 79e621ae-4dc5-40eb-a826-0df4969216e3, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_7200", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: 79e621ae-4dc5-40eb-a826-0df4969216e3, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_9ffe", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: 79e621ae-4dc5-40eb-a826-0df4969216e3, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_1ee1", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: 79e621ae-4dc5-40eb-a826-0df4969216e3, cipher: auto, tls: true, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_fb1b", type: vmess, server: tw01.neurix.icu, port: 443, uuid: 79e621ae-4dc5-40eb-a826-0df4969216e3, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_ed9c", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10000, uuid: aacfaec0-f0d0-4c9c-b06f-8b876413749b, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_2d9c", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10001, uuid: aacfaec0-f0d0-4c9c-b06f-8b876413749b, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_2e76", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10002, uuid: aacfaec0-f0d0-4c9c-b06f-8b876413749b, cipher: auto, tls: true, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_164e", type: vmess, server: ne-cbe4k7vz.neurix.sbs, port: 10003, uuid: aacfaec0-f0d0-4c9c-b06f-8b876413749b, cipher: auto, tls: true, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_0e68", type: vmess, server: tw01.neurix.icu, port: 443, uuid: aacfaec0-f0d0-4c9c-b06f-8b876413749b, cipher: auto, tls: true, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_3895", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_9aac", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_c6fe", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c96a", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_6b69", type: vless, server: 207.57.128.27, port: 8081, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_58c7", type: trojan, server: ny.vpnboost.xyz, port: 23786, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2015", type: ss, server: ny.vpnboost.xyz, port: 35678, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_98b2", type: vless, server: ny.vpnboost.xyz, port: 12986, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b207", type: vmess, server: ny.vpnboost.xyz, port: 54211, uuid: d42c9ae3-21e9-421e-8668-7ad69b4f456b, cipher: auto, tls: true, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8224", type: vless, server: 141.98.197.149, port: 8080, udp: true }
-  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_34da", type: vless, server: 85.113.71.97, port: 8080, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b522", type: vless, server: 72.18.214.24, port: 8080, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_558f", type: vless, server: 141.98.197.15, port: 8080, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_db86", type: ss, server: n1-251001.dnsv1.cc, port: 42147, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5674", type: ss, server: n1-251001.dnsv1.cc, port: 41116, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b296", type: ss, server: n1-251001.dnsv1.cc, port: 41121, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0d7b", type: ss, server: n1-251001.dnsv1.cc, port: 28193, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d964", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4turbdu1erkhrzyzncm91cd1ovel3, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7acc", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdoqzb4t1nbee16bzfnem94tmcmz3jvdxa9tlrjdw, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_67a9", type: ssr, server: ms4xljeumtozmtuwmdphdxrox2flczeyof9tzdu6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxrooleynunkmjltlz9vymzzcgfyyw09tnpjd01qqxhnve0ytkm1dgfxtnlim052wm5rdvkyoxqmchjvdg9wyxjhbt1nvev6tmprnlpwsnfpr1iwjnjlbwfya3m9tvm3bnu2m290tg5scnbqbnzarm9ksfj3y3pvdkwzrnbibkzwympjd01qsxvzmjl0jmdyb3vwpu5usxc, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_cb61", type: ssr, server: otu5nzmynzgxojmxntawomf1dghfywvzmti4x21kntpjagfjageymdp0bhmxljjfdglja2v0x2f1dgg6uti1q2qyow0vp29iznnwyxjhbt1oemn3twpbee1uttjoqzv0yvdoewiztnzablf1wti5dczwcm90b3bhcmftpu1urxpoale2wlzkcu9hujamcmvtyxjrcz1natv4y2vllxberxdnvgn4t1rjek16uw81wln1nvpdtzu3dxq2tfm1nzd5sizncm91cd1ovel3, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7b3b", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4turcsffnjmdyb3vwpu5usxc, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_06d9", type: ssr, server: ms4xljeumtozmtuwmdphdxrox2flczeyof9tzdu6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxrooleynunkmjltlz9vymzzcgfyyw09wwpsavluwxhnve0ytxk1dgfxtnlim052wm5rdvkyoxqmchjvdg9wyxjhbt1nvev6tmpnnljicezja1pyjnjlbwfya3m9tvm3bnu2m290tg5scnbqbnzarm9ksfj3y3pvdkwzrnbibkzwympjd01qsxvzmjl0jmdyb3vwpu5usxc, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_69a7", type: ssr, server: otu5nzmynzgxojmxntawomf1dghfywvzmti4x21kntpjagfjageymdp0bhmxljjfdglja2v0x2f1dgg6uti1q2qyow0vp29iznnwyxjhbt1zaljpwvrzee1uttjnetv0yvdoewiztnzablf1wti5dczwcm90b3bhcmftpu1urxpoak02ukhwrmnrwnimcmvtyxjrcz1natv4y2vllxberxdnvgn4t1rjek16uw81wln1nvpdtzu3dxq2tfm1nzd5sizncm91cd1ovel3, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_c413", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4turbdu1eukhrzyzncm91cd1ovel3, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ba4d", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdoqzb4t1nbee16bzfnem95t0emz3jvdxa9tlrjdw, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_9909", type: ssr, server: ms4xljeumtozmtuwmdphdxrox2flczeyof9tzdu6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxrooleynunkmjltlz9vymzzcgfyyw09tjjobvluvxhnve0ytmk1dgfxtnlim052wm5rdvkyoxqmchjvdg9wyxjhbt1nvev6tmpznlywuk1zwghhjnjlbwfya3m9tvm3bnu2m290tg5scnbqbnzarm9ksfj3y3pvdkwzrnbibkzwympjd01qsxvzmjl0jmdyb3vwpu5usxc, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ebb2", type: ssr, server: otu5nzmynzgxojmxntawomf1dghfywvzmti4x21kntpjagfjageymdp0bhmxljjfdglja2v0x2f1dgg6uti1q2qyow0vp29iznnwyxjhbt1omk5twvrvee1uttjoatv0yvdoewiztnzablf1wti5dczwcm90b3bhcmftpu1urxpoalk2vjbstvlyaecmcmvtyxjrcz1natv4y2vllxberxdnvgn4t1rjek16uw81wln1nvpdtzu3dxq2tfm1nzd5sizncm91cd1ovel3, port: 443, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_8df9", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_167c", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_3404", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_0bcf", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2c93", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_fb0c", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_a19e", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_5910", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_1f9e", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_13d7", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_f1da", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_2aad", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_6491", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_42ba", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_8336", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_daaf", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_7df4", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_953b", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7169", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c8b9", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_60df", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_a606", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_1562", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b74d", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3821", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_c1a7", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_c005", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_fcd9", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d95a", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2fa7", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_79f8", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_6198", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_b248", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_aac9", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_0775", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_f271", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_873b", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_2786", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b660", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2d77", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_c7a4", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_18b2", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_2998", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_fbf8", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_97ac", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_18a5", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_eebc", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_90d7", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a1ce", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7921", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_8caa", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_0651", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_99da", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_42cc", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_990c", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_1c32", type: vless, server: kr-b.bnsss.cc, port: 8080, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_f723", type: vless, server: kr-a.bnsss.cc, port: 8086, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_7766", type: vless, server: kr-c.bnsss.cc, port: 8087, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f038", type: vless, server: us-a.bnsss.cc, port: 8088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_9cb1", type: vless, server: 207.57.128.27, port: 8081, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_6f48", type: vless, server: us2.cco.pp.ua, port: 2053, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a507", type: ss, server: wyy5.gdnye.cn, port: 19006, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_aa3a", type: ss, server: wyy1.gdnye.cn, port: 19008, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_69c6", type: vless, server: us2.cco.pp.ua, port: 2053, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2931", type: ss, server: wyy5.gdnye.cn, port: 19006, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_9877", type: ss, server: wyy1.gdnye.cn, port: 19008, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_102e", type: vless, server: dmiteb.tamalagebi.xyz, port: 8443, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_e7d6", type: vmess, server: 98.tw-nodes.xyz, port: 443, uuid: 00059275-1c98-3b8e-933a-5f60323f20e3, cipher: auto, tls: true, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_41a8", type: vless, server: test.example.com, port: 443, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_5c40", type: vless, server: limisuidao.com, port: 10086, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6a62", type: vless, server: 1.1.1.1, port: 443, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_46f8", type: vless, server: rinki.store, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_1618", type: vless, server: aaee.55333.one, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_3db1", type: vless, server: jc.freelove.indevs.in, port: 443, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_fabb", type: vless, server: 83.150.217.93, port: 3272, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_5cc3", type: vless, server: 212.227.7.153, port: 9062, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_a624", type: vless, server: 212.132.99.151, port: 9947, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_f024", type: ss, server: 1.1.1.1, port: 1080, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_3880", type: ss, server: 127.0.0.1, port: 80, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7199", type: ss, server: 127.0.0.1, port: 80, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_670d", type: ss, server: 127.0.0.1, port: 80, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c85e", type: vmess, server: www.google.com, port: 10086, uuid: 60f45be4-65e1-354e-8e0e-9d775e699723, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d793", type: vmess, server: www.google.com, port: 10086, uuid: 60f45be4-65e1-354e-8e0e-9d775e699723, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f987", type: vmess, server: www.google.com, port: 10086, uuid: 60f45be4-65e1-354e-8e0e-9d775e699723, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_3d45", type: ss, server: 127.0.0.1, port: 80, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_abfd", type: vless, server: 141.98.197.149, port: 8080, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_94b8", type: vless, server: 85.113.71.97, port: 8080, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_00d0", type: vless, server: 72.18.214.24, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_d65b", type: vless, server: 141.98.197.15, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_c2ef", type: vless, server: 141.98.197.149, port: 8080, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_edf6", type: vless, server: 85.113.71.97, port: 8080, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_19f1", type: vless, server: 72.18.214.24, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_04bf", type: vless, server: 141.98.197.15, port: 8080, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0c52", type: ss, server: 127.0.0.1, port: 80, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_9d0e", type: vmess, server: 98.tw-nodes.xyz, port: 443, uuid: 8faa8cdd-3184-326c-a57d-d3202f293b6e, cipher: auto, tls: true, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_53a0", type: vless, server: test.example.com, port: 443, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_ad25", type: vless, server: limisuidao.com, port: 10086, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_bd98", type: vmess, server: 98.tw-nodes.xyz, port: 443, uuid: df1cb95d-c792-34cb-a08a-03df1663be1e, cipher: auto, tls: true, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5934", type: vless, server: test.example.com, port: 443, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_d690", type: vless, server: limisuidao.com, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8495", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_c9c9", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7ee7", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_bbd0", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_9dc2", type: vless, server: jc.freelove.indevs.in, port: 443, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_789b", type: vless, server: 83.150.217.93, port: 3272, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_fe36", type: vless, server: 212.227.7.153, port: 9062, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_6089", type: vless, server: 212.132.99.151, port: 9947, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_dc29", type: vless, server: jc.freelove.indevs.in, port: 443, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_e520", type: vless, server: 83.150.217.93, port: 3272, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_4a5a", type: vless, server: 212.227.7.153, port: 9062, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_0152", type: vless, server: 212.132.99.151, port: 9947, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_3d82", type: vless, server: jc.freelove.indevs.in, port: 443, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_c948", type: vless, server: 83.150.217.93, port: 3272, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_4d89", type: vless, server: 212.227.7.153, port: 9062, udp: true }
+  - { name: "🇩🇪 德国 打倒美帝国主义及其一切走狗_21ca", type: vless, server: 212.132.99.151, port: 9947, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b833", type: ss, server: 127.0.0.1, port: 1080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_4ec9", type: vmess, server: sg2.cloudbb.loan, port: 443, uuid: f3b7663a-c012-39fb-848c-bf79d25bd529, cipher: auto, tls: true, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_94b8", type: trojan, server: hkdmit7.cloudbb.loan, port: 20005, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7c29", type: vmess, server: cloudbb.win, port: 10086, uuid: f3b7663a-c012-39fb-848c-bf79d25bd529, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9d1b", type: vmess, server: cloudbb.win, port: 10086, uuid: f3b7663a-c012-39fb-848c-bf79d25bd529, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_9073", type: ss, server: 127.0.0.1, port: 80, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_74ad", type: ss, server: 127.0.0.1, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7833", type: ss, server: 127.0.0.1, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_04e7", type: ss, server: 127.0.0.1, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_053a", type: ss, server: 127.0.0.1, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d9fe", type: ss, server: n1-251001.dnsv1.cc, port: 42147, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2b01", type: ss, server: n1-251001.dnsv1.cc, port: 41116, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_71f5", type: ss, server: n1-251001.dnsv1.cc, port: 41121, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0c09", type: ss, server: n1-251001.dnsv1.cc, port: 28193, udp: true }
-  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_dfb3", type: vless, server: 168.138.166.89, port: 8899, udp: true }
-  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_bb09", type: vless, server: 138.2.94.44, port: 8899, udp: true }
-  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_f3fb", type: vless, server: 152.67.211.233, port: 8899, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7b3b", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4turcsffnjmdyb3vwpu5usxc, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fa0e", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdnetb3t0nbee56bzborg96twcmz3jvdxa9tlrjdw, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ea51", type: ssr, server: ms4xljeumtozmtuwmdphdxrox2flczeyof9tzdu6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxrooleynunkmjltlz9vymzzcgfyyw09tvrrne5tuxhnvev3t0m1dgfxtnlim052wm5rdvkyoxqmchjvdg9wyxjhbt1nvev4turnnlrgutnwrfjsjnjlbwfya3m9tvm3bnu2m290tg5scnbqbnzarm9ksfj3y3pvdkwzrnbibkzwympjd01qsxvzmjl0jmdyb3vwpu5usxc, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_dd26", type: ssr, server: otu5nzmynzgxojmxntawomf1dghfywvzmti4x21kntpjagfjageymdp0bhmxljjfdglja2v0x2f1dgg6uti1q2qyow0vp29iznnwyxjhbt1nvfe0tm1ree1urxdpqzv0yvdoewiztnzablf1wti5dczwcm90b3bhcmftpu1urxhnrgc2vezrm1zeumwmcmvtyxjrcz1natv4y2vllxberxdnvgn4t1rjek16uw81wln1nvpdtzu3dxq2tfm1nzd5sizncm91cd1ovel3, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_fd36", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_2a8b", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8ef5", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7245", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_c380", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_be9a", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_69f5", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9380", type: vless, server: 162.159.39.242, port: 443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_98bf", type: vless, server: 184.168.126.62, port: 10443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_d9df", type: vless, server: 184.168.126.62, port: 10443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_22d7", type: trojan, server: 184.168.126.62, port: 30443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_1525", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_de54", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_3c9a", type: vless, server: 54.65.22.236, port: 8081, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7c5d", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_9bac", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a299", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b5cf", type: vless, server: 54.65.22.236, port: 8081, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_d791", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8907", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_9ff9", type: vless, server: 140.238.48.26, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_79c8", type: vless, server: 54.65.22.236, port: 8081, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_e819", type: ss, server: 142.91.108.183, port: 12377, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3ffd", type: ss, server: 23.80.90.220, port: 12378, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2ffd", type: ss, server: 38.46.155.193, port: 12781, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ba9c", type: ss, server: 142.171.106.233, port: 9999, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_d8c5", type: ss, server: 103.97.178.98, port: 19999, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ba68", type: vless, server: 23.94.235.138, port: 8443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_ad8c", type: vless, server: 168.138.166.89, port: 8899, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_a491", type: vless, server: 138.2.94.44, port: 8899, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_441a", type: vless, server: 152.67.211.233, port: 8899, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ea68", type: vmess, server: 104.168.1.102, port: 8443, uuid: 8981e3d8-d51b-420c-8a40-6a44509ce8f1, cipher: auto, tls: true, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a85d", type: vmess, server: 104.168.1.102, port: 8222, uuid: 8981e3d8-d51b-420c-8a40-6a44509ce8f1, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4484", type: vmess, server: 13.58.50.121, port: 80, uuid: 8981e3d8-d51b-420c-8a40-6a44509ce8f1, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_4317", type: ss, server: 142.91.108.183, port: 12377, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3dde", type: ss, server: 23.80.90.220, port: 12378, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5f22", type: ss, server: 38.46.155.193, port: 12781, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ddee", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4tuvkqyzncm91cd1am0pswvhsa1pxrnm, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_80d4", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu55mhdoqzb4t0nbee16b3povg95twcmz3jvdxa9wjnkbflyumtav0zz, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d40a", type: ssr, server: 44cq5roo5osp44cr6k-3u1ns55so5oi35bc95b-r5pu05o2i5li6vjjyyxnnvzhnq5npppbpobxmninmlznnqivvvie6ntqzomf1dghfywvzmti4x3noyte6ywvzlti1ni1jzmi6dgxzms4yx3rpy2tldf9hdxrook5uuxovp29iznnwyxjhbt1nr0v6wwpnm09ettbmbmr1y3k1m2fxnwtim2r6tg1odmjrjnbyb3rvcgfyyw09tnpnek5ece9lrlywv0dvjnjlbwfya3m9ndrdutvyt281b1nqndrdujzlltnvmu5tntvtbzvvatm1ykm5nwitcjvwdta1bzjpnuxpnlzqsnlzwg5udlpibne1bnbwcgjwb2jybw5jbm1swm5ucul2dnzjrszncm91cd1am0pswvhsa1pxrnm, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_60bf", type: vmess, server: dog.lightningcat.pro, port: 10086, uuid: 42f8a588-99c9-3198-a003-fede9cbeaa19, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_6c02", type: vmess, server: dog.lightningcat.pro, port: 10086, uuid: 42f8a588-99c9-3198-a003-fede9cbeaa19, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_5fc4", type: vmess, server: dog.lightningcat.pro, port: 10086, uuid: 42f8a588-99c9-3198-a003-fede9cbeaa19, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6fb7", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu55mhdoqzb4t0nbee16bzfnem93tvemz3jvdxa9wjnkbflyumtav0zz, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_05e2", type: ssr, server: 44cq5roo5osp44cr6k-3u1ns55so5oi35bc95b-r5pu05o2i5li6vjjyyxnnvzhnq5npppbpobxmninmlznnqivvvie6ntqzomf1dghfywvzmti4x3noyte6ywvzlti1ni1jzmi6dgxzms4yx3rpy2tldf9hdxrook5uuxovp29iznnwyxjhbt1nv1v3wm1nm09ettfmbmr1y3k1m2fxnwtim2r6tg1odmjrjnbyb3rvcgfyyw09tnpnek5ucezimnmwy1u0jnjlbwfya3m9ndrdutvyt281b1nqndrdujzlltnvmu5tntvtbzvvatm1ykm5nwitcjvwdta1bzjpnuxpnlzqsnlzwg5udlpibne1bnbwcgjwb2jybw5jbm1swm5ucul2dnzjrszncm91cd1am0pswvhsa1pxrnm, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6d04", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu55mhdoqzb4t0nbee16bzfnem93t1emz3jvdxa9wjnkbflyumtav0zz, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_cf57", type: ssr, server: 44cq5roo5osp44cr6k-3u1ns55so5oi35bc95b-r5pu05o2i5li6vjjyyxnnvzhnq5npppbpobxmninmlznnqivvvie6ntqzomf1dghfywvzmti4x3noyte6ywvzlti1ni1jzmi6dgxzms4yx3rpy2tldf9hdxrook5uuxovp29iznnwyxjhbt1oemxswwpjm09ettjmbmr1y3k1m2fxnwtim2r6tg1odmjrjnbyb3rvcgfyyw09tnpnek5qcdfswfjdvjbjjnjlbwfya3m9ndrdutvyt281b1nqndrdujzlltnvmu5tntvtbzvvatm1ykm5nwitcjvwdta1bzjpnuxpnlzqsnlzwg5udlpibne1bnbwcgjwb2jybw5jbm1swm5ucul2dnzjrszncm91cd1am0pswvhsa1pxrnm, port: 443, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_540d", type: vless, server: my.siuu.top, port: 10086, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_f4cc", type: vless, server: my.siuu.top, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_89dd", type: vless, server: ems-jdt24he2q.yspeed.top, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_96b0", type: ss, server: 127.0.0.1, port: 1234, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6f3b", type: ss, server: 127.0.0.1, port: 1, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_e2eb", type: ss, server: 127.0.0.1, port: 1, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a0a5", type: ss, server: 142.91.108.183, port: 12377, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_12d1", type: ss, server: 23.80.90.220, port: 12378, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4c7a", type: ss, server: 38.46.155.193, port: 12781, udp: true }
   - { name: "🇨🇦 加拿大 打倒美帝国主义及其一切走狗_5276", type: trojan, server: 209.200.246.105, port: 17837, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b927", type: trojan, server: 216.234.140.55, port: 47574, udp: true }
   - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_b9c7", type: trojan, server: 154.3.37.35, port: 41916, udp: true }
@@ -477,51 +906,224 @@ proxies:
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_3dfe", type: vless, server: c2-4.bujidao.org, port: 2083, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_be92", type: vless, server: c2-6.bujidao.org, port: 8443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_31c8", type: ss, server: 127.0.0.1, port: 1234, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8342", type: ss, server: 127.0.0.1, port: 1234, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5430", type: ss, server: 127.0.0.1, port: 1234, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7c2b", type: vless, server: cf.090227.xyz, port: 8443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_4e8c", type: vless, server: ct.090227.xyz, port: 2083, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_f156", type: vless, server: cmcc.090227.xyz, port: 2096, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_3a07", type: vmess, server: dog.lightningcat.pro, port: 10086, uuid: 1d670ec3-f525-33da-944b-055c3d9b8e8d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_cdc1", type: vmess, server: dog.lightningcat.pro, port: 10086, uuid: 1d670ec3-f525-33da-944b-055c3d9b8e8d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_5f82", type: vmess, server: dog.lightningcat.pro, port: 10086, uuid: 1d670ec3-f525-33da-944b-055c3d9b8e8d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_c2dd", type: vless, server: cf.090227.xyz, port: 8443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_c960", type: vless, server: ct.090227.xyz, port: 2083, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_21fd", type: vless, server: cmcc.090227.xyz, port: 2096, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8e86", type: vmess, server: www.mgnet.vip, port: 10086, uuid: 03182dcf-2ccf-3d1b-84a5-3f1c5367084d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_7964", type: vmess, server: www.mgnet.vip, port: 10086, uuid: 03182dcf-2ccf-3d1b-84a5-3f1c5367084d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2eca", type: vmess, server: xx, port: 50003, uuid: 03182dcf-2ccf-3d1b-84a5-3f1c5367084d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_8e22", type: vmess, server: test.api-aws.com, port: 8443, uuid: 507825c4-f177-4985-97a0-dd326564dfb2, cipher: auto, tls: true, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_c70d", type: vmess, server: us-sanjose.api-aws.com, port: 443, uuid: 507825c4-f177-4985-97a0-dd326564dfb2, cipher: auto, tls: true, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_3979", type: vmess, server: us-sj2.api-aws.com, port: 443, uuid: 507825c4-f177-4985-97a0-dd326564dfb2, cipher: auto, tls: true, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_f905", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_c213", type: ss, server: 127.0.0.1, port: 1, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d2cd", type: ss, server: 127.0.0.1, port: 1, udp: true }
-  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_850e", type: vless, server: 168.138.166.89, port: 8899, udp: true }
-  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_739e", type: vless, server: 138.2.94.44, port: 8899, udp: true }
-  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_353f", type: vless, server: 152.67.211.233, port: 8899, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_684b", type: vless, server: 168.138.166.89, port: 8899, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_8dad", type: vless, server: 138.2.94.44, port: 8899, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_c7a3", type: vless, server: 152.67.211.233, port: 8899, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_e66f", type: vless, server: 168.138.166.89, port: 8899, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_f08b", type: vless, server: 138.2.94.44, port: 8899, udp: true }
+  - { name: "🇰🇷 韩国 打倒美帝国主义及其一切走狗_87cc", type: vless, server: 152.67.211.233, port: 8899, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d3b1", type: vmess, server: 104.168.1.102, port: 8443, uuid: 3509f601-92d8-4a6b-9fe5-12f5022a3154, cipher: auto, tls: true, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_e88b", type: vmess, server: 104.168.1.102, port: 8222, uuid: 3509f601-92d8-4a6b-9fe5-12f5022a3154, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_1173", type: vmess, server: 13.58.50.121, port: 80, uuid: 3509f601-92d8-4a6b-9fe5-12f5022a3154, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2a44", type: vmess, server: 104.168.1.102, port: 8443, uuid: f12b5113-a5ad-4f4e-a395-d74462da7efd, cipher: auto, tls: true, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_76f2", type: vmess, server: 104.168.1.102, port: 8222, uuid: f12b5113-a5ad-4f4e-a395-d74462da7efd, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f181", type: vmess, server: 13.58.50.121, port: 80, uuid: f12b5113-a5ad-4f4e-a395-d74462da7efd, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2e1b", type: vmess, server: 104.168.1.102, port: 8443, uuid: e51c9f0a-5f45-42c9-96e4-e0ba5cc3cd2e, cipher: auto, tls: true, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_be81", type: vmess, server: 104.168.1.102, port: 8222, uuid: e51c9f0a-5f45-42c9-96e4-e0ba5cc3cd2e, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_e3bf", type: vmess, server: 13.58.50.121, port: 80, uuid: e51c9f0a-5f45-42c9-96e4-e0ba5cc3cd2e, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a303", type: vmess, server: 104.168.1.102, port: 8443, uuid: 88fd81be-4576-4339-bd67-fa5dafe2e215, cipher: auto, tls: true, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5f0a", type: vmess, server: 104.168.1.102, port: 8222, uuid: 88fd81be-4576-4339-bd67-fa5dafe2e215, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5ae8", type: vmess, server: 13.58.50.121, port: 80, uuid: 88fd81be-4576-4339-bd67-fa5dafe2e215, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3c5a", type: ss, server: 142.171.106.233, port: 9999, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_0534", type: ss, server: 103.97.178.98, port: 19999, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_0fcd", type: vless, server: 23.94.235.138, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_bd09", type: ss, server: 142.171.106.233, port: 9999, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_718b", type: ss, server: 103.97.178.98, port: 19999, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2ba7", type: vless, server: 23.94.235.138, port: 8443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_d69a", type: ss, server: 142.171.106.233, port: 9999, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_1943", type: ss, server: 103.97.178.98, port: 19999, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_63db", type: vless, server: 23.94.235.138, port: 8443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8bfa", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_86af", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7f2b", type: vless, server: 176.97.73.155, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5a8f", type: vless, server: 174.136.205.68, port: 443, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_3131", type: hysteria2, server: hk.331220.xyz, port: 1000, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_442e", type: trojan, server: 255.255.111.110, port: 61, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0afa", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4turjdu5fmummz3jvdxa9nxetvtvzaxa2sxkynwjhta, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0a9b", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdoqzb4t1nbee16bzboem95tlemz3jvdxa9nxetvtvzaxa2sxkynwjhta, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_47d2", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4tgpfefiwsszncm91cd01nhlynvpdyjrwmms1yknqnwjxwa, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_3e02", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdoqzb4t1nbee16bzbpvg95tkemz3jvdxa9ntr5cjvaq2i0cdjrnwjdudvicvg, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_e9bb", type: vmess, server: simvpn3.org, port: 10086, uuid: 7dd5f9d1-44c7-3475-b1fc-2dc1ef7625f8, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f129", type: vmess, server: simvpn3.org, port: 10086, uuid: 7dd5f9d1-44c7-3475-b1fc-2dc1ef7625f8, cipher: auto, tls: false, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_fd8b", type: vmess, server: ouer.one, port: 10086, uuid: d2e28375-8b3d-35f1-b995-4cc757b05ab5, cipher: auto, tls: false, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2291", type: vmess, server: ouer.one, port: 10086, uuid: d2e28375-8b3d-35f1-b995-4cc757b05ab5, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_44ae", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4turndu5fmummz3jvdxa9nxetvtvzaxa2sxkynwjhta, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8a48", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdoqzb4t1nbee16bzfnem95tvemz3jvdxa9nxetvtvzaxa2sxkynwjhta, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_a644", type: vmess, server: simvpn3.org, port: 10086, uuid: b72d0732-2d04-3f45-b062-50e3d29284cb, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_78f6", type: vmess, server: simvpn3.org, port: 10086, uuid: b72d0732-2d04-3f45-b062-50e3d29284cb, cipher: auto, tls: false, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8aa4", type: vmess, server: ouer.one, port: 10086, uuid: e1951aea-f844-35ee-b645-bccba4867750, cipher: auto, tls: false, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_fd81", type: vmess, server: ouer.one, port: 10086, uuid: e1951aea-f844-35ee-b645-bccba4867750, cipher: auto, tls: false, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_3c4a", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0f4turndu5fmummz3jvdxa9nxetvtvzaxa2sxkynwjhta, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fc6b", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdoqzb4t1nbee16bzfnem8wtmcmz3jvdxa9nxetvtvzaxa2sxkynwjhta, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_fe4d", type: vless, server: waimao.jiasuhu.xyz, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_49fc", type: vmess, server: expired.example.com, port: 80, uuid: cfb3c776-6ca5-4c8e-95d4-2b1c14a678f3, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fdb3", type: vmess, server: expired.example.com, port: 80, uuid: cfb3c776-6ca5-4c8e-95d4-2b1c14a678f3, cipher: auto, tls: false, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_642d", type: vless, server: yun.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_a4c5", type: vless, server: yun.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_c102", type: vless, server: ling.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_026b", type: vless, server: ling.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_ed6c", type: vless, server: yun.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_4282", type: vless, server: xiao.serty.app, port: 10086, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_33ed", type: vless, server: meng.serty.app, port: 10086, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_0717", type: vmess, server: tz.defuclud.com, port: 10086, uuid: c4919ab6-bb99-3a9b-b6b3-20063dae28be, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2deb", type: vmess, server: tz.defuclud.com, port: 10086, uuid: c4919ab6-bb99-3a9b-b6b3-20063dae28be, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_f7e6", type: vmess, server: expired.example.com, port: 80, uuid: f5c6d54e-252c-438a-acf3-25d44170ad6e, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5acc", type: vmess, server: expired.example.com, port: 80, uuid: f5c6d54e-252c-438a-acf3-25d44170ad6e, cipher: auto, tls: false, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_9e80", type: vless, server: c5.huolongexpress.xyz, port: 10086, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_bdbc", type: vless, server: test.pzyta.hk, port: 10086, udp: true }
   - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_cce0", type: vless, server: 69yun69.com, port: 10086, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_551e", type: vmess, server: expired.example.com, port: 80, uuid: 7f76bba7-00b0-499c-8b37-f7052bde5868, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5357", type: vmess, server: expired.example.com, port: 80, uuid: 7f76bba7-00b0-499c-8b37-f7052bde5868, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_1f1f", type: vmess, server: expired.example.com, port: 80, uuid: 0c606001-4185-4ecf-8018-f94993e84d66, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_658d", type: vmess, server: expired.example.com, port: 80, uuid: 0c606001-4185-4ecf-8018-f94993e84d66, cipher: auto, tls: false, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_3e73", type: vless, server: test.pzyta.hk, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_d870", type: vless, server: xiao.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_e61d", type: vless, server: xiao.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_df17", type: vless, server: xiao.serty.app, port: 10086, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_1ddc", type: vmess, server: expired.example.com, port: 80, uuid: 48d69c61-698a-4e67-82d3-9c50b46fa1a6, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_df58", type: vmess, server: expired.example.com, port: 80, uuid: 48d69c61-698a-4e67-82d3-9c50b46fa1a6, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b434", type: vmess, server: expired.example.com, port: 80, uuid: a30b6303-3850-425c-9459-04758775f79e, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0481", type: vmess, server: expired.example.com, port: 80, uuid: a30b6303-3850-425c-9459-04758775f79e, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_db60", type: vmess, server: expired.example.com, port: 80, uuid: 426c6f32-053f-4a05-a997-b8d8104aa29d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_52d5", type: vmess, server: expired.example.com, port: 80, uuid: 426c6f32-053f-4a05-a997-b8d8104aa29d, cipher: auto, tls: false, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0493", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptvzbxa1tdjanxjxqjzzzva3n3lhtvrbd0xqqxdku0extxpktlfnjmdyb3vwptvzcwc2wunmntr1wa, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_182f", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmlug1chlmnxblmjzazta3n3lhtwpbeu5pmhdnetb3t0nbee56bzbnem8wtvemz3jvdxa9nvlxzzzzq2y1nhvy, port: 443, udp: true }
-  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_f024", type: ss, server: 1.1.1.1, port: 1080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_3512", type: vless, server: tuboshu.io, port: 10086, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_c951", type: vless, server: tuboshu.io, port: 10086, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_7f0c", type: vmess, server: simvpn3.org, port: 10086, uuid: 38204197-9ae8-3613-9589-7c2ceeda04c3, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c4df", type: vmess, server: simvpn3.org, port: 10086, uuid: 38204197-9ae8-3613-9589-7c2ceeda04c3, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_215a", type: vmess, server: simvpn3.org, port: 10086, uuid: edd8350a-fb8a-34a7-82d1-895d8d672522, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_769f", type: vmess, server: simvpn3.org, port: 10086, uuid: edd8350a-fb8a-34a7-82d1-895d8d672522, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_0391", type: vmess, server: simvpn3.org, port: 10086, uuid: 030f9ccf-1bc0-311a-bce0-ef6bf7431f10, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f37a", type: vmess, server: simvpn3.org, port: 10086, uuid: 030f9ccf-1bc0-311a-bce0-ef6bf7431f10, cipher: auto, tls: false, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_a21c", type: hysteria2, server: hk.331220.xyz, port: 1000, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_bdb2", type: trojan, server: 255.255.111.110, port: 61, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_f780", type: hysteria2, server: hk.331220.xyz, port: 1000, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_49f7", type: trojan, server: 255.255.111.110, port: 61, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_081e", type: hysteria2, server: hk.331220.xyz, port: 1000, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_72fb", type: trojan, server: 255.255.111.110, port: 61, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_23d1", type: hysteria2, server: hk.331220.xyz, port: 1000, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b448", type: trojan, server: 255.255.111.110, port: 61, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_ba4e", type: hysteria2, server: hk.331220.xyz, port: 1000, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2a20", type: trojan, server: 255.255.111.110, port: 61, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_5c31", type: vmess, server: expired.example.com, port: 80, uuid: bf202532-7e2b-4225-a153-cdad873812fe, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_a07c", type: vmess, server: expired.example.com, port: 80, uuid: bf202532-7e2b-4225-a153-cdad873812fe, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_f400", type: ss, server: us1-ss.flyparts.cn, port: 10020, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b622", type: vmess, server: us1-ss.flyparts.cn, port: 10022, uuid: 11548146-606e-402b-9c32-f47e466671fe, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_0bcc", type: ss, server: us1-ss.flyparts.cn, port: 10020, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c8f1", type: vmess, server: us1-ss.flyparts.cn, port: 10022, uuid: dd95e21b-e7e9-4a8f-a221-c41d456e9cc5, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_632c", type: ss, server: us1-ss.flyparts.cn, port: 10020, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5aeb", type: vmess, server: us1-ss.flyparts.cn, port: 10022, uuid: 3e133e6f-606c-45ac-997e-96a03243df7c, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2f2d", type: ss, server: us1-ss.flyparts.cn, port: 10020, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_0a57", type: vmess, server: us1-ss.flyparts.cn, port: 10022, uuid: 1c27588d-7dd7-42dd-8c55-36f2f419f485, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b989", type: ss, server: us1-ss.flyparts.cn, port: 10020, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b1dd", type: vmess, server: us1-ss.flyparts.cn, port: 10022, uuid: 7c61a2b0-24be-4b49-9786-dcb1e1924626, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_c400", type: vmess, server: 此节点不可用, port: 80, uuid: 062e4fab-e116-3e6e-9ff3-72f6c641a6c1, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2914", type: vmess, server: 此节点不可用, port: 80, uuid: 062e4fab-e116-3e6e-9ff3-72f6c641a6c1, cipher: auto, tls: false, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_eacc", type: vmess, server: expired.example.com, port: 80, uuid: 202bc198-a9fe-42d2-ad89-8a09551a530f, cipher: auto, tls: false, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_3552", type: vmess, server: expired.example.com, port: 80, uuid: 202bc198-a9fe-42d2-ad89-8a09551a530f, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ff09", type: ss, server: ywvzlti1ni1ny206cgfzc3dvcmqxmjnaoc44ljguodo4odg4, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_48a0", type: ss, server: 127.0.0.1, port: 443, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_b6bf", type: ss, server: lykeij.shvpn.xyz, port: 443, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_69e2", type: vmess, server: fyzvcbxfj.mtxcld-online.buzz, port: 10086, uuid: 2685d1a3-44de-3f32-80ae-6fef8447f9eb, cipher: auto, tls: false, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_687b", type: vmess, server: fyzvcbxfj.mtxcld-online.buzz, port: 10086, uuid: 2685d1a3-44de-3f32-80ae-6fef8447f9eb, cipher: auto, tls: false, udp: true }
   - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_fc51", type: vmess, server: www.google.com, port: 10086, uuid: 2661b5f8-8062-34a5-9371-a44313a75b6b, cipher: auto, tls: false, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_4418", type: vmess, server: www.google.com, port: 10086, uuid: 2661b5f8-8062-34a5-9371-a44313a75b6b, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_e8b2", type: vmess, server: expired.example.com, port: 80, uuid: 7e8309a2-d66a-4e89-91f6-b1894b1a3373, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_1609", type: vmess, server: expired.example.com, port: 80, uuid: 7e8309a2-d66a-4e89-91f6-b1894b1a3373, cipher: auto, tls: false, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2d28", type: vless, server: 176.97.73.155, port: 443, udp: true }
-  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_02a4", type: vless, server: 174.136.205.68, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6200", type: vless, server: jp1a.kannsai.top, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_891a", type: vmess, server: www.google.com, port: 10086, uuid: 2661b5f8-8062-34a5-9371-a44313a75b6b, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ba25", type: vmess, server: expired.example.com, port: 80, uuid: f22e4474-1f51-45ec-95a2-c3940a371d7d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7197", type: vmess, server: expired.example.com, port: 80, uuid: f22e4474-1f51-45ec-95a2-c3940a371d7d, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ca73", type: vmess, server: expired.example.com, port: 80, uuid: 1c5fd60b-e682-4d3a-8fd2-5074ea41aa2a, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_4d8e", type: vmess, server: expired.example.com, port: 80, uuid: 1c5fd60b-e682-4d3a-8fd2-5074ea41aa2a, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0abc", type: vmess, server: expired.example.com, port: 80, uuid: 9d7ed3c3-ab59-48e7-8bd4-fb446424bea4, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0296", type: vmess, server: expired.example.com, port: 80, uuid: 9d7ed3c3-ab59-48e7-8bd4-fb446424bea4, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_f721", type: vmess, server: expired.example.com, port: 80, uuid: abc32732-4da4-4849-8adf-9e4a790849d0, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d197", type: vmess, server: expired.example.com, port: 80, uuid: abc32732-4da4-4849-8adf-9e4a790849d0, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_51a8", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_912d", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_4b22", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d367", type: vmess, server: expired.example.com, port: 80, uuid: 8e0b4b02-619b-4d61-9343-d95bbeb9b587, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_401f", type: vmess, server: expired.example.com, port: 80, uuid: 8e0b4b02-619b-4d61-9343-d95bbeb9b587, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_f08f", type: vmess, server: xx.kuchazi.xyz, port: 9090, uuid: 694df708-6565-417e-86ae-91952a226ec9, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ade4", type: vmess, server: 64.83.33.212, port: 12000, uuid: 694df708-6565-417e-86ae-91952a226ec9, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b5fd", type: ssr, server: d3d3lmdvb2dszs5jb206mtphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmu201b2kznwjletzmlug1chlmnzd5ttzlltm1n3v0nkxtntvaq081tdjfntvtbyzncm91cd1jq0rsajr2bgxvuq, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7535", type: ssr, server: d3d3lmdvb2dszs5jb206mjphdxrox2noywlux2e6y2hhy2hhmja6dgxzms4yx3rpy2tldf9hdxroollusmxzv3qzwvd4cy8_b2jmc3bhcmftpszwcm90b3bhcmftpszyzw1hcmtzptzmu201b2kznwjletzmlug1chlmnzd5ttzlltm1n3v0nkxtntvaq081tdjfntvtbyzncm91cd1jq0rsajr2bgxvuq, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_c105", type: vmess, server: expired.example.com, port: 80, uuid: bb08ce97-8f14-4fe1-8e28-a6cd22b490ea, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_706b", type: vmess, server: expired.example.com, port: 80, uuid: bb08ce97-8f14-4fe1-8e28-a6cd22b490ea, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8e6b", type: vmess, server: expired.example.com, port: 80, uuid: 549d4d70-c435-415f-993a-a6f752499298, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_77d4", type: vmess, server: expired.example.com, port: 80, uuid: 549d4d70-c435-415f-993a-a6f752499298, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b77e", type: vmess, server: expired.example.com, port: 80, uuid: 949ad7ae-d774-473a-9186-e4dcc94726f2, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_9641", type: vmess, server: expired.example.com, port: 80, uuid: 949ad7ae-d774-473a-9186-e4dcc94726f2, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_22ac", type: vmess, server: expired.example.com, port: 80, uuid: 52525972-a344-424b-93ac-66278827f669, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fd09", type: vmess, server: expired.example.com, port: 80, uuid: 52525972-a344-424b-93ac-66278827f669, cipher: auto, tls: false, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_2591", type: ss, server: 154.3.37.100, port: 26307, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_c4c8", type: ss, server: 37.187.31.49, port: 45400, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_61e0", type: vless, server: 176.97.73.155, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_9ad1", type: vless, server: 174.136.205.68, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8f1e", type: vless, server: 176.97.73.155, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_5ea1", type: vless, server: 174.136.205.68, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7cfa", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_ff1b", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6884", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_0108", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fd51", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_89c1", type: trojan, server: empty.node, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_1363", type: vmess, server: 2400:c620:26:7a::a, port: 1000, uuid: ad77d4ce-5d2b-451f-92ec-62c0dffc90c2, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_a4f3", type: vmess, server: 2400:c620:26:7a::a, port: 1000, uuid: 944a7ab8-cb2d-4851-a994-28c476cea531, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fa36", type: vmess, server: expired.example.com, port: 80, uuid: 57d24b4a-5137-485d-86be-be62dca9515e, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_60f4", type: vmess, server: expired.example.com, port: 80, uuid: 57d24b4a-5137-485d-86be-be62dca9515e, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_f18f", type: vmess, server: expired.example.com, port: 80, uuid: b4b967fc-6e4d-4e40-b4cf-fb282abcd19f, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_bd45", type: vmess, server: expired.example.com, port: 80, uuid: b4b967fc-6e4d-4e40-b4cf-fb282abcd19f, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2a4c", type: vmess, server: expired.example.com, port: 80, uuid: f92cd682-1cc1-47d3-98ed-6259b506b5e1, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_b824", type: vmess, server: expired.example.com, port: 80, uuid: f92cd682-1cc1-47d3-98ed-6259b506b5e1, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_9f63", type: vmess, server: expired.example.com, port: 80, uuid: 80ce9c73-67ae-4f47-a97d-0ed3e6f86cf8, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_4dc5", type: vmess, server: expired.example.com, port: 80, uuid: 80ce9c73-67ae-4f47-a97d-0ed3e6f86cf8, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8e2e", type: vmess, server: expired.example.com, port: 80, uuid: 6289cf12-5453-4820-8ab6-65328b99e57c, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7f57", type: vmess, server: expired.example.com, port: 80, uuid: 6289cf12-5453-4820-8ab6-65328b99e57c, cipher: auto, tls: false, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_5e1c", type: ss, server: 154.3.37.100, port: 26307, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_e529", type: ss, server: 37.187.31.49, port: 45400, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_9e55", type: ss, server: 154.3.37.100, port: 26307, udp: true }
+  - { name: "🇫🇷 法国 打倒美帝国主义及其一切走狗_2df0", type: ss, server: 37.187.31.49, port: 45400, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_847f", type: vless, server: 176.97.73.155, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_092f", type: vless, server: 174.136.205.68, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_da70", type: vless, server: 176.97.73.155, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_c499", type: vless, server: 174.136.205.68, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_da63", type: vless, server: 176.97.73.155, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_2a3d", type: vless, server: 174.136.205.68, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_88a8", type: vless, server: 176.97.73.155, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_3f08", type: vless, server: 174.136.205.68, port: 443, udp: true }
   - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_b26b", type: ss, server: 103.47.225.69, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8d7a", type: vmess, server: 43.167.238.198, port: 3002, uuid: 59e675f6-7d9c-4725-8fa2-cdfeb4e19f4a, cipher: auto, tls: false, udp: true }
-  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_4d04", type: vless, server: 151.242.11.242, port: 8443, udp: true }
-  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_5ac9", type: vmess, server: thugiping.info, port: 80, uuid: 0ff2872c-a14b-4879-847e-f17ff4d6cfb4, cipher: auto, tls: false, udp: true }
+  - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_6833", type: trojan, server: 20250424-5r6z5asn5y-65079.xuxiaoshan.top, port: 25088, udp: true }
   - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_13fe", type: ss, server: chengbai02.ascwt179.com, port: 13223, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_e9bf", type: vmess, server: fr3.18838003.xyz, port: 80, uuid: bc12112b-479d-3526-bf98-5bd9a7584bbf, cipher: auto, tls: false, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_4d04", type: vless, server: 151.242.11.242, port: 8443, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_b3ae", type: vless, server: 151.242.11.242, port: 8443, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_05bb", type: vmess, server: thugiping.info, port: 80, uuid: 0907733a-0030-4bfe-9bd5-b5adfc96d349, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_756f", type: vmess, server: thugiping.info, port: 80, uuid: 5ab9ddd3-561e-41dc-9d59-5f5f07c74fc9, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_c34b", type: vmess, server: thugiping.info, port: 80, uuid: 441c7b6f-5afc-4abd-9c63-dd430348e2c3, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_ea19", type: vmess, server: thugiping.info, port: 80, uuid: 8a180336-a2eb-4434-a98c-9cb6f776d509, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_043d", type: vless, server: 2603:c020:800e:62ee:471c:3b87:2081:48aa, port: 46202, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_0c09", type: vmess, server: thugiping.info, port: 80, uuid: d5c632c8-019f-465c-99d3-3489dc594fbf, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_c323", type: vmess, server: thugiping.info, port: 80, uuid: 063c0768-9547-47de-8221-fbe2afdf493a, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_085f", type: vmess, server: thugiping.info, port: 80, uuid: a6cde862-2b36-4d01-925e-2f3a9b465e35, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_97f0", type: vmess, server: thugiping.info, port: 80, uuid: c47efba9-6a66-4199-8690-ee8eab92c230, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_9b18", type: vmess, server: thugiping.info, port: 80, uuid: d3245de6-47fb-4263-8424-139a40fa5009, cipher: auto, tls: false, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_b227", type: vmess, server: thugiping.info, port: 80, uuid: 6ea21a02-1ceb-44b5-8e80-187df9e77633, cipher: auto, tls: false, udp: true }
   - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_9414", type: ss, server: 79.127.213.137, port: 7000, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_1906", type: ss, server: 79.127.213.137, port: 7000, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_f7f5", type: ss, server: 79.127.213.137, port: 7000, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_8b9e", type: vless, server: 151.242.11.242, port: 8443, udp: true }
+  - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_aba3", type: vmess, server: thugiping.info, port: 80, uuid: 1b672001-6b09-4a08-9738-18ea0492dd10, cipher: auto, tls: false, udp: true }
   - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_f54c", type: vmess, server: thugiping.info, port: 80, uuid: 64480fa4-e4d6-4364-9337-0988eb2506d4, cipher: auto, tls: false, udp: true }
   - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_9476", type: vmess, server: thugiping.info, port: 80, uuid: 84b59afa-b418-452c-9b3c-13ab8055d39f, cipher: auto, tls: false, udp: true }
   - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_4f8b", type: vmess, server: thugiping.info, port: 80, uuid: 06d797ac-ceac-452c-a38d-7306a5da3ddb, cipher: auto, tls: false, udp: true }
@@ -536,39 +1138,91 @@ proxies:
   - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_7f99", type: vmess, server: thugiping.info, port: 80, uuid: e97736f1-d9c2-4ad7-9488-a8737597e9b1, cipher: auto, tls: false, udp: true }
   - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_c829", type: vmess, server: thugiping.info, port: 80, uuid: c65ee25f-b916-48e2-8788-2068049f500e, cipher: auto, tls: false, udp: true }
   - { name: "🇫🇮 芬兰 打倒美帝国主义及其一切走狗_b7c5", type: vmess, server: thugiping.info, port: 80, uuid: c9890724-8b83-4ded-9ed9-7861132e16ec, cipher: auto, tls: false, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_95c7", type: ss, server: 0.0.0.0, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7d46", type: ss, server: 0.0.0.0, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_1b63", type: ss, server: 0.0.0.0, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8f12", type: ss, server: 0.0.0.0, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_7184", type: ss, server: 0.0.0.0, port: 443, udp: true }
-  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6a6f", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_34aa", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_488e", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_312a", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_d724", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_fcdd", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_6395", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_cd00", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_1d38", type: ss, server: 0.0.0.0, port: 443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_d2d4", type: vless, server: 143.198.92.220, port: 443, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_8120", type: vless, server: xby2.op-house.top, port: 57719, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_8188", type: vless, server: xby2.op-house.top, port: 57719, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_2856", type: vmess, server: 39.96.125.188, port: 8086, uuid: 48c7c192-a0e1-4391-856c-daa468b63783, cipher: auto, tls: false, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_9219", type: vmess, server: 39.96.125.188, port: 8086, uuid: 9c25b124-6fc4-48ed-a8ae-12c0d9ee4b50, cipher: auto, tls: false, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_659d", type: vmess, server: 39.96.125.188, port: 8086, uuid: 73573f64-6d01-4e29-8079-d582b28b7039, cipher: auto, tls: false, udp: true }
+  - { name: "🇨🇳 中国 打倒美帝国主义及其一切走狗_35d2", type: vmess, server: 39.96.125.188, port: 8086, uuid: 71146bc9-84c6-4376-9ca6-f388f4960188, cipher: auto, tls: false, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_94f8", type: vmess, server: 43.167.238.198, port: 3002, uuid: 52cff1ee-4920-406e-a479-59b08b38c940, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_fb0b", type: vmess, server: 43.167.238.198, port: 3002, uuid: 1f8cead8-a3b7-4051-824e-2b0f6d441b46, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_1903", type: vmess, server: 43.167.238.198, port: 3002, uuid: 7a4b9ab9-aaca-4d2c-abef-7f6f1e5821ef, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_160f", type: vmess, server: 43.167.238.198, port: 3002, uuid: f08b8e9d-d93a-4c6e-99ec-24437e3cd421, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_0ee0", type: vmess, server: 43.167.238.198, port: 3002, uuid: c564fe3f-89b4-46bd-b333-e2732d24a6fe, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_4fd3", type: vmess, server: 43.167.238.198, port: 3002, uuid: 319bfd8d-0a59-4c0e-972b-e74990da668e, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_e94a", type: vmess, server: 43.167.238.198, port: 3002, uuid: b89a7fb7-758c-4259-984f-48bc987415a6, cipher: auto, tls: false, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8c44", type: vmess, server: 43.167.238.198, port: 3002, uuid: 565ad7e5-346b-4492-8759-900e0bf1281e, cipher: auto, tls: false, udp: true }
+  - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_c214", type: trojan, server: 20250424-5r6z5asn5y-65079.xuxiaoshan.top, port: 25088, udp: true }
   - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_bfa6", type: trojan, server: 20250424-5r6z5asn5y-65079.xuxiaoshan.top, port: 25088, udp: true }
   - { name: "🇦🇺 澳大利亚 打倒美帝国主义及其一切走狗_39a7", type: trojan, server: 20250424-5r6z5asn5y-65079.xuxiaoshan.top, port: 25088, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_b746", type: vmess, server: 34.82.96.138, port: 3000, uuid: 38084700-9992-4549-88ed-5c46e4f4f272, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_48aa", type: vmess, server: 34.82.96.138, port: 3000, uuid: 4d8ef1e0-294d-4022-9bd5-abc6b4333478, cipher: auto, tls: false, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_ab99", type: vmess, server: 34.82.96.138, port: 3000, uuid: fb7e4fcc-fb8f-4805-9b2b-1ed969f4cbf4, cipher: auto, tls: false, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2853", type: vless, server: jp1a.kannsai.top, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_8a88", type: vless, server: jp1a.kannsai.top, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_732f", type: vless, server: jp1a.kannsai.top, port: 443, udp: true }
+  - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_eb1d", type: vless, server: jp1a.kannsai.top, port: 443, udp: true }
   - { name: "🌐 未知地区 打倒美帝国主义及其一切走狗_2516", type: vless, server: jp1a.kannsai.top, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_290f", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ec79", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_f16c", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_d0b5", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ef8b", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_c453", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_e7ba", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_fa94", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_4004", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a611", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_d910", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7535", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_3e2e", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_0061", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_9d3b", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_dc3c", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_663c", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8f20", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_6930", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2d86", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_cf04", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_c8bf", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a74f", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_836a", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ffc2", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_d22c", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_6750", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_eb10", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_c5da", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_30e8", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_2ed6", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_45bb", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_bbaa", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_71d0", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_044d", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_6312", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b88a", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_fa12", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_232c", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_638d", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_98a5", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_076a", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_a45e", type: vless, server: 168.110.61.157, port: 443, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_071e", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_37bb", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_7b6d", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_1971", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b28c", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8a85", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_4943", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b5c0", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b3c0", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_9920", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_c33c", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_09c6", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_3433", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_40cd", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_cb9a", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_beda", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ed86", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ec9a", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_0afa", type: vless, server: 168.110.61.157, port: 443, udp: true }
   - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_77c4", type: vless, server: 168.110.61.157, port: 443, udp: true }
-  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_ddec", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_f9ae", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_6e40", type: vless, server: 168.110.61.157, port: 443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_d7e9", type: ss, server: 103.47.225.69, port: 443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_3452", type: ss, server: 103.47.225.69, port: 443, udp: true }
   - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_b8a3", type: ss, server: 103.47.225.69, port: 443, udp: true }
   - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_b706", type: ss, server: 103.47.225.69, port: 443, udp: true }
   - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_e0c4", type: ss, server: 103.47.225.69, port: 443, udp: true }
   - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_fd28", type: ss, server: 103.47.225.69, port: 443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_4922", type: ss, server: 103.47.225.69, port: 443, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_7e37", type: ss, server: 103.47.225.69, port: 443, udp: true }
