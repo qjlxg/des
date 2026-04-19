@@ -33,7 +33,7 @@ jobs:
 
     - name: 安装依赖
       run: |
-        pip install requests urllib3
+        pip install requests urllib3 cv2
 
     - name: 执行任务
       run: python ./TG_proxy_main.py
