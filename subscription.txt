@@ -1,0 +1,2 @@
+https://x-panel.bomp.top/api/v1/client/subscribe?token=49dbd130b13e852153f8ad06a62ba492
+https://wymcp2.hirr.cn/api/v1/client/subscribe?token=10c090ceb7eafce5c1b7d55843f49a70
