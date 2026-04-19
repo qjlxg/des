@@ -23,12 +23,11 @@ CACHE_FILE = "tg.cache"
 SUB_FILE = "subscription.txt"
 NODES_FILE = "nodes_plain.txt"
 
-MAX_WORKERS = 12                    # 关键：大幅降低，稳定性优先
+MAX_WORKERS = 12                    # 稳定优先
 DEFAULT_TIMEOUT = 12
 MAIL_WAIT_TIMEOUT = 55
 RATE_LIMIT_PER_HOST = 0.45
 
-# 邮箱优先级（实测稳定性排序）
 MAIL_APIS = ["mail.tm", "tempmail.lol", "mail.gw"]
 
 USER_AGENTS = [
@@ -83,7 +82,7 @@ class AirportCommander:
         self.old_cache = self._parse_cache()
         self.ocr = ddddocr.DdddOcr(show_ad=False, beta=True)
         self.limiter = RateLimiter(RATE_LIMIT_PER_HOST)
-        self.sessions = {}                     # 关键：按域名复用 session
+        self.sessions = {}                     # 按域名复用 session
 
         self.REG_PATHS = ["/api/v1/passport/auth/register", "/api/v1/guest/passport/auth/register", "/api/v1/auth/register"]
         self.SEND_EMAIL_PATHS = ["/api/v1/passport/comm/sendEmailVerify", "/api/v1/guest/passport/comm/sendEmailVerify"]
@@ -106,7 +105,6 @@ class AirportCommander:
         return data
 
     def _get_session(self, base_url: str):
-        """关键优化：按域名复用 session"""
         key = base_url.rstrip('/')
         if key in self.sessions:
             return self.sessions[key]
@@ -123,7 +121,7 @@ class AirportCommander:
         return s
 
     def create_temp_mail(self):
-        for api in MAIL_APIS:          # 固定优先级
+        for api in MAIL_APIS:
             try:
                 s = crequests.Session(verify=False)
                 dom = s.get(f"https://api.{api}/domains", timeout=DEFAULT_TIMEOUT).json()
@@ -142,7 +140,6 @@ class AirportCommander:
         s = crequests.Session(verify=False)
         s.headers.update({"Authorization": f"Bearer {mail_token}"})
         start = time.time()
-        # 先快后慢策略
         for wait in [1, 2, 3, 5, 8, 12]:
             if time.time() - start > MAIL_WAIT_TIMEOUT:
                 break
@@ -164,7 +161,7 @@ class AirportCommander:
         for path in self.CAPTCHA_PATHS:
             for _ in range(4):
                 try:
-                    self.limiter.wait(base_url)          # 使用限速器
+                    self.limiter.wait(base_url)
                     resp = session.get(f"{base_url}{path}", timeout=DEFAULT_TIMEOUT)
                     if resp.status_code != 200:
                         continue
@@ -173,7 +170,6 @@ class AirportCommander:
                     else:
                         img_data = base64.b64decode(resp.json().get('data', '').split(',')[-1])
                     code = self.ocr.classification(preprocess_captcha(img_data)).strip()
-                    # 关键：正则过滤垃圾识别结果
                     if code and re.match(r'^[a-zA-Z0-9]{4,6}$', code):
                         return code
                 except Exception as e:
@@ -185,7 +181,7 @@ class AirportCommander:
         for reg_path in self.REG_PATHS:
             try:
                 self.limiter.wait(base_url)
-                # 先轻量探测路径是否存在
+                # 路径探测
                 test = session.get(f"{base_url}{reg_path}", timeout=8)
                 if test.status_code == 404:
                     continue
@@ -196,7 +192,9 @@ class AirportCommander:
                 try:
                     self.limiter.wait(base_url)
                     payload = {"email": email, "password": password, "repassword": password}
-                    resp = session.post(f"{base_url}{reg_path}", json=payload if is_json else payload, timeout=DEFAULT_TIMEOUT)
+                    resp = session.post(f"{base_url}{reg_path}", 
+                                      json=payload if is_json else payload, 
+                                      timeout=DEFAULT_TIMEOUT)
                     data = resp.json()
 
                     token = data.get("data", {}).get("token") or data.get("token")
@@ -215,8 +213,152 @@ class AirportCommander:
                     logger.debug(f"注册尝试失败 {reg_path}: {e}")
         return None, None
 
-    # auto_buy_free_plan、get_subscribe_url、get_traffic_info、format_log、extract_nodes、f_size、run 方法与上一版本一致（已包含）
-    # 为节省篇幅，这里省略完全相同的部分，请直接从你上一版复制粘贴进来（或告诉我我一次性给你全量）
+    def auto_buy_free_plan(self, session, base_url):
+        for path in ["/api/v1/user/plan/fetch", "/api/v1/guest/plan/fetch"]:
+            try:
+                self.limiter.wait(base_url)
+                res = session.get(f"{base_url}{path}", timeout=DEFAULT_TIMEOUT).json()
+                plans = res.get("data", [])
+                for p in plans:
+                    free_cycles = [k.replace('_price', '') for k, v in p.items() 
+                                 if '_price' in k and str(v) == '0' and k != 'reset_price']
+                    if free_cycles and p.get('transfer_enable', 0) > 0:
+                        cycle = free_cycles[0]
+                        order = session.post(f"{base_url}/api/v1/user/order/save", 
+                                           json={'plan_id': p['id'], 'cycle': cycle})
+                        trade_no = order.json().get('data')
+                        if trade_no:
+                            session.post(f"{base_url}/api/v1/user/order/checkout", 
+                                       json={'trade_no': trade_no, 'method': 1})
+                            logger.info(f"成功购买免费计划: {p.get('name')}")
+                            return True
+            except Exception as e:
+                logger.debug(f"购买计划失败: {e}")
+                continue
+        return False
+
+    def get_subscribe_url(self, session, base_url, token):
+        default_sub = f"{base_url}/api/v1/client/subscribe?token={token}"
+        try:
+            self.limiter.wait(base_url)
+            res = session.get(f"{base_url}/api/v1/user/getSubscribe", timeout=DEFAULT_TIMEOUT)
+            data = res.json().get("data")
+            if isinstance(data, str) and data.startswith("http"):
+                return data
+        except:
+            pass
+        return default_sub
+
+    def get_traffic_info(self, sub_url, session=None):
+        try:
+            s = session or self._get_session(sub_url)
+            self.limiter.wait(sub_url)
+            resp = s.get(sub_url, timeout=DEFAULT_TIMEOUT + 5)
+            header = resp.headers.get('subscription-userinfo', '')
+            u = d = t = e = 0
+            if header:
+                for item in header.split(';'):
+                    if '=' in item:
+                        k, v = [x.strip() for x in item.split('=', 1)]
+                        if k == 'upload': u = int(v)
+                        elif k == 'download': d = int(v)
+                        elif k == 'total': t = int(v)
+                        elif k == 'expire': e = int(v)
+            return u + d, t, e, resp.text
+        except Exception as e:
+            logger.debug(f"获取流量信息失败: {e}")
+            return 0, 0, 0, ""
+
+    def format_log(self, url, email, used, total, exp, sub_url):
+        exp_str = datetime.fromtimestamp(exp).strftime('%Y-%m-%d %H:%M') if exp > 0 else "永久"
+        remain = max(0, total - used)
+        return (f"[{url}]\nbuy  pass\nemail  {email}\n"
+                f"sub_info  {self.f_size(used)}  {self.f_size(total)}  {exp_str}  (剩余 {self.f_size(remain)})\n"
+                f"sub_url  {sub_url}\ntime  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\ntype  v2board\n\n")
+
+    def f_size(self, size):
+        if size <= 0: return "0B"
+        for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+            if size < 1024:
+                return f"{size:.1f}{unit}"
+            size /= 1024
+        return f"{size:.1f}PB"
+
+    def extract_nodes(self, content):
+        if not content:
+            return []
+        pattern = r'(vmess|vless|ss|ssr|trojan|hysteria2?|hy2|tuic|anytls)://[^\s\'"<>]+'
+        nodes = re.findall(pattern, content, re.I)
+        return list(dict.fromkeys(nodes))
+
+    def process_task(self, url):
+        url = url.rstrip('/')
+        logger.info(f"开始处理 → {url}")
+
+        # DNS 检查
+        try:
+            host = re.search(r'https?://([^/:\s]+)', url).group(1)
+            socket.gethostbyname(host)
+        except Exception as e:
+            return [], f"[{url}]\nstatus  failed\nreason  DNS失败: {e}\n\n", ""
+
+        session = self._get_session(url)
+
+        # 使用缓存
+        if url in self.old_cache:
+            info = self.old_cache[url]
+            sub_url = info.get('sub_url')
+            if sub_url:
+                used, total, exp, txt = self.get_traffic_info(sub_url, session)
+                if total > 50 * 1024**3:   # 至少50GB才认为有效
+                    nodes = self.extract_nodes(txt)
+                    log = self.format_log(url, info.get('email', ''), used, total, exp, sub_url)
+                    return nodes, log, sub_url
+
+        # 注册主流程
+        for attempt in range(6):
+            try:
+                time.sleep(random.uniform(1.5, 4.0))
+                email, mail_token, mail_api = self.create_temp_mail()
+                if not email:
+                    continue
+
+                password = "Pass" + ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+                token, status = self.try_register(session, url, email, password)
+
+                if token == "NEED_EMAIL_VERIFY" and mail_token:
+                    cap = self.get_captcha(session, url)
+                    for path in self.SEND_EMAIL_PATHS:
+                        try:
+                            self.limiter.wait(url)
+                            session.post(f"{url}{path}", json={"email": email, "captcha_code": cap or ""}, timeout=DEFAULT_TIMEOUT)
+                            break
+                        except:
+                            continue
+                    verify_code = self.wait_for_code(mail_token, mail_api)
+                    if verify_code:
+                        payload = {"email": email, "password": password, "repassword": password, "email_code": verify_code}
+                        resp = session.post(f"{url}{self.REG_PATHS[0]}", json=payload, timeout=DEFAULT_TIMEOUT)
+                        token = resp.json().get("data", {}).get("token") or resp.json().get("token")
+
+                if token and len(str(token)) > 20:
+                    if not str(token).startswith("Bearer"):
+                        token = f"Bearer {token}"
+                    session.headers["Authorization"] = token
+
+                    self.auto_buy_free_plan(session, url)
+                    sub_url = self.get_subscribe_url(session, url, token.replace("Bearer ", ""))
+
+                    used, total, exp, txt = self.get_traffic_info(sub_url, session)
+                    log = self.format_log(url, email, used, total, exp, sub_url)
+                    logger.info(f"✅ 注册成功: {url}")
+                    return self.extract_nodes(txt), log, sub_url
+
+            except Exception as e:
+                logger.debug(f"[{url}] 第 {attempt+1} 次尝试失败: {e}")
+                time.sleep(random.uniform(4, 9))
+
+        return [], f"[{url}]\nstatus  failed\nreason  多次注册失败\ntime  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n", ""
 
     def run(self):
         if not os.path.exists(URLS_FILE):
@@ -247,7 +389,7 @@ class AirportCommander:
                     status = "成功" if "buy  pass" in log else "失败"
                     print(f"[{status}] {url}")
                 except Exception as e:
-                    logger.error(f"处理 {url} 异常: {e}")
+                    logger.error(f"处理 {url} 时发生异常: {e}")
 
         Path(NODES_FILE).write_text("\n".join(dict.fromkeys(all_nodes)), encoding='utf-8')
         Path(SUB_FILE).write_text("\n".join(dict.fromkeys(all_subs)), encoding='utf-8')
