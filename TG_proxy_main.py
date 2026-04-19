@@ -7,6 +7,7 @@ import random
 import re
 import string
 import time
+import socket
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
