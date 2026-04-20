@@ -1,0 +1,11 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇯🇵 日本5G大宽带-5-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 37127, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
+- {name: 🇯🇵 日本5G大宽带-6-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 61800, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
+- {name: 🇯🇵 日本5G大宽带-7-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 24622, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
+- {name: 🇯🇵 日本5G大宽带-8-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 24044, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
+- {name: 🇯🇵 日本5G大宽带-9-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 32729, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
+- {name: 🇯🇵 日本5G大宽带-10-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 37523, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
+- {name: 🇯🇵 日本5G大宽带-11-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 62462, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
+- {name: 🇯🇵 日本5G大宽带-12-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 62462, type: ss, cipher: aes-128-gcm, password: e9014950-7599-4431-b1f3-9ccc221f0f70, udp: true}
