@@ -1,5 +1,3 @@
---- START OF FILE text/x-python ---
-
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
