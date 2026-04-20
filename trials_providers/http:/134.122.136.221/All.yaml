@@ -1,0 +1,8 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇧🇲 官网：续费/导入：bm.baomao.cc - 爆猫网络, server: 127.0.0.1, port: 33548, type: ss, cipher: chacha20-ietf-poly1305, password: cc940832-e818-4095-8e35-55d8c186c1a3, udp: true}
+- {name: ℹ️ Q群：660506725 - 爆猫网络, server: 127.0.0.1, port: 33548, type: ss, cipher: chacha20-ietf-poly1305, password: cc940832-e818-4095-8e35-55d8c186c1a3, udp: true}
+- {name: ℹ️ 💁联系我们：doc.baomao.cc - 爆猫网络, server: 127.0.0.1, port: 33548, type: ss, cipher: chacha20-ietf-poly1305, password: cc940832-e818-4095-8e35-55d8c186c1a3, udp: true}
+- {name: 淬火成金，逆势而上 - 爆猫网络, server: 127.0.0.1, port: 33548, type: ss, cipher: chacha20-ietf-poly1305, password: cc940832-e818-4095-8e35-55d8c186c1a3, udp: true}
+- {name: ℹ️ 必加售后群 当前节点V2.0 - 爆猫网络, server: 127.0.0.1, port: 33548, type: ss, cipher: chacha20-ietf-poly1305, password: cc940832-e818-4095-8e35-55d8c186c1a3, udp: true}

@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 🌈 HK香港 | 海外使用 - Cecil 塞西尔, server: hk-hkbn.cdn-yx.buzz, port: 20052, type: trojan, password: 349b4fbf-45d0-4eac-8e9b-20a1d65f97b8, sni: hk-hkbn.cdn-yx.buzz, skip-cert-verify: true, udp: true}

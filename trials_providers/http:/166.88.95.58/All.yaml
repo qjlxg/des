@@ -1,0 +1,42 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 香港-01-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 13469, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-02-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 17320, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-03-bgp入口2倍 - KFCLOUD, server: e02_ddns.711212.xyz, port: 40085, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-04-bgp入口2倍 - KFCLOUD, server: e02_ddns.711212.xyz, port: 42105, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇹🇼 台湾省-1-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 15443, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇹🇼 台湾IPLC专线1 5倍 - KFCLOUD, server: e03_ddns.711212.xyz, port: 34065, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇹🇼 台湾IPLC专线2 5倍 - KFCLOUD, server: e03_ddns.711212.xyz, port: 13679, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-5-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 37127, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-6-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 61800, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-7-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 24622, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-8-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 24044, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-9-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 32729, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-10-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 37523, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-11-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 62462, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇯🇵 日本5G大宽带-12-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 62462, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-05-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 24983, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-06-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 63837, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-07-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 14809, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-08-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 49771, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-09-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 31987, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-10-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 11397, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-11-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 41235, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港-12-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 38622, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇩🇪 德国-3-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 30645, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇩🇪 德国-4-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 25544, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇩🇪 德国-5-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 19983, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇩🇪 德国-6-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 15527, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国5G大宽带-bgp入口2倍 - KFCLOUD, server: shrimp-door-9527.gym0boy.com, port: 42986, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国-3-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 31097, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国-4-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 15937, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国-5-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 44999, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国-6-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 45148, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港5G大带宽1 - KFCLOUD, server: e02_ddns.711212.xyz, port: 15018, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港5G大带宽2 - KFCLOUD, server: e02_ddns.711212.xyz, port: 14535, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港5G大带宽3 - KFCLOUD, server: e02_ddns.711212.xyz, port: 32149, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇭🇰 香港5G大带宽4 - KFCLOUD, server: e02_ddns.711212.xyz, port: 39333, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国5G大宽带2-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 14276, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国5G大宽带3-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 54263, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇺🇸 美国5G大宽带4-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 56719, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}

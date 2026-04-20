@@ -1,0 +1,8 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇭🇰 Hong Kong | 1 - Alphaio, server: global.digital-nvme.com, port: 39501, type: trojan, password: 0cbbfaf2-4053-45bc-ba74-8f898f1daf2f, sni: mmbiz.qpic.cn, skip-cert-verify: true, udp: true}
+- {name: 🇸🇬 Singapore | 1 - Alphaio, server: global.digital-nvme.com, port: 39502, type: trojan, password: 0cbbfaf2-4053-45bc-ba74-8f898f1daf2f, sni: mmbiz.qpic.cn, skip-cert-verify: true, udp: true}
+- {name: 🇯🇵 Japan | 1 - Alphaio, server: global.digital-nvme.com, port: 39503, type: trojan, password: 0cbbfaf2-4053-45bc-ba74-8f898f1daf2f, sni: mmbiz.qpic.cn, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 United States | 1 - Alphaio, server: global.digital-nvme.com, port: 39504, type: trojan, password: 0cbbfaf2-4053-45bc-ba74-8f898f1daf2f, sni: mmbiz.qpic.cn, skip-cert-verify: true, udp: true}
+- {name: Tai wan | 1 - Alphaio, server: global.digital-nvme.com, port: 39505, type: trojan, password: 0cbbfaf2-4053-45bc-ba74-8f898f1daf2f, sni: mmbiz.qpic.cn, skip-cert-verify: true, udp: true}

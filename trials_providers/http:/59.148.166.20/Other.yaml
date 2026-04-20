@@ -1,0 +1,12 @@
+%YAML 1.1
+---
+proxies:
+- {name: '[ss]邀请好友最高返利50% - 蜥蜴网络', server: hwyg.ny111xx.xin, port: 53500, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇬🇧 [ss]大陸-英國01 - 蜥蜴网络', server: gezxk.ny111xx.xin, port: 8237, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇬🇧 [ss]大陆-英国05 - 蜥蜴网络', server: hwyg.ny111xx.xin, port: 41177, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇩🇪 [ss]大陸-德國01 - 蜥蜴网络', server: gezxk.ny111xx.xin, port: 29687, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇩🇪 [ss]大陸-德國02 - 蜥蜴网络', server: hwyg.ny111xx.xin, port: 52379, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇸🇲 [ss]海外HK-SM2 - 蜥蜴网络', server: 154.83.87.37, port: 56001, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇰🇷 [ss]海外-KR - 蜥蜴网络', server: 185.214.103.175, port: 56001, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇩🇪 [ss]海外DE-2 - 蜥蜴网络', server: 156.226.174.127, port: 56001, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇬🇧 [ss]海外UK-1 - 蜥蜴网络', server: 212.135.39.89, port: 56001, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}

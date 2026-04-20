@@ -1,0 +1,12 @@
+%YAML 1.1
+---
+proxies:
+- {name: ℹ️ 邮箱：dkscttv769@gmail.com - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53401, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🐤坤坤VIP-无限·LSP组 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53401, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇲🇾 御姐-马来西亚 01-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53466, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇲🇾 御姐-马来西亚 02-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53467, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇲🇾 御姐-马来西亚 03-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53468, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇲🇾 御姐-马来西亚 04-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53469, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇲🇾 御姐-马来西亚 05-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53470, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇹🇷 御姐-土耳其 01-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmtr.lma1b2.com, port: 53496, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇦🇷 御姐-阿根廷 01-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmar.lma1b2.com, port: 53498, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}

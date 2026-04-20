@@ -1,0 +1,13 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇺🇸 御姐-美国 01-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53451, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 02-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53452, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 03-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53453, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 04-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53454, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 05-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53455, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 06-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53456, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 07-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53457, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 08-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53458, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 09-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53459, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}
+- {name: 🇺🇸 御姐-美国 10-IPLC专线 - 🐔坤坤八卦云-IPLC专线秒开·省着用, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53460, type: trojan, password: 78b0b6ca-c827-4dc2-a362-fde350da609a, skip-cert-verify: true, udp: true}

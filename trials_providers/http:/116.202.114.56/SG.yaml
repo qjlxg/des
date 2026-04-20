@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇸🇬 Singapore | 1 - Alphaio, server: global.digital-nvme.com, port: 39502, type: trojan, password: 0cbbfaf2-4053-45bc-ba74-8f898f1daf2f, sni: mmbiz.qpic.cn, skip-cert-verify: true, udp: true}

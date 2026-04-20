@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: '🇺🇸 [vmess]美国 - 朱雀加速', server: us01.zqjs.top, port: 8443, type: vmess, uuid: 291f0597-1804-4e2c-aa39-f92042459015, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /ws, headers: {Host: us01.zqjs.top}}, udp: true}

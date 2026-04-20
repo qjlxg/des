@@ -1,0 +1,4 @@
+%YAML 1.1
+---
+proxies:
+- {name: cpt - V2Board, server: 106.54.45.38, port: 42433, type: vmess, uuid: 2b5cd9a7-7bb9-4adc-a26c-26f4d0222d81, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}

@@ -1,0 +1,6 @@
+%YAML 1.1
+---
+proxies:
+- {name: '🇺🇸 [ss]大陸-美國01 - 蜥蜴网络', server: gezxk.ny111xx.xin, port: 41357, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇺🇸 [ss]大陆-美国05 - 蜥蜴网络', server: hwyg.ny111xx.xin, port: 43055, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}
+- {name: '🇺🇸 [ss]海外US-1 - 蜥蜴网络', server: 156.229.161.18, port: 56001, type: ss, cipher: aes-256-gcm, password: e4cfe2eb-f2b4-4a90-a3c8-7a5979f0ddd8, udp: true}

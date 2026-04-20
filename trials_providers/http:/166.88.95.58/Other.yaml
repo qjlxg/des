@@ -1,0 +1,7 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇩🇪 德国-3-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 30645, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇩🇪 德国-4-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 25544, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇩🇪 德国-5-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 19983, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}
+- {name: 🇩🇪 德国-6-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 15527, type: ss, cipher: aes-128-gcm, password: 1b0fa464-660e-4314-8e37-633f2339009d, udp: true}

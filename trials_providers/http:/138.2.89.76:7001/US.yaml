@@ -1,0 +1,5 @@
+%YAML 1.1
+---
+proxies:
+- {name: 🇺🇸 EDGE-美国 - M2024, server: ip.dddw.eu.org, port: 443, type: trojan, password: c8f722be-8622-4aba-9bed-e94b705c5b95, sni: edge.dddw.eu.org, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2560', headers: {Host: edge.dddw.eu.org}}, udp: true}
+- {name: 🇺🇸 EDGE-洛杉矶 - M2024, server: ip.dddw.eu.org, port: 443, type: trojan, password: c8f722be-8622-4aba-9bed-e94b705c5b95, sni: edge.dddw.eu.org, skip-cert-verify: true, network: ws, ws-opts: {path: '/?ed=2560&proxyip=us.dddw.eu.org', headers: {Host: edge.dddw.eu.org}}, udp: true}
