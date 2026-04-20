@@ -10,10 +10,14 @@ from urllib.parse import (parse_qsl, unquote_plus, urlencode, urljoin,
 
 import json5
 import requests
+import urllib3
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3 import Retry
 from urllib3.util import parse_url
+
+# 禁用 SSL 警告
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from utils import (cached, get, keep, parallel_map, rand_id, str2size,
                    str2timestamp)
@@ -31,7 +35,7 @@ PROBE_REG_PATHS = [
     "api/v1/passport/auth/subscribe",
     "api/v1/passport/auth/v2boardRegister",
     "register",
-    "user/register" # 补充常用路径
+    "user/register" 
 ]
 PROBE_CONFIG_PATHS = ["api/v1/guest/comm/config", "api/v1/passport/comm/config"]
 
@@ -61,7 +65,7 @@ re_sspanel_price = re.compile(r'\d+(?:\.\d+)?')
 re_sspanel_traffic = re.compile(r'\d+(?:\.\d+)?\s*[BKMGTPE]', re.I)
 re_sspanel_duration = re.compile(r'(\d+)\s*(天|month)')
 
-# 新增：用于保存订阅链接的文件锁
+# 用于保存订阅链接的文件锁
 _SAVE_LOCK = RLock()
 
 def save_subscription(sub_url: str, sub_info: dict):
@@ -73,14 +77,13 @@ def save_subscription(sub_url: str, sub_info: dict):
     try:
         # 流量校验
         total = sub_info.get('total', 0)
-        used = sub_info.get('upload', 0) + sub_info.get('download', 0)
+        used = (sub_info.get('upload') or 0) + (sub_info.get('download') or 0)
         if total <= used:
             return
 
         # 有效期校验
         expire = sub_info.get('expire')
         if expire:
-            # 将字符串或数字转换为时间戳
             ts_expire = expire if isinstance(expire, (int, float)) else str2timestamp(str(expire))
             if ts_expire and ts_expire < time():
                 return
@@ -88,8 +91,7 @@ def save_subscription(sub_url: str, sub_info: dict):
         # 写入文件
         with _SAVE_LOCK:
             with open('subscription.txt', 'a', encoding='utf-8') as f:
-                # 兼容 SSPanel 可能存在的多个订阅地址（以|分隔）
-                for url in sub_url.split('|'):
+                for url in str(sub_url).split('|'):
                     if url.strip():
                         f.write(f"{url.strip()}\n")
     except:
@@ -150,14 +152,12 @@ class Response:
 
     @cached
     def __str__(self):
-        # 限制打印长度，防止大规模运行时日志输出导致卡顿
         return f'{self.__status_code} {self.__reason} {repr(self.text[:100])}'
 
 
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
-        # 优化连接池：针对 1 万个任务，必须增加池大小防止线程等待连接释放
         adapter = HTTPAdapter(
             pool_connections=100, 
             pool_maxsize=200, 
@@ -165,6 +165,7 @@ class Session(requests.Session):
         )
         self.mount('https://', adapter)
         self.mount('http://', adapter)
+        self.verify = False # 全局禁用证书校验
         self.max_redirects = max_redirects
         self.allow_redirects = allow_redirects
         self.headers['User-Agent'] = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
@@ -227,15 +228,14 @@ class Session(requests.Session):
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
-        # 强制缩短 timeout 防止长时间挂起
-        kwargs.update(data=data, timeout=timeout, allow_redirects=False)
+        kwargs.update(data=data, timeout=timeout, allow_redirects=False, verify=False)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
         
         try:
             res = super().request(method, url, **kwargs)
         except Exception:
-            raise # 异常由外部 guess_panel 捕获
+            raise
 
         if allow_redirects and res.is_redirect:
             no = ~allow_redirects
@@ -246,7 +246,7 @@ class Session(requests.Session):
                 if res.is_redirect:
                     i += 1
                     if i > self.max_redirects:
-                        break # 重定向过载直接跳出
+                        break 
                     new_url = urljoin(url, res.headers.get('Location', ''))
                     if url == new_url:
                         if no & REDIRECT_TO_GET:
@@ -296,10 +296,12 @@ class _ROSession(Session):
 
 class V2BoardSession(_ROSession):
     def __set_auth(self, email: str, reg_info: dict):
+        if not reg_info or 'data' not in reg_info:
+            raise Exception(f"授权失败: {reg_info}")
         self.login_info = reg_info['data']
         self.email = email
         if 'v2board_session' not in self.cookies:
-            self.headers['authorization'] = self.login_info['auth_data']
+            self.headers['authorization'] = self.login_info.get('auth_data', '')
 
     def reset(self):
         super().reset()
@@ -310,8 +312,8 @@ class V2BoardSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if 'data' not in res:
-            raise Exception(res)
+        if not isinstance(res, dict) or 'data' not in res:
+            raise Exception(str(res))
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
         self.reset()
@@ -321,12 +323,12 @@ class V2BoardSession(_ROSession):
             'email_code': email_code or '',
             'invite_code': invite_code or '',
         }).json()
-        if 'data' in res:
+        if isinstance(res, dict) and 'data' in res:
             self.__set_auth(email, res)
             return None
-        if 'message' in res:
+        if isinstance(res, dict) and 'message' in res:
             return res['message']
-        raise Exception(res)
+        raise Exception(str(res))
 
     def login(self, email: str = None, password=None):
         if hasattr(self, 'login_info') and (not email or email == getattr(self, 'email', None)):
@@ -358,7 +360,7 @@ class V2BoardSession(_ROSession):
         ).json()
         self.raise_for_fail(res)
         res = self.post('api/v1/user/order/checkout', {
-            'trade_no': res['data']
+            'trade_no': res.get('data')
         }).json()
         self.raise_for_fail(res)
         return data
@@ -374,10 +376,10 @@ class V2BoardSession(_ROSession):
         self.raise_for_fail(res)
         d = res['data']
         return {
-            'upload': d['u'],
-            'download': d['d'],
-            'total': d['transfer_enable'],
-            'expire': d['expired_at']
+            'upload': d.get('u', 0),
+            'download': d.get('d', 0),
+            'total': d.get('transfer_enable', 0),
+            'expire': d.get('expired_at', 0)
         }
 
     def get_plan(self, min_price=0, max_price=0):
@@ -387,7 +389,7 @@ class V2BoardSession(_ROSession):
         max_price *= 100
         plan = None
         _max = (0, 0, 0)
-        for p in r['data']:
+        for p in r.get('data', []):
             if (ik := next(((i, k) for i, k in enumerate((
                 'onetime_price',
                 'three_year_price',
@@ -398,7 +400,7 @@ class V2BoardSession(_ROSession):
                 'month_price',
             )) if (price := p.get(k)) is not None and min_price <= price <= max_price), None)):
                 i, period = ik
-                v = p[period], p['transfer_enable'], -i
+                v = p[period], p.get('transfer_enable', 0), -i
                 if v > _max:
                     _max = v
                     plan = {
@@ -420,8 +422,8 @@ class SSPanelSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if not res.get('ret'):
-            raise Exception(res)
+        if not res or not res.get('ret'):
+            raise Exception(str(res))
 
     def register(self, email: str, password=None, email_code=None, invite_code=None, name_eq_email=None, reg_fmt=None, im_type=False, aff=None) -> str | None:
         self.reset()
@@ -442,7 +444,7 @@ class SSPanelSession(_ROSession):
             return None
         if 'msg' in res:
             return res['msg']
-        raise Exception(res)
+        raise Exception(str(res))
 
     def login(self, email: str = None, password=None):
         if not email:
@@ -480,7 +482,7 @@ class SSPanelSession(_ROSession):
     def checkin(self):
         res = self.post('user/checkin').json()
         if not res.get('ret') and ('msg' not in res or not re_checked_in.search(res['msg'])):
-            raise Exception(res)
+            raise Exception(str(res))
 
     def get_sub_url(self, **params) -> str:
         r = self.get('user')
@@ -636,8 +638,8 @@ class HkspeedupSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if res.get('code') != 200:
-            raise Exception(res)
+        if not res or res.get('code') != 200:
+            raise Exception(str(res))
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
         self.reset()
@@ -654,7 +656,7 @@ class HkspeedupSession(_ROSession):
             return None
         if 'message' in res:
             return res['message']
-        raise Exception(res)
+        raise Exception(str(res))
 
     def login(self, email: str = None, password=None):
         if not email:
@@ -679,7 +681,7 @@ class HkspeedupSession(_ROSession):
     def checkin(self):
         res = self.post('user/checkIn').json()
         if res.get('code') != 200 and ('message' not in res or not re_checked_in.search(res['message'])):
-            raise Exception(res)
+            raise Exception(str(res))
 
     def get_sub_url(self, **params) -> str:
         res = self.get('user/info').json()
@@ -701,22 +703,31 @@ def guess_panel(host):
     info = {}
     session = _ROSession(host)
     try:
+        # 证书忽略已在 Session.__init__ 中处理，这里只需处理逻辑
         # 第一步：快速预检特征路径
         has_feature = False
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
-                r_probe = session.head(path, timeout=3)
+                r_probe = session.head(path, timeout=5)
                 if r_probe.status_code != 404:
                     has_feature = True
                     break
-            except:
-                continue
+            except: continue
         
+        # 即使 Head 失败，也要看页面源码是否包含面板特征
+        if not has_feature:
+            try:
+                r_idx = session.get(timeout=5)
+                # 识别 Xboard/V2Board 特有的 window.settings
+                if 'window.settings' in r_idx.text or 'theme/Xboard' in r_idx.text:
+                    has_feature = True
+            except: pass
+
         if not has_feature:
             return info 
 
         # 第二步：正式识别面板类型
-        # 探测 V2Board
+        # 探测 V2Board / Xboard
         r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
             r = session.head(timeout=3)
@@ -728,9 +739,11 @@ def guess_panel(host):
                 rj = r.json()
                 info['type'] = 'v2board'
                 _r = session.get(timeout=5)
-                if _r.ok and _r.bs().title:
-                    info['name'] = _r.bs().title.text
-                if (email_whitelist := get(rj, 'data', 'email_whitelist_suffix')):
+                if _r.ok:
+                    info['name'] = _r.bs().title.text if _r.bs().title else 'V2Board'
+                # 提取白名单
+                email_whitelist = get(rj, 'data', 'email_whitelist_suffix')
+                if email_whitelist:
                     info['email_domain'] = email_whitelist[0]
             except: pass
         
@@ -739,7 +752,7 @@ def guess_panel(host):
             r = session.get('auth/login', timeout=5)
             if r.ok:
                 info['type'] = 'sspanel'
-                info['name'] = r.bs().title.text.split(' — ')[-1]
+                info['name'] = r.bs().title.text.split(' — ')[-1] if r.bs().title else 'SSPanel'
             elif 300 <= r.status_code < 400:
                 r = session.head('user/login', timeout=5)
                 if r.ok:
@@ -750,7 +763,7 @@ def guess_panel(host):
             info['api_host'] = session.host
             
     except Exception as e:
-        info['error'] = e
+        info['error'] = str(e)
     finally:
         session.close() 
     return info
@@ -999,20 +1012,29 @@ def temp_email_domain_to_session_type(domain: str = None) -> dict[str, type[Temp
 
 
 class TempEmail:
-    def __init__(self, banned_domains=None):
+    def __init__(self, banned_domains=None, allowed_domains=None):
         self.__lock = RLock()
         self.__queues: list[tuple[str, Queue, float]] = []
         self.__banned = set(banned_domains or [])
+        self.__allowed = set(allowed_domains or [])
 
     @property
     @cached
     def email(self) -> str:
         id = rand_id()
         domain_len_limit = 31 - len(id)
-        valid_domains = [
-            d for d in temp_email_domain_to_session_type()
-            if len(d) <= domain_len_limit and d not in self.__banned
-        ]
+        
+        # 优先从白名单中选择，如果没有匹配的临时邮箱，再从全部可用域中选
+        valid_domains = []
+        if self.__allowed:
+            valid_domains = [d for d in self.__allowed if d in temp_email_domain_to_session_type()]
+            
+        if not valid_domains:
+            valid_domains = [
+                d for d in temp_email_domain_to_session_type()
+                if len(d) <= domain_len_limit and d not in self.__banned
+            ]
+            
         if not valid_domains:
              raise Exception("没有可用的临时邮箱域名")
         domain = choice(valid_domains)
