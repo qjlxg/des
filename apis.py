@@ -144,8 +144,9 @@ class Response:
     def json(self):
         try:
             return json.loads(self.text)
-        except (json.JSONDecodeError, UnicodeDecodeError) as e:
-            raise Exception(f'解析 json 失败: {e} ({self})')
+        except:
+            # 修复解析失败导致的 NoneType 报错
+            return {}
 
     @cached
     def bs(self):
@@ -312,7 +313,7 @@ class V2BoardSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if 'data' not in res:
+        if not res or 'data' not in res:
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
@@ -323,10 +324,10 @@ class V2BoardSession(_ROSession):
             'email_code': email_code or '',
             'invite_code': invite_code or '',
         }).json()
-        if 'data' in res:
+        if res and 'data' in res:
             self.__set_auth(email, res)
             return None
-        if 'message' in res:
+        if res and 'message' in res:
             return res['message']
         raise Exception(res)
 
@@ -422,7 +423,7 @@ class SSPanelSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if not res.get('ret'):
+        if not res or not res.get('ret'):
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None, name_eq_email=None, reg_fmt=None, im_type=False, aff=None) -> str | None:
@@ -439,10 +440,10 @@ class SSPanelSession(_ROSession):
             **({'imtype': 1, 'wechat': password} if im_type else {}),
             **({'aff': aff} if aff is not None else {}),
         }).json()
-        if res.get('ret'):
+        if res and res.get('ret'):
             self.email = email
             return None
-        if 'msg' in res:
+        if res and 'msg' in res:
             return res['msg']
         raise Exception(res)
 
@@ -481,7 +482,7 @@ class SSPanelSession(_ROSession):
 
     def checkin(self):
         res = self.post('user/checkin').json()
-        if not res.get('ret') and ('msg' not in res or not re_checked_in.search(res['msg'])):
+        if not res or (not res.get('ret') and ('msg' not in res or not re_checked_in.search(res['msg']))):
             raise Exception(res)
 
     def get_sub_url(self, **params) -> str:
@@ -638,7 +639,7 @@ class HkspeedupSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if res.get('code') != 200:
+        if not res or res.get('code') != 200:
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
@@ -651,10 +652,10 @@ class HkspeedupSession(_ROSession):
             **({'code': email_code} if email_code else {}),
             **({'inviteCode': invite_code} if invite_code else {})
         }).json()
-        if res.get('code') == 200:
+        if res and res.get('code') == 200:
             self.email = email
             return None
-        if 'message' in res:
+        if res and 'message' in res:
             return res['message']
         raise Exception(res)
 
@@ -710,41 +711,48 @@ def guess_panel(host):
         
         if not has_feature:
             # 兼容 SSPanel 默认路径
-            r_auth = session.get('auth/login', timeout=5)
-            if r_auth.ok:
-                info['type'] = 'sspanel'
-                info['name'] = r_auth.bs().title.text.split(' — ')[-1] if r_auth.bs().title else "SSPanel"
+            try:
+                r_auth = session.get('auth/login', timeout=5)
+                if r_auth.ok:
+                    info['type'] = 'sspanel'
+                    info['name'] = r_auth.bs().title.text.split(' — ')[-1] if r_auth.bs().title else "SSPanel"
+            except: pass
             return info 
 
         # 详细识别
-        r = session.get('api/v1/guest/comm/config', timeout=5)
-        if r.status_code == 403:
-            r = session.head(timeout=3)
-            if r.ok and session.redirect_origin:
-                r = session.get('api/v1/guest/comm/config', timeout=5)
-        
-        if r.ok:
-            try:
-                rj = r.json()
-                info['type'] = 'v2board'
-                _r = session.get(timeout=5)
-                if _r.ok and _r.bs().title:
-                    info['name'] = _r.bs().title.text
-                email_whitelist = get(rj, 'data', 'email_whitelist_suffix')
-                if email_whitelist:
-                    info['email_domain'] = email_whitelist[0]
-            except: pass
+        try:
+            r = session.get('api/v1/guest/comm/config', timeout=5)
+            if r.status_code == 403:
+                r = session.head(timeout=3)
+                if r.ok and session.redirect_origin:
+                    r = session.get('api/v1/guest/comm/config', timeout=5)
+            
+            if r.ok:
+                try:
+                    rj = r.json()
+                    if rj:
+                        info['type'] = 'v2board'
+                        _r = session.get(timeout=5)
+                        if _r.ok and _r.bs().title:
+                            info['name'] = _r.bs().title.text
+                        email_whitelist = get(rj, 'data', 'email_whitelist_suffix')
+                        if email_whitelist:
+                            info['email_domain'] = email_whitelist[0]
+                except: pass
+        except: pass
         
         if 'type' not in info:
-            r = session.get('auth/login', timeout=5)
-            if r.ok:
-                info['type'] = 'sspanel'
-                info['name'] = r.bs().title.text.split(' — ')[-1] if r.bs().title else "SSPanel"
-            elif 300 <= r.status_code < 400:
-                r = session.head('user/login', timeout=5)
+            try:
+                r = session.get('auth/login', timeout=5)
                 if r.ok:
                     info['type'] = 'sspanel'
-                    info['auth_path'] = 'user'
+                    info['name'] = r.bs().title.text.split(' — ')[-1] if r.bs().title else "SSPanel"
+                elif 300 <= r.status_code < 400:
+                    r = session.head('user/login', timeout=5)
+                    if r.ok:
+                        info['type'] = 'sspanel'
+                        info['auth_path'] = 'user'
+            except: pass
         
         if 'api_host' not in info and session.redirect_origin:
             info['api_host'] = session.host
@@ -767,23 +775,33 @@ class MailGW(TempEmailSession):
         super().__init__('api.mail.gw')
 
     def get_domains(self) -> list[str]:
-        r = self.get('domains', timeout=10)
-        return [item['domain'] for item in r.json().get('hydra:member', [])] if r.status_code == 200 else []
+        try:
+            r = self.get('domains', timeout=10)
+            return [item['domain'] for item in r.json().get('hydra:member', [])] if r.status_code == 200 else []
+        except: return []
 
     def set_email_address(self, address: str):
-        account = {'address': address, 'password': address.split('@')[0]}
-        self.post('accounts', json=account, timeout=10)
-        r = self.post('token', json=account, timeout=10)
-        if r.status_code == 200:
-            self.headers['Authorization'] = f'Bearer {r.json()["token"]}'
+        try:
+            account = {'address': address, 'password': address.split('@')[0]}
+            self.post('accounts', json=account, timeout=10)
+            r = self.post('token', json=account, timeout=10)
+            if r.status_code == 200:
+                rj = r.json()
+                if rj and 'token' in rj:
+                    self.headers['Authorization'] = f'Bearer {rj["token"]}'
+        except: pass
 
     def get_messages(self) -> list[str]:
-        r = self.get('messages', timeout=10)
-        if r.status_code != 200: return []
-        def fn(item):
-            res = self.get(f'messages/{item["id"]}', timeout=10)
-            return res.json().get('text','') if res.ok else ''
-        return parallel_map(fn, r.json().get('hydra:member', []))
+        try:
+            r = self.get('messages', timeout=10)
+            if r.status_code != 200: return []
+            def fn(item):
+                try:
+                    res = self.get(f'messages/{item["id"]}', timeout=10)
+                    return res.json().get('text','') if res.ok else ''
+                except: return ''
+            return parallel_map(fn, r.json().get('hydra:member', []))
+        except: return []
 
 
 class Snapmail(TempEmailSession):
@@ -791,17 +809,21 @@ class Snapmail(TempEmailSession):
         super().__init__('snapmail.cc')
 
     def get_domains(self) -> list[str]:
-        r = self.get('scripts/controllers/addEmailBox.js', timeout=10)
-        m = re_snapmail_domains.search(r.text)
-        return json5.loads(m[1]) if m else []
+        try:
+            r = self.get('scripts/controllers/addEmailBox.js', timeout=10)
+            m = re_snapmail_domains.search(r.text)
+            return json5.loads(m[1]) if m else []
+        except: return []
 
     def set_email_address(self, address: str):
         self.address = address
 
     def get_messages(self) -> list[str]:
-        r = self.get(f'emailList/{self.address}', timeout=10)
-        if r.ok and isinstance(r.json(), list):
-            return [bs(item['html']).get_text('\n', strip=True) for item in r.json()]
+        try:
+            r = self.get(f'emailList/{self.address}', timeout=10)
+            if r.ok and isinstance(r.json(), list):
+                return [bs(item['html']).get_text('\n', strip=True) for item in r.json()]
+        except: pass
         return []
 
 
@@ -810,31 +832,39 @@ class MailCX(TempEmailSession):
         super().__init__('api.mail.cx/api/v1/')
 
     def get_domains(self) -> list[str]:
-        r = self.get('https://mail.cx', timeout=10)
-        if not r.ok: return []
-        js_paths = [js['src'] for js in r.bs().find_all('script') if js.has_attr('src') and re_mailcx_js_path.fullmatch(js['src'])]
-        for path in js_paths:
-            try:
-                rj = self.get(urljoin('https://mail.cx', path), timeout=10)
-                if rj.ok:
-                    m = re_mailcx_domains.search(rj.text)
-                    if m: return json5.loads(m[1])
-            except: continue
+        try:
+            r = self.get('https://mail.cx', timeout=10)
+            if not r.ok: return []
+            js_paths = [js['src'] for js in r.bs().find_all('script') if js.has_attr('src') and re_mailcx_js_path.fullmatch(js['src'])]
+            for path in js_paths:
+                try:
+                    rj = self.get(urljoin('https://mail.cx', path), timeout=10)
+                    if rj.ok:
+                        m = re_mailcx_domains.search(rj.text)
+                        if m: return json5.loads(m[1])
+                except: continue
+        except: pass
         return []
 
     def set_email_address(self, address: str):
-        r = self.post('auth/authorize_token', timeout=10)
-        if r.ok:
-            self.headers['Authorization'] = f'Bearer {r.json()}'
-            self.address = address
+        try:
+            r = self.post('auth/authorize_token', timeout=10)
+            if r.ok:
+                self.headers['Authorization'] = f'Bearer {r.json()}'
+                self.address = address
+        except: pass
 
     def get_messages(self) -> list[str]:
-        r = self.get(f'mailbox/{self.address}', timeout=10)
-        if not r.ok: return []
-        def fn(item):
-            res = self.get(f'mailbox/{self.address}/{item["id"]}', timeout=10)
-            return res.json().get('body', {}).get('text', '') if res.ok else ''
-        return parallel_map(fn, r.json())
+        try:
+            r = self.get(f'mailbox/{self.address}', timeout=10)
+            if not r.ok: return []
+            def fn(item):
+                try:
+                    res = self.get(f'mailbox/{self.address}/{item["id"]}', timeout=10)
+                    return res.json().get('body', {}).get('text', '') if res.ok else ''
+                except: return ''
+            return parallel_map(fn, r.json())
+        except: return []
 
 
 class GuerrillaMail(TempEmailSession):
@@ -842,19 +872,27 @@ class GuerrillaMail(TempEmailSession):
         super().__init__('api.guerrillamail.com/ajax.php')
 
     def get_domains(self) -> list[str]:
-        r = self.get('https://www.spam4.me', timeout=10)
-        return re_option_domain.findall(r.text) if r.ok else []
+        try:
+            r = self.get('https://www.spam4.me', timeout=10)
+            return re_option_domain.findall(r.text) if r.ok else []
+        except: return []
 
     def set_email_address(self, address: str):
-        self.get(f'?f=set_email_user&email_user={address.split("@")[0]}', timeout=10)
+        try:
+            self.get(f'?f=set_email_user&email_user={address.split("@")[0]}', timeout=10)
+        except: pass
 
     def get_messages(self) -> list[str]:
-        r = self.get('?f=get_email_list&offset=0', timeout=10)
-        if not (r.ok and r.content and 'list' in r.json()): return []
-        def fn(item):
-            res = self.get(f'?f=fetch_email&email_id={item["mail_id"]}', timeout=10)
-            return bs(res.json()['mail_body']).get_text('\n', strip=True) if res.ok and res.text != 'false' else ''
-        return parallel_map(fn, r.json().get('list',[]))
+        try:
+            r = self.get('?f=get_email_list&offset=0', timeout=10)
+            if not (r.ok and r.content and 'list' in r.json()): return []
+            def fn(item):
+                try:
+                    res = self.get(f'?f=fetch_email&email_id={item["mail_id"]}', timeout=10)
+                    return bs(res.json()['mail_body']).get_text('\n', strip=True) if res.ok and res.text != 'false' else ''
+                except: return ''
+            return parallel_map(fn, r.json().get('list',[]))
+        except: return []
 
 
 class Emailnator(TempEmailSession):
@@ -865,20 +903,26 @@ class Emailnator(TempEmailSession):
         return ['smartnator.com', 'femailtor.com', 'psnator.com', 'mydefipet.live', 'tmpnator.live']
 
     def set_email_address(self, address: str):
-        self.get(timeout=10)
-        token = self.cookies.get('XSRF-TOKEN')
-        if token:
-            self.headers['x-xsrf-token'] = unquote_plus(token)
-            self.post(json={'email': address}, timeout=10)
-            self.address = address
+        try:
+            self.get(timeout=10)
+            token = self.cookies.get('XSRF-TOKEN')
+            if token:
+                self.headers['x-xsrf-token'] = unquote_plus(token)
+                self.post(json={'email': address}, timeout=10)
+                self.address = address
+        except: pass
 
     def get_messages(self) -> list[str]:
-        r = self.post(json={'email': self.address}, timeout=10)
-        if not r.ok: return []
-        def fn(item):
-            res = self.post(json={'email': self.address, 'messageID': item['messageID']}, timeout=10)
-            return res.bs().get_text('\n', strip=True) if res.ok else ''
-        return parallel_map(fn, r.json().get('messageData', [])[1:])
+        try:
+            r = self.post(json={'email': self.address}, timeout=10)
+            if not r.ok: return []
+            def fn(item):
+                try:
+                    res = self.post(json={'email': self.address, 'messageID': item['messageID']}, timeout=10)
+                    return res.bs().get_text('\n', strip=True) if res.ok else ''
+                except: return ''
+            return parallel_map(fn, r.json().get('messageData', [])[1:])
+        except: return []
 
 
 class Moakt(TempEmailSession):
@@ -886,20 +930,28 @@ class Moakt(TempEmailSession):
         super().__init__('moakt.com')
 
     def get_domains(self) -> list[str]:
-        r = self.get(timeout=10)
-        return re_option_domain.findall(r.text) if r.ok else []
+        try:
+            r = self.get(timeout=10)
+            return re_option_domain.findall(r.text) if r.ok else []
+        except: return []
 
     def set_email_address(self, address: str):
-        u, d = address.split('@')
-        self.post('inbox', {'domain': d, 'username': u}, timeout=10)
+        try:
+            u, d = address.split('@')
+            self.post('inbox', {'domain': d, 'username': u}, timeout=10)
+        except: pass
 
     def get_messages(self) -> list[str]:
-        r = self.get('inbox', timeout=10)
-        if not r.ok: return []
-        def fn(href):
-            res = self.get(f"{href}/content", timeout=10)
-            return res.bs().get_text('\n', strip=True) if res.ok else ''
-        return parallel_map(fn, [a['href'] for a in r.bs().select('.tm-table td:first-child>a')])
+        try:
+            r = self.get('inbox', timeout=10)
+            if not r.ok: return []
+            def fn(href):
+                try:
+                    res = self.get(f"{href}/content", timeout=10)
+                    return res.bs().get_text('\n', strip=True) if res.ok else ''
+                except: return ''
+            return parallel_map(fn, [a['href'] for a in r.bs().select('.tm-table td:first-child>a')])
+        except: return []
 
 
 class Rootsh(TempEmailSession):
@@ -908,22 +960,30 @@ class Rootsh(TempEmailSession):
         self.headers['Accept-Language'] = 'zh-CN,zh;q=0.9'
 
     def get_domains(self) -> list[str]:
-        r = self.get(timeout=10)
-        return [a.text for a in r.bs().select('#domainlist a')] if r.ok else []
+        try:
+            r = self.get(timeout=10)
+            return [a.text for a in r.bs().select('#domainlist a')] if r.ok else []
+        except: return []
 
     def set_email_address(self, address: str):
-        self.get(timeout=10)
-        self.post('applymail', {'mail': address}, timeout=10)
-        self.address = address
+        try:
+            self.get(timeout=10)
+            self.post('applymail', {'mail': address}, timeout=10)
+            self.address = address
+        except: pass
 
     def get_messages(self) -> list[str]:
-        r = self.post('getmail', {'mail': self.address}, timeout=10)
-        if not (r.ok and 'mail' in r.json()): return []
-        prefix = f"win/{self.address.replace('@', '(a)').replace('.', '-_-')}/"
-        def fn(item):
-            res = self.get(prefix + item[4], timeout=10)
-            return res.bs().get_text('\n', strip=True) if res.ok else ''
-        return parallel_map(fn, r.json().get('mail', []))
+        try:
+            r = self.post('getmail', {'mail': self.address}, timeout=10)
+            if not (r.ok and 'mail' in r.json()): return []
+            prefix = f"win/{self.address.replace('@', '(a)').replace('.', '-_-')}/"
+            def fn(item):
+                try:
+                    res = self.get(prefix + item[4], timeout=10)
+                    return res.bs().get_text('\n', strip=True) if res.ok else ''
+                except: return ''
+            return parallel_map(fn, r.json().get('mail', []))
+        except: return []
 
 
 class Linshiyou(TempEmailSession):
@@ -931,17 +991,23 @@ class Linshiyou(TempEmailSession):
         super().__init__('linshiyou.com')
 
     def get_domains(self) -> list[str]:
-        r = self.get(timeout=10)
-        return re_option_domain.findall(r.text) if r.ok else []
+        try:
+            r = self.get(timeout=10)
+            return re_option_domain.findall(r.text) if r.ok else []
+        except: return []
 
     def set_email_address(self, address: str):
-        self.get('user.php', params={'user': address}, timeout=10)
-        self.address = address
+        try:
+            self.get('user.php', params={'user': address}, timeout=10)
+            self.address = address
+        except: pass
 
     def get_messages(self) -> list[str]:
-        self.get('user.php', params={'user': self.address}, timeout=10)
-        r = self.get('mail.php', timeout=10)
-        return [tag.get_text('\n', strip=True) for tag in r.bs().find_all(class_='tmail-email-body-content')] if r.ok else []
+        try:
+            self.get('user.php', params={'user': self.address}, timeout=10)
+            r = self.get('mail.php', timeout=10)
+            return [tag.get_text('\n', strip=True) for tag in r.bs().find_all(class_='tmail-email-body-content')] if r.ok else []
+        except: return []
 
 
 @cached
@@ -999,34 +1065,41 @@ class TempEmail:
         while True:
             sleep(2) # 恢复 2 秒轮询，提高注册速度
             if not self.__session: break
+            
             try:
-                messages = self.__session.get_messages()
-            except:
-                messages = []
-            with self.__lock:
-                if not self.__queues:
-                    if hasattr(self, f'_{TempEmail.__name__}__th'):
-                        del self.__th
-                    break
-                new_len = 0
-                for item in self.__queues:
-                    keyword, queue, end_time = item
-                    found = False
-                    for message in messages:
-                        if message and (not keyword or keyword in message):
-                            m = re_email_code.search(message)
-                            if m:
-                                queue.put(m[1])
-                                found = True
-                                break
-                    if found: continue
-                    if time() > end_time:
-                        queue.put(None)
-                    else:
-                        self.__queues[new_len] = item
-                        new_len += 1
-                del self.__queues[new_len:]
-                if not self.__queues:
-                    if hasattr(self, f'_{TempEmail.__name__}__th'):
-                        del self.__th
-                    break
+                # 修复 provider 报错导致的后台线程死掉
+                try:
+                    messages = self.__session.get_messages()
+                except Exception:
+                    messages = []
+                
+                with self.__lock:
+                    if not self.__queues:
+                        if hasattr(self, f'_{TempEmail.__name__}__th'):
+                            del self.__th
+                        break
+                    new_len = 0
+                    for item in self.__queues:
+                        keyword, queue, end_time = item
+                        found = False
+                        for message in messages:
+                            if message and (not keyword or keyword in message):
+                                m = re_email_code.search(message)
+                                if m:
+                                    queue.put(m[1])
+                                    found = True
+                                    break
+                        if found: continue
+                        if time() > end_time:
+                            queue.put(None)
+                        else:
+                            self.__queues[new_len] = item
+                            new_len += 1
+                    del self.__queues[new_len:]
+                    if not self.__queues:
+                        if hasattr(self, f'_{TempEmail.__name__}__th'):
+                            del self.__th
+                        break
+            except Exception:
+                # 最后的容错
+                sleep(5)
