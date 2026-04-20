@@ -10,6 +10,7 @@ from urllib.parse import (parse_qsl, unquote_plus, urlencode, urljoin,
 
 import json5
 import requests
+import urllib3
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3 import Retry
