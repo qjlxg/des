@@ -1,7 +1,2 @@
-http://23.80.88.150:7001/api/v1/client/subscribe?token=bf4253f4063dd973d608cfcd3c5d2017
-http://14.225.217.155:8081/api/v1/client/subscribe?token=741fbb6379f1dd9c67e3a421d33ec94c
-http://103.56.112.145:7001/api/v1/client/subscribe?token=b44f9d9956e798aa8dc4ad1946e5f42d
-http://107.174.37.147:7001/api/v1/client/subscribe?token=7ea697d9f993d8a3a7048544b410ff90
-https://hui.huangjuexiao.cn/api/v1/client/subscribe?token=66689f0191daeb8506437b819c689ba0
-http://152.53.209.30:8082/api/v1/client/subscribe?token=d984cef8fb18015a83b4a68b4e1e0f71
-https://149.104.78.5/api/v1/client/subscribe?token=f24ddb43aa653f64e7d602191ac2e7b6
+http://107.174.37.147:7001/api/v1/client/subscribe?token=76642b12277252c90c2dfd0b5ad601ec
+https://www.tamalagebi.xyz/api/v1/client/subscribe?token=ae7e3e4da061ac0216a6154bd130c21d
