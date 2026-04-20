@@ -63,8 +63,8 @@ re_sspanel_price = re.compile(r'\d+(?:\.\d+)?')
 re_sspanel_traffic = re.compile(r'\d+(?:\.\d+)?\s*[BKMGTPE]', re.I)
 re_sspanel_duration = re.compile(r'(\d+)\s*(天|month)')
 
-# 新增特征匹配正则
-re_v2board_settings_title = re.compile(r"title:\s*'(.+?)'")
+# 新增针对 V2Board/Xboard 变种站点的正则
+re_v2board_settings_title = re.compile(r"title:\s*['\"](.+?)['\"]")
 
 def bs(text):
     return BeautifulSoup(text, 'html.parser')
@@ -120,12 +120,14 @@ class Response:
 
     @cached
     def __str__(self):
+        # 限制打印长度，防止大规模运行时日志输出导致卡顿
         return f'{self.__status_code} {self.__reason} {repr(self.text[:100])}'
 
 
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
+        # 优化连接池
         adapter = HTTPAdapter(
             pool_connections=100, 
             pool_maxsize=200, 
@@ -137,7 +139,7 @@ class Session(requests.Session):
         self.allow_redirects = allow_redirects
         self.headers['User-Agent'] = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
         self.set_base(base)
-        self.verify = False # 默认忽略 SSL 验证
+        self.verify = False # 全局默认忽略 SSL 证书校验
 
     def set_base(self, base):
         if base:
@@ -196,6 +198,7 @@ class Session(requests.Session):
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
+        # 增加 verify=self.verify 确保忽略无效证书
         kwargs.update(data=data, timeout=timeout, allow_redirects=False, verify=self.verify)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
@@ -668,7 +671,7 @@ panel_class_map = {
 def guess_panel(host):
     info = {}
     session = _ROSession(host)
-    session.verify = False # 针对 SSL 证书无效的站点
+    session.verify = False # 强制忽略 SSL
     try:
         # 第一步：快速预检特征路径
         has_feature = False
@@ -681,8 +684,8 @@ def guess_panel(host):
             except:
                 continue
         
-        # 第二步：正式识别
-        # 探测 V2Board (API 方式)
+        # 第二步：正式识别面板类型
+        # 探测 V2Board (API 优先)
         r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
             r = session.head(timeout=3)
@@ -700,16 +703,19 @@ def guess_panel(host):
                     info['email_domain'] = email_whitelist[0]
             except: pass
         
-        # 探测新版 V2Board/Xboard (HTML 嵌入配置方式)
+        # 第三步：探测 HTML 变种 (如 Xboard 或硬编码配置的 V2Board)
         if 'type' not in info:
-            r_index = session.get('/', timeout=5)
-            if r_index.ok and ('window.settings' in r_index.text or '/theme/Xboard' in r_index.text or '/theme/v2board' in r_index.text):
-                info['type'] = 'v2board'
-                m_title = re_v2board_settings_title.search(r_index.text)
-                if m_title:
-                    info['name'] = m_title.group(1)
-                elif r_index.bs().title:
-                    info['name'] = r_index.bs().title.text
+            r_home = session.get('/', timeout=5)
+            if r_home.ok:
+                source = r_home.text
+                # 识别特征：window.settings, routerBase, 或特定资源路径
+                if 'window.settings =' in source or 'window.routerBase =' in source or '/theme/Xboard' in source or '/theme/v2board' in source or '/theme/default' in source:
+                    info['type'] = 'v2board'
+                    m_title = re_v2board_settings_title.search(source)
+                    if m_title:
+                        info['name'] = m_title[1]
+                    elif r_home.bs().title:
+                        info['name'] = r_home.bs().title.text
 
         # 探测 SSPanel
         if 'type' not in info:
