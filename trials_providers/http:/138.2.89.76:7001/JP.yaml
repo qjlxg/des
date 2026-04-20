@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇯🇵 日本东京-JP4 - M2024, server: jp4.2024.gq, port: 18443, type: ss, cipher: aes-256-gcm, password: c8f722be-8622-4aba-9bed-e94b705c5b95, udp: true}

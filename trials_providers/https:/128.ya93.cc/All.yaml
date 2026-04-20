@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇭🇰 香港-01 - 一元鸡场, server: 38.65.91.133, port: 31468, type: vmess, uuid: 81e5c43f-e6e3-4253-9489-2d9277f39bdf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: 🇺🇸 美国-01 - 一元鸡场, server: 38.65.91.133, port: 1101, type: vmess, uuid: 81e5c43f-e6e3-4253-9489-2d9277f39bdf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: 测试 - 一元鸡场, server: 43.243.73.197, port: 23269, type: vmess, uuid: 81e5c43f-e6e3-4253-9489-2d9277f39bdf, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}

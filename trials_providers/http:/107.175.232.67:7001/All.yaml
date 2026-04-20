@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇹🇼台湾住宅家宽01 - OKX, server: 151.242.165.213, port: 30039, type: ss, cipher: chacha20-ietf-poly1305, password: c8322030-f71c-451a-a140-fb26827cf4f1, udp: true}
-- {name: 🇯🇵移动优化|测试节点 - OKX, server: 154.83.94.7, port: 30043, type: ss, cipher: chacha20-ietf-poly1305, password: c8322030-f71c-451a-a140-fb26827cf4f1, udp: true}
-- {name: 联通电信暂不提供优化测试 - OKX, server: 156.231.115.233, port: 30044, type: ss, cipher: chacha20-ietf-poly1305, password: c8322030-f71c-451a-a140-fb26827cf4f1, udp: true}

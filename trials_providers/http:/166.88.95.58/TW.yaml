@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇹🇼 台湾省-1-bgp入口2倍 - KFCLOUD, server: jmswyh.edu2026.cn, port: 15443, type: ss, cipher: aes-128-gcm, password: 38b1606f-97cd-4ed5-b7b5-96fd54833499, udp: true}
-- {name: 🇹🇼 台湾IPLC专线1 5倍 - KFCLOUD, server: e03_ddns.711212.xyz, port: 34065, type: ss, cipher: aes-128-gcm, password: 38b1606f-97cd-4ed5-b7b5-96fd54833499, udp: true}
-- {name: 🇹🇼 台湾IPLC专线2 5倍 - KFCLOUD, server: e03_ddns.711212.xyz, port: 13679, type: ss, cipher: aes-128-gcm, password: 38b1606f-97cd-4ed5-b7b5-96fd54833499, udp: true}

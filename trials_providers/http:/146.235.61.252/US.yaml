@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: '🇺🇸 [vmess]美国3 - Cloudflare', server: us3.vp1000.net, port: 443, type: vmess, uuid: db1bdd9c-0ea6-454c-a04a-4d2ea279487d, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-opts: {path: /cp100vp800kkkdsnx, headers: {Host: us3.vp1000.net}}, udp: true}

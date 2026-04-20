@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇯🇵 🌈 JP日本 | 海外使用 - Cecil 塞西尔, server: jp--01.bmv0zmx554mb6yc8.com, port: 30001, type: vmess, uuid: 349b4fbf-45d0-4eac-8e9b-20a1d65f97b8, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}

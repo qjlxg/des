@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇯🇵 日本-2 - 快捷VPN, server: 27.152.180.32, port: 28019, type: ss, cipher: chacha20-ietf-poly1305, password: 10d3e4f8-0daf-4429-906c-22d113e6b082, udp: true}
-- {name: 🇯🇵 日本-3 - 快捷VPN, server: 27.152.180.32, port: 28054, type: ss, cipher: chacha20-ietf-poly1305, password: 10d3e4f8-0daf-4429-906c-22d113e6b082, udp: true}
-- {name: 🇯🇵 日本-4 - 快捷VPN, server: 27.152.180.32, port: 28057, type: ss, cipher: chacha20-ietf-poly1305, password: 10d3e4f8-0daf-4429-906c-22d113e6b082, udp: true}

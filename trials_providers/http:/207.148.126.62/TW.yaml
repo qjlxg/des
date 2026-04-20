@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇹🇼 cn1台湾|1x - Haofast_Cloud, server: xn--1-eo6a9f4b00af2lsoy.8888888888.sbs, port: 18899, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
-- {name: 🇹🇼 cn2台湾|1x - Haofast_Cloud, server: xn--2-eo6a9f4b00af2lsoy.8888888888.sbs, port: 18899, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}
-- {name: 🇹🇼 【VIP】台湾|1x - Haofast_Cloud, server: best.haofast.com, port: 18899, type: ss, cipher: aes-128-gcm, password: 11f6a21a-5855-4631-89a1-3fee7677251d, udp: true}

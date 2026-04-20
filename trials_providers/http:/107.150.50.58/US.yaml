@@ -1,4 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇺🇸 TT-美国13-GCORE - m, server: ttt002.vleeeeeee001.wang, port: 20028, type: trojan, password: 0acfb9b8-0bfa-4d77-b45d-164eae124636, sni: ttssl001.vleeeeeee001.wang, skip-cert-verify: true, udp: true}

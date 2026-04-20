@@ -1,8 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇹🇼 台湾-hinet-1 - 7-Eleven, server: tw1.kidcc.xyz, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾-hinet-2 - 7-Eleven, server: tw2.kidcc.xyz, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: 🇹🇼 台湾1 - 7-Eleven, server: 45.12.62.201, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇹🇼 台湾2 - 7-Eleven, server: 45.12.62.202, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇹🇼 台湾3 - 7-Eleven, server: 45.12.62.203, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
