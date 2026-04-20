@@ -61,6 +61,40 @@ re_sspanel_price = re.compile(r'\d+(?:\.\d+)?')
 re_sspanel_traffic = re.compile(r'\d+(?:\.\d+)?\s*[BKMGTPE]', re.I)
 re_sspanel_duration = re.compile(r'(\d+)\s*(天|month)')
 
+# 新增：用于保存订阅链接的文件锁
+_SAVE_LOCK = RLock()
+
+def save_subscription(sub_url: str, sub_info: dict):
+    """
+    保存有流量且未过期的订阅链接到 subscription.txt
+    """
+    if not sub_url or not sub_info:
+        return
+    try:
+        # 流量校验
+        total = sub_info.get('total', 0)
+        used = sub_info.get('upload', 0) + sub_info.get('download', 0)
+        if total <= used:
+            return
+
+        # 有效期校验
+        expire = sub_info.get('expire')
+        if expire:
+            # 将字符串或数字转换为时间戳
+            ts_expire = expire if isinstance(expire, (int, float)) else str2timestamp(str(expire))
+            if ts_expire and ts_expire < time():
+                return
+
+        # 写入文件
+        with _SAVE_LOCK:
+            with open('subscription.txt', 'a', encoding='utf-8') as f:
+                # 兼容 SSPanel 可能存在的多个订阅地址（以|分隔）
+                for url in sub_url.split('|'):
+                    if url.strip():
+                        f.write(f"{url.strip()}\n")
+    except:
+        pass
+
 
 def bs(text):
     return BeautifulSoup(text, 'html.parser')
@@ -256,7 +290,6 @@ class _ROSession(Session):
             if parse_url(r.url)[:4] != parse_url(url)[:4]:
                 self.set_origin(r.url)
                 self.__redirect_origin = True
-                # print(f'{self.host}: {url} -> {r.url}')
             self.__times += 1
         return r
 
@@ -668,12 +701,10 @@ def guess_panel(host):
     info = {}
     session = _ROSession(host)
     try:
-        # 第一步：快速预检特征路径 (不再直接进行解析，而是先确认路径存活)
-        # 使用 HEAD 请求或者极短超时的 GET
+        # 第一步：快速预检特征路径
         has_feature = False
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
-                # 只要返回 200/403/405 等说明路径是有定义的，通常是非 404
                 r_probe = session.head(path, timeout=3)
                 if r_probe.status_code != 404:
                     has_feature = True
@@ -682,7 +713,7 @@ def guess_panel(host):
                 continue
         
         if not has_feature:
-            return info # 如果所有特征路径都 404 或超时，直接跳过该站
+            return info 
 
         # 第二步：正式识别面板类型
         # 探测 V2Board
@@ -721,7 +752,7 @@ def guess_panel(host):
     except Exception as e:
         info['error'] = e
     finally:
-        session.close() # 必须手动关闭
+        session.close() 
     return info
 
 
