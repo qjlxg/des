@@ -1,7 +1,5 @@
-http://129.146.105.113/api/v1/client/subscribe?token=c42cec0ba7f673b843ccab1bab48cff9
-https://argosub.men/api/v1/client/subscribe?token=1160e8690da8c406496d969de471ca14
-https://154.219.113.133/s/b4c01bb8ef228fdfca09b491be408745
-https://www.tamalagebi.xyz/s/fe7d0a6b5ab3712b79bdabc2ec495e7d
-https://www.tamalagebi.xyz/s/7e7917e8b332a8c3d929be2e6499d077
-https://104.223.120.132/api/v1/client/subscribe?token=475441aa90a123db847cd78f761460dd
-http://107.174.37.147:7001/fly/d5620492c17e3b3e716981818e601b04
+http://103.180.21.82/api/v1/client/subscribe?token=ff15430d40c6aa3c4e78e4621fb0c110
+http://51.83.8.191/s/14523930a0e4d967729e484e58a804f8
+http://129.146.105.113/api/v1/client/subscribe?token=2f55342ef3fb2e1c2a4ef3f6b8937fff
+http://106.54.45.38/api/v1/client/subscribe?token=52d84ff91fc5c43312c87da95b3628aa
+https://a-gvgya9fuh2fyd7bx.z01.azurefd.net/alphaio/id/menu?token=b1551707f6eb19662bf712fd5d8132a6
