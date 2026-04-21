@@ -296,34 +296,25 @@ def cache_sub_info(info, opt: dict, cache: dict[str, list[str]]):
     cache['sub_info'] = [size2str(used), size2str(total), expire, rest]
 
 
+# 修改点：将原保存本地配置文件的逻辑设为空操作
 def save_sub_base64_and_clash(base64, clash, host, opt: dict):
-    return gen_base64_and_clash_config(
-        base64_path=f'trials/{host}',
-        clash_path=f'trials/{host}.yaml',
-        providers_dir=f'trials_providers/{host}',
-        base64=base64,
-        clash=clash,
-        exclude=opt.get('exclude')
-    )
+    return 0
 
 
 def save_sub(info, base64, clash, base64_url, clash_url, host, opt: dict, cache: dict[str, list[str]], log: list):
     cache.pop('保存订阅信息失败', None)
-    cache.pop('保存base64/clash订阅失败', None)
-
     try:
         cache_sub_info(info, opt, cache)
     except Exception as e:
         cache['保存订阅信息失败'] = [e]
         log.append(f'保存订阅信息失败({host})({clash_url}): {e}')
-    try:
-        node_n = save_sub_base64_and_clash(base64, clash, host, opt)
+    
+    # 不再调用保存本地文件的逻辑，直接从 info 中提取节点数 (如果有的话)
+    if info and 'node_n' in info:
+        node_n = info['node_n']
         if (d := node_n - int(g0(cache, 'node_n', 0))) != 0:
             log.append(f'{host} 节点数 {"+" if d > 0 else ""}{d} ({node_n})')
         cache['node_n'] = node_n
-    except Exception as e:
-        cache['保存base64/clash订阅失败'] = [e]
-        log.append(f'保存base64/clash订阅失败({host})({base64_url})({clash_url}): {e}')
 
 
 def get_and_save(session: PanelSession, host, opt: dict, cache: dict[str, list[str]], log: list):
@@ -372,29 +363,14 @@ if __name__ == '__main__':
         write('.github/repo_get_trial', cur_repo)
 
     cfg = read_cfg('trial.cfg')['default']
-
     opt = build_options(cfg)
-
     cache = read_cfg('trial.cache', dict_items=True)
 
     for host in [*cache]:
         if host not in opt:
             del cache[host]
 
-    for path in list_file_paths('trials'):
-        host, ext = os.path.splitext(os.path.basename(path))
-        if ext != '.yaml':
-            host += ext
-        else:
-            host = host.split('_')[0]
-        if host not in opt:
-            remove(path)
-
-    for path in list_folder_paths('trials_providers'):
-        host = os.path.basename(path)
-        if '.' in host and host not in opt:
-            clear_files(path)
-            remove(path)
+    # 修改点：不再清理 trials/trials_providers 文件夹，因为不再生成它们
 
     with ThreadPoolExecutor(32) as executor:
         args = [(h, opt[h], cache[h]) for h, *_ in cfg]
@@ -402,15 +378,8 @@ if __name__ == '__main__':
             for line in log:
                 print(line)
 
-    total_node_n = gen_base64_and_clash_config(
-        base64_path='trial',
-        clash_path='trial.yaml',
-        providers_dir='trials_providers',
-        base64_paths=(path for path in list_file_paths('trials') if os.path.splitext(path)[1].lower() != '.yaml'),
-        providers_dirs=(path for path in list_folder_paths('trials_providers') if '.' in os.path.basename(path))
-    )
-
-    print('总节点数', total_node_n)
+    # 修改点：取消 aggregated (trial/trial.yaml) 文件的生成逻辑
+    print('已取消本地配置文件的聚合生成。')
 
     def get_sort_key(host):
         c = cache.get(host, {})
@@ -435,7 +404,7 @@ if __name__ == '__main__':
     new_cache = {k: cache[k] for k in sorted_keys}
     write_cfg('trial.cache', new_cache)
 
-    # --- 核心修改处：提取订阅链接并严格过滤 0B 或低流量节点 ---
+    # 修改点：提取订阅链接并严格过滤流量 < 1G 的节点
     valid_subs = []
     for host, data in new_cache.items():
         sub_info = data.get('sub_info')
@@ -444,17 +413,16 @@ if __name__ == '__main__':
         if not sub_info or not sub_url:
             continue
             
-        # sub_info 结构: [已用, 总量, 到期时间, 剩余信息字符串]
-        # 计算剩余流量：总量 - 已用
         try:
+            # 计算剩余流量：总量 - 已用
             remain_val = str2size(sub_info[1]) - str2size(sub_info[0])
         except:
             remain_val = 0
             
         # 判定条件：
-        # 1. 剩余流量必须 >= 1G (即 1073741824 字节)
+        # 1. 剩余流量必须 >= 1G (1073741824 字节)
         # 2. 必须是 "永不过期" 或者 剩余天数 > 0
-        if remain_val < 1073741824: # 过滤掉小于 1G 的（包含 0B）
+        if remain_val < 1073741824: 
             continue
 
         info_str = " ".join(map(str, sub_info))
@@ -464,7 +432,6 @@ if __name__ == '__main__':
             valid_subs.append(url)
         elif "days" in info_str:
             try:
-                # 提取剩余天数逻辑
                 time_part = info_str.split('剩余')[1].split(' ', 2)[2]
                 if "days" in time_part:
                     days_val = int(time_part.split('days')[0].strip())
