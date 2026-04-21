@@ -738,13 +738,16 @@ def guess_panel(host):
                                 info['name'] = m_title[1]
                     except: pass
         
-        # 探测 SSPanel
+# 探测 SSPanel (增加对 Tabler 主题和 HTMX 版本的识别)
         if 'type' not in info:
             r = session.get('auth/login', timeout=5)
             if r.ok:
-                info['type'] = 'sspanel'
-                if r.bs().title:
-                    info['name'] = r.bs().title.text.split(' — ')[-1]
+                # 识别关键字：fuck.min.js (SSPanel特有), hx-post (HTMX), SSPanel-UIM
+                if any(k in r.text for k in ['fuck.min.js', 'hx-post', 'SSPanel-UIM', 'SS管理系统']):
+                    info['type'] = 'sspanel'
+                    if r.bs().title:
+                        title_text = r.bs().title.text
+                        info['name'] = title_text.split(' — ')[-1] if ' — ' in title_text else title_text
             elif 300 <= r.status_code < 400:
                 r = session.head('user/login', timeout=5)
                 if r.ok:
@@ -757,7 +760,7 @@ def guess_panel(host):
     except Exception as e:
         info['error'] = e
     finally:
-        session.close() # 必须手动关闭
+        session.close()
     return info
 
 
