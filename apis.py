@@ -34,7 +34,7 @@ PROBE_REG_PATHS = [
     "api/v1/passport/auth/subscribe",
     "api/v1/passport/auth/v2boardRegister",
     "register",
-    "user/register" # 补充常用路径
+    "user/register"
 ]
 PROBE_CONFIG_PATHS = ["api/v1/guest/comm/config", "api/v1/passport/comm/config"]
 
@@ -64,6 +64,9 @@ re_sspanel_price = re.compile(r'\d+(?:\.\d+)?')
 re_sspanel_traffic = re.compile(r'\d+(?:\.\d+)?\s*[BKMGTPE]', re.I)
 re_sspanel_duration = re.compile(r'(\d+)\s*(天|month)')
 
+# --- 新增变种识别正则 ---
+# 识别 Xboard/V2board 首页特征配置
+re_xboard_settings = re.compile(r'window\.settings\s*=\s*(\{.+?\})', re.S)
 
 def bs(text):
     return BeautifulSoup(text, 'html.parser')
@@ -94,6 +97,10 @@ class Response:
         return 200 <= self.__status_code < 300
 
     @property
+    def is_redirect(self):
+        return 300 <= self.__status_code < 400
+
+    @property
     def reason(self):
         return self.__reason
 
@@ -119,14 +126,12 @@ class Response:
 
     @cached
     def __str__(self):
-        # 限制打印长度，防止大规模运行时日志输出导致卡顿
         return f'{self.__status_code} {self.__reason} {repr(self.text[:100])}'
 
 
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
-        # 优化连接池：针对 1 万个任务，必须增加池大小防止线程等待连接释放
         adapter = HTTPAdapter(
             pool_connections=100, 
             pool_maxsize=200, 
@@ -196,26 +201,27 @@ class Session(requests.Session):
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
-        # 强制缩短 timeout 防止长时间挂起，同时强制 verify=False 忽略证书错误
-        kwargs.update(data=data, timeout=timeout, allow_redirects=False, verify=False)
+        # 统一处理 verify，防止因证书问题导致探测失败
+        kwargs.setdefault('verify', False)
+        kwargs.update(data=data, timeout=timeout, allow_redirects=False)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
         
         try:
             res = super().request(method, url, **kwargs)
         except Exception:
-            raise # 异常由外部 guess_panel 捕获
+            raise
 
-        if allow_redirects and res.is_redirect:
+        if allow_redirects and (300 <= res.status_code < 400):
             no = ~allow_redirects
             url = res.url
             kwargs.pop('params', None)
             i = 0
             while True:
-                if res.is_redirect:
+                if (300 <= res.status_code < 400):
                     i += 1
                     if i > self.max_redirects:
-                        break # 重定向过载直接跳出
+                        break
                     new_url = urljoin(url, res.headers.get('Location', ''))
                     if url == new_url:
                         if no & REDIRECT_TO_GET:
@@ -259,7 +265,6 @@ class _ROSession(Session):
             if parse_url(r.url)[:4] != parse_url(url)[:4]:
                 self.set_origin(r.url)
                 self.__redirect_origin = True
-                # print(f'{self.host}: {url} -> {r.url}')
             self.__times += 1
         return r
 
@@ -671,65 +676,66 @@ def guess_panel(host):
     info = {}
     session = _ROSession(host)
     try:
-        # 第一步：快速预检特征路径 (不再直接进行解析，而是先确认路径存活)
+        # 第一步：SSL 容错与路径探测
         has_feature = False
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
-                # 只要返回 200/403/405 等说明路径是有定义的，通常是非 404
-                r_probe = session.head(path, timeout=3)
+                # 显式使用 verify=False 处理不安全证书
+                r_probe = session.head(path, timeout=5, verify=False)
                 if r_probe.status_code != 404:
                     has_feature = True
                     break
             except:
                 continue
         
-        if not has_feature:
-            return info # 如果所有特征路径都 404 或超时，直接跳过该站
-
         # 第二步：正式识别面板类型
-        # 探测 V2Board / Xboard
-        r = session.get('api/v1/guest/comm/config', timeout=5)
+        # 优先尝试 V2Board 标准 API
+        r = session.get('api/v1/guest/comm/config', timeout=5, verify=False)
         if r.status_code == 403:
-            r = session.head(timeout=3)
-            if r.ok and session.redirect_origin:
-                r = session.get('api/v1/guest/comm/config', timeout=5)
+            r = session.head(timeout=3, verify=False)
+            if r.is_redirect or (r.ok and session.redirect_origin):
+                r = session.get('api/v1/guest/comm/config', timeout=5, verify=False)
         
         if r.ok:
             try:
                 rj = r.json()
                 info['type'] = 'v2board'
-                _r = session.get(timeout=5)
+                _r = session.get(timeout=5, verify=False)
                 if _r.ok and _r.bs().title:
                     info['name'] = _r.bs().title.text
                 if (email_whitelist := get(rj, 'data', 'email_whitelist_suffix')):
                     info['email_domain'] = email_whitelist[0]
             except: pass
 
-        # 针对 Xboard 特征的 HTML 识别逻辑
+        # --- NEW: 变种识别逻辑 ---
+        # 如果 API 识别失败，分析首页 HTML
         if 'type' not in info:
-            r_index = session.get(timeout=5)
+            r_index = session.get('', timeout=5, verify=False)
             if r_index.ok:
-                text = r_index.text
-                # 识别 Xboard/V2Board 首页特征变量
-                if 'window.settings' in text and ('Xboard' in text or 'v2board' in text.lower()):
+                html_text = r_index.text
+                # 识别 Xboard/Modern V2Board 特征
+                # 以后有新的变种直接在下面列表添加关键词即可
+                v2_variants = ['window.settings', '/theme/Xboard', 'routerBase', '/assets/umi.js']
+                if any(k in html_text for k in v2_variants):
                     info['type'] = 'v2board'
-                    try:
-                        if r_index.bs().title:
-                            info['name'] = r_index.bs().title.text
-                        else:
-                            m_title = re.search(r"title:\s*['\"](.+?)['\"]", text)
-                            if m_title:
-                                info['name'] = m_title[1]
-                    except: pass
+                    if r_index.bs().title:
+                        info['name'] = r_index.bs().title.text
+                    # 尝试从 window.settings 提取标题
+                    m_settings = re_xboard_settings.search(html_text)
+                    if m_settings:
+                        try:
+                            settings_data = json5.loads(m_settings[1])
+                            info['name'] = settings_data.get('title', info.get('name'))
+                        except: pass
         
         # 探测 SSPanel
         if 'type' not in info:
-            r = session.get('auth/login', timeout=5)
+            r = session.get('auth/login', timeout=5, verify=False)
             if r.ok:
                 info['type'] = 'sspanel'
                 info['name'] = r.bs().title.text.split(' — ')[-1]
             elif 300 <= r.status_code < 400:
-                r = session.head('user/login', timeout=5)
+                r = session.head('user/login', timeout=5, verify=False)
                 if r.ok:
                     info['type'] = 'sspanel'
                     info['auth_path'] = 'user'
@@ -740,7 +746,7 @@ def guess_panel(host):
     except Exception as e:
         info['error'] = e
     finally:
-        session.close() # 必须手动关闭
+        session.close()
     return info
 
 
