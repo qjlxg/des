@@ -684,10 +684,11 @@ def guess_panel(host):
                 continue
         
         if not has_feature:
-            return info # 如果所有特征路径都 404 或超时，直接跳过该站
+            # 针对 Xboard 的特殊情况：首页是 SPA，路径可能无法直接探测，需进入首页进一步识别
+            pass
 
         # 第二步：正式识别面板类型
-        # 探测 V2Board / Xboard
+        # 探测 V2Board / Xboard (API 探测)
         r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
             r = session.head(timeout=3)
@@ -705,13 +706,21 @@ def guess_panel(host):
                     info['email_domain'] = email_whitelist[0]
             except: pass
 
-        # 针对 Xboard 特征的 HTML 识别逻辑
+        # 针对 Xboard 特征的 HTML 识别逻辑 (首页内容分析)
         if 'type' not in info:
             r_index = session.get(timeout=5)
             if r_index.ok:
                 text = r_index.text
-                # 识别 Xboard/V2Board 首页特征变量
-                if 'window.settings' in text and ('Xboard' in text or 'v2board' in text.lower()):
+                # 定义 Xboard/V2Board 变种特征关键字
+                v2_variants = [
+                    'window.settings',
+                    'window.routerBase',
+                    '/theme/Xboard',
+                    '/assets/umi.js',
+                    'v2board'
+                ]
+                # 识别识别 Xboard/V2Board 首页特征变量
+                if any(k in text for k in v2_variants):
                     info['type'] = 'v2board'
                     try:
                         if r_index.bs().title:
