@@ -444,3 +444,34 @@ if __name__ == '__main__':
     new_cache = {k: cache[k] for k in sorted_keys}
     
     write_cfg('trial.cache', new_cache)
+
+    # --- 提取订阅链接到 subscription.txt ---
+    valid_subs = []
+    for host, data in new_cache.items():
+        sub_info = data.get('sub_info')
+        sub_url = data.get('sub_url')
+        
+        if not sub_info or not sub_url:
+            continue
+            
+        info_str = " ".join(map(str, sub_info))
+        url = sub_url[0]
+        
+        # 判定条件：
+        # 1. 包含 "永不过期"
+        # 2. 包含 "days" 且前面的数字大于 0 (排除负数和不到一天的)
+        if "永不过期" in info_str:
+            valid_subs.append(url)
+        elif "days" in info_str:
+            # 提取 "剩余流量" 后面的部分，例如 "364 days, 11:41..."
+            try:
+                time_part = info_str.split('剩余')[1].split(' ', 2)[2]
+                if "days" in time_part:
+                    days_val = int(time_part.split('days')[0].strip())
+                    if days_val > 0:
+                        valid_subs.append(url)
+            except:
+                pass
+                
+    if valid_subs:
+        write('subscription.txt', "\n".join(valid_subs))
