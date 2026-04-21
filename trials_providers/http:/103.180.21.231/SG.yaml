@@ -1,8 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇸🇬 新加坡-1 - 7-Eleven, server: 205.198.86.146, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇸🇬 新加坡-2 - 7-Eleven, server: 205.198.86.175, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇸🇬 新加坡-3 - 7-Eleven, server: 205.198.87.162, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇸🇬 新加坡-4 - 7-Eleven, server: 205.198.87.164, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇸🇬 新加坡-5 - 7-Eleven, server: 205.198.87.166, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}

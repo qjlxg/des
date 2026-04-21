@@ -1,6 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇺🇸 美国-1 - 7-Eleven, server: 23.27.143.79, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇺🇸 美国-2 - 7-Eleven, server: 223.165.6.217, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}
-- {name: 🇺🇸 美国-3 - 7-Eleven, server: 205.198.70.177, port: 28666, type: vmess, uuid: 72a07edd-7de1-4563-a0a8-71c8b13d4533, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, servername: www.bilibili.com, udp: true}

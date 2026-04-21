@@ -1,7 +1,0 @@
-%YAML 1.1
----
-proxies:
-- {name: 🇹🇼 🌈 TW台湾 | 海外使用 - Cecil 塞西尔, server: tw-taian.cdn-yx.buzz, port: 20052, type: trojan, password: 349b4fbf-45d0-4eac-8e9b-20a1d65f97b8, sni: tw-taian.cdn-yx.buzz, skip-cert-verify: true, udp: true}
-- {name: 🇭🇰 🌈 HK香港 | 海外使用 - Cecil 塞西尔, server: hk-hkbn.cdn-yx.buzz, port: 20052, type: trojan, password: 349b4fbf-45d0-4eac-8e9b-20a1d65f97b8, sni: hk-hkbn.cdn-yx.buzz, skip-cert-verify: true, udp: true}
-- {name: 🇯🇵 🌈 JP日本 | 海外使用 - Cecil 塞西尔, server: jp--01.bmv0zmx554mb6yc8.com, port: 30001, type: vmess, uuid: 349b4fbf-45d0-4eac-8e9b-20a1d65f97b8, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
-- {name: 🇸🇬 🌈 SG新加坡 | 海外使用 - Cecil 塞西尔, server: sg--01.bmv0zmx554mb6yc8.com, port: 30001, type: vmess, uuid: 349b4fbf-45d0-4eac-8e9b-20a1d65f97b8, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: true}
