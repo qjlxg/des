@@ -1,2 +1,5 @@
-http://107.174.37.147:7001/api/v1/client/subscribe?token=76642b12277252c90c2dfd0b5ad601ec
-https://www.tamalagebi.xyz/api/v1/client/subscribe?token=ae7e3e4da061ac0216a6154bd130c21d
+http://50.114.113.44:4567/api/v1/client/subscribe?token=fb1e1bca84ebb26f8d6fe3f56f5c1623
+http://66.112.214.216:7001/api/v1/client/subscribe?token=fc49063582cbf837d94abe85f3185a35
+http://166.88.98.12:4567/api/v1/client/subscribe?token=63e5afc3f9933cd7750119df063832c7
+https://sub01.u1s1yun.com/api/v1/client/subscribe?token=a24dd43361a81469f71443a5ed7e19b1
+https://85.113.71.19/xxy-douyin?token=71ab7717cce5728fc2368a053183793b
