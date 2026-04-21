@@ -412,23 +412,18 @@ if __name__ == '__main__':
 
     print('总节点数', total_node_n)
 
-    # --- 核心修改：重新实现排序逻辑，确保有流量数据的节点在 cache 中置顶 ---
     def get_sort_key(host):
         c = cache.get(host, {})
-        # 严格检查 sub_info 是否存在且有效
         sub_info = c.get('sub_info')
         if not sub_info or not isinstance(sub_info, list) or len(sub_info) < 3:
             return (0, 0, 0)
         
         try:
-            # 权重1：置顶标识
             has_data = 1
-            # 权重2：剩余流量 (str2size 将 '100G' 转换成字节数进行对比)
             remain_val = str2size(sub_info[1]) - str2size(sub_info[0])
-            # 权重3：有效期
             expire_str = sub_info[2]
             if expire_str == '永不过期':
-                time_val = 4102416000 # 2100年
+                time_val = 4102416000 
             else:
                 time_val = str2timestamp(expire_str)
             
@@ -436,16 +431,11 @@ if __name__ == '__main__':
         except:
             return (0, 0, 0)
 
-    # 对 cache.keys() 进行降序排列（大的在前）
-    # 这样 (1, 流量, 时间) 会排在 (0, 0, 0) 之前
     sorted_keys = sorted(cache.keys(), key=get_sort_key, reverse=True)
-    
-    # 重新构建有序字典，确保 write_cfg 写入文件时顺序正确
     new_cache = {k: cache[k] for k in sorted_keys}
-    
     write_cfg('trial.cache', new_cache)
 
-    # --- 提取订阅链接到 subscription.txt ---
+    # --- 核心修改处：提取订阅链接并严格过滤 0B 或低流量节点 ---
     valid_subs = []
     for host, data in new_cache.items():
         sub_info = data.get('sub_info')
@@ -454,17 +444,27 @@ if __name__ == '__main__':
         if not sub_info or not sub_url:
             continue
             
+        # sub_info 结构: [已用, 总量, 到期时间, 剩余信息字符串]
+        # 计算剩余流量：总量 - 已用
+        try:
+            remain_val = str2size(sub_info[1]) - str2size(sub_info[0])
+        except:
+            remain_val = 0
+            
+        # 判定条件：
+        # 1. 剩余流量必须 >= 1G (即 1073741824 字节)
+        # 2. 必须是 "永不过期" 或者 剩余天数 > 0
+        if remain_val < 1073741824: # 过滤掉小于 1G 的（包含 0B）
+            continue
+
         info_str = " ".join(map(str, sub_info))
         url = sub_url[0]
         
-        # 判定条件：
-        # 1. 包含 "永不过期"
-        # 2. 包含 "days" 且前面的数字大于 0 (排除负数和不到一天的)
         if "永不过期" in info_str:
             valid_subs.append(url)
         elif "days" in info_str:
-            # 提取 "剩余流量" 后面的部分，例如 "364 days, 11:41..."
             try:
+                # 提取剩余天数逻辑
                 time_part = info_str.split('剩余')[1].split(' ', 2)[2]
                 if "days" in time_part:
                     days_val = int(time_part.split('days')[0].strip())
