@@ -31,11 +31,10 @@ PROBE_REG_PATHS = [
     "api/v1/guest/passport/auth/register",
     "api/v1/client/register",
     "auth/register",
-    "elearning/api/v1/passport/auth/register",
     "api/v1/passport/auth/subscribe",
     "api/v1/passport/auth/v2boardRegister",
     "register",
-    "user/register"
+    "user/register" # 补充常用路径
 ]
 PROBE_CONFIG_PATHS = ["api/v1/guest/comm/config", "api/v1/passport/comm/config"]
 
@@ -129,16 +128,15 @@ class Session(requests.Session):
         super().__init__()
         # 优化连接池：针对 1 万个任务，必须增加池大小防止线程等待连接释放
         adapter = HTTPAdapter(
-            pool_connections=200, 
-            pool_maxsize=500, 
-            max_retries=Retry(total=1, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
+            pool_connections=100, 
+            pool_maxsize=200, 
+            max_retries=Retry(total=2, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
         )
         self.mount('https://', adapter)
         self.mount('http://', adapter)
         self.max_redirects = max_redirects
         self.allow_redirects = allow_redirects
-        # 更新 UA 减少被 403 几率
-        self.headers['User-Agent'] = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        self.headers['User-Agent'] = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
         self.set_base(base)
 
     def set_base(self, base):
@@ -197,13 +195,7 @@ class Session(requests.Session):
 
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
-        # 修复 NoneType 拼接报错：增加 self.__base 判断
-        url_part = url.split('#', 1)[0]
-        if self.__base:
-            url = urljoin(self.__base, url_part)
-        else:
-            url = url_part
-            
+        url = urljoin(self.__base, url.split('#', 1)[0])
         # 强制缩短 timeout 防止长时间挂起，同时强制 verify=False 忽略证书错误
         kwargs.update(data=data, timeout=timeout, allow_redirects=False, verify=False)
         if allow_redirects is None:
@@ -262,9 +254,9 @@ class _ROSession(Session):
 
     def request(self, method, url='', *args, **kwargs):
         r = super().request(method, url, *args, **kwargs)
-        if self.__times < 2 and self.base:
-            url_abs = urljoin(self.base, url)
-            if parse_url(r.url)[:4] != parse_url(url_abs)[:4]:
+        if self.__times < 2:
+            url = urljoin(self.base, url)
+            if parse_url(r.url)[:4] != parse_url(url)[:4]:
                 self.set_origin(r.url)
                 self.__redirect_origin = True
                 # print(f'{self.host}: {url} -> {r.url}')
@@ -274,12 +266,10 @@ class _ROSession(Session):
 
 class V2BoardSession(_ROSession):
     def __set_auth(self, email: str, reg_info: dict):
-        # 修复 'NoneType' object is not subscriptable：增加 data 存在性检查
-        if 'data' in reg_info and reg_info['data']:
-            self.login_info = reg_info['data']
-            self.email = email
-            if 'v2board_session' not in self.cookies and 'auth_data' in self.login_info:
-                self.headers['authorization'] = self.login_info['auth_data']
+        self.login_info = reg_info['data']
+        self.email = email
+        if 'v2board_session' not in self.cookies:
+            self.headers['authorization'] = self.login_info['auth_data']
 
     def reset(self):
         super().reset()
@@ -290,20 +280,18 @@ class V2BoardSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if not isinstance(res, dict) or 'data' not in res:
+        if 'data' not in res:
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
         self.reset()
-        # 修复“请同意服务条款”：增加 agree: 1 参数
         res = self.post('api/v1/passport/auth/register', {
             'email': email,
             'password': password or email.split('@')[0],
             'email_code': email_code or '',
             'invite_code': invite_code or '',
-            'agree': 1
         }).json()
-        if 'data' in res and res['data']:
+        if 'data' in res:
             self.__set_auth(email, res)
             return None
         if 'message' in res:
@@ -355,12 +343,11 @@ class V2BoardSession(_ROSession):
         res = self.get('api/v1/user/getSubscribe').json()
         self.raise_for_fail(res)
         d = res['data']
-        # 修复潜在 Key 缺失报错
         return {
-            'upload': d.get('u', 0),
-            'download': d.get('d', 0),
-            'total': d.get('transfer_enable', 0),
-            'expire': d.get('expired_at', '')
+            'upload': d['u'],
+            'download': d['d'],
+            'total': d['transfer_enable'],
+            'expire': d['expired_at']
         }
 
     def get_plan(self, min_price=0, max_price=0):
@@ -370,7 +357,7 @@ class V2BoardSession(_ROSession):
         max_price *= 100
         plan = None
         _max = (0, 0, 0)
-        for p in r.get('data', []):
+        for p in r['data']:
             if (ik := next(((i, k) for i, k in enumerate((
                 'onetime_price',
                 'three_year_price',
@@ -381,7 +368,7 @@ class V2BoardSession(_ROSession):
                 'month_price',
             )) if (price := p.get(k)) is not None and min_price <= price <= max_price), None)):
                 i, period = ik
-                v = p[period], p.get('transfer_enable', 0), -i
+                v = p[period], p['transfer_enable'], -i
                 if v > _max:
                     _max = v
                     plan = {
@@ -403,7 +390,7 @@ class SSPanelSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if not isinstance(res, dict) or not res.get('ret'):
+        if not res.get('ret'):
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None, name_eq_email=None, reg_fmt=None, im_type=False, aff=None) -> str | None:
@@ -429,8 +416,8 @@ class SSPanelSession(_ROSession):
 
     def login(self, email: str = None, password=None):
         if not email:
-            email = getattr(self, 'email', None)
-        if email and 'email' in self.cookies and email == unquote_plus(self.cookies['email']):
+            email = self.email
+        if 'email' in self.cookies and email == unquote_plus(self.cookies['email']):
             return
         self.reset()
         res = self.post(f'{self.auth_path}/login', {
@@ -538,9 +525,7 @@ class SSPanelSession(_ROSession):
                 first = tag.find()
                 if not first:
                     continue
-                m_id = re_sspanel_tab_shop_id.fullmatch(tag['id'])
-                if not m_id: continue
-                id = int(m_id[1])
+                id = int(re_sspanel_tab_shop_id.fullmatch(tag['id'])[1])
                 price = float(get(re_sspanel_price.search(first.text), 0, default=0))
                 traffic = str2size(get(re_sspanel_traffic.search(tag.text), 0, default='1T'))
                 duration = int(get(re_sspanel_duration.search(tag.text), 1, default=999))
@@ -548,46 +533,55 @@ class SSPanelSession(_ROSession):
         elif (tags := doc.find_all(class_='pricing')):
             num_infos = []
             for tag in tags:
-                p_tag = tag.find(class_='pricing-price')
-                if not p_tag: continue
-                m_price = re_sspanel_price.search(p_tag.find().text if p_tag.find() else p_tag.text)
+                m_price = re_sspanel_price.search(tag.find(class_='pricing-price').find().text)
                 price = float(get(m_price, 0, default=0))
                 if not (min_price <= price <= max_price):
                     continue
                 traffic = str2size(get(re_sspanel_traffic.search(
-                    tag.find(class_='pricing-padding').text if tag.find(class_='pricing-padding') else tag.text), 0, default='1T'))
+                    tag.find(class_='pricing-padding').text), 0, default='1T'))
                 cta = tag.find(class_='pricing-cta')
-                if not cta: continue
-                onclick = cta.get('onclick') or (cta.find()['onclick'] if cta.find() else None)
-                if not onclick: continue
+                onclick = cta.get('onclick') or cta.find()['onclick']
                 m_num = re_sspanel_plan_num.search(onclick)
                 if m_num:
                     num_infos.append((m_num[0], traffic))
                 else:
                     m_id = re_sspanel_plan_id.search(onclick)
                     if not m_id:
-                        continue
-                    duration = int(get(re_sspanel_duration.search(tag.text), 1, default=999))
+                        raise Exception('未找到 plan_num/plan_id')
+                    duration = int(get(re_sspanel_duration.search(
+                        tag.find(class_='pricing-padding').text), 1, default=999))
                     up(int(m_id[1]), price, traffic, duration)
 
             def fn(item):
-                try:
-                    for id, price, _time in self.get_plan_infos(item[0]):
-                        m_duration = re_sspanel_duration.search(_time)
-                        if get(m_duration, 2) != 'month':
-                            continue
-                        yield id, float(price), item[1], int(m_duration[1]) * 30
-                except: pass
+                for id, price, _time in self.get_plan_infos(item[0]):
+                    m_duration = re_sspanel_duration.search(_time)
+                    if get(m_duration, 2) != 'month':
+                        raise Exception(f'未知时间单位: {_time}')
+                    yield id, float(price), item[1], int(m_duration[1]) * 30
 
             for plans in parallel_map(fn, num_infos):
                 for args in plans:
                     up(*args)
+        elif (tags := doc.find_all(class_='shop-price')):
+            for tag in tags:
+                id = int(re_sspanel_plan_id.search(tag.find_next_sibling(class_='btn')['onclick'])[1])
+                price, traffic, duration = map(float, (tag.text, *tag.find_next_sibling().text.split(' / ')))
+                up(id, price, traffic, duration)
+        elif (tags := doc.find_all(class_='pricingTable-firstTable_table__pricing')):
+            for tag in tags:
+                id = int(re_sspanel_plan_id.search(
+                    tag.find_next_sibling(class_='pricingTable-firstTable_table__getstart')['onclick']
+                )[1])
+                price = float(get(re_sspanel_price.search(tag.text), 0, default=0))
+                traffic = str2size(get(re_sspanel_traffic.search(tag.find_next_sibling().text), 0, default='1T'))
+                duration = int(get(re_sspanel_duration.search(tag.find_next_sibling().text), 1, default=999))
+                up(id, price, traffic, duration)
         return plan
 
     def get_plan_time(self, num):
         r = self.get('user/shop/getplantime', params={'num': num}).json()
         self.raise_for_fail(r)
-        return r.get('plan_time', [])
+        return r['plan_time']
 
     def get_plan_info(self, num, time):
         r = self.get('user/shop/getplaninfo', params={'num': num, 'time': time}).json()
@@ -612,7 +606,7 @@ class HkspeedupSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if not isinstance(res, dict) or res.get('code') != 200:
+        if res.get('code') != 200:
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
@@ -634,8 +628,8 @@ class HkspeedupSession(_ROSession):
 
     def login(self, email: str = None, password=None):
         if not email:
-            email = getattr(self, 'email', None)
-        if email and 'token' in self.headers and email == self.email:
+            email = self.email
+        if 'token' in self.headers and email == self.email:
             return
         self.reset()
         res = self.post('user/login', json={
@@ -682,7 +676,7 @@ def guess_panel(host):
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
                 # 只要返回 200/403/405 等说明路径是有定义的，通常是非 404
-                r_probe = session.head(path, timeout=5)
+                r_probe = session.head(path, timeout=3)
                 if r_probe.status_code != 404:
                     has_feature = True
                     break
@@ -690,14 +684,13 @@ def guess_panel(host):
                 continue
         
         if not has_feature:
-            # 针对 Xboard 的特殊情况：首页是 SPA，路径可能无法直接探测，需进入首页进一步识别
-            pass
+            return info # 如果所有特征路径都 404 或超时，直接跳过该站
 
         # 第二步：正式识别面板类型
-        # 探测 V2Board / Xboard (API 探测)
+        # 探测 V2Board / Xboard
         r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
-            r = session.head(timeout=5)
+            r = session.head(timeout=3)
             if r.ok and session.redirect_origin:
                 r = session.get('api/v1/guest/comm/config', timeout=5)
         
@@ -708,26 +701,17 @@ def guess_panel(host):
                 _r = session.get(timeout=5)
                 if _r.ok and _r.bs().title:
                     info['name'] = _r.bs().title.text
-                if 'data' in rj and (email_whitelist := rj['data'].get('email_whitelist_suffix')):
+                if (email_whitelist := get(rj, 'data', 'email_whitelist_suffix')):
                     info['email_domain'] = email_whitelist[0]
             except: pass
 
-        # 针对 Xboard 特征的 HTML 识别逻辑 (首页内容分析)
+        # 针对 Xboard 特征的 HTML 识别逻辑
         if 'type' not in info:
             r_index = session.get(timeout=5)
             if r_index.ok:
                 text = r_index.text
-                # 定义 Xboard/V2Board 变种特征关键字
-                v2_variants = [
-                    'window.settings',
-                    'window.routerBase',
-                    '/theme/Xboard',
-                    '/elearning/',
-                    '/assets/umi.js',
-                    'v2board'
-                ]
-                # 识别识别 Xboard/V2Board 首页特征变量
-                if any(k in text for k in v2_variants):
+                # 识别 Xboard/V2Board 首页特征变量
+                if 'window.settings' in text and ('Xboard' in text or 'v2board' in text.lower()):
                     info['type'] = 'v2board'
                     try:
                         if r_index.bs().title:
@@ -738,16 +722,12 @@ def guess_panel(host):
                                 info['name'] = m_title[1]
                     except: pass
         
-# 探测 SSPanel (增加对 Tabler 主题和 HTMX 版本的识别)
+        # 探测 SSPanel
         if 'type' not in info:
             r = session.get('auth/login', timeout=5)
             if r.ok:
-                # 识别关键字：fuck.min.js (SSPanel特有), hx-post (HTMX), SSPanel-UIM
-                if any(k in r.text for k in ['fuck.min.js', 'hx-post', 'SSPanel-UIM', 'SS管理系统']):
-                    info['type'] = 'sspanel'
-                    if r.bs().title:
-                        title_text = r.bs().title.text
-                        info['name'] = title_text.split(' — ')[-1] if ' — ' in title_text else title_text
+                info['type'] = 'sspanel'
+                info['name'] = r.bs().title.text.split(' — ')[-1]
             elif 300 <= r.status_code < 400:
                 r = session.head('user/login', timeout=5)
                 if r.ok:
@@ -760,7 +740,7 @@ def guess_panel(host):
     except Exception as e:
         info['error'] = e
     finally:
-        session.close()
+        session.close() # 必须手动关闭
     return info
 
 
@@ -776,25 +756,27 @@ class MailGW(TempEmailSession):
 
     def get_domains(self) -> list[str]:
         r = self.get('domains', timeout=10)
-        if not r.ok:
-            return []
-        return [item['domain'] for item in r.json().get('hydra:member', [])]
+        if r.status_code != 200:
+            raise Exception(f'获取 {self.host} 邮箱域名失败: {r}')
+        return [item['domain'] for item in r.json()['hydra:member']]
 
     def set_email_address(self, address: str):
         account = {'address': address, 'password': address.split('@')[0]}
         r = self.post('accounts', json=account, timeout=10)
+        if r.status_code != 201:
+            raise Exception(f'创建 {self.host} 账户失败: {r}')
         r = self.post('token', json=account, timeout=10)
-        if r.ok:
-            self.headers['Authorization'] = f'Bearer {r.json()["token"]}'
+        if r.status_code != 200:
+            raise Exception(f'获取 {self.host} token 失败: {r}')
+        self.headers['Authorization'] = f'Bearer {r.json()["token"]}'
 
     def get_messages(self) -> list[str]:
         r = self.get('messages', timeout=10)
-        if not r.ok: return []
         return [
-            resp.json().get('text','')
-            for resp in parallel_map(lambda x: self.get(f'messages/{x["id"]}', timeout=10), r.json().get('hydra:member', []))
-            if resp.ok
-        ]
+            r.json().get('text','')
+            for r in parallel_map(lambda x: self.get(x, timeout=10), (f'messages/{item["id"]}' for item in r.json().get('hydra:member', [])))
+            if r.status_code == 200
+        ] if r.status_code == 200 else []
 
 
 class Snapmail(TempEmailSession):
@@ -804,9 +786,8 @@ class Snapmail(TempEmailSession):
     def get_domains(self) -> list[str]:
         r = self.get('scripts/controllers/addEmailBox.js', timeout=10)
         if not r.ok:
-            return []
-        m = re_snapmail_domains.search(r.text)
-        return json5.loads(m[1]) if m else []
+            raise Exception(f'获取 {self.host} addEmailBox.js 失败: {r}')
+        return json5.loads(re_snapmail_domains.search(r.text)[1])
 
     def set_email_address(self, address: str):
         self.address = address
@@ -831,30 +812,32 @@ class MailCX(TempEmailSession):
             if js.has_attr('src') and re_mailcx_js_path.fullmatch(js['src']):
                 js_paths.append(js['src'])
         if js_paths:
-            for js_path in js_paths:
-                try:
-                    rj = self.get(urljoin('https://mail.cx', js_path), timeout=10)
-                    if rj.ok:
-                        m = re_mailcx_domains.search(rj.text)
-                        if m: return json5.loads(m[1])
-                except: pass
+            with ThreadPoolExecutor(len(js_paths)) as executor:
+                futures = {executor.submit(self.get, urljoin('https://mail.cx', js_path), timeout=10): js_path for js_path in js_paths}
+                for future in as_completed(futures, timeout=15):
+                    try:
+                        r = future.result()
+                        if r.ok:
+                            m = re_mailcx_domains.search(r.text)
+                            if m:
+                                return json5.loads(m[1])
+                    except: pass
         return []
 
     def set_email_address(self, address: str):
         r = self.post('auth/authorize_token', timeout=10)
-        if r.ok:
-            self.headers['Authorization'] = f'Bearer {r.json()}'
-            self.address = address
+        if not r.ok:
+            raise Exception(f'获取 {self.host} token 失败: {r}')
+        self.headers['Authorization'] = f'Bearer {r.json()}'
+        self.address = address
 
     def get_messages(self) -> list[str]:
-        if not hasattr(self, 'address'): return []
         r = self.get(f'mailbox/{self.address}', timeout=10)
-        if not r.ok: return []
         return [
-            resp.json().get('body', {}).get('text', '')
-            for resp in parallel_map(lambda x: self.get(f'mailbox/{self.address}/{x["id"]}', timeout=10), r.json())
-            if resp.ok
-        ]
+            r.json().get('body', {}).get('text', '')
+            for r in parallel_map(lambda x: self.get(x, timeout=10), (f'mailbox/{self.address}/{item["id"]}' for item in r.json()))
+            if r.ok
+        ] if r.ok else []
 
 
 class GuerrillaMail(TempEmailSession):
@@ -868,16 +851,17 @@ class GuerrillaMail(TempEmailSession):
         return re_option_domain.findall(r.text)
 
     def set_email_address(self, address: str):
-        self.get(f'?f=set_email_user&email_user={address.split("@")[0]}', timeout=10)
+        r = self.get(f'?f=set_email_user&email_user={address.split("@")[0]}', timeout=10)
+        if not (r.ok and r.content and r.json().get('email_addr')):
+            raise Exception(f'设置 {self.host} 账户失败: {r}')
 
     def get_messages(self) -> list[str]:
         r = self.get('?f=get_email_list&offset=0', timeout=10)
-        if not r.ok or not isinstance(r.json(), dict): return []
         return [
-            bs(resp.json()['mail_body']).get_text('\n', strip=True)
-            for resp in parallel_map(lambda x: self.get(f'?f=fetch_email&email_id={x["mail_id"]}', timeout=10), r.json().get('list',[]))
-            if resp.ok and resp.text != 'false'
-        ]
+            bs(r.json()['mail_body']).get_text('\n', strip=True)
+            for r in parallel_map(lambda x: self.get(x, timeout=10), (f'?f=fetch_email&email_id={item["mail_id"]}' for item in r.json().get('list',[])))
+            if r.ok and r.content and r.text != 'false'
+        ] if r.ok and r.content else []
 
 
 class Emailnator(TempEmailSession):
@@ -889,20 +873,22 @@ class Emailnator(TempEmailSession):
 
     def set_email_address(self, address: str):
         self.get(timeout=10)
-        if (token := self.cookies.get('XSRF-TOKEN')):
-            self.headers['x-xsrf-token'] = unquote_plus(token)
-            self.post(json={'email': address}, timeout=10)
-            self.address = address
+        if not (token := self.cookies.get('XSRF-TOKEN')):
+            raise Exception(f'获取 {self.host} XSRF-TOKEN 失败')
+        self.headers['x-xsrf-token'] = unquote_plus(token)
+        r = self.post(json={'email': address}, timeout=10)
+        if not r.ok:
+            raise Exception(f'设置 {self.host} 账户失败({address}): {r}')
+        self.address = address
 
     def get_messages(self) -> list[str]:
-        if not hasattr(self, 'address'): return []
         r = self.post(json={'email': self.address}, timeout=10)
-        if not r.ok: return []
+        def fn(item): return self.post(json={'email': self.address, 'messageID': item['messageID']}, timeout=10)
         return [
-            resp.bs().get_text('\n', strip=True)
-            for resp in parallel_map(lambda x: self.post(json={'email': self.address, 'messageID': x['messageID']}, timeout=10), r.json().get('messageData', [])[1:])
-            if resp.ok
-        ]
+            r.bs().get_text('\n', strip=True)
+            for r in parallel_map(fn, r.json().get('messageData', [])[1:])
+            if r.ok
+        ] if r.ok else []
 
 
 class Moakt(TempEmailSession):
@@ -917,16 +903,17 @@ class Moakt(TempEmailSession):
 
     def set_email_address(self, address: str):
         username, domain = address.split('@')
-        self.post('inbox', {'domain': domain, 'username': username}, timeout=10)
+        r = self.post('inbox', {'domain': domain, 'username': username}, timeout=10)
+        if 'tm_session' not in self.cookies:
+            raise Exception(f'设置 {self.host} 账户失败: {r}')
 
     def get_messages(self) -> list[str]:
         r = self.get('inbox', timeout=10)
-        if not r.ok: return []
         return [
-            resp.bs().get_text('\n', strip=True)
-            for resp in parallel_map(lambda x: self.get(f"{x['href']}/content", timeout=10), r.bs().select('.tm-table td:first-child>a'))
-            if resp.ok
-        ]
+            r.bs().get_text('\n', strip=True)
+            for r in parallel_map(lambda x: self.get(x, timeout=10), (f"{item['href']}/content" for item in r.bs().select('.tm-table td:first-child>a')))
+            if r.ok
+        ] if r.ok else []
 
 
 class Rootsh(TempEmailSession):
@@ -944,21 +931,18 @@ class Rootsh(TempEmailSession):
         if 'mail' not in self.cookies:
             self.get(timeout=10)
         r = self.post('applymail', {'mail': address}, timeout=10)
-        # 修复 Rootsh 申请频率限制报错
-        if r.ok and r.json().get('success') == 'false':
-            raise Exception(f"Rootsh 限流: {r.json().get('message')}")
+        if not r.ok or r.json().get('success') != 'true':
+            raise Exception(f'设置 {self.host} 账户失败: {r}')
         self.address = address
 
     def get_messages(self) -> list[str]:
-        if not hasattr(self, 'address'): return []
         r = self.post('getmail', {'mail': self.address}, timeout=10)
-        if not r.ok: return []
         prefix = f"win/{self.address.replace('@', '(a)').replace('.', '-_-')}/"
         return [
-            resp.bs().get_text('\n', strip=True)
-            for resp in parallel_map(lambda x: self.get(prefix + x[4], timeout=10), r.json().get('mail', []))
-            if resp.ok
-        ]
+            r.bs().get_text('\n', strip=True)
+            for r in parallel_map(lambda x: self.get(x, timeout=10), (prefix + item[4] for item in r.json().get('mail', [])))
+            if r.ok
+        ] if r.ok else []
 
 
 class Linshiyou(TempEmailSession):
@@ -972,12 +956,15 @@ class Linshiyou(TempEmailSession):
         return re_option_domain.findall(r.text)
 
     def set_email_address(self, address: str):
-        self.get('user.php', params={'user': address}, timeout=10)
+        r = self.get('user.php', params={'user': address}, timeout=10)
+        if not r.ok or r.text != address:
+            raise Exception(f'设置 {self.host} 账户失败: {r}')
         self.address = address
 
     def get_messages(self) -> list[str]:
+        self.set_email_address(self.address)
         r = self.get('mail.php', timeout=10)
-        if r.ok:
+        if r.ok and r.content:
             return [tag.get_text('\n', strip=True) for tag in r.bs().find_all(class_='tmail-email-body-content')]
         return []
 
@@ -1033,7 +1020,7 @@ class TempEmail:
 
     def __run(self):
         while True:
-            sleep(5) # 稍微增加间隔，适配邮箱服务延迟
+            sleep(2)
             try:
                 messages = self.__session.get_messages()
             except:
