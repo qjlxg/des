@@ -196,8 +196,8 @@ class Session(requests.Session):
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
-        # 强制缩短 timeout 防止长时间挂起
-        kwargs.update(data=data, timeout=timeout, allow_redirects=False)
+        # 强制缩短 timeout 防止长时间挂起，同时强制 verify=False 忽略证书错误
+        kwargs.update(data=data, timeout=timeout, allow_redirects=False, verify=False)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
         
@@ -672,7 +672,6 @@ def guess_panel(host):
     session = _ROSession(host)
     try:
         # 第一步：快速预检特征路径 (不再直接进行解析，而是先确认路径存活)
-        # 使用 HEAD 请求或者极短超时的 GET
         has_feature = False
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
@@ -688,7 +687,7 @@ def guess_panel(host):
             return info # 如果所有特征路径都 404 或超时，直接跳过该站
 
         # 第二步：正式识别面板类型
-        # 探测 V2Board
+        # 探测 V2Board / Xboard
         r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
             r = session.head(timeout=3)
@@ -705,6 +704,23 @@ def guess_panel(host):
                 if (email_whitelist := get(rj, 'data', 'email_whitelist_suffix')):
                     info['email_domain'] = email_whitelist[0]
             except: pass
+
+        # 针对 Xboard 特征的 HTML 识别逻辑
+        if 'type' not in info:
+            r_index = session.get(timeout=5)
+            if r_index.ok:
+                text = r_index.text
+                # 识别 Xboard/V2Board 首页特征变量
+                if 'window.settings' in text and ('Xboard' in text or 'v2board' in text.lower()):
+                    info['type'] = 'v2board'
+                    try:
+                        if r_index.bs().title:
+                            info['name'] = r_index.bs().title.text
+                        else:
+                            m_title = re.search(r"title:\s*['\"](.+?)['\"]", text)
+                            if m_title:
+                                info['name'] = m_title[1]
+                    except: pass
         
         # 探测 SSPanel
         if 'type' not in info:
