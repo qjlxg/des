@@ -1,4 +1,11 @@
-https://ok181.ru/dada/shui?token=e965fc93b991f171b0d035859d9582c4
-https://vip.ruixing.fun/vip/6edacefe572e78e96846f8c0210b8c56
-https://vip.ruixing.fun/vip/1aee26d0fd04fb20614afa6391c731b3
-https://argosub.men/api/v1/client/subscribe?token=d64b6b9d31a6e67948fbb66da82f2a8a
+http://192.197.113.55:2053/api/v1/client/subscribe?token=8399024e1788d3349497704e61e185e8
+http://104.168.1.102:7001/s/b3177cc21766d412ed2188f5f11f4708
+http://172.245.147.152/api/v1/client/subscribe?token=24a79cf7ecb7c70fe8c2de84119de0b9
+http://139.180.186.18:7001/s/05415cf3cc7f070766f4d88b9937f993
+https://43.162.105.30/api/v1/client/subscribe?token=51e34411df7441ede77027ac24bf0dc5
+http://admin.tianmiao.icu/api/v1/client/subscribe?token=d7b385e7da09e3dea33499bd442870a2
+https://admin.tianmiao.icu/api/v1/client/subscribe?token=a14c8c9f81f8fdc53cc8a2eb90dd931b
+http://154.3.37.121/api/v1/client/subscribe?token=df16bc9cb1bec7fa98232eaf55cbff5f
+http://zzyun.cc/s/3cbf7040a130a4e8bc12276781877641
+https://zzyun.cc/s/7d205cc638a30ebbb9930a4bb3aeae23
+https://query.oxeranet.online/HNmIghfceUWqK0d?token=781e59119e12649167e67fc5bfd137a3
