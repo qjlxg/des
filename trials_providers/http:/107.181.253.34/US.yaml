@@ -1,5 +1,5 @@
 %YAML 1.1
 ---
 proxies:
-- {name: 🇺🇸 直链#美国01 - 秒连加速器, server: us01.n.lgjsq.top, port: 10001, type: ss, cipher: chacha20-ietf-poly1305, password: 9e198d7e-606e-4eee-8f8f-3f15a640feb4, udp: true}
-- {name: 🇺🇸 转发#美国01 - 秒连加速器, server: rk1.mlrk0.cc, port: 10002, type: ss, cipher: chacha20-ietf-poly1305, password: 9e198d7e-606e-4eee-8f8f-3f15a640feb4, udp: true}
+- {name: 🇺🇸 直链#美国01 - 秒连加速器, server: us01.n.lgjsq.top, port: 10001, type: ss, cipher: chacha20-ietf-poly1305, password: a7db08c7-5f32-461c-84b5-1b85db139148, udp: true}
+- {name: 🇺🇸 转发#美国01 - 秒连加速器, server: rk1.mlrk0.cc, port: 10002, type: ss, cipher: chacha20-ietf-poly1305, password: a7db08c7-5f32-461c-84b5-1b85db139148, udp: true}

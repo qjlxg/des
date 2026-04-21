@@ -1,23 +1,12 @@
-[http://104.168.1.102:7001]
-buy  period=month_price&plan_id=1
-email  nxhocbtqi626@gmail.com
-name  SWISVIP
-node_n  3
-sub_info  14.52K  9.537P  2026-05-21 08:55:25+08:00  (剩余 9.537P 29 days, 22:36:49.959222)
-sub_url  http://104.168.1.102:7001/s/6fd95e26b92813168d97c4b3d5c414c1
-time  2026-04-21 08:55:25.437746+08:00
+[http://107.181.253.34]
+buy  pass
+email  essnxrqdy263@gmail.com
+name  秒连加速器
+node_n  2
+sub_info  0B  976.6T  2026-04-22 10:53:02+08:00  (剩余 976.6T 23:58:28.015283)
+sub_url  http://107.181.253.34/s/6abce2de801b72b0a5f53ce0e04d5632
+time  2026-04-21 10:53:48.178591+08:00
 type  v2board
-
-[http://139.180.186.18:7001]
-buy  period=onetime_price&plan_id=1
-email  wddngrutn278@gmail.com
-name  私家车
-sub_info  0B  1.953T  永不过期  (剩余 1.953T)
-sub_url  http://139.180.186.18:7001/s/53c58631c0f55667963d50f8de7702d3
-time  2026-04-21 08:55:29.890187+08:00
-type  v2board
-保存base64/clash订阅失败  mapping values are not allowed here in "<byte string>", line 1, column 1818: ... on(){window._cf_chl_opt = {cFPWv: 'b',cH: 'EBJMDTQUgeiLC9cDdTrg4 ... ^ (line: 1)
-更新旧订阅失败  int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
 
 [http://38.207.176.158:7002]
 buy  pass
@@ -33,67 +22,67 @@ type  v2board
 
 [http://50.114.113.44:4567]
 buy  pass
-email  kgdkvue315@qq.com
+email  isseaqf954@qq.com
 email_domain  qq.com
 name  筋斗云
 sub_info  0B  0B  永不过期  (剩余 0B)
-sub_url  http://50.114.113.44:4567/api/v1/client/subscribe?token=5fa4b31849a618763432ff4f0ba7fbff
-time  2026-04-21 10:17:20.110473+08:00
+sub_url  http://50.114.113.44:4567/api/v1/client/subscribe?token=d757d0a60b45da21b7e1218ba34b69ec
+time  2026-04-21 10:53:52.351570+08:00
 type  v2board
 保存base64/clash订阅失败  'NoneType' object is not iterable
 
 [http://66.112.214.216:7001]
 buy  pass
-email  acvgaoyxf230@gmail.com
+email  nimqkhaa708@gmail.com
 name  Xboard
 sub_info  0B  0B  永不过期  (剩余 0B)
-sub_url  http://66.112.214.216:7001/api/v1/client/subscribe?token=78d2358bd358c01f267d11a93e3d18a5
-time  2026-04-21 10:17:52.725252+08:00
+sub_url  http://66.112.214.216:7001/api/v1/client/subscribe?token=e46239674284d478785244f3cdf46bfa
+time  2026-04-21 10:53:51.101511+08:00
 type  v2board
 保存base64/clash订阅失败  'NoneType' object is not iterable
 
 [http://166.88.98.12:4567]
 buy  pass
-email  xuypoglpv580@qq.com
+email  lvrrfoc53@qq.com
 email_domain  qq.com
 name  筋斗云
 sub_info  0B  0B  永不过期  (剩余 0B)
-sub_url  http://166.88.98.12:4567/api/v1/client/subscribe?token=23ee310f65bf0229b82fd65e56ff472a
-time  2026-04-21 10:17:12.753883+08:00
+sub_url  http://166.88.98.12:4567/api/v1/client/subscribe?token=dfbd28d031606593afa4084aaed6e8c8
+time  2026-04-21 10:53:58.196955+08:00
 type  v2board
 保存base64/clash订阅失败  'NoneType' object is not iterable
 
 [https://47.86.162.250]
 buy  pass
-email  aodadiok324@gmail.com
+email  dkcxffy321@gmail.com
 name  U1s1
 sub_info  0B  0B  永不过期  (剩余 0B)
-sub_url  https://sub01.u1s1yun.com/api/v1/client/subscribe?token=791f1f5c2021c8c30f9c95480478110f
-time  2026-04-21 10:17:01.655195+08:00
+sub_url  https://sub01.u1s1yun.com/api/v1/client/subscribe?token=29123e7e744210b0d276970a842f391e
+time  2026-04-21 10:53:50.389029+08:00
 type  v2board
 保存base64/clash订阅失败  'NoneType' object is not iterable
 
 [https://85.113.71.19]
 buy  pass
-email  wkukbpbfw465@gmail.com
+email  cvgfhnxln85@gmail.com
 name  小小椰
 sub_info  0B  0B  永不过期  (剩余 0B)
-sub_url  https://85.113.71.19/xxy-douyin?token=c181607fe74aff2802921dcf61e82c5c
-time  2026-04-21 10:17:04.403941+08:00
+sub_url  https://85.113.71.19/xxy-douyin?token=d5ee223ce09b80535aebc7f35ae51039
+time  2026-04-21 10:55:24.584718+08:00
 type  v2board
 保存base64/clash订阅失败  'NoneType' object is not iterable
 
 [http://103.61.37.139]
 name  panel
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(xgsytanx175@gmail.com): 未开放注册。
+更新订阅链接/续费续签失败  注册失败(pzupozn769@gmail.com): 未开放注册。
 
 [http://106.75.130.178]
 
 [https://82.27.2.141:7443]
 name  VOID BOARD
 type  v2board
-更新订阅链接/续费续签失败  注册失败(zeypfjb296@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (403 Forbidden '<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body>\r\n<center><h1>403 Forbidden</h1></center>\r\n')
+更新订阅链接/续费续签失败  注册失败(bowlxsu757@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (403 Forbidden '<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body>\r\n<center><h1>403 Forbidden</h1></center>\r\n')
 
 [http://47.76.135.200]
 buy  pass
@@ -108,6 +97,9 @@ type  v2board
 [http://113.198.254.3]
 
 [http://47.79.22.197]
+name  蓝莓
+type  sspanel
+更新订阅链接/续费续签失败  注册失败(thgedyazy563@gmail.com): 系统无法接受你的验证结果，请刷新页面后重试。
 
 [https://47.109.48.237]
 
@@ -116,13 +108,14 @@ type  v2board
 [https://121.29.76.132:7777]
 name  are you ok
 type  v2board
-更新订阅链接/续费续签失败  注册失败(syzscad506@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(ectehqk526@gmail.com): 本站已关闭注册
 
 [http://211.101.236.150:4444]
+banned_domains  snapmail.cc
 email_domain  qq.com
 name  蓝猫 lanmao.uk
 type  v2board
-更新订阅链接/续费续签失败  注册失败(uczzaviur950@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱验证码超时(dzdskjj821@snapmail.cc)
 
 [http://142.171.199.49:7001]
 buy  pass
@@ -142,21 +135,24 @@ type  v2board
 [http://117.29.140.117:8999]
 error  'NoneType' object has no attribute 'text'
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(ipmuzmb712@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
+更新订阅链接/续费续签失败  注册失败(jhbewknp834@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
 
 [http://89.58.42.56:7001]
+name  XBoard
+type  v2board
+更新订阅链接/续费续签失败  注册失败(ybbgyhapa294@gmail.com): 本站已关闭注册
 
 [http://47.76.206.106:50001]
 banned_domains  lyx13.xyz  guerrillamail.org
 email_domain  qq.com
 name  西瓜加速
 type  v2board
-更新订阅链接/续费续签失败  获取邮箱验证码超时(mbfnoumg365@guerrillamail.org)
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [https://101.37.37.121]
 error  'NoneType' object has no attribute 'text'
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(ebyemhjde32@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
+更新订阅链接/续费续签失败  注册失败(cjkjfztr294@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
 
 [http://47.86.165.180:5000]
 buy  pass
@@ -177,26 +173,26 @@ type  v2board
 email_domain  qq.com
 name  鹊桥·小火箭
 type  v2board
-更新订阅链接/续费续签失败  注册失败(yphuejyg777@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [https://cdnweb.xrocket.cn]
 email_domain  qq.com
 name  鹊桥·小火箭
 type  v2board
-更新订阅链接/续费续签失败  注册失败(scqxbfws682@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(trifqjxvf714@vintage-vault.store): {'status': 'fail', 'message': '邮箱后缀不在白名单中', 'data': None, 'error': None}
 
 [http://cdnweb.xrocket.cn]
 api_host  cdnweb.xrocket.cn
 email_domain  qq.com
 name  鹊桥·小火箭
 type  v2board
-更新订阅链接/续费续签失败  注册失败(dfnxpypfs474@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [https://106.15.60.147]
 email_domain  qq.com
 name  鹊桥·小火箭
 type  v2board
-更新订阅链接/续费续签失败  注册失败(wdgvatp263@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(vjlbbzkoj732@sharklasers.com): {'status': 'fail', 'message': '邮箱后缀不在白名单中', 'data': None, 'error': None}
 
 [https://219.117.205.204:5000]
 
@@ -213,16 +209,17 @@ type  v2board
 [http://159.195.51.219:7001]
 name  NaiveNet
 type  v2board
-更新订阅链接/续费续签失败  注册失败(mynsjklhv500@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(fcuwnrd44@gmail.com): 本站已关闭注册
 
 [http://106.52.176.59:1200]
 
 [https://122.249.146.150:5000]
 
 [http://107.174.92.25:7001]
+banned_domains  drmail.in
 name  Xboard
 type  v2board
-更新订阅链接/续费续签失败  注册失败(tvyzwzjc608@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱验证码超时(frvnepmub105@drmail.in)
 
 [http://82.157.195.187]
 
@@ -231,12 +228,12 @@ type  v2board
 [https://1.95.73.96:7777]
 name  are you ok
 type  v2board
-更新订阅链接/续费续签失败  注册失败(pihutkl43@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(fvgmkztrv200@gmail.com): 本站已关闭注册
 
 [http://64.186.240.104:7001]
 name  BetterSSR
 type  v2board
-更新订阅链接/续费续签失败  注册失败(htryofe293@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(dbvgtetx901@gmail.com): 本站已关闭注册
 
 [https://203.181.40.215:5000]
 
@@ -268,7 +265,7 @@ type  v2board
 [https://frcrv.8888.4556.services-gateway.com]
 name  V2Board
 type  v2board
-更新订阅链接/续费续签失败  注册失败(pyghzzydn757@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (404 Not Found '<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n')
+更新订阅链接/续费续签失败  注册失败(nfgnvtk602@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (404 Not Found '<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n')
 
 [https://60.247.149.84]
 
@@ -285,7 +282,7 @@ type  v2board
 email_domain  gmail.com
 name  idle Duck
 type  v2board
-更新订阅链接/续费续签失败  注册失败(ocxzmgxz553@gmail.com): 注册频繁，请等待 100000 分钟后再次尝试
+更新订阅链接/续费续签失败  注册失败(xjfvmvc798@gmail.com): 注册频繁，请等待 100000 分钟后再次尝试
 
 [https://153.156.15.120:5000]
 
@@ -296,7 +293,7 @@ type  v2board
 [http://37.187.77.207:7001]
 name  人人
 type  v2board
-更新订阅链接/续费续签失败  注册失败(msjacpm814@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(iutcuem172@gmail.com): 本站已关闭注册
 
 [https://157.107.38.250:5000]
 
@@ -304,7 +301,7 @@ type  v2board
 email_domain  gmail.com
 name  稳定冲浪
 type  v2board
-更新订阅链接/续费续签失败  注册失败(uvyrwlzsg643@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"ghcdaetiy469@mail.shouyou789.com","success":"false"}'
 
 [http://5.78.135.6:9527]
 
@@ -335,12 +332,12 @@ type  v2board
 
 [http://23.159.248.198:7777]
 type  v2board
-更新订阅链接/续费续签失败  注册失败(ahibnla25@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  can only concatenate str (not "NoneType") to str
 
 [http://47.83.123.211:9999]
 name  huge cloud
 type  v2board
-更新订阅链接/续费续签失败  注册失败(eihhhdlcz487@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(shthyjuk774@gmail.com): 本站已关闭注册
 
 [https://121.1.144.185:5000]
 
@@ -364,7 +361,7 @@ type  v2board
 [http://152.53.23.221:7001]
 name  Chessi
 type  v2board
-更新订阅链接/续费续签失败  注册失败(rowiypsr930@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(chyjpij389@gmail.com): 本站已关闭注册
 
 [https://61.45.34.199:5000]
 
@@ -372,14 +369,14 @@ type  v2board
 email_domain  gmail.com
 name  Whale Network
 type  v2board
-更新订阅链接/续费续签失败  注册失败(wmqkvbc338@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(qnsnhnw510@moakt.ws): {'status': 'fail', 'message': '验证码有误', 'data': None, 'error': None}
 
 [http://www.l333.net]
 api_host  www.l333.net
 email_domain  gmail.com
 name  Whale Network
 type  v2board
-更新订阅链接/续费续签失败  注册失败(hyshkdbo948@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [https://210.170.53.65:5000]
 
@@ -390,13 +387,13 @@ type  v2board
 [https://www.diosama.com]
 name  DIO科技
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(xhkwjfcui683@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (500 Internal Server Error '<!doctype html>\n<html lang="zh">\n\n<head>\n <meta charset="utf-8"/>\n <meta name="robots" content')
+更新订阅链接/续费续签失败  注册失败(zoohizys608@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (500 Internal Server Error '<!doctype html>\n<html lang="zh">\n\n<head>\n <meta charset="utf-8"/>\n <meta name="robots" content')
 
 [http://www.diosama.com]
 api_host  www.diosama.com
 name  DIO科技
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(vlhnvxk208@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (500 Internal Server Error '<!doctype html>\n<html lang="zh">\n\n<head>\n <meta charset="utf-8"/>\n <meta name="robots" content')
+更新订阅链接/续费续签失败  注册失败(iyupjgzg792@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (500 Internal Server Error '<!doctype html>\n<html lang="zh">\n\n<head>\n <meta charset="utf-8"/>\n <meta name="robots" content')
 
 [http://85.113.70.97:18080]
 name  AA
@@ -413,18 +410,18 @@ name  papi的自用坤场
 sub_url  https://board.988977.xyz:8443/s/7cee979d078ff9414d9668ae5f965e7e
 time  2026-04-21 10:17:04.782062+08:00
 type  v2board
-获取订阅失败  (https://142.171.36.41:8443/s/7cee979d078ff9414d9668ae5f965e7e): 403 Forbidden '{"message":"Account unavailable"}'
+更新旧订阅失败  (https://142.171.36.41:8443/s/7cee979d078ff9414d9668ae5f965e7e): 403 Forbidden '{"message":"Account unavailable"}'
 
 [http://152.53.48.209:8443]
 email_domain  gmail.com
 name  spkun(只因云)
 type  v2board
-更新订阅链接/续费续签失败  注册失败(awkaxzq365@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(equvqtnw336@moakt.co): {'status': 'fail', 'message': '邮箱后缀不在白名单中', 'data': None, 'error': None}
 
 [https://82.40.32.219:8443]
 name  okey云
 type  v2board
-更新订阅链接/续费续签失败  注册失败(dpmbyed362@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(wucjopi258@guerrillamail.de): {'status': 'fail', 'message': '验证码有误', 'data': None, 'error': None}
 
 [https://182.37.61.193]
 
@@ -432,37 +429,37 @@ type  v2board
 email_domain  qq.com
 name  云上极速
 type  v2board
-更新订阅链接/续费续签失败  注册失败(rprzctknk196@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(lvfbwbl877@lista.cc): {'status': 'fail', 'message': '邮箱后缀不在白名单中', 'data': None, 'error': None}
 
 [http://103.219.195.25:7001]
 email_domain  gmail.com
 name  七七云（已过期）
 type  v2board
-更新订阅链接/续费续签失败  注册失败(kebjpfok578@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(cxwfqqwe977@gmail.com): 本站已关闭注册
 
 [https://87.98.175.19:2087]
 email_domain  gmail.com
 name  魔力云
 type  v2board
-更新订阅链接/续费续签失败  发送邮箱验证码失败(jkddevgne892@lplso.tmmad.com): {'message': '验证码有误'}
+更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"tmcbqzvp992@ipiso.tmmad.com","success":"false"}'
 
 [http://38.47.52.1:10001]
 email_domain  qq.com
 name  FastFox
 type  v2board
-更新订阅链接/续费续签失败  注册失败(ehhrittk603@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(oqpanckzc909@jkd.tmmad.com): {'status': 'fail', 'message': '邮箱后缀不在白名单中', 'data': None, 'error': None}
 
 [http://8.148.153.179:8443]
 name  IXP专线
 type  v2board
-更新订阅链接/续费续签失败  注册失败(kyasfoeo944@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(isdnepw0@gmail.com): 本站已关闭注册
 
 [https://188.166.22.48:8443]
 
 [http://104.192.80.199:7001]
 name  Home云专线
 type  v2board
-更新订阅链接/续费续签失败  注册失败(oqqnbwrgh962@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"zeogefdh581@jkd.tmmad.com","success":"false"}'
 
 [http://64.23.190.200:18080]
 
@@ -486,17 +483,17 @@ type  v2board
 [http://15.204.87.159:7002]
 name  穿云
 type  v2board
-更新订阅链接/续费续签失败  注册失败(vecuepslf116@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [http://45.128.222.69:7001]
 name  梯云渡
 type  v2board
-更新订阅链接/续费续签失败  注册失败(zvmckwcwu559@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"srfbymxpi985@mail.wvwvw.tech","success":"false"}'
 
 [http://107.175.6.57:7001]
 name  快儿快儿机场
 type  v2board
-更新订阅链接/续费续签失败  注册失败(xranskca664@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(rsryqfgrh245@drmail.in): {'status': 'fail', 'message': '验证码有误', 'data': None, 'error': None}
 
 [http://115.146.123.216:5001]
 
@@ -504,65 +501,65 @@ type  v2board
 email_domain  gmail.com
 name  NanopiNeo2-机场
 type  v2board
-更新订阅链接/续费续签失败  注册失败(dhosstm372@gmail.com): 本站已关闭注册
+更新订阅链接/续费续签失败  注册失败(gbjhpswhv213@gmail.com): 本站已关闭注册
 
 [http://45.202.240.228:7001]
 name  奇友机场
 type  v2board
-更新订阅链接/续费续签失败  注册失败(ldakerbi245@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(jwsfctnki216@gmail.com): 本站已关闭注册
 
 [http://94.103.93.146:9999]
 banned_domains  xxxhi.cc  adtgng.tmmad.com
 name  动兔云
 type  v2board
-更新订阅链接/续费续签失败  获取邮箱验证码超时(pyfxged193@adtgng.tmmad.com)
+更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"azqxtzt90@huweimail.cn","success":"false"}'
 
 [https://118.243.179.17:5000]
 
 [http://64.186.229.183:7001]
 name  Srxary
 type  v2board
-更新订阅链接/续费续签失败  注册失败(vfofjgbod544@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(fhsiyjpq457@gmail.com): 本站已关闭注册
 
 [http://172.93.165.98:10001]
-banned_domains  guerrillamail.biz
+banned_domains  guerrillamail.biz  mail.wvwvw.tech
 email_domain  qq.com
 name  芒果加速🥭
 type  v2board
-更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"tzhfnnj64@banq7.online","success":"false"}'
+更新订阅链接/续费续签失败  获取邮箱验证码超时(mnddahwu443@mail.wvwvw.tech)
 
 [https://118.243.125.185:5000]
 
 [http://107.174.102.141:7001]
 name  dcer
 type  v2board
-更新订阅链接/续费续签失败  注册失败(mvfnrgdyn824@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(xqaltbi609@gmail.com): 本站已关闭注册
 
 [http://51.79.133.111:9527]
 email_domain  gmail.com
 name  SSNET
 type  v2board
-更新订阅链接/续费续签失败  注册失败(cnzibzg337@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [http://61.92.15.163:199]
 name  阿狗的狗窝
 type  v2board
-更新订阅链接/续费续签失败  注册失败(hbxfukqm408@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  can only concatenate str (not "NoneType") to str
 
 [http://192.227.231.163:7001]
 name  XBoard
 type  v2board
-更新订阅链接/续费续签失败  注册失败(hdrwjsge555@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"nqfgjzzd714@rgzx.tmmad.com","success":"false"}'
 
 [http://20.205.97.29:10000]
 name  sspanel-uim
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(aedkcqhem945@gmail.com): 未开放注册
+更新订阅链接/续费续签失败  注册失败(amcabqei634@gmail.com): 未开放注册
 
 [http://60.205.184.72:8089]
 name  智能工厂融合定位服务系统
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(uxzmwrgt793@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
+更新订阅链接/续费续签失败  注册失败(pjsjeomp376@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
 
 [http://103.248.228.165:8000]
 buy  pass
@@ -582,44 +579,44 @@ name  Xboard
 sub_url  https://107.175.232.186/s/4588d60e3090f2ff8647c3b43fb74f2a
 time  2026-04-21 10:17:08.883671+08:00
 type  v2board
-获取订阅失败  (https://107.175.232.186:7000/s/4588d60e3090f2ff8647c3b43fb74f2a): 403 Forbidden ''
+更新旧订阅失败  (https://107.175.232.186:7000/s/4588d60e3090f2ff8647c3b43fb74f2a): 403 Forbidden ''
 
 [http://8.217.176.225:7001]
 email_domain  buaa.edu.cn
 name  清华健身房✈️场
 type  v2board
-更新订阅链接/续费续签失败  注册失败(bugdnup276@buaa.edu.cn): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [http://51.79.131.3:9527]
 name  大猫机场✈️
 type  v2board
-更新订阅链接/续费续签失败  注册失败(dttzthwi357@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  can only concatenate str (not "NoneType") to str
 
 [https://122.249.140.154:5000]
 
 [http://125.118.234.193:7001]
 name  FBoard
 type  v2board
-更新订阅链接/续费续签失败  注册失败(dnapjkpvu610@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(nlauzrfgm354@gmail.com): 本站已关闭注册
 
 [https://110.5.20.79:5000]
 
 [http://148.135.83.138:7001]
 name  XBoard
 type  v2board
-更新订阅链接/续费续签失败  注册失败(rvtjpbk285@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(logsqhx181@gmail.com): 本站已关闭注册
 
 [http://45.145.74.151:6688]
 email_domain  gmail.com
 name  Moon
 type  v2board
-更新订阅链接/续费续签失败  发送邮箱验证码失败(zcchfvw819@jkd.tmmad.com): {'message': '邮箱后缀不处于白名单中'}
+更新订阅链接/续费续签失败  发送邮箱验证码失败(ybqjlxo671@disbox.net): {'message': '邮箱后缀不处于白名单中'}
 
 [http://206.168.191.207:10000]
 email_domain  qq.com
 name  海牛加速器
 type  v2board
-更新订阅链接/续费续签失败  注册失败(wmdcsxzh566@qq.com): 邮箱后缀不处于白名单中
+更新订阅链接/续费续签失败  注册失败(kdxsgba953@qq.com): 邮箱后缀不处于白名单中
 
 [http://107.175.134.54:7001]
 buy  pass
@@ -638,7 +635,7 @@ type  v2board
 email_domain  hret.dev
 name  HRET
 type  v2board
-更新订阅链接/续费续签失败  注册失败(xgqkcqbi812@hret.dev): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 设置 rootsh.com 账户失败: 200 OK '{"message":"邮箱申请太频繁，请2秒后再试！","user":"ngrxvlq619@bccto.cc","success":"false"}'
 
 [https://103.175.221.146:8000]
 
@@ -656,13 +653,13 @@ type  v2board
 [http://1.83.52.8:8000]
 name  haibaoyun
 type  v2board
-更新订阅链接/续费续签失败  注册失败(aqbmpken970@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  注册失败(kswukrc387@gmail.com): 本站已关闭注册
 
 [http://45.249.89.109:18080]
 email_domain  qq.com
 name  MGNB
 type  v2board
-更新订阅链接/续费续签失败  发送邮箱验证码失败(krcbjllic746@disbox.org): {'message': '邮箱后缀不处于白名单中'}
+更新订阅链接/续费续签失败  发送邮箱验证码失败(otmzmlqt985@guerrillamail.net): {'message': '邮箱后缀不处于白名单中'}
 
 [https://121.1.143.101:5000]
 
@@ -678,27 +675,27 @@ type  v2board
 [https://118.25.100.178]
 error  'NoneType' object has no attribute 'text'
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(rocnovsuz691@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
+更新订阅链接/续费续签失败  注册失败(riztwyvxv78@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
 
 [https://61.205.233.244:5000]
 
 [https://47.83.239.181]
 name  萝卜圈
 type  v2board
-更新订阅链接/续费续签失败  注册失败(tqbuyzu93@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  获取邮箱失败: 获取 www.emailnator.com XSRF-TOKEN 失败
 
 [http://138.201.181.251:7001]
 email_domain  qq.com
 name  相见欢
 type  v2board
-更新订阅链接/续费续签失败  注册失败(tjagbgu179@qq.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(epexlnl640@moakt.cc): {'status': 'fail', 'message': '邮箱后缀不在白名单中', 'data': None, 'error': None}
 
 [https://153.246.148.129:5000]
 
 [http://178.208.190.170:7001]
 name  枫的节点
 type  v2board
-更新订阅链接/续费续签失败  注册失败(qjtpokga634@gmail.com): 'NoneType' object is not subscriptable
+更新订阅链接/续费续签失败  发送邮箱验证码失败(jtubwhha69@x866.cc): {'status': 'fail', 'message': '验证码有误', 'data': None, 'error': None}
 
 [https://182.236.20.135:5000]
 
@@ -718,11 +715,11 @@ type  v2board
 [https://47.94.34.72]
 name  MarketUP
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(lqwoqqtw989@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
+更新订阅链接/续费续签失败  注册失败(vktlgtj789@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (405 Not Allowed '<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></cente')
 
 [http://104.223.22.132:9527]
 name  SSPanel-UIM
 type  sspanel
-更新订阅链接/续费续签失败  注册失败(hpnnkhyrq647@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (500 Internal Server Error '<!doctype html>\n<html lang="zh_CN" data-bs-theme="auto">\n\n<head>\n <meta charset="utf-8"/>\n <me')
+更新订阅链接/续费续签失败  注册失败(htmjakz657@gmail.com): 解析 json 失败: Expecting value: line 1 column 1 (char 0) (500 Internal Server Error '<!doctype html>\n<html lang="zh_CN" data-bs-theme="auto">\n\n<head>\n <meta charset="utf-8"/>\n <me')
 
 [https://122.222.152.211:5000]
