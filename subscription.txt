@@ -1,5 +1,3 @@
-http://50.114.113.44:4567/api/v1/client/subscribe?token=fb1e1bca84ebb26f8d6fe3f56f5c1623
-http://66.112.214.216:7001/api/v1/client/subscribe?token=fc49063582cbf837d94abe85f3185a35
-http://166.88.98.12:4567/api/v1/client/subscribe?token=63e5afc3f9933cd7750119df063832c7
-https://sub01.u1s1yun.com/api/v1/client/subscribe?token=a24dd43361a81469f71443a5ed7e19b1
-https://85.113.71.19/xxy-douyin?token=71ab7717cce5728fc2368a053183793b
+https://192.3.245.124/api/v1/client/subscribe?token=2922034740dd383bd341304003449928
+http://103.49.63.119/s/caf32e6ebb03fcdb26a1c9f5942c6a99
+https://freejc.qzz.io/s/94d82465c3ba71e4ff7d2a009e4831c1
