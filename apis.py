@@ -9,14 +9,15 @@ from urllib.parse import (parse_qsl, unquote_plus, urlencode, urljoin,
                           urlsplit, urlunsplit)
 
 import json5
-import requests
 import urllib3
+import requests
 from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3 import Retry
 from urllib3.util import parse_url
 # 禁用 SSL 安全警告输出
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 from utils import (cached, get, keep, parallel_map, rand_id, str2size,
                    str2timestamp)
 
@@ -63,8 +64,6 @@ re_sspanel_price = re.compile(r'\d+(?:\.\d+)?')
 re_sspanel_traffic = re.compile(r'\d+(?:\.\d+)?\s*[BKMGTPE]', re.I)
 re_sspanel_duration = re.compile(r'(\d+)\s*(天|month)')
 
-# 新增针对 V2Board/Xboard 变种站点的正则
-re_v2board_settings_title = re.compile(r"title:\s*['\"](.+?)['\"]")
 
 def bs(text):
     return BeautifulSoup(text, 'html.parser')
@@ -127,7 +126,7 @@ class Response:
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
-        # 优化连接池
+        # 优化连接池：针对 1 万个任务，必须增加池大小防止线程等待连接释放
         adapter = HTTPAdapter(
             pool_connections=100, 
             pool_maxsize=200, 
@@ -139,7 +138,6 @@ class Session(requests.Session):
         self.allow_redirects = allow_redirects
         self.headers['User-Agent'] = user_agent or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
         self.set_base(base)
-        self.verify = False # 全局默认忽略 SSL 证书校验
 
     def set_base(self, base):
         if base:
@@ -198,15 +196,15 @@ class Session(requests.Session):
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
-        # 增加 verify=self.verify 确保忽略无效证书
-        kwargs.update(data=data, timeout=timeout, allow_redirects=False, verify=self.verify)
+        # 强制缩短 timeout 防止长时间挂起
+        kwargs.update(data=data, timeout=timeout, allow_redirects=False)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
         
         try:
             res = super().request(method, url, **kwargs)
         except Exception:
-            raise 
+            raise # 异常由外部 guess_panel 捕获
 
         if allow_redirects and res.is_redirect:
             no = ~allow_redirects
@@ -217,7 +215,7 @@ class Session(requests.Session):
                 if res.is_redirect:
                     i += 1
                     if i > self.max_redirects:
-                        break 
+                        break # 重定向过载直接跳出
                     new_url = urljoin(url, res.headers.get('Location', ''))
                     if url == new_url:
                         if no & REDIRECT_TO_GET:
@@ -261,6 +259,7 @@ class _ROSession(Session):
             if parse_url(r.url)[:4] != parse_url(url)[:4]:
                 self.set_origin(r.url)
                 self.__redirect_origin = True
+                # print(f'{self.host}: {url} -> {r.url}')
             self.__times += 1
         return r
 
@@ -671,12 +670,13 @@ panel_class_map = {
 def guess_panel(host):
     info = {}
     session = _ROSession(host)
-    session.verify = False # 强制忽略 SSL
     try:
-        # 第一步：快速预检特征路径
+        # 第一步：快速预检特征路径 (不再直接进行解析，而是先确认路径存活)
+        # 使用 HEAD 请求或者极短超时的 GET
         has_feature = False
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
+                # 只要返回 200/403/405 等说明路径是有定义的，通常是非 404
                 r_probe = session.head(path, timeout=3)
                 if r_probe.status_code != 404:
                     has_feature = True
@@ -684,8 +684,11 @@ def guess_panel(host):
             except:
                 continue
         
+        if not has_feature:
+            return info # 如果所有特征路径都 404 或超时，直接跳过该站
+
         # 第二步：正式识别面板类型
-        # 探测 V2Board (API 优先)
+        # 探测 V2Board
         r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
             r = session.head(timeout=3)
@@ -703,20 +706,6 @@ def guess_panel(host):
                     info['email_domain'] = email_whitelist[0]
             except: pass
         
-        # 第三步：探测 HTML 变种 (如 Xboard 或硬编码配置的 V2Board)
-        if 'type' not in info:
-            r_home = session.get('/', timeout=5)
-            if r_home.ok:
-                source = r_home.text
-                # 识别特征：window.settings, routerBase, 或特定资源路径
-                if 'window.settings =' in source or 'window.routerBase =' in source or '/theme/Xboard' in source or '/theme/v2board' in source or '/theme/default' in source:
-                    info['type'] = 'v2board'
-                    m_title = re_v2board_settings_title.search(source)
-                    if m_title:
-                        info['name'] = m_title[1]
-                    elif r_home.bs().title:
-                        info['name'] = r_home.bs().title.text
-
         # 探测 SSPanel
         if 'type' not in info:
             r = session.get('auth/login', timeout=5)
@@ -735,7 +724,7 @@ def guess_panel(host):
     except Exception as e:
         info['error'] = e
     finally:
-        session.close() 
+        session.close() # 必须手动关闭
     return info
 
 
