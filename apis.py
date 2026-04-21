@@ -34,7 +34,7 @@ PROBE_REG_PATHS = [
     "api/v1/passport/auth/subscribe",
     "api/v1/passport/auth/v2boardRegister",
     "register",
-    "user/register"
+    "user/register" # 补充常用路径
 ]
 PROBE_CONFIG_PATHS = ["api/v1/guest/comm/config", "api/v1/passport/comm/config"]
 
@@ -64,9 +64,6 @@ re_sspanel_price = re.compile(r'\d+(?:\.\d+)?')
 re_sspanel_traffic = re.compile(r'\d+(?:\.\d+)?\s*[BKMGTPE]', re.I)
 re_sspanel_duration = re.compile(r'(\d+)\s*(天|month)')
 
-# --- 新增变种识别正则 ---
-# 识别 Xboard/V2board 首页配置对象
-re_xboard_settings = re.compile(r'window\.settings\s*=\s*(\{.+?\})', re.S)
 
 def bs(text):
     return BeautifulSoup(text, 'html.parser')
@@ -97,10 +94,6 @@ class Response:
         return 200 <= self.__status_code < 300
 
     @property
-    def is_redirect(self):
-        return 300 <= self.__status_code < 400
-
-    @property
     def reason(self):
         return self.__reason
 
@@ -126,12 +119,14 @@ class Response:
 
     @cached
     def __str__(self):
+        # 限制打印长度，防止大规模运行时日志输出导致卡顿
         return f'{self.__status_code} {self.__reason} {repr(self.text[:100])}'
 
 
 class Session(requests.Session):
     def __init__(self, base=None, user_agent=None, max_redirects=5, allow_redirects=7):
         super().__init__()
+        # 优化连接池：针对 1 万个任务，必须增加池大小防止线程等待连接释放
         adapter = HTTPAdapter(
             pool_connections=100, 
             pool_maxsize=200, 
@@ -201,27 +196,26 @@ class Session(requests.Session):
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
-        # 修改点：默认禁用证书验证，处理“连接不安全”站点
-        kwargs.setdefault('verify', False)
-        kwargs.update(data=data, timeout=timeout, allow_redirects=False)
+        # 强制缩短 timeout 防止长时间挂起，同时强制 verify=False 忽略证书错误
+        kwargs.update(data=data, timeout=timeout, allow_redirects=False, verify=False)
         if allow_redirects is None:
             allow_redirects = self.allow_redirects
         
         try:
             res = super().request(method, url, **kwargs)
         except Exception:
-            raise
+            raise # 异常由外部 guess_panel 捕获
 
-        if allow_redirects and (300 <= res.status_code < 400):
+        if allow_redirects and res.is_redirect:
             no = ~allow_redirects
             url = res.url
             kwargs.pop('params', None)
             i = 0
             while True:
-                if (300 <= res.status_code < 400):
+                if res.is_redirect:
                     i += 1
                     if i > self.max_redirects:
-                        break
+                        break # 重定向过载直接跳出
                     new_url = urljoin(url, res.headers.get('Location', ''))
                     if url == new_url:
                         if no & REDIRECT_TO_GET:
@@ -265,21 +259,17 @@ class _ROSession(Session):
             if parse_url(r.url)[:4] != parse_url(url)[:4]:
                 self.set_origin(r.url)
                 self.__redirect_origin = True
+                # print(f'{self.host}: {url} -> {r.url}')
             self.__times += 1
         return r
 
 
 class V2BoardSession(_ROSession):
     def __set_auth(self, email: str, reg_info: dict):
-        # 修改点：防止 data 字段为 null 导致的 NoneType 报错
-        data = reg_info.get('data')
-        if not isinstance(data, dict):
-            self.email = email
-            return
-        self.login_info = data
+        self.login_info = reg_info['data']
         self.email = email
         if 'v2board_session' not in self.cookies:
-            self.headers['authorization'] = self.login_info.get('auth_data', '')
+            self.headers['authorization'] = self.login_info['auth_data']
 
     def reset(self):
         super().reset()
@@ -290,8 +280,7 @@ class V2BoardSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        # 修改点：严格检查 data 字段，不为字典或为空则抛异常
-        if not isinstance(res, dict) or res.get('data') is None:
+        if 'data' not in res:
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
@@ -302,7 +291,7 @@ class V2BoardSession(_ROSession):
             'email_code': email_code or '',
             'invite_code': invite_code or '',
         }).json()
-        if res.get('data'):
+        if 'data' in res:
             self.__set_auth(email, res)
             return None
         if 'message' in res:
@@ -347,33 +336,28 @@ class V2BoardSession(_ROSession):
     def get_sub_url(self, **params) -> str:
         res = self.get('api/v1/user/getSubscribe').json()
         self.raise_for_fail(res)
-        self.sub_url = res['data'].get('subscribe_url', '')
+        self.sub_url = res['data']['subscribe_url']
         return self.sub_url
 
     def get_sub_info(self):
         res = self.get('api/v1/user/getSubscribe').json()
         self.raise_for_fail(res)
-        d = res.get('data')
-        if not d: return None
+        d = res['data']
         return {
-            'upload': d.get('u', 0),
-            'download': d.get('d', 0),
-            'total': d.get('transfer_enable', 0),
-            'expire': d.get('expired_at', '')
+            'upload': d['u'],
+            'download': d['d'],
+            'total': d['transfer_enable'],
+            'expire': d['expired_at']
         }
 
     def get_plan(self, min_price=0, max_price=0):
         r = self.get('api/v1/user/plan/fetch').json()
         self.raise_for_fail(r)
-        
-        plans = r.get('data')
-        if not isinstance(plans, list): return None
-
         min_price *= 100
         max_price *= 100
         plan = None
         _max = (0, 0, 0)
-        for p in plans:
+        for p in r['data']:
             if (ik := next(((i, k) for i, k in enumerate((
                 'onetime_price',
                 'three_year_price',
@@ -687,72 +671,65 @@ def guess_panel(host):
     info = {}
     session = _ROSession(host)
     try:
-        # 第一步：SSL 容错与预检
+        # 第一步：快速预检特征路径 (不再直接进行解析，而是先确认路径存活)
         has_feature = False
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
-                # 使用 verify=False，即便证书无效也强制读取
-                r_probe = session.head(path, timeout=5, verify=False)
+                # 只要返回 200/403/405 等说明路径是有定义的，通常是非 404
+                r_probe = session.head(path, timeout=3)
                 if r_probe.status_code != 404:
                     has_feature = True
                     break
             except:
                 continue
         
-        # 第二步：正式识别
-        # 尝试 V2Board 标准接口
-        r = session.get('api/v1/guest/comm/config', timeout=5, verify=False)
+        if not has_feature:
+            return info # 如果所有特征路径都 404 或超时，直接跳过该站
+
+        # 第二步：正式识别面板类型
+        # 探测 V2Board / Xboard
+        r = session.get('api/v1/guest/comm/config', timeout=5)
         if r.status_code == 403:
-            r = session.head(timeout=3, verify=False)
-            if r.is_redirect or (r.ok and session.redirect_origin):
-                r = session.get('api/v1/guest/comm/config', timeout=5, verify=False)
+            r = session.head(timeout=3)
+            if r.ok and session.redirect_origin:
+                r = session.get('api/v1/guest/comm/config', timeout=5)
         
         if r.ok:
             try:
                 rj = r.json()
                 info['type'] = 'v2board'
-                _r = session.get(timeout=5, verify=False)
+                _r = session.get(timeout=5)
                 if _r.ok and _r.bs().title:
                     info['name'] = _r.bs().title.text
                 if (email_whitelist := get(rj, 'data', 'email_whitelist_suffix')):
-                    if isinstance(email_whitelist, list) and len(email_whitelist) > 0:
-                        info['email_domain'] = email_whitelist[0]
+                    info['email_domain'] = email_whitelist[0]
             except: pass
 
-        # --- NEW: Xboard 变种识别逻辑 ---
+        # 针对 Xboard 特征的 HTML 识别逻辑
         if 'type' not in info:
-            r_index = session.get('', timeout=5, verify=False)
+            r_index = session.get(timeout=5)
             if r_index.ok:
-                html_text = r_index.text
-                # 以后若有新变体，只需在此列表中增加关键字
-                v2_variants = [
-                    'window.settings', 
-                    '/theme/Xboard', 
-                    'routerBase', 
-                    '/assets/umi.js',
-                    'window.routerBase'
-                ]
-                if any(k in html_text for k in v2_variants):
+                text = r_index.text
+                # 识别 Xboard/V2Board 首页特征变量
+                if 'window.settings' in text and ('Xboard' in text or 'v2board' in text.lower()):
                     info['type'] = 'v2board'
-                    if r_index.bs().title:
-                        info['name'] = r_index.bs().title.text
-                    
-                    # 尝试从 window.settings 提取更准确的站点名
-                    m_settings = re_xboard_settings.search(html_text)
-                    if m_settings:
-                        try:
-                            settings_data = json5.loads(m_settings[1])
-                            info['name'] = settings_data.get('title', info.get('name'))
-                        except: pass
+                    try:
+                        if r_index.bs().title:
+                            info['name'] = r_index.bs().title.text
+                        else:
+                            m_title = re.search(r"title:\s*['\"](.+?)['\"]", text)
+                            if m_title:
+                                info['name'] = m_title[1]
+                    except: pass
         
         # 探测 SSPanel
         if 'type' not in info:
-            r = session.get('auth/login', timeout=5, verify=False)
+            r = session.get('auth/login', timeout=5)
             if r.ok:
                 info['type'] = 'sspanel'
                 info['name'] = r.bs().title.text.split(' — ')[-1]
             elif 300 <= r.status_code < 400:
-                r = session.head('user/login', timeout=5, verify=False)
+                r = session.head('user/login', timeout=5)
                 if r.ok:
                     info['type'] = 'sspanel'
                     info['auth_path'] = 'user'
@@ -763,7 +740,7 @@ def guess_panel(host):
     except Exception as e:
         info['error'] = e
     finally:
-        session.close()
+        session.close() # 必须手动关闭
     return info
 
 
