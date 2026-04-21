@@ -129,9 +129,9 @@ class Session(requests.Session):
         super().__init__()
         # 优化连接池：针对 1 万个任务，必须增加池大小防止线程等待连接释放
         adapter = HTTPAdapter(
-            pool_connections=100, 
-            pool_maxsize=200, 
-            max_retries=Retry(total=2, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
+            pool_connections=200, 
+            pool_maxsize=500, 
+            max_retries=Retry(total=1, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
         )
         self.mount('https://', adapter)
         self.mount('http://', adapter)
@@ -690,7 +690,7 @@ def guess_panel(host):
 
         # 第二步：正式识别面板类型
         # 探测 V2Board / Xboard (API 探测)
-        r = session.get('api/v1/guest/comm/config', timeout=5)
+        r = session.get('api/v1/guest/comm/config', timeout=3)
         if r.status_code == 403:
             r = session.head(timeout=3)
             if r.ok and session.redirect_origin:
