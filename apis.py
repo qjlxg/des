@@ -65,7 +65,7 @@ re_sspanel_traffic = re.compile(r'\d+(?:\.\d+)?\s*[BKMGTPE]', re.I)
 re_sspanel_duration = re.compile(r'(\d+)\s*(天|month)')
 
 # --- 新增变种识别正则 ---
-# 识别 Xboard/V2board 首页特征配置
+# 识别 Xboard/V2board 首页配置对象
 re_xboard_settings = re.compile(r'window\.settings\s*=\s*(\{.+?\})', re.S)
 
 def bs(text):
@@ -201,7 +201,7 @@ class Session(requests.Session):
     def request(self, method: str, url: str = '', data=None, timeout=15, allow_redirects=None, **kwargs):
         method = method.upper()
         url = urljoin(self.__base, url.split('#', 1)[0])
-        # 统一处理 verify，防止因证书问题导致探测失败
+        # 修改点：默认禁用证书验证，处理“连接不安全”站点
         kwargs.setdefault('verify', False)
         kwargs.update(data=data, timeout=timeout, allow_redirects=False)
         if allow_redirects is None:
@@ -271,10 +271,15 @@ class _ROSession(Session):
 
 class V2BoardSession(_ROSession):
     def __set_auth(self, email: str, reg_info: dict):
-        self.login_info = reg_info['data']
+        # 修改点：防止 data 字段为 null 导致的 NoneType 报错
+        data = reg_info.get('data')
+        if not isinstance(data, dict):
+            self.email = email
+            return
+        self.login_info = data
         self.email = email
         if 'v2board_session' not in self.cookies:
-            self.headers['authorization'] = self.login_info['auth_data']
+            self.headers['authorization'] = self.login_info.get('auth_data', '')
 
     def reset(self):
         super().reset()
@@ -285,7 +290,8 @@ class V2BoardSession(_ROSession):
 
     @staticmethod
     def raise_for_fail(res):
-        if 'data' not in res:
+        # 修改点：严格检查 data 字段，不为字典或为空则抛异常
+        if not isinstance(res, dict) or res.get('data') is None:
             raise Exception(res)
 
     def register(self, email: str, password=None, email_code=None, invite_code=None) -> str | None:
@@ -296,7 +302,7 @@ class V2BoardSession(_ROSession):
             'email_code': email_code or '',
             'invite_code': invite_code or '',
         }).json()
-        if 'data' in res:
+        if res.get('data'):
             self.__set_auth(email, res)
             return None
         if 'message' in res:
@@ -341,28 +347,33 @@ class V2BoardSession(_ROSession):
     def get_sub_url(self, **params) -> str:
         res = self.get('api/v1/user/getSubscribe').json()
         self.raise_for_fail(res)
-        self.sub_url = res['data']['subscribe_url']
+        self.sub_url = res['data'].get('subscribe_url', '')
         return self.sub_url
 
     def get_sub_info(self):
         res = self.get('api/v1/user/getSubscribe').json()
         self.raise_for_fail(res)
-        d = res['data']
+        d = res.get('data')
+        if not d: return None
         return {
-            'upload': d['u'],
-            'download': d['d'],
-            'total': d['transfer_enable'],
-            'expire': d['expired_at']
+            'upload': d.get('u', 0),
+            'download': d.get('d', 0),
+            'total': d.get('transfer_enable', 0),
+            'expire': d.get('expired_at', '')
         }
 
     def get_plan(self, min_price=0, max_price=0):
         r = self.get('api/v1/user/plan/fetch').json()
         self.raise_for_fail(r)
+        
+        plans = r.get('data')
+        if not isinstance(plans, list): return None
+
         min_price *= 100
         max_price *= 100
         plan = None
         _max = (0, 0, 0)
-        for p in r['data']:
+        for p in plans:
             if (ik := next(((i, k) for i, k in enumerate((
                 'onetime_price',
                 'three_year_price',
@@ -676,11 +687,11 @@ def guess_panel(host):
     info = {}
     session = _ROSession(host)
     try:
-        # 第一步：SSL 容错与路径探测
+        # 第一步：SSL 容错与预检
         has_feature = False
         for path in PROBE_REG_PATHS + PROBE_CONFIG_PATHS:
             try:
-                # 显式使用 verify=False 处理不安全证书
+                # 使用 verify=False，即便证书无效也强制读取
                 r_probe = session.head(path, timeout=5, verify=False)
                 if r_probe.status_code != 404:
                     has_feature = True
@@ -688,8 +699,8 @@ def guess_panel(host):
             except:
                 continue
         
-        # 第二步：正式识别面板类型
-        # 优先尝试 V2Board 标准 API
+        # 第二步：正式识别
+        # 尝试 V2Board 标准接口
         r = session.get('api/v1/guest/comm/config', timeout=5, verify=False)
         if r.status_code == 403:
             r = session.head(timeout=3, verify=False)
@@ -704,23 +715,29 @@ def guess_panel(host):
                 if _r.ok and _r.bs().title:
                     info['name'] = _r.bs().title.text
                 if (email_whitelist := get(rj, 'data', 'email_whitelist_suffix')):
-                    info['email_domain'] = email_whitelist[0]
+                    if isinstance(email_whitelist, list) and len(email_whitelist) > 0:
+                        info['email_domain'] = email_whitelist[0]
             except: pass
 
-        # --- NEW: 变种识别逻辑 ---
-        # 如果 API 识别失败，分析首页 HTML
+        # --- NEW: Xboard 变种识别逻辑 ---
         if 'type' not in info:
             r_index = session.get('', timeout=5, verify=False)
             if r_index.ok:
                 html_text = r_index.text
-                # 识别 Xboard/Modern V2Board 特征
-                # 以后有新的变种直接在下面列表添加关键词即可
-                v2_variants = ['window.settings', '/theme/Xboard', 'routerBase', '/assets/umi.js']
+                # 以后若有新变体，只需在此列表中增加关键字
+                v2_variants = [
+                    'window.settings', 
+                    '/theme/Xboard', 
+                    'routerBase', 
+                    '/assets/umi.js',
+                    'window.routerBase'
+                ]
                 if any(k in html_text for k in v2_variants):
                     info['type'] = 'v2board'
                     if r_index.bs().title:
                         info['name'] = r_index.bs().title.text
-                    # 尝试从 window.settings 提取标题
+                    
+                    # 尝试从 window.settings 提取更准确的站点名
                     m_settings = re_xboard_settings.search(html_text)
                     if m_settings:
                         try:
