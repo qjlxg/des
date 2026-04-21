@@ -1,5 +1,2 @@
-http://103.180.21.82/api/v1/client/subscribe?token=ff15430d40c6aa3c4e78e4621fb0c110
-http://51.83.8.191/s/14523930a0e4d967729e484e58a804f8
-http://129.146.105.113/api/v1/client/subscribe?token=2f55342ef3fb2e1c2a4ef3f6b8937fff
-http://106.54.45.38/api/v1/client/subscribe?token=52d84ff91fc5c43312c87da95b3628aa
-https://a-gvgya9fuh2fyd7bx.z01.azurefd.net/alphaio/id/menu?token=b1551707f6eb19662bf712fd5d8132a6
+http://104.168.1.102:7001/s/9ca74e834d5bae1819938d94b9dec371
+http://139.180.186.18:7001/s/c73feb6cc796c948cc3622d91a0af1db
