@@ -31,10 +31,11 @@ PROBE_REG_PATHS = [
     "api/v1/guest/passport/auth/register",
     "api/v1/client/register",
     "auth/register",
+    "elearning/api/v1/passport/auth/register",
     "api/v1/passport/auth/subscribe",
     "api/v1/passport/auth/v2boardRegister",
     "register",
-    "user/register" # 补充常用路径
+    "user/register"
 ]
 PROBE_CONFIG_PATHS = ["api/v1/guest/comm/config", "api/v1/passport/comm/config"]
 
@@ -716,6 +717,7 @@ def guess_panel(host):
                     'window.settings',
                     'window.routerBase',
                     '/theme/Xboard',
+                    '/elearning/',
                     '/assets/umi.js',
                     'v2board'
                 ]
