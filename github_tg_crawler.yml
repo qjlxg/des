@@ -1,0 +1,74 @@
+name: github_tg_crawler
+
+on:
+  workflow_dispatch: # 支持手动运行
+  schedule:
+    - cron: '0 22 * * *' # 北京时间早上6点运行 (UTC 22:00)
+  push:
+    paths:
+      - 'github_tg_crawler.py'
+      - '.github/workflows/github_tg_crawler.yml'
+
+
+concurrency:
+  group: crawler-lock
+  cancel-in-progress: false 
+
+jobs:
+  crawler_job:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+       
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Crawler
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: python github_tg_crawler.py
+
+      - name: Push Results
+        run: |
+          # 配置 Git 用户信息
+          git config --local user.email "bot@github.com"
+          git config --local user.name "BOT"
+          
+          # 设置上海时区
+          export TZ='Asia/Shanghai'
+          dt=$(date "+%Y-%m-%d %H:%M:%S")
+          
+          # 检查文件是否存在并添加到暂存区
+          # 如果文件不存在，git add 会报错，这里通过 -f 或检查确保安全
+          git add urls.txt subscribes.txt || true
+          
+          # 检查是否有文件变动
+          if git diff --staged --quiet; then
+            echo "没有发现数据更新，跳过提交。"
+          else
+            git commit -m "BOT: 自动更新数据于 $dt"
+            
+            # 核心优化 2: 解决 Push Rejected 报错
+            # 先拉取远程分支，并使用 --rebase 模式将本地提交排在远程之后
+            echo "正在同步远程仓库..."
+            git pull --rebase origin main
+            
+            # 推送
+            echo "正在推送更新..."
+            git push origin main
+          fi
