@@ -1,1 +1,2 @@
-https://162.211.230.101/api/v1/client/subscribe?token=696543ff6313f6af22efb05ed16b2f96
+https://panel2.fast8888.com/api/v1/client/subscribe?token=1713e7ccb00116dc9dc2e42b865f1b9d
+https://panel.fast8888.com/api/v1/client/subscribe?token=8b2aa0d54a4a34967f30953f0d50f5ac
