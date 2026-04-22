@@ -1,2 +1,1 @@
-http://104.168.1.102:7001/s/9ca74e834d5bae1819938d94b9dec371
-http://139.180.186.18:7001/s/c73feb6cc796c948cc3622d91a0af1db
+https://162.211.230.101/api/v1/client/subscribe?token=696543ff6313f6af22efb05ed16b2f96
