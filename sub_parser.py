@@ -24,9 +24,9 @@ GEOIP_DB = "GeoLite2-Country.mmdb"
 MAX_CONCURRENT_TASKS = 500 
 MAX_RETRIES = 1
 
-# --- 排除过滤名单 (包含网址及其变种关键词) ---
+# --- 排除过滤名单 ---
 BLACKLIST_KEYWORDS = [
-    "ly.ba000.cc", "wocao.su7.me", "jiasu01.vip", "louwangzhiyu", "mojie",  "lyly.649844.xyz", "multiserver", "shahramv1","xship.top",
+    "ly.ba000.cc", "wocao.su7.me", "jiasu01.vip", "louwangzhiyu", "mojie", "lyly.649844.xyz", "multiserver", "shahramv1","xship.top",
     "yywhale", "nxxbbf", "slianvpn", "cloudaddy", "quickbeevpn", "114.34.83.215:7001","sub.shadowproxy66.workers.dev",
     "tianmiao", "cokecloud", "boluoidc", "gpket", "fast8888", "ykxqn"
 ]
@@ -35,11 +35,18 @@ BLACKLIST_KEYWORDS = [
 def decode_base64(data):
     if not data: return ""
     try:
-        data = data.replace("-", "+").replace("_", "/")
-        clean_data = re.sub(r'[^A-Za-z0-9+/=]', '', data.strip())
+        # 清理非 base64 字符
+        data = data.strip().replace("-", "+").replace("_", "/")
+        clean_data = re.sub(r'[^A-Za-z0-9+/=]', '', data)
+        # 补齐等号
         missing_padding = len(clean_data) % 4
         if missing_padding: clean_data += '=' * (4 - missing_padding)
-        return base64.b64decode(clean_data).decode('utf-8', errors='ignore')
+        
+        decoded_bytes = base64.b64decode(clean_data)
+        try:
+            return decoded_bytes.decode('utf-8')
+        except UnicodeDecodeError:
+            return decoded_bytes.decode('latin-1', errors='ignore')
     except: return ""
 
 def encode_base64(data):
@@ -52,6 +59,7 @@ def get_md5_short(text):
 def get_geo_info(host, reader):
     if not host or not reader: return "🌐", "未知地区"
     ip = host
+    # 判断是否为 IP，不是则解析域名
     if not re.match(r"^\d{1,3}(\.\d{1,3}){3}$", host):
         try: ip = socket.gethostbyname(host)
         except: return "🌐", "未知地区"
@@ -70,9 +78,9 @@ def get_node_details(line, protocol):
             v = json.loads(decode_base64(line.split("://")[1]))
             return {"server": v.get('add'), "port": int(v.get('port', 443)), "uuid": v.get('id'), "tls": v.get('tls') == "tls"}
         
-        # 兼容带密码格式的解析 (user:pass@host:port)
         u = urlparse(line)
         host = u.hostname
+        # 处理带密码的格式
         if not host and "@" in u.netloc:
             host = u.netloc.split("@")[-1].split(":")[0]
         
@@ -80,22 +88,22 @@ def get_node_details(line, protocol):
     except: return None
 
 def parse_nodes(content, reader):
-    # 强制尝试一次 Base64 解码，处理包含干扰文字的订阅内容
-    decoded_attempt = decode_base64(content)
-    if "://" in decoded_attempt:
-        content = decoded_attempt
-    elif "://" not in content[:100] and len(content) > 20:
-        content = decoded_attempt
+    # 强制进行一次解码尝试
+    decoded = decode_base64(content)
+    # 如果解码后包含节点协议，则使用解码后的内容
+    if any(p + "://" in decoded for p in ['vmess', 'vless', 'trojan', 'ss', 'ssr', 'hysteria']):
+        content = decoded
 
     protocols = ['vmess', 'vless', 'trojan', 'anytls', 'hysteria', 'hysteria2', 'hy2', 'tuic', 'ss', 'ssr']
     pattern = r'(?:' + '|'.join(protocols) + r')://[^\s\"\'<>#]+(?:#[^\s\"\'<>]*)?'
     found_links = re.findall(pattern, content, re.IGNORECASE)
+    
     nodes = []
     for link in found_links:
         if link.lower().startswith(('http://', 'https://')): continue
         protocol = link.split("://")[0].lower()
         try:
-            # 提取服务器地址进行 GeoIP 查询
+            # 提取 host 用于地理位置查询
             if protocol == 'vmess':
                 host = json.loads(decode_base64(link.split("://")[1])).get('add')
             else:
@@ -103,14 +111,11 @@ def parse_nodes(content, reader):
                 host = u.hostname
                 if not host and "@" in u.netloc:
                     host = u.netloc.split("@")[-1].split(":")[0]
-                if not host:
-                    host = re.search(r'@([^:/?#\s]+)', link).group(1).split(':')[0]
             
             if not host: continue
             
-            # --- 核心过滤逻辑：排除黑名单域名或变种 ---
-            host_lower = host.lower()
-            if any(keyword in host_lower for keyword in BLACKLIST_KEYWORDS):
+            # 过滤逻辑
+            if any(keyword in host.lower() for keyword in BLACKLIST_KEYWORDS):
                 continue
 
             flag, country = get_geo_info(host, reader)
@@ -123,7 +128,7 @@ async def fetch_with_retry(session, url, reader, semaphore):
         for _ in range(MAX_RETRIES + 1):
             try:
                 async with session.get(url, timeout=15, ssl=False) as res:
-                    if res.status != 200: return url, [], 0
+                    if res.status != 200: continue
                     text = await res.text()
                     nodes = parse_nodes(text, reader)
                     if nodes:
