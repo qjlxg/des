@@ -35,16 +35,25 @@ BLACKLIST_KEYWORDS = [
 def decode_base64(data):
     if not data: return ""
     try:
-        data = data.strip().replace("-", "+").replace("_", "/")
-        clean_data = re.sub(r'[^A-Za-z0-9+/=]', '', data)
+        # 彻底清理：移除所有换行、空格及干扰字符
+        clean_data = re.sub(r'[^A-Za-z0-9+/=]', '', data.strip())
+        
+        # 自动补齐 Base64 长度
         missing_padding = len(clean_data) % 4
-        if missing_padding: clean_data += '=' * (4 - missing_padding)
+        if missing_padding:
+            clean_data += '=' * (4 - missing_padding)
+            
         decoded_bytes = base64.b64decode(clean_data)
-        try:
-            return decoded_bytes.decode('utf-8')
-        except UnicodeDecodeError:
-            return decoded_bytes.decode('latin-1', errors='ignore')
-    except: return ""
+        
+        # 尝试多种编码方案，优先 UTF-8
+        for encoding in ['utf-8', 'gbk', 'latin-1']:
+            try:
+                return decoded_bytes.decode(encoding)
+            except:
+                continue
+        return decoded_bytes.decode('utf-8', errors='ignore')
+    except:
+        return ""
 
 def encode_base64(data):
     try: return base64.b64encode(data.encode('utf-8')).decode('utf-8')
@@ -76,37 +85,30 @@ def get_node_details(line, protocol):
             v = json.loads(decode_base64(line.split("://")[1]))
             return {"server": v.get('add'), "port": int(v.get('port', 443)), "uuid": v.get('id'), "tls": v.get('tls') == "tls"}
         
-        # 方案 B：增强 Trojan/通用正则解析，提取 SNI (peer)
-        details = {"server": "", "port": 443, "sni": ""}
+        # 正则增强 Trojan/多协议解析 (提取 @host:port)
         match = re.search(r'@([^:/#?]+):(\d+)', line)
         if match:
-            details["server"] = match.group(1)
-            details["port"] = int(match.group(2))
-        else:
-            u = urlparse(line)
-            details["server"] = u.hostname or ""
-            details["port"] = int(u.port or 443)
-        
-        # 尝试提取 sni/peer 参数
-        sni_match = re.search(r'[?&](?:peer|sni)=([^&#]+)', line)
-        if sni_match:
-            details["sni"] = sni_match.group(1)
+            return {"server": match.group(1), "port": int(match.group(2))}
             
-        return details
+        u = urlparse(line)
+        host = u.hostname
+        if not host and "@" in u.netloc:
+            host = u.netloc.split("@")[-1].split(":")[0]
+        return {"server": host, "port": int(u.port or 443)}
     except: return None
 
 def parse_nodes(content, reader):
-    # 自动识别并循环解码 Base64 (处理多重编码或纯 Base64 列表)
-    current_content = content.strip()
-    if "://" not in current_content[:100]:
-        decoded = decode_base64(current_content)
-        if any(p + "://" in decoded for p in ['vmess', 'vless', 'trojan', 'ss', 'ssr', 'hysteria']):
-            current_content = decoded
-
+    # 第一步：尝试直接解析原始文本
     protocols = ['vmess', 'vless', 'trojan', 'anytls', 'hysteria', 'hysteria2', 'hy2', 'tuic', 'ss', 'ssr']
     pattern = r'(?:' + '|'.join(protocols) + r')://[^\s\"\'<>#]+(?:#[^\s\"\'<>]*)?'
-    found_links = re.findall(pattern, current_content, re.IGNORECASE)
     
+    # 第二步：如果原始文本里没发现节点，尝试解码
+    found_links = re.findall(pattern, content, re.IGNORECASE)
+    if not found_links:
+        decoded = decode_base64(content)
+        found_links = re.findall(pattern, decoded, re.IGNORECASE)
+        content = decoded # 更新 content 供后续提取 host 使用
+
     nodes = []
     for link in found_links:
         if link.lower().startswith(('http://', 'https://')): continue
@@ -115,9 +117,15 @@ def parse_nodes(content, reader):
             if protocol == 'vmess':
                 host = json.loads(decode_base64(link.split("://")[1])).get('add')
             else:
-                # 兼容提取 Host
+                # 兼容提取 host
                 match = re.search(r'@([^:/#?]+)', link)
-                host = match.group(1).split(':')[0] if match else urlparse(link).hostname
+                if match:
+                    host = match.group(1).split(':')[0]
+                else:
+                    u = urlparse(link)
+                    host = u.hostname
+                    if not host and "@" in u.netloc:
+                        host = u.netloc.split("@")[-1].split(":")[0]
             
             if not host: continue
             if any(keyword in host.lower() for keyword in BLACKLIST_KEYWORDS):
@@ -149,9 +157,9 @@ async def main():
     raw_file_content = ""
     if os.path.exists(INPUT_FILE):
         with open(INPUT_FILE, 'r', encoding='utf-8') as f:
-            raw_file_content = f.read()
+            raw_file_content = f.read().strip()
 
-    # 1. 提取所有订阅 URL
+    # 提取远程 URL
     all_urls = re.findall(r'https?://[^\s<>\"\'\u4e00-\u9fa5]+', raw_file_content)
     unique_urls = list(dict.fromkeys(all_urls))
     unique_urls = [u for u in unique_urls if not any(k in u.lower() for k in BLACKLIST_KEYWORDS)]
@@ -160,17 +168,17 @@ async def main():
     stats = []
 
     with geoip2.database.Reader(GEOIP_DB) as reader:
-        # 2. 改进：始终尝试解析文件本身的文本内容（方案 C 增强）
-        print(f"--- 正在解析本地文件 {INPUT_FILE} 内容 ---")
-        local_nodes = parse_nodes(raw_file_content, reader)
-        if local_nodes:
-            raw_node_objs.extend(local_nodes)
-            stats.append(["Local_File", len(local_nodes)])
-            print(f"[*] 本地解析成功: 找到 {len(local_nodes)} 个节点")
+        # 如果文件中没有 URL，但有很长的字符（可能是 Base64 内容），直接本地解析
+        if not unique_urls and len(raw_file_content) > 20:
+            print(f"--- 检测到本地内容，正在直接解析 {INPUT_FILE} ---")
+            local_nodes = parse_nodes(raw_file_content, reader)
+            if local_nodes:
+                raw_node_objs.extend(local_nodes)
+                stats.append(["Local_File", len(local_nodes)])
 
-        # 3. 处理远程订阅
+        # 处理远程 URL
         if unique_urls:
-            print(f"--- 正在处理 {len(unique_urls)} 个远程订阅源 ---")
+            print(f"--- 正在处理 {len(unique_urls)} 个源 ---")
             semaphore = asyncio.Semaphore(MAX_CONCURRENT_TASKS)
             connector = aiohttp.TCPConnector(limit=50, ssl=False)
             async with aiohttp.ClientSession(headers={'User-Agent': 'v2rayN/6.23'}, connector=connector) as session:
@@ -180,7 +188,7 @@ async def main():
                     raw_node_objs.extend(nodes); stats.append([url, count])
 
     if not raw_node_objs:
-        print("未发现任何节点，请检查 sub_links.txt 内容。"); return
+        print("未发现任何节点。"); return
 
     final_links = []
     yaml_proxies = []
@@ -188,6 +196,7 @@ async def main():
     
     for obj in raw_node_objs:
         line, protocol, flag, country = obj["line"], obj["protocol"], obj["flag"], obj["country"]
+        # 节点去重逻辑
         base_link = line.split('#')[0] if protocol != 'vmess' else line
         if base_link in seen_lines: continue
         seen_lines.add(base_link)
@@ -212,10 +221,7 @@ async def main():
             if d:
                 p_type = "trojan" if protocol == 'anytls' else protocol
                 proxy_item = f"  - {{ name: \"{new_name}\", type: {p_type}, server: {d['server']}, port: {d['port']}"
-                if protocol == 'vmess': 
-                    proxy_item += f", uuid: {d['uuid']}, cipher: auto, tls: {str(d['tls']).lower()}"
-                elif protocol == 'trojan' and d.get('sni'):
-                    proxy_item += f", password: {line.split('@')[0].split('://')[1]}, sni: {d['sni']}"
+                if protocol == 'vmess': proxy_item += f", uuid: {d['uuid']}, cipher: auto, tls: {str(d['tls']).lower()}"
                 proxy_item += ", udp: true }"
                 yaml_proxies.append(proxy_item)
         except: continue
