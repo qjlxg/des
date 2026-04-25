@@ -1,6 +1,6 @@
 # 美帝国主义是纸老虎
-# Updated: 2026-04-25 12:49:28
-# Total: 0
+# Updated: 2026-04-25 12:58:08
+# Total: 104
 
 port: 7890
 mode: Rule
@@ -9,3 +9,107 @@ dns:
   nameserver: [119.29.29.29, 223.5.5.5]
 
 proxies:
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_7177", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53401, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_ed4e", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53402, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_f044", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53403, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1057", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53404, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_b1e8", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53405, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_d95e", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53406, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_0377", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53407, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_0600", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53408, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_3b32", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53409, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_143b", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53410, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_e2a5", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53411, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_764d", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53412, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_7582", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53413, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_3f2b", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53414, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_60bf", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53415, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_2fe8", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53416, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_213d", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53417, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_bb7b", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53418, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_f139", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53419, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1941", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmhk.lma1b2.com, port: 53420, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_792f", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53421, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_b845", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53422, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_d56f", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53423, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_b412", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53424, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1fa5", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53425, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_9779", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53426, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_455c", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53427, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1afc", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53428, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_064b", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53429, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_becd", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtw.lma1b2.com, port: 53430, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_fd5a", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53431, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1434", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53432, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_9c71", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53433, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_be6e", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53434, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_ebc5", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53435, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_105e", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53436, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_8135", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53437, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_a498", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53438, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_e8ba", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53439, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_c635", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmsg.lma1b2.com, port: 53440, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_6854", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53441, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_58fb", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53442, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_4b90", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53443, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_ca5c", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53444, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_b269", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53445, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_54ab", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53446, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_8da6", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53447, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1256", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53448, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_2073", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53449, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_5457", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmjp.lma1b2.com, port: 53450, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_e731", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53451, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_7e10", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53452, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_b60f", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53453, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_f0c5", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53454, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_eb0b", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53455, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_71d9", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53456, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_3be2", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53457, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_63bd", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53458, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_906b", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53459, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_8d3f", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmus.lma1b2.com, port: 53460, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_e1d7", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53466, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_ebf3", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53467, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_c6ba", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53468, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_2187", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53469, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_f938", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmmy.lma1b2.com, port: 53470, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_1cf2", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmtr.lma1b2.com, port: 53496, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_4e14", type: trojan, server: lmnode-ixd2fh5v0uq1v7z-lmar.lma1b2.com, port: 53498, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_ad63", type: hy2, server: 1sg001.476579.xyz, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_a4b6", type: hy2, server: hkmax02.352343.cc, port: 8080, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_73eb", type: hy2, server: 5gzdx.233235.xyz, port: 8080, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_41a0", type: hy2, server: tw60.233235.xyz, port: 8080, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_bc7b", type: hy2, server: tw3.757866.xyz, port: 8080, udp: true }
+  - { name: "🇹🇼 台湾 打倒美帝国主义及其一切走狗_84ac", type: hy2, server: tw40.453521.xyz, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_33f2", type: hy2, server: vsg05.344233.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_09f0", type: hy2, server: sg03.344233.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_4f9f", type: hy2, server: sg04.352343.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_619a", type: hy2, server: sg05.453521.xyz, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_f593", type: hy2, server: sg06.453521.xyz, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_3cb8", type: hy2, server: sg07.344233.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_75cf", type: hy2, server: vsg04.344233.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_f421", type: hy2, server: sg09.453521.xyz, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_66e3", type: hy2, server: sg10.352343.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_3bd1", type: hy2, server: sg11.352343.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_b8e2", type: hy2, server: sg12.352343.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_5384", type: hy2, server: sg13.352343.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_02df", type: hy2, server: sg14.352343.cc, port: 8080, udp: true }
+  - { name: "🇸🇬 新加坡 打倒美帝国主义及其一切走狗_d0b4", type: hy2, server: sg18.352343.cc, port: 8080, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_a4c7", type: hy2, server: hkmax01.376897.xyz, port: 8080, udp: true }
+  - { name: "🇭🇰 香港 打倒美帝国主义及其一切走狗_c1ce", type: hy2, server: hkmax02.344233.cc, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_bfbe", type: hy2, server: 1jp003.156786.xyz, port: 8081, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_5c2d", type: hy2, server: hyfnjp01.156786.xyz, port: 8081, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_8308", type: hy2, server: jp03.344233.cc, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_79ce", type: hy2, server: hyfnjp03.352343.cc, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_93ec", type: hy2, server: hyfnjp04.344233.cc, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_9293", type: hy2, server: hyfnjp07.156786.xyz, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_5536", type: hy2, server: 1jp001.476579.xyz, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_5d60", type: hy2, server: hyfnjp06.376897.xyz, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_5608", type: hy2, server: 1jp01.352343.cc, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_0ad1", type: hy2, server: jp06.476579.xyz, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_b876", type: hy2, server: jp07.476579.xyz, port: 8080, udp: true }
+  - { name: "🇯🇵 日本 打倒美帝国主义及其一切走狗_60b4", type: hy2, server: jp08.476579.xyz, port: 8080, udp: true }
+  - { name: "🌐 未知国家 打倒美帝国主义及其一切走狗_4dda", type: hy2, server: hyfnus01.595780.xyz, port: 8080, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_e7ec", type: hy2, server: hyfnus02.767887.xyz, port: 8080, udp: true }
+  - { name: "🇺🇸 美国 打倒美帝国主义及其一切走狗_75e4", type: hy2, server: hyfnus04.767887.xyz, port: 8080, udp: true }
