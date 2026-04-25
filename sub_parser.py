@@ -69,13 +69,24 @@ def get_node_details(line, protocol):
         if protocol == 'vmess':
             v = json.loads(decode_base64(line.split("://")[1]))
             return {"server": v.get('add'), "port": int(v.get('port', 443)), "uuid": v.get('id'), "tls": v.get('tls') == "tls"}
+        
+        # 兼容带密码格式的解析 (user:pass@host:port)
         u = urlparse(line)
-        return {"server": u.hostname, "port": int(u.port or 443)}
+        host = u.hostname
+        if not host and "@" in u.netloc:
+            host = u.netloc.split("@")[-1].split(":")[0]
+        
+        return {"server": host, "port": int(u.port or 443)}
     except: return None
 
 def parse_nodes(content, reader):
-    if "://" not in content[:50] and len(content) > 20:
-        content = decode_base64(content)
+    # 强制尝试一次 Base64 解码，处理包含干扰文字的订阅内容
+    decoded_attempt = decode_base64(content)
+    if "://" in decoded_attempt:
+        content = decoded_attempt
+    elif "://" not in content[:100] and len(content) > 20:
+        content = decoded_attempt
+
     protocols = ['vmess', 'vless', 'trojan', 'anytls', 'hysteria', 'hysteria2', 'hy2', 'tuic', 'ss', 'ssr']
     pattern = r'(?:' + '|'.join(protocols) + r')://[^\s\"\'<>#]+(?:#[^\s\"\'<>]*)?'
     found_links = re.findall(pattern, content, re.IGNORECASE)
@@ -84,14 +95,16 @@ def parse_nodes(content, reader):
         if link.lower().startswith(('http://', 'https://')): continue
         protocol = link.split("://")[0].lower()
         try:
-            # 提取服务器地址
+            # 提取服务器地址进行 GeoIP 查询
             if protocol == 'vmess':
                 host = json.loads(decode_base64(link.split("://")[1])).get('add')
             else:
-                host_part = urlparse(link).hostname
-                if not host_part:
-                    host_part = re.search(r'@([^:/?#\s]+)', link).group(1).split(':')[0]
-                host = host_part
+                u = urlparse(link)
+                host = u.hostname
+                if not host and "@" in u.netloc:
+                    host = u.netloc.split("@")[-1].split(":")[0]
+                if not host:
+                    host = re.search(r'@([^:/?#\s]+)', link).group(1).split(':')[0]
             
             if not host: continue
             
@@ -126,7 +139,6 @@ async def main():
             all_urls = re.findall(r'https?://[^\s<>\"\'\u4e00-\u9fa5]+', f.read())
 
     unique_urls = list(dict.fromkeys(all_urls))
-    # 同时也排除包含黑名单关键词的订阅链接本身
     unique_urls = [u for u in unique_urls if not any(k in u.lower() for k in BLACKLIST_KEYWORDS)]
     
     if not unique_urls: return
