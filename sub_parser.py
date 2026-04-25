@@ -58,7 +58,6 @@ def get_geo_info(host, reader):
     ip = host
     if not re.match(r"^\d{1,3}(\.\d{1,3}){3}$", host):
         try: 
-            # 方案 A：防止 DNS 失败导致节点丢失
             ip = socket.gethostbyname(host)
         except: 
             return "🚩", "解析失败"
@@ -77,27 +76,36 @@ def get_node_details(line, protocol):
             v = json.loads(decode_base64(line.split("://")[1]))
             return {"server": v.get('add'), "port": int(v.get('port', 443)), "uuid": v.get('id'), "tls": v.get('tls') == "tls"}
         
-        # 方案 B：正则增强 Trojan/多协议解析
+        # 方案 B：增强 Trojan/通用正则解析，提取 SNI (peer)
+        details = {"server": "", "port": 443, "sni": ""}
         match = re.search(r'@([^:/#?]+):(\d+)', line)
         if match:
-            return {"server": match.group(1), "port": int(match.group(2))}
+            details["server"] = match.group(1)
+            details["port"] = int(match.group(2))
+        else:
+            u = urlparse(line)
+            details["server"] = u.hostname or ""
+            details["port"] = int(u.port or 443)
+        
+        # 尝试提取 sni/peer 参数
+        sni_match = re.search(r'[?&](?:peer|sni)=([^&#]+)', line)
+        if sni_match:
+            details["sni"] = sni_match.group(1)
             
-        u = urlparse(line)
-        host = u.hostname
-        if not host and "@" in u.netloc:
-            host = u.netloc.split("@")[-1].split(":")[0]
-        return {"server": host, "port": int(u.port or 443)}
+        return details
     except: return None
 
 def parse_nodes(content, reader):
-    # 强制进行一次解码尝试
-    decoded = decode_base64(content)
-    if any(p + "://" in decoded for p in ['vmess', 'vless', 'trojan', 'ss', 'ssr', 'hysteria']):
-        content = decoded
+    # 自动识别并循环解码 Base64 (处理多重编码或纯 Base64 列表)
+    current_content = content.strip()
+    if "://" not in current_content[:100]:
+        decoded = decode_base64(current_content)
+        if any(p + "://" in decoded for p in ['vmess', 'vless', 'trojan', 'ss', 'ssr', 'hysteria']):
+            current_content = decoded
 
     protocols = ['vmess', 'vless', 'trojan', 'anytls', 'hysteria', 'hysteria2', 'hy2', 'tuic', 'ss', 'ssr']
     pattern = r'(?:' + '|'.join(protocols) + r')://[^\s\"\'<>#]+(?:#[^\s\"\'<>]*)?'
-    found_links = re.findall(pattern, content, re.IGNORECASE)
+    found_links = re.findall(pattern, current_content, re.IGNORECASE)
     
     nodes = []
     for link in found_links:
@@ -107,15 +115,9 @@ def parse_nodes(content, reader):
             if protocol == 'vmess':
                 host = json.loads(decode_base64(link.split("://")[1])).get('add')
             else:
-                # 方案 B 的 host 提取逻辑
+                # 兼容提取 Host
                 match = re.search(r'@([^:/#?]+)', link)
-                if match:
-                    host = match.group(1).split(':')[0]
-                else:
-                    u = urlparse(link)
-                    host = u.hostname
-                    if not host and "@" in u.netloc:
-                        host = u.netloc.split("@")[-1].split(":")[0]
+                host = match.group(1).split(':')[0] if match else urlparse(link).hostname
             
             if not host: continue
             if any(keyword in host.lower() for keyword in BLACKLIST_KEYWORDS):
@@ -149,7 +151,7 @@ async def main():
         with open(INPUT_FILE, 'r', encoding='utf-8') as f:
             raw_file_content = f.read()
 
-    # 提取订阅 URL
+    # 1. 提取所有订阅 URL
     all_urls = re.findall(r'https?://[^\s<>\"\'\u4e00-\u9fa5]+', raw_file_content)
     unique_urls = list(dict.fromkeys(all_urls))
     unique_urls = [u for u in unique_urls if not any(k in u.lower() for k in BLACKLIST_KEYWORDS)]
@@ -158,17 +160,17 @@ async def main():
     stats = []
 
     with geoip2.database.Reader(GEOIP_DB) as reader:
-        # 方案 C：如果没发现 URL 但文件有内容，尝试作为本地 Base64 直接解析
-        if not unique_urls and len(raw_file_content.strip()) > 20:
-            print(f"--- 检测到本地内容，正在直接解析 {INPUT_FILE} ---")
-            local_nodes = parse_nodes(raw_file_content, reader)
-            if local_nodes:
-                raw_node_objs.extend(local_nodes)
-                stats.append(["Local_File", len(local_nodes)])
+        # 2. 改进：始终尝试解析文件本身的文本内容（方案 C 增强）
+        print(f"--- 正在解析本地文件 {INPUT_FILE} 内容 ---")
+        local_nodes = parse_nodes(raw_file_content, reader)
+        if local_nodes:
+            raw_node_objs.extend(local_nodes)
+            stats.append(["Local_File", len(local_nodes)])
+            print(f"[*] 本地解析成功: 找到 {len(local_nodes)} 个节点")
 
-        # 处理远程 URL
+        # 3. 处理远程订阅
         if unique_urls:
-            print(f"--- 正在处理 {len(unique_urls)} 个源 ---")
+            print(f"--- 正在处理 {len(unique_urls)} 个远程订阅源 ---")
             semaphore = asyncio.Semaphore(MAX_CONCURRENT_TASKS)
             connector = aiohttp.TCPConnector(limit=50, ssl=False)
             async with aiohttp.ClientSession(headers={'User-Agent': 'v2rayN/6.23'}, connector=connector) as session:
@@ -178,7 +180,7 @@ async def main():
                     raw_node_objs.extend(nodes); stats.append([url, count])
 
     if not raw_node_objs:
-        print("未发现任何节点。"); return
+        print("未发现任何节点，请检查 sub_links.txt 内容。"); return
 
     final_links = []
     yaml_proxies = []
@@ -210,7 +212,10 @@ async def main():
             if d:
                 p_type = "trojan" if protocol == 'anytls' else protocol
                 proxy_item = f"  - {{ name: \"{new_name}\", type: {p_type}, server: {d['server']}, port: {d['port']}"
-                if protocol == 'vmess': proxy_item += f", uuid: {d['uuid']}, cipher: auto, tls: {str(d['tls']).lower()}"
+                if protocol == 'vmess': 
+                    proxy_item += f", uuid: {d['uuid']}, cipher: auto, tls: {str(d['tls']).lower()}"
+                elif protocol == 'trojan' and d.get('sni'):
+                    proxy_item += f", password: {line.split('@')[0].split('://')[1]}, sni: {d['sni']}"
                 proxy_item += ", udp: true }"
                 yaml_proxies.append(proxy_item)
         except: continue
